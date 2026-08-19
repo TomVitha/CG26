@@ -1,0 +1,96 @@
+/* TODO */
+.brow {
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    height: 4px;
+    width: 40px;
+    background-color: var(--cg-yellow);
+    margin-bottom: 20px;
+  }
+}
+
+.tag {
+  --badge-padding-x: 12px;
+  --badge-padding-y: 4px;
+  --badge-font-size: 0.75rem;
+  --badge-font-weight: 700;
+  --badge-color: ;
+  --badge-border-radius: 999px;
+  --badge-icon-size: 1lh;
+  --badge-line-height: 1;
+  align-items: center;
+  background-color: var(--theme-color, var(--cg-yellow));
+  border-radius: var(--badge-border-radius);
+  border: var(--border-width) var(--border-style) transparent;
+  color: var(--theme-contrast-color, var(--body-text-color, black));
+  display: inline-flex;
+  font-size: var(--badge-font-size);
+  font-weight: var(--badge-font-weight);
+  gap: 0.75em;
+  justify-content: center;
+  /* letter-spacing: .04em; */
+  line-height: var(--badge-line-height);
+  /* min-width: calc(1em + var(--badge-padding-y) * 2 + 2px); */
+  overflow: hidden;
+  padding: var(--badge-padding-y) var(--badge-padding-x);
+  text-align: center;
+  /* ? maybe ? */
+  /* text-transform: uppercase; */
+  user-select: none;
+  vertical-align: bottom;
+  white-space: nowrap;
+}
+
+/* tag preceding a heading */
+.tag:has(+ h2) {
+  margin-bottom: 22px;
+}
+
+
+/* # HERO */
+.hero {
+  height: 800px;
+  padding-top: calc(var(--header-height) + 32px);
+  padding-bottom: 32px;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  .hero-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero-content {
+    width: fit-content;
+    max-width: min(570px, 100%);
+    padding: 60px 40px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(25px);
+    color: white;
+  }
+}
+
+@media (width < 992px) {
+  .hero {
+    /* TEMP: Actual value is TBA */
+    height: 500px;
+
+    .hero-container {
+      justify-content: end;
+      padding-inline: 0 !important;
+    }
+
+    .hero-content {
+      width: 100%;
+      max-width: 100%;
+      padding: 32px 16px;
+    }
+  }
+}

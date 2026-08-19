@@ -1,0 +1,38 @@
+:root {
+  --cg-yellow: #ffed00;
+  --cg-blue: #20234c;
+  /* yellow, primary, body text color */
+  --body-text-color: ;
+
+  /* layout */
+  --section-spacing: 100px;
+
+  --header-height-desktop: 124px;
+  --header-height-mobile: 56px;
+  --header-height: var(--header-height-desktop);
+
+  /* CONTROLS (buttons, inputs) */
+  --controls-fs-sm: 0.875rem;
+  --controls-fs-md: 1.125rem;
+  --controls-fs-lg: 1.25rem;
+  --controls-padding-sm: 6px 16px;
+  --controls-padding-md: 14px 18px;
+  /* --controls-padding-md: 11px 18px; */
+  --controls-padding-lg: 0 18px;
+  --controls-border-radius: 5px;
+  /* ! <input> nedokáže jít až na line-height: 1 -> proto bylo třeba hodnotu zvýšit; hodnoty zvoleny aby height vycházel na celé a sudé číslo */
+  --controls-lh-sm: 1.142857142857143;
+  --controls-lh-md: 1.222222222222222;
+  --controls-lh-lh: 1.2;
+
+
+  /* ? maybe */
+  /* --glass-filter: blur(25px); */
+}
+
+@media (width < 992px) {
+  :root {
+    --section-spacing: 100px;
+    --header-height: var(--header-height-mobile);
+  }
+}

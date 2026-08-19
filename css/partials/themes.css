@@ -1,0 +1,4 @@
+.theme-yellow {
+  --theme-primary-color: var(--cg-yellow);
+  --theme-contrast-color: black;
+}

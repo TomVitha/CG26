@@ -1,0 +1,10 @@
+/* WIP HARD */
+
+.text-yellow {
+  color: var(--cg-yellow);
+}
+
+.bg-blue {
+  background-color: var(--cg-blue);
+  color: white;
+}

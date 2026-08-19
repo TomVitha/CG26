@@ -1,0 +1,17 @@
+:is(section, .section) {
+  margin-block: var(--section-spacing);
+
+  /* sections with background */
+  &[class*="bg-"] {
+    margin-block: 0;
+    padding-block: var(--section-spacing);
+  }
+
+
+
+  /* sub-section (section inside another section) */
+  & & {
+    /* debug */
+    background-color: red;
+  }
+}
