@@ -2,6 +2,7 @@
 <html>
 
 <head>
+  <base href="%BASE_URL%">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="Content-Language" content="cs">
@@ -56,14 +57,15 @@
   <script type="text/javascript" src="https://kit.fontawesome.com/0fd8c3bac9.js"></script>
   <!-- TODO: Font Awesome Styles -->
   <script type="module">
-    import { loadContent } from './wms/vite-wms.js';
+    import { insertContent } from './wms/vite-wms.js';
     import { router } from './wms/router.js'
+    import headerHtml from './wms/header.html?raw'
+    import footerHtml from './wms/footer.html?raw'
 
     router.init();
 
-    // ? should we await ?
-    loadContent("header.head", "./wms/header.html", true)
-    loadContent("footer", "./wms/footer.html")
+    insertContent("header.head", headerHtml, true)
+    insertContent("footer", footerHtml)
 
   </script>
 </body>
