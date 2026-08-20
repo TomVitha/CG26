@@ -1,6 +1,22 @@
 :root {
-  --cg-yellow: #ffed00;
-  --cg-blue: #20234c;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-cg-yellow: #ffed00;
+  --color-cg-blue: #20234c;
+  --color-blue: #2C306c;
+  --color-gray-light: #fafafa;
+  --color-gray-medium: #e3e3e3;
+  --color-blue-light: #f8fafc;
+  --color-blue-medium: #dce6f6;
+  --color-white-dark: #f8f7f5;
+  --color-cream-light: #fbf7ed;
+  --color-cream-medium: #f5f0e0;
+  --color-cream-dark: #efe6cd;
+
+  --color-text-primary: #27232c;
+  --color-text-secondary: #666666;
+  --color-text-tertiary: #575757;
+
   /* yellow, primary, body text color */
   --body-text-color: ;
 
