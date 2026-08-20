@@ -1,4 +1,8 @@
-<div class="hero" style="background-image: url('https://www.central-group.cz/uloziste/17/17e2cce3-c4ab-4508-8d4c-c1592e56eb05.jpg');">
+<div class="hero">
+  <video class="hero-bg" poster="https://www.central-group.cz//storage/CG/wms3/img/kariera/videa/empiria-poster.png" autoplay muted loop>
+    <source src="https://www.central-group.cz/storage/CG/wms3/img/kariera/videa/empiria.mp4" media="(min-width: 576px)">
+    <source src="https://www.central-group.cz/storage/CG/wms3/img/kariera/videa/empiria-vertical.mp4">
+  </video>
   <div class="container-main hero-container">
     <div class="hero-content">
       <hgroup>
@@ -16,7 +20,7 @@
 
 <section>
   <div class="container-main">
-    <div class="layout-grid">
+    <div class="layout-grid projects-banners">
       <a href="#" class="hp-banner wide prime">
         <picture>
           <img src="https://www.central-group.cz/Uloziste/6d/6d3c1333-12e0-4e20-9f88-c06677468779.jpg" alt="Viladomy Střížkov">
@@ -114,118 +118,51 @@
   </div>
 </section>
 
-<style>
-  /* TEMP umístění stylů */
-  .hp-banner {
-    position: relative;
-    overflow: hidden;
-    min-height: 250px;
-    isolation: isolate;
-    padding: min(var(--layout-gutter), 24px);
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    color: white;
-
-    /* backdrop */
-    &::before {
-      content: "";
-      display: block;
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      /* background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5)); */
-      background:
-        linear-gradient(292deg, rgba(32, 35, 76, 0.00) 54.72%, rgba(18, 20, 43, 0.80) 99.05%),
-        linear-gradient(211deg, rgba(32, 35, 76, 0.00) 55.37%, rgba(18, 20, 43, 0.80) 76.36%);
-      z-index: -1;
-      transition: all 300ms;
-      pointer-events: none;
-    }
-
-    picture {
-      display: contents;
-    }
-
-    :is(img, video) {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -3;
-      transition: all 300ms;
-    }
-
-    video {
-      transition: all 300ms;
-      opacity: 0;
-      z-index: -2;
-    }
-
-    &:hover {
-      &::before {
-        /* FIXME: Gradients cannot be transitioned */
-        /* background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.5)); */
-      }
-
-      video {
-        opacity: 1;
-      }
-    }
-
-    &:not(:has(video)):hover img {
-      scale: 1.075;
-    }
-
-    address {
-      order: -1;
-      margin-bottom: auto;
-
-      /* WIP */
-      &::before {
-        /* FIXME: Ikoně chybí tečka uprostřed */
-        content: url('data:image/svg+xml,<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.34878 12.7165C8.43367 11.7796 11.6644 8.74597 11.6644 5.83311C11.6644 4.59532 11.1728 3.40823 10.2977 2.53298C9.42265 1.65773 8.23578 1.16602 6.99823 1.16602C5.76068 1.16602 4.57381 1.65773 3.69873 2.53298C2.82365 3.40823 2.33203 4.59532 2.33203 5.83311C2.33203 8.74597 5.56279 11.7796 6.64768 12.7165C6.74875 12.7925 6.87178 12.8336 6.99823 12.8336C7.12468 12.8336 7.24771 12.7925 7.34878 12.7165Z" stroke="%23FFED00" stroke-linecap="round"/></svg>')
-      }
-      /* TODO: Pin icon before */
-    }
-  }
-
-  .layout-grid {
-    >* {
-      grid-column: 1 / -1;
-      /* grid-row: span 1; */
-    }
-  }
-
-  @media (width > 992px) {
-    .layout-grid {
-      /* Řádky budou všechny stejně vysoké (FIX pro kolapsnutý řádek a nepřekrývající se tall bannery) */
-      grid-auto-rows: 1fr;
-
-      .prime {
-        order: -1;
-      }
-
-      >* {
-        grid-column: span 4;
-        grid-row: span 1;
-      }
-
-      .wide {
-        grid-column: span 8;
-      }
-
-      .tall {
-        grid-row: span 2;
-      }
-
-      aside {
-        grid-column: span 4;
-        grid-row: span 3;
-      }
-    }
-  }
-</style>
+<section>
+  <div class="container-main">
+    <div class="layout-grid deck articles">
+      <article class="card tall">
+        <img src="https://picsum.photos/448/342?random=1" alt="" class="card-img">
+        <div class="card-body" style="background-color: #fbf7ed;">
+          <h3>Nejširší <strong>možnosti financování pro nákup nového bytu</strong></h3>
+          <p>
+            Vlastní prostředky, hypotéka nebo jejich kombinace.
+            <strong>Vyberte si z několika způsobů financování</strong>
+            a nastavte si řešení, které nejlépe odpovídá vašim možnostem, potřebám a plánům.
+          </p>
+          <a href="#" class="btn btn-primary">Prozkoumat financování <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://picsum.photos/448/139?random=2" alt="" class="card-img">
+        <div class="card-body" style="background-color: #f5f0e0;">
+          <h3>Největší developerská <strong>vzorkovna v Česku</strong></h3>
+          <p>
+            Koupelny, podlahy i dveře si vyberete na jednom místě. <strong>S odborným poradenstvím ZDARMA.</strong>
+          </p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://picsum.photos/448/139?random=3" alt="" class="card-img">
+        <div class="card-body" style="background-color: #f3ecd8;">
+          <h3>4&nbsp;unikátní <strong>finanční programy</strong></h3>
+          <p>
+            Využijte <strong>unikátní finanční programy</strong>, které vám přinesou více jistoty, výhod a pohodlí při pořízení bytu.
+          </p>
+        </div>
+      </article>
+      <article class="card tall">
+        <img src="https://picsum.photos/448/342?random=4" alt="" class="card-img">
+        <div class="card-body" style="background-color: #efe6cd;">
+          <h3><strong>Interiérové studio</strong>ro domov podle vašich představ</h3>
+          <p>
+            Od prvního návrhu až po kompletně zařízený domov.
+            <strong>Navrhneme a zrealizujeme váš interiér na klíč,</strong>
+            včetně výběru materiálů, nábytku a vybavení.
+          </p>
+          <a href="#" class="btn btn-primary">Prozkoumat CENTRAL INTERIER <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

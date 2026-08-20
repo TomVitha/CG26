@@ -15,7 +15,7 @@ em, .em {
   font-weight: 600;
 
   @media (width < 992px) {
-      /* font-size: 1.125em; */
+    /* font-size: 1.125em; */
   }
 }
 
@@ -50,7 +50,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--heading-color, currentColor);
   line-height: 1.2;
   position: relative;
-  
+
   /* ? maybe */
   margin-bottom: 1rem;
   margin-bottom: 1.25rem;
@@ -106,10 +106,14 @@ h5 {
 }
 
 h6 {
-
+  
 }
 
 @media (width < 992px) {
+  h1 {
+    font-size: 1.875rem;
+  }
+
   h2 {
     font-size: 2.25rem;
   }

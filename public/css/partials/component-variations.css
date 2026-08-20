@@ -1,0 +1,70 @@
+.layout-grid.projects-banners {
+
+  > * {
+    grid-column: 1 / -1;
+    /* grid-row: span 1; */
+  }
+
+  @media (width > 992px) {
+    & {
+      /* Řádky budou všechny stejně vysoké (FIX pro kolapsnutý řádek a nepřekrývající se tall bannery) */
+      grid-auto-rows: 1fr;
+
+      .prime {
+        order: -1;
+      }
+
+      > * {
+        grid-column: span 4;
+        grid-row: span 1;
+      }
+
+      .wide {
+        grid-column: span 8;
+      }
+
+      .tall {
+        grid-row: span 2;
+      }
+
+      aside {
+        grid-column: span 4;
+        grid-row: span 3;
+      }
+    }
+  }
+}
+
+/* ? REDO using utility classes ? */
+.layout-grid.articles {
+  grid-auto-flow: column;
+
+  /* grid items */
+  > * {
+    grid-column: span 4;
+  }
+
+  @media (width >=992px) {
+    .tall {
+      grid-row: span 2
+    }
+  }
+
+  @media (width < 992px) {
+    &.articles {
+      grid-auto-flow: row;
+
+      > * {
+        grid-column: span 6;
+      }
+    }
+  }
+
+  @media (width < 768px) {
+    &.articles {
+      > * {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+}

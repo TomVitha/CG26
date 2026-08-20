@@ -45,4 +45,13 @@
   /* &.rows-equal {
     grid-auto-rows: 1fr;
   } */
+
+  /* WIP */
+  &.deck {
+    align-items: stretch;
+
+    > * {
+      height: 100%;
+    }
+  }
 }

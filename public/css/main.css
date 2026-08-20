@@ -10,13 +10,16 @@
 
 @import url("./partials/footer.css");
 
+@import url("./partials/component-variations.css");
+
 /* TEMP umístění */
 :root {
   font-family: "Exo 2";
-  font-size: 1.125rem;
   line-height: 1.5;
 }
 
 body {
   color: var(--body-text-color);
+  /* NOTE: Font-size je určeno na body, namísto na :root, protože tím by se přenastavila hodnota 1rem; a byť v těle používáme velikost 18, pořád chceme 1rem = 16px, abychom se z toho nezbláznili */
+  font-size: 1.125rem;
 }
