@@ -10,7 +10,14 @@
 
 @import url("./partials/footer.css");
 
+@import url("./partials/footer.css");
+
+/* TEMP umístění */
 :root {
   font-family: "Exo 2";
   line-height: 1.5;
+}
+
+body {
+  color: var(--body-text-color);
 }

@@ -1,5 +1,5 @@
 <div class="hero" style="background-image: url('https://www.central-group.cz/uloziste/17/17e2cce3-c4ab-4508-8d4c-c1592e56eb05.jpg');">
-  <div class="container hero-container">
+  <div class="container-main hero-container">
     <div class="hero-content">
       <hgroup>
         <h1 class="brow">Největší výběr bytů
@@ -15,7 +15,23 @@
 </div>
 
 <section>
-  <div class="container">
+  <div class="container-main">
+    <div class="layout-grid">
+      <article class="wide prime" style="background-color: rgb(233, 100, 100);">Střížkov (wide)</article>
+      <aside class="aside" style="background-color: violet;">Aside</aside>
+      <article style="background-color: #f2f2f2;">Tesla</article>
+      <article class="tall" style="background-color: rgb(99, 204, 134);">Bohdalec (tall)</article>
+      <article class="tall" style="background-color: rgb(99, 204, 134);">Počernice (tall)</article>
+      <article class="wide" style="background-color: rgb(233, 100, 100);">RJT (wide)</article>
+      <article style="background-color: #f2f2f2;">Pitkovice</article>
+      <article style="background-color: #f2f2f2;">Harfa</article>
+      <article style="background-color: #f2f2f2;">Parkovka</article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container-main">
     <div style="text-align: center;">
       <div class="tag">SLUŽBY</div>
       <h2>Snazší cesta k novému bydlení</h2>
@@ -26,3 +42,47 @@
     </div>
   </div>
 </section>
+
+<style>
+  .layout-grid {
+    >* {
+      grid-column: 1 / -1;
+      /* grid-row: span 1; */
+
+      /* TEMP */
+      background-color: #f7f7f7;
+      padding: 32px 16px;
+      text-align: center;
+      align-content: center;
+    }
+  }
+
+  @media (width > 992px) {
+    .layout-grid {
+      /* Řádky budou všechny stejně vysoké (FIX pro kolapsnutý řádek a nepřekrývající se tall bannery) */
+      grid-auto-rows: 1fr;
+
+      .prime {
+        order: -1;
+      }
+
+      >* {
+        grid-column: span 4;
+        grid-row: span 1;
+      }
+
+      .wide {
+        grid-column: span 8;
+      }
+
+      .tall {
+        grid-row: span 2;
+      }
+
+      aside {
+        grid-column: span 4;
+        grid-row: span 3;
+      }
+    }
+  }
+</style>
