@@ -1,7 +1,6 @@
 .footer {
   /* COLORS */
-  --footer-brow-color: var(--cg-blue);
-  /*--footer-bg: var(--white-dark);*/  
+  /*--footer-bg: var(--white-dark);*/
   --footer-bg: var(--gray-light);
   --footer-bottom-bg: var(--white);
   --footer-text-color: var(--body-text-color);
@@ -13,8 +12,6 @@
   --footer-social-bg: var(--cg-blue);
   --footer-social-color: var(--white);
   --footer-hover-bg: var(--cg-yellow);
-  /* .brow je v components.css žlutý, v patičce je modrý
-  --footer-brow-color: var(--cg-blue);
 
   /* TYPOGRAPHY */
   --footer-heading-weight: 800;
@@ -26,19 +23,17 @@
   --footer-row-gap: 56px;
   --footer-icon-size: 32px;
   --footer-list-max-width: 220px;
+  --footer-socials-spacing: 96px;
+  /* odsazení položek seznamů na mob */
+  --footer-list-indent: 16px;
 
   background-color: var(--footer-bg);
   color: var(--footer-text-color);
 
-  /* nadpisy sloupců (h4 = 1.5rem / 700 podle typography.css) */
+  /* nadpisy sloupců - typography.css) */
   h4 {
     color: var(--footer-heading-color);
     font-weight: var(--footer-heading-weight);
-  }
-
-  /* linka nad nadpisem – komponenta .brow z components.css */
-  .brow::before {
-    background-color: var(--footer-brow-color);
   }
 }
 
@@ -92,11 +87,10 @@
     color: var(--footer-icon-color);
     font-size: var(--footer-fs-sm);
   }
-  
-  .footer-icon > .fa-clock, .footer-icon > .fa-phone, .footer-icon > .fa-envelope {
-      font-size: 1.0rem;
-  }
 
+  .footer-icon > .fa-clock, .footer-icon > .fa-phone, .footer-icon > .fa-envelope {
+    font-size: 1.0rem;
+  }
 }
 
 a.footer-contact:hover {
@@ -105,8 +99,8 @@ a.footer-contact:hover {
 
 
 /* ## SLOUPEC 1: SOCIALS */
-.footer-socials-heading {
-  margin-block-start: 96px;
+.footer-socials-block {
+  margin-block-start: var(--footer-socials-spacing);
 }
 
 .footer-socials {
@@ -152,7 +146,6 @@ ul.footer-socials, ul.footer-contacts, ul.footer-links {
     display: block;
     padding: 8px 10px;
     margin-inline: -10px;
-    /*border-radius: var(--controls-border-radius);*/
     border-radius: 0;
     font-weight: 700;
     transition: background-color 0.3s ease;
@@ -195,18 +188,32 @@ ul.footer-socials, ul.footer-contacts, ul.footer-links {
   }
 }
 
-/* tlačítko = .btn .btn-yellow .btn-md z controls.css;
-   --btn-contrast-color zatím není v projektu definován → dourčeno zde */
-.footer .btn-yellow {
-  --btn-contrast-color: var(--cg-blue);
-  --btn-hover-bg: var(--cg-blue);
-  --btn-hover-color: var(--cg-yellow);
-  font-weight: 700;
-  transition: background-color 0.25s ease, color 0.25s ease;
+
+/* # DROPDOWNS for mobile */
+.footer-dropdown > summary {
+  list-style: none;
+
+  .footer-dropdown-icon {
+    display: none;
+    color: var(--footer-heading-color);
+    transition: rotate 0.3s ease;
+  }
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+}
+
+/* od 576px výš je obsah <details> vždy viditelný (nezávisle na atributu open) */
+@media (width >= 576px) {
+  .footer-dropdown::details-content {
+    content-visibility: visible;
+    block-size: auto;
+  }
 }
 
 
-/* ## SPODNÍ PRUH */
+/* # bottom note */
 .footer-bottom {
   background-color: var(--footer-bottom-bg);
   color: var(--footer-muted-color);
@@ -219,7 +226,7 @@ ul.footer-socials, ul.footer-contacts, ul.footer-links {
   }
 
   p {
-      font-size: 12px;
+    margin-bottom: 0;
   }
 
   a {
@@ -237,14 +244,11 @@ ul.footer-socials, ul.footer-contacts, ul.footer-links {
   .footer {
     --footer-padding-block: 56px 64px;
     --footer-list-max-width: none;
+    --footer-socials-spacing: 56px;
   }
 
   .footer-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .footer-socials-heading {
-    margin-block-start: 56px;
   }
 
   .footer-bottom .footer-bottom-grid {
@@ -258,16 +262,72 @@ ul.footer-socials, ul.footer-contacts, ul.footer-links {
     --footer-row-gap: 40px;
   }
 
-  .footer-address {
-    margin-bottom: 1.5rem;
-  }
 
   .footer-grid {
     grid-template-columns: minmax(0, 1fr);
+    row-gap: 0;
   }
 
-.footer .btn-yellow {
-  width: 100%;
-}
+  /* obsah 1. sloupce se stane přímo položkami gridu → sociální sítě
+     je pak možné přeřadit pomocí order až na konec patičky */
+  .footer-col-contact {
+    display: contents;
+  }
 
+  .footer-col {
+    margin-block-start: var(--footer-row-gap);
+  }
+
+  .footer-socials-block {
+    order: 1;
+    margin-block-start: var(--footer-socials-spacing);
+  }
+
+  /* # DROPDOWN */
+  .footer-dropdown > summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    cursor: pointer;
+
+    .footer-dropdown-icon {
+      display: block;
+      font-size: 1.25rem;
+    }
+  }
+
+  .footer-dropdown[open] > summary .footer-dropdown-icon {
+    rotate: 180deg;
+  }
+
+  /* interpolate-size: allow-keywords z reset.css */
+  .footer-dropdown::details-content {
+    block-size: 0;
+    overflow: hidden;
+    transition: block-size 0.35s ease, content-visibility 0.35s ease allow-discrete;
+  }
+
+  .footer-dropdown[open]::details-content {
+    block-size: auto;
+  }
+
+  /* odsazení položek v seznamu */
+  .footer-projects a {
+    padding-left: calc(var(--footer-list-indent) + 10px);
+  }
+
+  .footer-links {
+    margin-bottom: 0;
+
+    a {
+      padding-left: var(--footer-list-indent);
+    }
+  }
+
+  /* tlačítko zůstává vždy viditelné (je mimo <details>) */
+  .footer-col-links .btn {
+    width: 100%;
+    margin-block-start: 32px;
+  }
 }
