@@ -17,15 +17,86 @@
 <section>
   <div class="container-main">
     <div class="layout-grid">
-      <article class="wide prime" style="background-color: rgb(233, 100, 100);">Střížkov (wide)</article>
-      <aside class="aside" style="background-color: violet;">Aside</aside>
-      <article style="background-color: #f2f2f2;">Tesla</article>
-      <article class="tall" style="background-color: rgb(99, 204, 134);">Bohdalec (tall)</article>
-      <article class="tall" style="background-color: rgb(99, 204, 134);">Počernice (tall)</article>
-      <article class="wide" style="background-color: rgb(233, 100, 100);">RJT (wide)</article>
-      <article style="background-color: #f2f2f2;">Pitkovice</article>
-      <article style="background-color: #f2f2f2;">Harfa</article>
-      <article style="background-color: #f2f2f2;">Parkovka</article>
+      <a href="#" class="hp-banner wide prime">
+        <picture>
+          <img src="https://www.central-group.cz/Uloziste/6d/6d3c1333-12e0-4e20-9f88-c06677468779.jpg" alt="Viladomy Střížkov">
+        </picture>
+        <address>
+          <span>Praha 8 - Střížkov</span>
+        </address>
+        <h4>Viladomy Střížkov</h4>
+      </a>
+      <aside>
+        <nav>
+          <h4>Dokončené byty</h4>
+        </nav>
+        <nav>
+          <h4>Byty ve výstavbě</h4>
+        </nav>
+      </aside>
+      <a href="#" class="hp-banner">
+        <picture>
+          <img src="https://www.central-group.cz/Uloziste/bd/bd68d40a-1290-4aab-ba03-c63a84e09c09.jpg" alt="Rezidenční čtvrť Tesla Hloubětín">
+        </picture>
+        <address>
+          <span>Praha 8 - Hloubětín</span>
+        </address>
+        <h4>Rezidenční čtvrť Tesla&nbsp;Hloubětín</h4>
+      </a>
+      <a href="#" class="hp-banner tall">
+        <picture>
+          <img src="https://www.central-group.cz/Uloziste/54/54471479-4e98-4891-a6cb-616bcd575aeb.jpg" alt="Viladomy Střížkov">
+        </picture>
+        <address>
+          <span>Praha 4 - Michle</span>
+        </address>
+        <h4>Bohdalecké zahrady</h4>
+      </a>
+      <a href="#" class="hp-banner tall">
+        <picture>
+          <img src="https://www.central-group.cz/Uloziste/f8/f8424307-67d5-493b-9106-5576b8092c2f.jpg" alt="Viladomy Počernice">
+        </picture>
+        <address>
+          <span>Praha 9 - Dolní Počernice</span>
+        </address>
+        <h4>Viladomy Počernice</h4>
+      </a>
+      <a href="#" class="hp-banner wide">
+        <picture>
+          <img src="https://www.central-group.cz/Uloziste/0e/0eefd926-f099-4d5d-a3c6-bba84ba408ea.jpg" alt="Jižní Terasy">
+        </picture>
+        <address>
+          <span>Praha 4 - Háje</span>
+        </address>
+        <h4>Rezidence Jižní terasy</h4>
+      </a>
+      <a href="#" class="hp-banner">
+        <picture>
+          <img src="https://www.central-group.cz/Uloziste/1d/1de1b630-81ba-452a-b0a6-6441fc98a62e.jpg" alt="Viladomy Pitkovice">
+        </picture>
+        <address>
+          <span>Praha 10 - Pitkovice</span>
+        </address>
+        <h4>Viladomy Pitkovice</h4>
+      </a>
+      <a href="#" class="hp-banner">
+        <picture>
+          <img src="https://www.central-group.cz/Uloziste/96/96d1835e-10f3-4f77-b700-595157fb230d.jpg" alt="Harfa Living">
+        </picture>
+        <address>
+          <span>Praha 9 - Vysočany</span>
+        </address>
+        <h4>Harfa Living</h4>
+      </a>
+      <a href="#" class="hp-banner">
+        <picture>
+          <img src="https://www.central-group.cz/Uloziste/86/86ff1fee-f02d-47e6-b397-cf1849cd18a4.jpg" alt="Rezidence Parková Čtvrť">
+        </picture>
+        <address>
+          <span>Praha 3 - Žižkov</span>
+        </address>
+        <h4>Rezidence Parková Čtvrť</h4>
+      </a>
     </div>
   </div>
 </section>
@@ -44,16 +115,88 @@
 </section>
 
 <style>
+  /* TEMP umístění stylů */
+  .hp-banner {
+    position: relative;
+    overflow: hidden;
+    min-height: 250px;
+    isolation: isolate;
+    padding: min(var(--layout-gutter), 24px);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    color: white;
+
+    /* backdrop */
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      /* background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5)); */
+      background:
+        linear-gradient(292deg, rgba(32, 35, 76, 0.00) 54.72%, rgba(18, 20, 43, 0.80) 99.05%),
+        linear-gradient(211deg, rgba(32, 35, 76, 0.00) 55.37%, rgba(18, 20, 43, 0.80) 76.36%);
+      z-index: -1;
+      transition: all 300ms;
+      pointer-events: none;
+    }
+
+    picture {
+      display: contents;
+    }
+
+    :is(img, video) {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -3;
+      transition: all 300ms;
+    }
+
+    video {
+      transition: all 300ms;
+      opacity: 0;
+      z-index: -2;
+    }
+
+    &:hover {
+      &::before {
+        /* FIXME: Gradients cannot be transitioned */
+        /* background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.5)); */
+      }
+
+      video {
+        opacity: 1;
+      }
+    }
+
+    &:not(:has(video)):hover img {
+      scale: 1.075;
+    }
+
+    address {
+      order: -1;
+      margin-bottom: auto;
+
+      /* WIP */
+      &::before {
+        /* FIXME: Ikoně chybí tečka uprostřed */
+        content: url('data:image/svg+xml,<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.34878 12.7165C8.43367 11.7796 11.6644 8.74597 11.6644 5.83311C11.6644 4.59532 11.1728 3.40823 10.2977 2.53298C9.42265 1.65773 8.23578 1.16602 6.99823 1.16602C5.76068 1.16602 4.57381 1.65773 3.69873 2.53298C2.82365 3.40823 2.33203 4.59532 2.33203 5.83311C2.33203 8.74597 5.56279 11.7796 6.64768 12.7165C6.74875 12.7925 6.87178 12.8336 6.99823 12.8336C7.12468 12.8336 7.24771 12.7925 7.34878 12.7165Z" stroke="%23FFED00" stroke-linecap="round"/></svg>')
+      }
+      /* TODO: Pin icon before */
+    }
+  }
+
   .layout-grid {
     >* {
       grid-column: 1 / -1;
       /* grid-row: span 1; */
-
-      /* TEMP */
-      background-color: #f7f7f7;
-      padding: 32px 16px;
-      text-align: center;
-      align-content: center;
     }
   }
 
