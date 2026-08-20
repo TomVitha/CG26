@@ -18,6 +18,7 @@
   --hypo-benefit-icon-size: 56px;
   --hypo-tabs-width: 220px;
   --hypo-aside-width: 320px;
+  --hypo-price-padding: 24px;
   --hypo-box-padding: 40px;
   --hypo-radius: var(--controls-border-radius);
 }
@@ -236,14 +237,16 @@
 .hypo-price {
   background-color: var(--hypo-surface);
   border-radius: var(--hypo-radius);
-  padding: 24px;
+  padding: var(--hypo-price-padding);
   text-align: center;
 }
 
 .hypo-price-row {
   padding-block: 16px;
 
-  & + & {
+  /* linka jen mezi „cena bytu" a „vlastní zdroje";
+     nad zvýrazněným řádkem ji nechceme, ten je oddělený žlutou plochou */
+  & + &:not(.hypo-price-row--highlight) {
     border-top: 1px solid var(--gray-200);
   }
 }
@@ -290,9 +293,14 @@
   font-weight: 800;
 }
 
+/* stejně široké jako žlutý řádek se splátkou (šířka boxu bez paddingu = 272px)
+   a zarovnané pod ním na střed – platí i na mobilu */
 .hypo-panel-btn {
+  display: flex;
   width: 100%;
+  max-width: calc(var(--hypo-aside-width) - 2 * var(--hypo-price-padding));
   margin-top: var(--hypo-gap);
+  margin-inline: auto;
 }
 
 /* ### Poznámka pod příklady */
@@ -527,7 +535,12 @@
     grid-template-columns: minmax(0, 1fr) 280px;
   }
 
-  /* Kontaktní blok: nadpis + text vedle sebe, kontakty a tlačítko pod nimi */
+  /* Kontaktní blok: nadpis + text vedle sebe, kontakty a tlačítko pod nimi
+     (12 sloupců, aby 2 × span 6 vyšlo přesně) */
+  .hypo-cta.layout-grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
   .hypo-cta-heading,
   .hypo-cta-text,
   .hypo-cta-contacts,
@@ -580,8 +593,14 @@
     background: var(--hypo-separator-horizontal);
   }
 
+  /* v jednom sloupci vypadá lépe na střed */
+  .hypo-benefit {
+    text-align: center;
+  }
+
   .hypo-benefit-icon {
     margin-bottom: 20px;
+    margin-inline: auto;
   }
 
   /* Taby 2 × 2 */

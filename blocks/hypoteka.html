@@ -2,7 +2,7 @@
 <link href="css/pages/hypoteka.css" rel="stylesheet" type="text/css">
 
 <div class="hero">
-  <video class="hero-bg" poster="https://www.central-group.cz//storage/CG/wms3/img/kariera/videa/empiria-poster.png" autoplay muted loop>
+  <video class="hero-bg" poster="https://www.central-group.cz/storage/CG/wms3/img/kariera/videa/empiria-poster.png" autoplay muted loop playsinline>
     <source src="https://www.central-group.cz/storage/CG/wms3/img/kariera/videa/empiria.mp4" media="(min-width: 576px)">
     <source src="https://www.central-group.cz/storage/CG/wms3/img/kariera/videa/empiria-vertical.mp4">
   </video>
@@ -29,7 +29,8 @@
 </div>
 
 
-<main class="hypo">
+<!-- pozn.: <div>, ne <main> – blok se vkládá dovnitř <main id="main"> v index.html -->
+<div class="hypo">
 
   <!-- ## ÚVOD -->
   <section class="hypo-intro">
@@ -177,7 +178,7 @@
               </div>
             </div>
             <a href="/vyhledavani?apartmentLayouts=2kk" class="btn btn-outline-blue btn-md hypo-panel-btn">
-              Nabídka bytů <i class="fa-light fa-arrow-right" aria-hidden="true"></i>
+              Nabídka bytů <i class="fa-sharp fa-solid fa-arrow-right" aria-hidden="true"></i>
             </a>
           </div>
         </div>
@@ -203,7 +204,7 @@
               </div>
             </div>
             <a href="/vyhledavani?apartmentLayouts=3kk" class="btn btn-outline-blue btn-md hypo-panel-btn">
-              Nabídka bytů <i class="fa-light fa-arrow-right" aria-hidden="true"></i>
+              Nabídka bytů <i class="fa-sharp fa-solid fa-arrow-right" aria-hidden="true"></i>
             </a>
           </div>
         </div>
@@ -229,7 +230,7 @@
               </div>
             </div>
             <a href="/vyhledavani?apartmentLayouts=4kk" class="btn btn-outline-blue btn-md hypo-panel-btn">
-              Nabídka bytů <i class="fa-light fa-arrow-right" aria-hidden="true"></i>
+              Nabídka bytů <i class="fa-sharp fa-solid fa-arrow-right" aria-hidden="true"></i>
             </a>
           </div>
         </div>
@@ -343,6 +344,6 @@
     </div>
   </section>
 
-</main>
+</div>
 
 <script src="js/hypoteka.js"></script>
