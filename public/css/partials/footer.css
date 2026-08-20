@@ -91,7 +91,7 @@
   align-items: center;
   gap: 14px;
   font-weight: 600;
-  color: var(--footer-text-color);
+  color: var(--cg-blue);
 
   .footer-icon {
     flex: 0 0 auto;
@@ -104,6 +104,11 @@
     color: var(--footer-icon-color);
     font-size: var(--footer-fs-sm);
   }
+  
+  .footer-icon > .fa-clock, .footer-icon > .fa-phone, .footer-icon > .fa-envelope {
+      font-size: 1.0rem;
+  }
+
 }
 
 a.footer-contact:hover {
@@ -265,7 +270,16 @@ ul.footer-socials, ul.footer-contacts, ul.footer-links {
     --footer-row-gap: 40px;
   }
 
+  .footer-address {
+    margin-bottom: 1.5rem;
+  }
+
   .footer-grid {
     grid-template-columns: minmax(0, 1fr);
   }
+
+.footer .btn-yellow {
+  width: 100%;
+}
+
 }
