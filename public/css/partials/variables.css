@@ -3,7 +3,9 @@
   --black: #000000;
   --cg-yellow: #ffed00;
   --cg-blue: #20234c;
+  /* TODO: rename from "blue" (used in section bg gradients) */
   --blue: #2C306c;
+  --blue-midnight: #27232c;
   --gray-light: #fafafa;
   --gray-100: #d9d9d9;
   --gray-200: #e3e3e3;
@@ -15,13 +17,10 @@
   --cream-light: #fbf7ed;
   --cream-medium: #f5f0e0;
   --cream-dark: #efe6cd;
-
-  --blue-midnight: #27232c;
-
+  
+  /* WIP */
   --lavender: #e2e3ec;
   --snow: #f8fafc;
-  
-
 
   --body-text-color: var(--blue-midnight);
   --muted-text-color: var(--gray-600);
@@ -29,11 +28,12 @@
   /* layout */
   --section-spacing: 100px;
 
+  /* Header */
   --header-height-desktop: 124px;
   --header-height-mobile: 56px;
   --header-height: var(--header-height-desktop);
 
-  /* CONTROLS (buttons, inputs) */
+  /* Controls (buttons, inputs) */
   --controls-fs-sm: 0.875rem;
   --controls-fs-md: 1.125rem;
   --controls-fs-lg: 1.25rem;
@@ -46,7 +46,6 @@
   --controls-lh-sm: 1.142857142857143;
   --controls-lh-md: 1.222222222222222;
   --controls-lh-lh: 1.2;
-
 
   /* ? maybe */
   /* --glass-filter: blur(25px); */
