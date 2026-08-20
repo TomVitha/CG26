@@ -1,16 +1,12 @@
 /* TODO: Přesunout do partials/variables.css + partials/layout.css
    (kontejner je globální).
    Max. šířka 1440px, 2x padding 16px → obsah 1408px. */
-:root {
-  --container-max-width: 1440px;
-  --container-padding-inline: 16px;
-}
 
-.container {
+.container-main {
   width: 100%;
-  max-width: var(--container-max-width);
+  /*max-width: var(--container-max-width);*/
   margin-inline: auto;
-  padding-inline: var(--container-padding-inline);
+  /*padding-inline: var(--container-padding-inline);*/
 }
 
 
@@ -71,7 +67,7 @@
 
 /* ## SLOUPEC 1: KONTAKT */
 .footer-address {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
 
   strong {
     display: block;
@@ -117,7 +113,7 @@ a.footer-contact:hover {
 
 /* ## SLOUPEC 1: SOCIALS */
 .footer-socials-heading {
-  margin-block-start: 96px;
+  margin-block-start: 130px;
 }
 
 .footer-socials {
