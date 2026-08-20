@@ -1,5 +1,3 @@
-/* TODO: hard-coded 32px gutter/gap nahradit za spol. variable */
-
 :is(section, .section) {
   margin-block: var(--section-spacing);
 
@@ -35,7 +33,7 @@
 
 .layout-grid {
   display: grid;
-  gap: 32px 32px;
+  gap: var(--layout-gutter) var(--layout-gutter);
   grid-template-columns: repeat(var(--column-count, 12), minmax(0, 1fr));
 
   /* ? možná mít rovnou zaplné - zatím jako class */

@@ -27,6 +27,7 @@
 
   /* layout */
   --section-spacing: 100px;
+  --layout-gutter: 32px;
 
   /* Header */
   --header-height-desktop: 124px;
@@ -55,5 +56,6 @@
   :root {
     --section-spacing: 100px;
     --header-height: var(--header-height-mobile);
+    --layout-gutter: 16px;
   }
 }
