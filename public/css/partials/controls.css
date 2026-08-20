@@ -25,9 +25,10 @@ select,
   --btn-text-color: var(--btn-contrast-color);
   --btn-border-width: 1px;
   --btn-border-color: transparent;
+  --btn-icon-color: currentColor;
+  /* ? maybe - hover variables -- buď přepisovat v :hover, nebo vlastní proměnné */
   --btn-hover-color: var(--btn-text-color);
   --btn-hover-bg: var(--btn-bg-color);
-  --btn-icon-color: currentColor;
 
   display: inline-flex;
   font-weight: 600;
@@ -99,11 +100,11 @@ select,
 
 .btn-primary {
   --btn-theme-color: var(--cg-yellow);
-  --btn-text-color: var(--black, black);
+  --btn-contrast-color: var(--black, black);
 
   &:hover {
     --btn-theme-color: var(--cg-blue);
-    --btn-text-color: var(--white, white);
+    --btn-contrast-color: var(--white, white);
     --btn-icon-color: var(--cg-yellow);
   }
 }
