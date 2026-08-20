@@ -10,6 +10,8 @@
 
 @import url("./partials/footer.css");
 
+@import url("./partials/component-variations.css");
+
 /* TEMP umístění */
 :root {
   font-family: "Exo 2";

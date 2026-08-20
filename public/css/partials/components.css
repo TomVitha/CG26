@@ -13,14 +13,14 @@
 }
 
 .brow--footer {
-    &::before {
-        content: "";
-        display: block;
-        height: 3px;
-        width: 20px;
-        background-color: var(--cg-blue);
-        margin-bottom: 12px;
-    }
+  &::before {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 20px;
+    background-color: var(--cg-blue);
+    margin-bottom: 12px;
+  }
 }
 
 .tag {
@@ -104,7 +104,7 @@
   }
 }
 
-@media (width >= 992px) {
+@media (width >=992px) {
   .hero {
     height: 800px;
     padding-bottom: var(--layout-gutter);
@@ -119,6 +119,101 @@
       padding: 60px 40px;
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
+    }
+  }
+}
+
+/* # CARD */
+.card {
+  display: flex;
+  flex-direction: column;
+
+  .card-img {
+    width: 100%;
+  }
+
+  .card-body {
+    background-color: #f2f2f2;
+    padding: 40px;
+    flex: 1 1 auto;
+  }
+}
+
+@media (width < 992px) {
+  .card .card-body {
+    padding-inline: 24px;
+  }
+}
+
+/* TEMP umístění stylů */
+.hp-banner {
+  position: relative;
+  overflow: hidden;
+  min-height: 250px;
+  isolation: isolate;
+  padding: min(var(--layout-gutter), 24px);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  color: white;
+
+  /* backdrop */
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    /* background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5)); */
+    background:
+      linear-gradient(292deg, rgba(32, 35, 76, 0.00) 54.72%, rgba(18, 20, 43, 0.80) 99.05%),
+      linear-gradient(211deg, rgba(32, 35, 76, 0.00) 55.37%, rgba(18, 20, 43, 0.80) 76.36%);
+    z-index: -1;
+    transition: all 300ms;
+    pointer-events: none;
+  }
+
+  picture {
+    display: contents;
+  }
+
+  :is(img, video) {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -3;
+    transition: all 300ms;
+  }
+
+  video {
+    transition: all 300ms;
+    opacity: 0;
+    z-index: -2;
+  }
+
+  &:hover {
+    video {
+      opacity: 1;
+    }
+  }
+
+  /* Pokud nemá video, obrízek se zoomne */
+  &:not(:has(video)):hover img {
+    scale: 1.075;
+  }
+
+  address {
+    order: -1;
+    margin-bottom: auto;
+
+    /* WIP */
+    &::before {
+      /* FIXME: Ikoně chybí tečka uprostřed */
+      content: url('data:image/svg+xml,<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.34878 12.7165C8.43367 11.7796 11.6644 8.74597 11.6644 5.83311C11.6644 4.59532 11.1728 3.40823 10.2977 2.53298C9.42265 1.65773 8.23578 1.16602 6.99823 1.16602C5.76068 1.16602 4.57381 1.65773 3.69873 2.53298C2.82365 3.40823 2.33203 4.59532 2.33203 5.83311C2.33203 8.74597 5.56279 11.7796 6.64768 12.7165C6.74875 12.7925 6.87178 12.8336 6.99823 12.8336C7.12468 12.8336 7.24771 12.7925 7.34878 12.7165Z" stroke="%23FFED00" stroke-linecap="round"/></svg>')
     }
   }
 }
