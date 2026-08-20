@@ -1,7 +1,35 @@
 <!-- Styly stránky. Alternativa: přidat @import do public/css/main.css a tento <link> smazat. -->
 <link href="css/pages/hypoteka.css" rel="stylesheet" type="text/css">
 
-<div class="hypo">
+<div class="hero">
+  <video class="hero-bg" poster="https://www.central-group.cz//storage/CG/wms3/img/kariera/videa/empiria-poster.png" autoplay muted loop>
+    <source src="https://www.central-group.cz/storage/CG/wms3/img/kariera/videa/empiria.mp4" media="(min-width: 576px)">
+    <source src="https://www.central-group.cz/storage/CG/wms3/img/kariera/videa/empiria-vertical.mp4">
+  </video>
+  <div class="container-main hero-container">
+    <div class="hero-content">
+      <hgroup>
+        <h1 class="brow">Zvýhodněná hypotéka
+          <br>
+          zdarma, <strong class="yellow-heading">na míru<br>a na klíč</strong>
+        </h1>
+        <p class="hero-text">
+          <strong>Výhodné financování bez zbytečných starostí</strong>. Naši hypoteční specialisté Vám zdarma pomohou najít řešení, které odpovídá Vašim možnostem a potřebám.
+        </p>
+
+        <div class="hypo-cta-action">
+          <a href="/page/kontakty#hypo" class="btn btn-primary btn-md">
+            Nezávazná konzultace <i class="fa-sharp fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+
+      </hgroup>
+    </div>
+  </div>
+</div>
+
+
+<main class="hypo">
 
   <!-- ## ÚVOD -->
   <section class="hypo-intro">
@@ -41,25 +69,25 @@
         <li class="hypo-benefit">
           <span class="hypo-benefit-icon"><i class="fa-solid fa-percent" aria-hidden="true"></i></span>
           <h3 class="hypo-benefit-title">Až 90 % kupní<br>ceny bytu</h3>
-          <p>Se zvýhodněnou hypotékou můžete financovat až 90 % kupní ceny.</p>
+          <p>Se zvýhodněnou hypotékou můžete financovat až 90&nbsp;% kupní ceny.</p>
         </li>
 
         <li class="hypo-benefit">
           <span class="hypo-benefit-icon"><i class="fa-solid fa-clipboard-check" aria-hidden="true"></i></span>
           <h3 class="hypo-benefit-title">Úspora času<br>i peněz</h3>
-          <p>Vyřízení hypotéky zajistíme zdarma včetně administrativy, komunikace s bankou i běžných poplatků.</p>
+          <p>Vyřízení hypotéky zajistíme zdarma včetně administrativy, komunikace s&nbsp;bankou i&nbsp;běžných poplatků.</p>
         </li>
 
         <li class="hypo-benefit">
           <span class="hypo-benefit-icon"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i></span>
           <h3 class="hypo-benefit-title">Pohlídáme<br>termíny</h3>
-          <p>Pohlídáme důležité termíny, podmínky i celý průběh financování.</p>
+          <p>Pohlídáme důležité termíny, podmínky i&nbsp;celý průběh financování.</p>
         </li>
 
         <li class="hypo-benefit">
           <span class="hypo-benefit-icon"><i class="fa-solid fa-file-signature" aria-hidden="true"></i></span>
           <h3 class="hypo-benefit-title">Čerpání<br>bez starostí</h3>
-          <p>Zajistíme soulad úvěrové a zástavní dokumentace s podmínkami kupní smlouvy.</p>
+          <p>Zajistíme soulad úvěrové a&nbsp;zástavní dokumentace s&nbsp;podmínkami kupní smlouvy.</p>
         </li>
 
       </ul>
@@ -315,6 +343,6 @@
     </div>
   </section>
 
-</div>
+</main>
 
 <script src="js/hypoteka.js"></script>

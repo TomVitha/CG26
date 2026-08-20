@@ -14,7 +14,7 @@
 
   /* SIZES */
   --hypo-gap: var(--layout-gutter);
-  --hypo-benefits-gap: 40px;
+  --hypo-benefits-gap: 80px;
   --hypo-benefit-icon-size: 56px;
   --hypo-tabs-width: 220px;
   --hypo-aside-width: 320px;
@@ -27,6 +27,14 @@
 
 /* Nadpis sekce: základ regular, zvýrazněná část extra bold.
    (kandidát na variantu v typography.css – h2 je jinak 800) */
+.yellow-heading {
+  color: var(--cg-yellow);
+}
+
+.hero-text {
+  font-weight: 300;
+}
+
 .hypo-heading {
   font-size: 2.25rem;
   font-weight: 400;
