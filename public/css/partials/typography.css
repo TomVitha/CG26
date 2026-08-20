@@ -30,6 +30,11 @@ small, .small {
   font-size: 88.88888888888889%;
 }
 
+/* Tiny */
+.tiny {
+  font-size: 0.75rem;
+}
+
 /* Big */
 b, .big {
   /* ? */
