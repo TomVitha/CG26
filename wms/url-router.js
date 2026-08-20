@@ -141,7 +141,7 @@ export function createRouter(options) {
     document.addEventListener('click', onLinkClick)
 
     // Re-render the current route in place when a block's HTML file is edited (Vite HMR)
-    onBlocksHotUpdate(() => render(resolve(window.location.pathname), { scroll: false }))
+    onBlocksHotUpdate(() => render(resolve(stripBase(window.location.pathname)), { scroll: false }))
 
     return replace(window.location.pathname)
   }
