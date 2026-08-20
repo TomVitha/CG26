@@ -1,6 +1,6 @@
 /* ==========================================================================
-   # STRÁNKA HYPOTÉKA
-   Markup: blocks/hypoteka.html, chování tabů: public/js/hypoteka.js
+   # HYPOTÉKA
+   Markup: blocks/hypoteka.html, přepínání tabů: public/js/hypoteka.js
    ========================================================================== */
 
 .hypo {
@@ -26,8 +26,8 @@
 
 /* ## SPOLEČNÉ PRVKY */
 
-/* Nadpis sekce: základ regular, zvýrazněná část extra bold.
-   (kandidát na variantu v typography.css – h2 je jinak 800) */
+/* Nadpis sekce
+   (přesuunouv do typography.css – h2 je jinak 800?) */
 .yellow-heading {
   color: var(--cg-yellow);
 }
@@ -49,12 +49,12 @@
 }
 
 /* modrá varianta komponenty .brow (components.css má žlutou)
-   – kandidát na components.css, ideálně přes var(--brow-color) */
+   – přesunout do components.css, nebo přes var(--brow-color)? */
 .brow--blue::before {
   background-color: var(--cg-blue);
 }
 
-/* Tlačítko s obrysem – kandidát na controls.css */
+/* Tlačítko s obrysem – přesunout do controls.css ?*/
 .btn-outline-blue {
   --btn-theme-color: transparent;
   --btn-contrast-color: var(--cg-blue);
@@ -66,7 +66,7 @@
   transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-/* Tlačítko na bannerech: žluté / hover bílé, text vždy černý */
+/* Tlačítko na bannerech: žluté / hover bílé, text černý */
 .btn-banner {
   --btn-theme-color: var(--cg-yellow);
   --btn-contrast-color: var(--black);
@@ -103,7 +103,7 @@
 .hypo-benefit {
   position: relative;
 
-  /* svislý oddělovač vlevo od sloupce */
+  /* svislý oddělovač */
   &::before {
     content: "";
     position: absolute;
@@ -113,7 +113,7 @@
     background: var(--hypo-separator);
   }
 
-  /* první sloupec v řádku oddělovač nemá (počet sloupců se mění s breakpointem) */
+  /* první sloupec v řádku oddělovač nemá (počet podle breakpointu) */
   &:nth-child(5n + 1)::before {
     content: none;
   }
@@ -146,7 +146,7 @@
 }
 
 
-/* ## PŘÍKLADY FINANCOVÁNÍ */
+/* # PŘÍKLADY FINANCOVÁNÍ */
 .hypo-examples {
   display: grid;
   grid-template-columns: var(--hypo-tabs-width) minmax(0, 1fr);
@@ -155,7 +155,7 @@
   margin-top: 40px;
 }
 
-/* ### Taby */
+/* # Taby */
 .hypo-tabs {
   display: flex;
   flex-direction: column;
@@ -201,7 +201,7 @@
   font-size: 1rem;
 }
 
-/* vyšší specifičnost kvůli Font Awesome (.fa-* nastavuje display) */
+/* vyšší specifičnost kvůli Font Awesome */
 .hypo-tab .hypo-tab-icon--close,
 .hypo-tab[aria-selected="true"] .hypo-tab-icon--plus {
   display: none;
@@ -212,7 +212,7 @@
   color: var(--cg-yellow);
 }
 
-/* ### Panel (obrázek + ceny + tlačítko) */
+/* #Panel (obrázek + ceny + tlačítko) */
 .hypo-panel {
   display: grid;
   grid-template-columns: minmax(0, 1fr) var(--hypo-aside-width);
@@ -244,8 +244,7 @@
 .hypo-price-row {
   padding-block: 16px;
 
-  /* linka jen mezi „cena bytu" a „vlastní zdroje";
-     nad zvýrazněným řádkem ji nechceme, ten je oddělený žlutou plochou */
+  /* linka mezi „cena bytu" a „vlastní zdroje" */
   & + &:not(.hypo-price-row--highlight) {
     border-top: 1px solid var(--gray-200);
   }
@@ -293,8 +292,7 @@
   font-weight: 800;
 }
 
-/* stejně široké jako žlutý řádek se splátkou (šířka boxu bez paddingu = 272px)
-   a zarovnané pod ním na střed – platí i na mobilu */
+
 .hypo-panel-btn {
   display: flex;
   width: 100%;
@@ -303,7 +301,6 @@
   margin-inline: auto;
 }
 
-/* ### Poznámka pod příklady */
 .hypo-note {
   display: flex;
   align-items: center;
@@ -327,7 +324,7 @@
 }
 
 
-/* ## KONTAKTNÍ BLOK */
+/* # KONTAKTNÍ BLOK */
 .hypo-cta.layout-grid {
   grid-template-columns: repeat(13, minmax(0, 1fr));
 }
@@ -386,7 +383,7 @@
 }
 
 
-/* ## BANNERY */
+/* # BANNERY */
 .hypo-banners {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -408,7 +405,7 @@
   justify-content: end;
   color: var(--white);
 
-  /* ztmavení kvůli čitelnosti textu */
+  /* ztmavení */
   &::before {
     content: "";
     position: absolute;
@@ -535,8 +532,7 @@
     grid-template-columns: minmax(0, 1fr) 280px;
   }
 
-  /* Kontaktní blok: nadpis + text vedle sebe, kontakty a tlačítko pod nimi
-     (12 sloupců, aby 2 × span 6 vyšlo přesně) */
+  /* Kontaktní blok: nadpis + text vedle sebe, kontakty a tlačítko pod nimi */
   .hypo-cta.layout-grid {
     grid-template-columns: repeat(12, minmax(0, 1fr));
   }
@@ -575,7 +571,7 @@
     font-size: 1.875rem;
   }
 
-  /* Výhody: 1 sloupec, svislé oddělovače nahradí vodorovné */
+  /* Výhody: 1 sloupec */
   .hypo-benefits-list {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -593,7 +589,6 @@
     background: var(--hypo-separator-horizontal);
   }
 
-  /* v jednom sloupci vypadá lépe na střed */
   .hypo-benefit {
     text-align: center;
   }
