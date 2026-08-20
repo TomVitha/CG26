@@ -1,0 +1,275 @@
+/* TODO: Přesunout do partials/variables.css + partials/layout.css
+   (kontejner je globální).
+   Max. šířka 1440px, 2x padding 16px → obsah 1408px. */
+:root {
+  --container-max-width: 1440px;
+  --container-padding-inline: 16px;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-inline);
+}
+
+
+.footer {
+  /* COLORS */
+  --footer-brow-color: var(--cg-blue);
+  /*--footer-bg: var(--white-dark);*/  
+  --footer-bg: var(--gray-light);
+  --footer-bottom-bg: var(--white);
+  --footer-text-color: var(--body-text-color);
+  --footer-muted-color: var(--muted-text-color);
+  --footer-heading-color: var(--cg-blue);
+  --footer-border-color: var(--gray-100);
+  --footer-icon-bg: var(--cg-yellow);
+  --footer-icon-color: var(--cg-blue);
+  --footer-social-bg: var(--cg-blue);
+  --footer-social-color: var(--white);
+  --footer-hover-bg: var(--cg-yellow);
+  /* .brow je v components.css žlutý, v patičce je modrý
+  --footer-brow-color: var(--cg-blue);
+
+  /* TYPOGRAPHY */
+  --footer-heading-weight: 800;
+  --footer-fs-sm: 0.875rem;
+
+  /* SIZES */
+  --footer-padding-block: 64px 96px;
+  --footer-column-gap: 50px;
+  --footer-row-gap: 56px;
+  --footer-icon-size: 32px;
+  --footer-list-max-width: 220px;
+
+  background-color: var(--footer-bg);
+  color: var(--footer-text-color);
+
+  /* nadpisy sloupců (h4 = 1.5rem / 700 podle typography.css) */
+  h4 {
+    color: var(--footer-heading-color);
+    font-weight: var(--footer-heading-weight);
+  }
+
+  /* linka nad nadpisem – komponenta .brow z components.css */
+  .brow::before {
+    background-color: var(--footer-brow-color);
+  }
+}
+
+.footer-main {
+  padding-block: var(--footer-padding-block);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--footer-row-gap) var(--footer-column-gap);
+}
+
+
+/* ## SLOUPEC 1: KONTAKT */
+.footer-address {
+  margin-bottom: 1.5rem;
+
+  strong {
+    display: block;
+    color: var(--footer-text-color);
+  }
+
+  span {
+    color: var(--footer-muted-color);
+  }
+}
+
+.footer-contacts {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-contact {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-weight: 600;
+  color: var(--footer-text-color);
+
+  .footer-icon {
+    flex: 0 0 auto;
+    display: grid;
+    place-items: center;
+    width: var(--footer-icon-size);
+    height: var(--footer-icon-size);
+    border-radius: var(--controls-border-radius);
+    background-color: var(--footer-icon-bg);
+    color: var(--footer-icon-color);
+    font-size: var(--footer-fs-sm);
+  }
+}
+
+a.footer-contact:hover {
+  text-decoration: none;
+}
+
+
+/* ## SLOUPEC 1: SOCIALS */
+.footer-socials-heading {
+  margin-block-start: 96px;
+}
+
+.footer-socials {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  a {
+    display: grid;
+    place-items: center;
+    width: var(--footer-icon-size);
+    height: var(--footer-icon-size);
+    border-radius: var(--controls-border-radius);
+    background-color: var(--footer-social-bg);
+    color: var(--footer-social-color);
+    font-size: var(--footer-fs-sm);
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  a:hover {
+    background-color: var(--footer-hover-bg);
+    color: var(--footer-icon-color);
+  }
+}
+
+
+/* ## SLOUPCE 2 A 3: SEZNAMY PROJEKTŮ */
+ul.footer-socials, ul.footer-contacts, ul.footer-links {
+  padding-left: 0;
+}
+
+.footer-projects {
+  list-style: none;
+  max-width: var(--footer-list-max-width);
+
+  li {
+    border-bottom: 1px solid var(--footer-border-color);
+    margin-top: 5px;
+  }
+
+  a {
+    display: block;
+    padding: 8px 10px;
+    margin-inline: -10px;
+    /*border-radius: var(--controls-border-radius);*/
+    border-radius: 0;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+  }
+
+  a span {
+    display: block;
+    font-size: var(--footer-fs-sm);
+    font-weight: 400;
+    color: var(--footer-muted-color);
+    letter-spacing: 0.01em;
+  }
+
+  a:hover {
+    background-color: var(--footer-hover-bg);
+  }
+
+  a:hover span {
+    color: var(--footer-heading-color);
+  }
+}
+
+
+/* ## SLOUPEC 4: RYCHLÉ ODKAZY */
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+
+  a {
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+
+  a:hover {
+    color: var(--footer-heading-color);
+    text-decoration: underline;
+  }
+}
+
+/* tlačítko = .btn .btn-yellow .btn-md z controls.css;
+   --btn-contrast-color zatím není v projektu definován → dourčeno zde */
+.footer .btn-yellow {
+  --btn-contrast-color: var(--cg-blue);
+  --btn-hover-bg: var(--cg-blue);
+  --btn-hover-color: var(--cg-yellow);
+  font-weight: 700;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+
+/* ## SPODNÍ PRUH */
+.footer-bottom {
+  background-color: var(--footer-bottom-bg);
+  color: var(--footer-muted-color);
+  padding-block: 32px;
+
+  .footer-bottom-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    gap: 24px var(--footer-column-gap);
+  }
+
+  p {
+      font-size: 12px;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  a:hover {
+    color: var(--footer-heading-color);
+  }
+}
+
+
+/* RESPONSIVE */
+@media (width < 992px) {
+  .footer {
+    --footer-padding-block: 56px 64px;
+    --footer-list-max-width: none;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer-socials-heading {
+    margin-block-start: 56px;
+  }
+
+  .footer-bottom .footer-bottom-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (width < 576px) {
+  .footer {
+    --footer-padding-block: 48px 56px;
+    --footer-row-gap: 40px;
+  }
+
+  .footer-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

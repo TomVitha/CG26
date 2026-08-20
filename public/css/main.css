@@ -8,6 +8,8 @@
 @import url("./partials/layout.css");
 @import url("./partials/colors.css");
 
+@import url("./partials/footer.css");
+
 :root {
   font-family: "Exo 2";
   line-height: 1.5;
