@@ -37,6 +37,16 @@ const routerOptions = {
       ],
     },
     {
+      path: "/postup-koupe",
+      name: "postup-koupe",
+      title: "Postup koupě",
+      description: "Jak probíhá koupě nového bytu – od výběru přes rezervaci a financování až po předání klíčů.",
+      blocks: [
+        { src: "meta-common", type: "meta" },
+        { src: "postup-koupe" },
+      ],
+    },
+    {
       path: "/design-style",
       name: "design-style",
       title: "Design style",

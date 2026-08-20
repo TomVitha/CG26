@@ -153,3 +153,16 @@ select {
 .autosize {
   field-sizing: content;
 }
+
+/* Obrys místo výplně (světlé pozadí) */
+.btn-outline-blue {
+  --btn-theme-color: transparent;
+  --btn-contrast-color: var(--cg-blue);
+  --btn-border-color: var(--cg-blue);
+  --btn-hover-bg: var(--cg-blue);
+  --btn-hover-color: var(--white);
+  --btn-icon-color: currentColor;
+
+  font-weight: 700;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}

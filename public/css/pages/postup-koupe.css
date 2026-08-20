@@ -1,0 +1,388 @@
+/* ==========================================================================
+   # STRÁNKA POSTUP KOUPĚ
+   Markup: blocks/postup-koupe.html
+
+   Sdílené komponenty jsou v partials:
+   .section-heading (typography.css), .brow--blue, .tag, .banner, .cta-box,
+   .contact (components.css), .btn / .btn-primary (controls.css)
+   ========================================================================== */
+
+.postup {
+  /* COLORS */
+  --postup-surface: var(--blue-light);
+  --postup-muted-color: var(--gray-500);
+  --postup-line-color: #C6C8E8;
+
+  /* SIZES */
+  --postup-gap: var(--layout-gutter);
+  --postup-radius: var(--controls-border-radius);
+  --postup-badge-size: 48px;
+  --postup-step-gap: 32px;
+  --postup-programs-gap: 96px;
+  /* mezera mezi pruhem s texturou a 1. programem */
+  --postup-head-spacing: 48px;
+  /* o kolik obrázek 1. programu přesahuje do pruhu s texturou */
+  --postup-programs-overlap: 80px;
+}
+
+
+/* ## ÚVODNÍ SEKCE */
+.postup-intro-heading {
+  grid-column: span 6;
+}
+
+.postup-intro-text {
+  grid-column: 7 / -1;
+}
+
+
+/* ## PRŮBĚH KOUPĚ (banner + kroky) */
+.postup-process {
+  margin-top: 72px;
+  align-items: start;
+}
+
+.postup-process-banner {
+  grid-column: span 5;
+}
+
+.postup-process-banner .banner {
+  --banner-title-size: 28px;
+  --banner-padding: 32px;
+
+  min-height: 340px;
+  padding-block-end: 32px;
+}
+
+.postup-steps {
+  grid-column: 7 / -1;
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  gap: var(--postup-step-gap);
+}
+
+.postup-step {
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--postup-badge-size) minmax(0, 1fr);
+  column-gap: 24px;
+
+  /* přerušovaná spojnice mezi čísly – délka odpovídá výšce položky */
+  &:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    top: calc(var(--postup-badge-size) + 8px);
+    bottom: -14px;
+    left: calc(var(--postup-badge-size) / 2);
+    border-left: 1px dashed var(--postup-line-color);
+  }
+
+  /* šipka na konci spojnice */
+  &:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: calc(var(--postup-badge-size) / 2);
+    translate: -50% 0;
+    border-inline: 4px solid transparent;
+    border-top: 6px solid var(--postup-line-color);
+  }
+}
+
+.postup-step-number {
+  grid-column: 1;
+  grid-row: 1;
+  display: grid;
+  place-items: center;
+  width: var(--postup-badge-size);
+  height: var(--postup-badge-size);
+  border-radius: 50%;
+  background-color: var(--cg-yellow);
+  color: var(--cg-blue);
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.postup-step-title {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
+  margin-bottom: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--cg-blue);
+}
+
+.postup-step-text {
+  grid-column: 2;
+  grid-row: 2;
+  margin-block: 12px 0;
+  max-width: 70ch;
+  font-size: 1rem;
+  color: var(--postup-muted-color);
+}
+
+
+/* ## PROGRAMY */
+.postup-programs-head {
+  /* TODO: zástupná textura – nahradit rastrovým obrázkem z designu */
+  background-color: #EFEDEA;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="4" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="500" height="500" filter="url(%23n)" opacity="0.45"/></svg>');
+  background-size: 500px 500px;
+  padding-block: 56px 96px;
+  margin-bottom: var(--postup-head-spacing);
+
+  .tag {
+    margin-bottom: 22px;
+  }
+
+  p {
+    max-width: 46ch;
+    margin-block: 1rem 0;
+    font-size: 1rem;
+    color: var(--cg-blue);
+  }
+}
+
+.postup-programs {
+  display: grid;
+  gap: var(--postup-programs-gap);
+}
+
+.postup-program {
+  align-items: start;
+
+  /* liché řádky: text vlevo, médium vpravo */
+  .postup-program-body {
+    grid-column: span 4;
+  }
+
+  .postup-program-media {
+    grid-column: 8 / -1;
+  }
+
+  /* sudé řádky: prohozeno */
+  &:nth-child(even) {
+    .postup-program-media {
+      grid-column: 1 / span 5;
+      grid-row: 1;
+    }
+
+    .postup-program-body {
+      grid-column: 9 / -1;
+      grid-row: 1;
+    }
+  }
+
+  /* první obrázek přesahuje do pruhu s texturou */
+  &:first-child .postup-program-media {
+    margin-top: calc((var(--postup-head-spacing) + var(--postup-programs-overlap)) * -1);
+  }
+}
+
+.postup-program-title {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--cg-blue);
+}
+
+.postup-program-body {
+  p {
+    max-width: 65ch;
+    font-size: 1rem;
+    color: var(--cg-blue);
+  }
+
+  /* uvození seznamu */
+  .postup-program-lead {
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+    color: var(--black);
+  }
+}
+
+.postup-program-list {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 65ch;
+  font-size: 1rem;
+  color: var(--postup-muted-color);
+
+  li {
+    padding-left: 18px;
+    position: relative;
+
+    &::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--postup-muted-color);
+    }
+  }
+}
+
+.postup-program-media {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: var(--postup-radius);
+  background-color: var(--cg-blue);
+  margin: 0;
+
+  :is(img, video) {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* video (pokud je doplněno) překrývá obrázek, který slouží jako poster/fallback */
+  video {
+    z-index: 1;
+  }
+}
+
+
+/* ## KONTAKTNÍ BLOK (vzhled boxu je v components.css → .cta-box) */
+.postup-cta-heading {
+  margin-bottom: 32px;
+}
+
+.postup-cta {
+  .cta-text {
+    grid-column: span 6;
+    max-width: 50%;
+  }
+
+  .cta-contacts-col {
+    grid-column: span 3;
+  }
+
+  .cta-action {
+    grid-column: span 3;
+  }
+}
+
+.postup-consultant {
+  margin-bottom: 16px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--cg-blue);
+}
+
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (width < 992px) {
+  .postup {
+    --postup-programs-gap: 64px;
+    --postup-programs-overlap: 0px;
+    --postup-head-spacing: 40px;
+  }
+
+  /* Úvod: nadpis nad textem */
+  .postup-intro-heading,
+  .postup-intro-text {
+    grid-column: 1 / -1;
+  }
+
+  .postup-intro-text p {
+    max-width: 70ch;
+  }
+
+  /* Průběh koupě: banner nad kroky */
+  .postup-process {
+    margin-top: 48px;
+  }
+
+  .postup-process-banner,
+  .postup-steps {
+    grid-column: 1 / -1;
+  }
+
+  /* Programy: text nad obrázkem (i v sudých řádcích) */
+  .postup-program {
+    row-gap: 32px;
+
+    .postup-program-body,
+    .postup-program-media {
+      grid-column: 1 / -1;
+    }
+
+    /* v jednom sloupci se obrázek nepřetahuje pod text */
+    &:first-child .postup-program-media {
+      margin-top: 0;
+    }
+
+    &:nth-child(even) {
+      .postup-program-media {
+        grid-column: 1 / -1;
+        grid-row: auto;
+      }
+
+      .postup-program-body {
+        grid-column: 1 / -1;
+        grid-row: auto;
+      }
+    }
+  }
+
+  .postup-program-media {
+    aspect-ratio: 16 / 9;
+  }
+
+  /* Kontaktní blok: text přes celou šířku, kontakty a tlačítko vedle sebe */
+  .postup-cta {
+    .cta-text {
+      grid-column: 1 / -1;
+    }
+
+    .cta-contacts-col,
+    .cta-action {
+      grid-column: span 6;
+    }
+  }
+}
+
+@media (width < 576px) {
+  .postup {
+    --postup-step-gap: 28px;
+    --postup-badge-size: 36px;
+    --postup-programs-gap: 48px;
+  }
+
+  .postup-programs-head {
+    padding-block: 40px 64px;
+  }
+
+  .postup-step {
+    column-gap: 16px;
+  }
+
+  .postup-program-media {
+    aspect-ratio: 4 / 3;
+  }
+
+  .postup-step-title {
+    font-size: 1.125rem;
+  }
+
+  .postup-cta-heading {
+    margin-bottom: 24px;
+  }
+
+  .postup-cta {
+    .cta-contacts-col,
+    .cta-action {
+      grid-column: 1 / -1;
+    }
+  }
+}

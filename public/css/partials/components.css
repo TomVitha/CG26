@@ -23,6 +23,12 @@
   }
 }
 
+.brow--blue {
+  &::before {
+    background-color: var(--cg-blue);
+  }
+}
+
 .tag {
   --badge-padding-x: 12px;
   --badge-padding-y: 4px;
@@ -102,6 +108,11 @@
     background-position: center;
     background-repeat: no-repeat;
   }
+
+  .yellow-heading {
+    color: var(--cg-yellow);
+  }
+
 }
 
 @media (width >=992px) {
@@ -215,5 +226,183 @@
       /* FIXME: Ikoně chybí tečka uprostřed */
       content: url('data:image/svg+xml,<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.34878 12.7165C8.43367 11.7796 11.6644 8.74597 11.6644 5.83311C11.6644 4.59532 11.1728 3.40823 10.2977 2.53298C9.42265 1.65773 8.23578 1.16602 6.99823 1.16602C5.76068 1.16602 4.57381 1.65773 3.69873 2.53298C2.82365 3.40823 2.33203 4.59532 2.33203 5.83311C2.33203 8.74597 5.56279 11.7796 6.64768 12.7165C6.74875 12.7925 6.87178 12.8336 6.99823 12.8336C7.12468 12.8336 7.24771 12.7925 7.34878 12.7165Z" stroke="%23FFED00" stroke-linecap="round"/></svg>')
     }
+  }
+}
+
+/* # BANNER
+   Obrázek nebo video přes celou plochu, obsah zarovnaný dolů.
+   <a class="banner"><div class="banner-media">…</div><div class="banner-content">…</div></a> */
+.banner {
+  --banner-title-size: 32px;
+  --banner-padding: 40px;
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 450px;
+  padding: var(--banner-padding);
+  padding-block-end: 56px;
+  border-radius: var(--controls-border-radius);
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  color: var(--white);
+
+  /* ztmavení kvůli čitelnosti textu */
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+      linear-gradient(180deg, rgba(18, 20, 43, 0.00) 35%, rgba(18, 20, 43, 0.65) 100%),
+      linear-gradient(90deg, rgba(18, 20, 43, 0.65) 0%, rgba(18, 20, 43, 0.00) 70%);
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover .banner-media :is(img, video) {
+    scale: 1.05;
+  }
+
+  /* tlačítko na banneru: žluté, na hover bílé, text vždy černý */
+  .btn {
+    --btn-theme-color: var(--cg-yellow);
+    --btn-contrast-color: var(--black);
+    --btn-hover-bg: var(--white);
+    --btn-hover-color: var(--black);
+
+    align-self: start;
+    width: fit-content;
+    font-weight: 700;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+}
+
+.banner-media {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+
+  :is(img, video) {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: scale 0.4s ease;
+  }
+
+  /* video (pokud je doplněno) překrývá obrázek, který slouží jako poster/fallback */
+  video {
+    z-index: 1;
+  }
+}
+
+.banner-content {
+  p {
+    font-size: 16px;
+    margin-bottom: 24px;
+    max-width: 34ch;
+  }
+}
+
+.banner-title {
+  font-size: var(--banner-title-size);
+  font-weight: 400;
+  line-height: 1.25;
+  margin-bottom: 12px;
+  color: var(--white);
+
+  strong {
+    display: block;
+    font-weight: 800;
+  }
+}
+
+@media (width < 992px) {
+  .banner {
+    --banner-padding: 32px;
+    min-height: 380px;
+  }
+}
+
+@media (width < 576px) {
+  .banner {
+    --banner-title-size: 26px;
+    --banner-padding: 24px;
+
+    min-height: 320px;
+    padding-block-end: var(--banner-padding);
+  }
+
+  .banner-content .btn {
+    width: 100%;
+  }
+}
+
+
+/* # CTA BOX kontakty a tlačítkem. Rozvržení sloupců si určuje stránka */
+.cta-box {
+  --cta-padding: 40px;
+
+  padding: var(--cta-padding);
+  border-radius: var(--controls-border-radius);
+  background-color: var(--blue-light);
+  align-items: center;
+}
+
+.cta-heading {
+  font-size: 1.875rem;
+  margin-bottom: 0;
+}
+
+.cta-text {
+  font-size: 0.875rem;
+  margin-bottom: 0;
+}
+
+.cta-contacts {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--cg-blue);
+}
+
+.contact-icon {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--controls-border-radius);
+  background-color: var(--cg-yellow);
+  color: var(--cg-blue);
+  font-size: 0.75rem;
+}
+
+@media (width < 992px) {
+  .cta-box {
+    --cta-padding: 32px;
+  }
+}
+
+@media (width < 576px) {
+  .cta-box {
+    --cta-padding: 24px;
+  }
+
+  .cta-action .btn {
+    width: 100%;
   }
 }

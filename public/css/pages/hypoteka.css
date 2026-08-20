@@ -1,12 +1,15 @@
 /* ==========================================================================
-   # HYPOTÉKA
-   Markup: blocks/hypoteka.html, přepínání tabů: public/js/hypoteka.js
+   # STRÁNKA HYPOTÉKA
+   Markup: blocks/hypoteka.html, chování tabů: public/js/hypoteka.js
+
+   Sdílené komponenty v partials:
+   .section-heading (typography.css), .brow--blue, .banner, .cta-box, .contact
+   (components.css), .btn-outline-blue (controls.css)
    ========================================================================== */
 
 .hypo {
   /* COLORS */
   --hypo-surface: var(--blue-light);
-  --hypo-heading-color: var(--cg-blue);
   --hypo-muted-color: var(--gray-500);
   --hypo-benefits-bg: linear-gradient(88deg, var(--cg-blue, #20234C) 0%, #2C306C 49.28%, var(--cg-blue, #20234C) 98.08%), #F8FAFC;
   --hypo-separator: linear-gradient(180deg, rgba(50, 52, 83, 0.00) 0%, #505486 51.44%, rgba(50, 52, 83, 0.00) 100%);
@@ -19,61 +22,13 @@
   --hypo-tabs-width: 220px;
   --hypo-aside-width: 320px;
   --hypo-price-padding: 24px;
-  --hypo-box-padding: 40px;
   --hypo-radius: var(--controls-border-radius);
 }
 
 
-/* ## SPOLEČNÉ PRVKY */
-
-/* Nadpis sekce
-   (přesuunouv do typography.css – h2 je jinak 800?) */
-.yellow-heading {
-  color: var(--cg-yellow);
-}
-
+/* ## HERO */
 .hero-text {
   font-weight: 300;
-}
-
-.hypo-heading {
-  font-size: 2.25rem;
-  font-weight: 400;
-  line-height: 1.2;
-  color: var(--hypo-heading-color);
-
-  strong {
-    display: block;
-    font-weight: 800;
-  }
-}
-
-/* modrá varianta komponenty .brow (components.css má žlutou)
-   – přesunout do components.css, nebo přes var(--brow-color)? */
-.brow--blue::before {
-  background-color: var(--cg-blue);
-}
-
-/* Tlačítko s obrysem – přesunout do controls.css ?*/
-.btn-outline-blue {
-  --btn-theme-color: transparent;
-  --btn-contrast-color: var(--cg-blue);
-  --btn-border-color: var(--cg-blue);
-  --btn-hover-bg: var(--cg-blue);
-  --btn-hover-color: var(--white);
-  --btn-icon-color: currentColor;
-  font-weight: 700;
-  transition: background-color 0.25s ease, color 0.25s ease;
-}
-
-/* Tlačítko na bannerech: žluté / hover bílé, text černý */
-.btn-banner {
-  --btn-theme-color: var(--cg-yellow);
-  --btn-contrast-color: var(--black);
-  --btn-hover-bg: var(--white);
-  --btn-hover-color: var(--black);
-  font-weight: 700;
-  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 
@@ -103,7 +58,7 @@
 .hypo-benefit {
   position: relative;
 
-  /* svislý oddělovač */
+  /* svislý oddělovač vlevo od sloupce */
   &::before {
     content: "";
     position: absolute;
@@ -113,7 +68,7 @@
     background: var(--hypo-separator);
   }
 
-  /* první sloupec v řádku oddělovač nemá (počet podle breakpointu) */
+  /* první sloupec v řádku oddělovač nemá */
   &:nth-child(5n + 1)::before {
     content: none;
   }
@@ -146,7 +101,7 @@
 }
 
 
-/* # PŘÍKLADY FINANCOVÁNÍ */
+/* ## PŘÍKLADY FINANCOVÁNÍ */
 .hypo-examples {
   display: grid;
   grid-template-columns: var(--hypo-tabs-width) minmax(0, 1fr);
@@ -155,7 +110,7 @@
   margin-top: 40px;
 }
 
-/* # Taby */
+/* ### Taby */
 .hypo-tabs {
   display: flex;
   flex-direction: column;
@@ -201,7 +156,7 @@
   font-size: 1rem;
 }
 
-/* vyšší specifičnost kvůli Font Awesome */
+/* vyšší specifičnost kvůli Font Awesome (.fa-* nastavuje display) */
 .hypo-tab .hypo-tab-icon--close,
 .hypo-tab[aria-selected="true"] .hypo-tab-icon--plus {
   display: none;
@@ -212,7 +167,7 @@
   color: var(--cg-yellow);
 }
 
-/* #Panel (obrázek + ceny + tlačítko) */
+/* ### Panel (obrázek + ceny + tlačítko) */
 .hypo-panel {
   display: grid;
   grid-template-columns: minmax(0, 1fr) var(--hypo-aside-width);
@@ -244,7 +199,7 @@
 .hypo-price-row {
   padding-block: 16px;
 
-  /* linka mezi „cena bytu" a „vlastní zdroje" */
+
   & + &:not(.hypo-price-row--highlight) {
     border-top: 1px solid var(--gray-200);
   }
@@ -262,10 +217,9 @@
 .hypo-price-value {
   display: block;
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--cg-blue);
 }
-
 
 .hypo-price-row--highlight {
   border-top: none;
@@ -280,10 +234,6 @@
   }
 }
 
-.hypo-price-value {
-  font-weight: 400;
-}
-
 .hypo-price-row:first-child .hypo-price-value {
   font-weight: 700;
 }
@@ -291,7 +241,6 @@
 .hypo-price-row--highlight .hypo-price-value {
   font-weight: 800;
 }
-
 
 .hypo-panel-btn {
   display: flex;
@@ -301,6 +250,7 @@
   margin-inline: auto;
 }
 
+/* # Poznámka  */
 .hypo-note {
   display: flex;
   align-items: center;
@@ -324,149 +274,33 @@
 }
 
 
-/* # KONTAKTNÍ BLOK */
-.hypo-cta.layout-grid {
-  grid-template-columns: repeat(13, minmax(0, 1fr));
-}
-
+/* ## KONTAKTNÍ BLOK (vzhled boxu je v components.css → .cta-box) */
 .hypo-cta {
-  padding: var(--hypo-box-padding);
-  border-radius: var(--hypo-radius);
-  background-color: var(--hypo-surface);
-  align-items: center;
-}
+  --column-count: 13;
 
-.hypo-cta-heading {
-  grid-column: span 3;
-  font-size: 1.875rem;
-  margin-bottom: 0;
-}
+  .cta-heading {
+    grid-column: span 3;
+  }
 
-.hypo-cta-text {
-  grid-column: span 4;
-  font-size: 0.875rem;
-  margin-bottom: 0;
-}
+  .cta-text {
+    grid-column: span 4;
+  }
 
-.hypo-cta-contacts {
-  grid-column: span 3;
-  list-style: none;
-  padding-left: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
+  .cta-contacts {
+    grid-column: span 3;
+  }
 
-.hypo-cta-action {
-  grid-column: span 2;
-}
-
-.hypo-contact {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 0.875rem;
-  font-weight: 700;
-  color: var(--cg-blue);
-}
-
-.hypo-contact-icon {
-  flex: 0 0 auto;
-  display: grid;
-  place-items: center;
-  width: 28px;
-  height: 28px;
-  border-radius: var(--hypo-radius);
-  background-color: var(--cg-yellow);
-  color: var(--cg-blue);
-  font-size: 0.75rem;
+  .cta-action {
+    grid-column: span 2;
+  }
 }
 
 
-/* # BANNERY */
+/* ## BANNERY (vzhled banneru je v components.css → .banner) */
 .hypo-banners {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--hypo-gap);
-}
-
-.hypo-banner {
-  --hypo-banner-title-size: 32px;
-
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  min-height: 450px;
-  padding: var(--hypo-box-padding);
-  padding-block-end: 56px;
-  border-radius: var(--hypo-radius);
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  color: var(--white);
-
-  /* ztmavení */
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background:
-      linear-gradient(180deg, rgba(18, 20, 43, 0.00) 35%, rgba(18, 20, 43, 0.65) 100%),
-      linear-gradient(90deg, rgba(18, 20, 43, 0.65) 0%, rgba(18, 20, 43, 0.00) 70%);
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-  }
-
-  &:hover .hypo-banner-media :is(img, video) {
-    scale: 1.05;
-  }
-}
-
-.hypo-banner-media {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-
-  :is(img, video) {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: scale 0.4s ease;
-  }
-
-  /* video (pokud je doplněno) překrývá obrázek, který slouží jako poster/fallback */
-  video {
-    z-index: 1;
-  }
-}
-
-.hypo-banner-content {
-  p {
-    font-size: 16px;
-    margin-bottom: 24px;
-    max-width: 34ch;
-  }
-
-  .btn {
-    align-self: start;
-    width: fit-content;
-  }
-}
-
-.hypo-banner-title {
-  font-size: var(--hypo-banner-title-size);
-  font-weight: 400;
-  line-height: 1.25;
-  margin-bottom: 12px;
-  color: var(--white);
-
-  strong {
-    display: block;
-    font-weight: 800;
-  }
 }
 
 
@@ -491,10 +325,6 @@
 }
 
 @media (width < 992px) {
-  .hypo {
-    --hypo-box-padding: 32px;
-  }
-
   /* Úvod: nadpis nad textem */
   .hypo-intro-heading,
   .hypo-intro-text {
@@ -514,7 +344,7 @@
     content: none;
   }
 
-  /* Příklady: taby nad obsahem, na šířku */
+  /* taby nad obsahem, na šířku */
   .hypo-examples {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -532,25 +362,21 @@
     grid-template-columns: minmax(0, 1fr) 280px;
   }
 
-  /* Kontaktní blok: nadpis + text vedle sebe, kontakty a tlačítko pod nimi */
-  .hypo-cta.layout-grid {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-  }
+  /* Kontaktní blok */
+  .hypo-cta {
+    --column-count: 12;
 
-  .hypo-cta-heading,
-  .hypo-cta-text,
-  .hypo-cta-contacts,
-  .hypo-cta-action {
-    grid-column: span 6;
+    .cta-heading,
+    .cta-text,
+    .cta-contacts,
+    .cta-action {
+      grid-column: span 6;
+    }
   }
 
   /* Bannery pod sebou */
   .hypo-banners {
     grid-template-columns: minmax(0, 1fr);
-  }
-
-  .hypo-banner {
-    min-height: 380px;
   }
 }
 
@@ -563,15 +389,10 @@
 
 @media (width < 576px) {
   .hypo {
-    --hypo-box-padding: 24px;
     --hypo-benefits-gap: 32px;
   }
 
-  .hypo-heading {
-    font-size: 1.875rem;
-  }
-
-  /* Výhody: 1 sloupec */
+  /* Výhody: 1 sloupec vodorovné separatory */
   .hypo-benefits-list {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -608,25 +429,10 @@
     padding: 14px 16px;
   }
 
-  .hypo-cta-heading,
-  .hypo-cta-text,
-  .hypo-cta-contacts,
-  .hypo-cta-action {
+  .hypo-cta .cta-heading,
+  .hypo-cta .cta-text,
+  .hypo-cta .cta-contacts,
+  .hypo-cta .cta-action {
     grid-column: 1 / -1;
-  }
-
-  .hypo-cta-action .btn {
-    width: 100%;
-  }
-
-  .hypo-banner {
-    --hypo-banner-title-size: 26px;
-
-    min-height: 320px;
-    padding-block-end: var(--hypo-box-padding);
-  }
-
-  .hypo-banner-content .btn {
-    width: 100%;
   }
 }
