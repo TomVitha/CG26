@@ -34,6 +34,7 @@
   h4 {
     color: var(--footer-heading-color);
     font-weight: var(--footer-heading-weight);
+    font-size: 1.25rem;
   }
 }
 
@@ -45,8 +46,8 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: var(--footer-row-gap) var(--footer-column-gap);
+  font-size: 80%;
 }
-
 
 /* ## SLOUPEC 1: KONTAKT */
 .footer-address {

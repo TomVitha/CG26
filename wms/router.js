@@ -27,6 +27,16 @@ const routerOptions = {
       ],
     },
     {
+      path: "/hypoteka",
+      name: "hypoteka",
+      title: "Hypotéka",
+      description: "Výhodné financování bez zbytečných poplatků – hypotéka na míru od CENTRAL GROUP.",
+      blocks: [
+        { src: "meta-common" },
+        { src: "hypoteka" },
+      ],
+    },
+    {
       path: "/design-style",
       name: "design-style",
       title: "Design style",
