@@ -35,36 +35,12 @@
   }
 }
 
-/* ? REDO using utility classes ? */
+
 .layout-grid.articles {
-  grid-auto-flow: column;
-
-  /* grid items */
-  > * {
-    grid-column: span 4;
-  }
-
+  /* TODO: Deprecate in favor of utility class */
   @media (width >=992px) {
     .tall {
       grid-row: span 2
-    }
-  }
-
-  @media (width < 992px) {
-    &.articles {
-      grid-auto-flow: row;
-
-      > * {
-        grid-column: span 6;
-      }
-    }
-  }
-
-  @media (width < 768px) {
-    &.articles {
-      > * {
-        grid-column: 1 / -1;
-      }
     }
   }
 }
