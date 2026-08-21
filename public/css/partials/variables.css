@@ -29,6 +29,15 @@
   --section-spacing: 100px;
   --layout-gutter: 32px;
 
+  --spacer-0: 0;
+  --spacer-1: 8px;
+  --spacer-2: 16px;
+  --spacer-3: 32px;
+  /* WIP spacer 4,5,6 values */
+  --spacer-4: 48px;
+  --spacer-5: 64px;
+  --spacer-6: 80px;
+
   /* Header */
   --header-height-desktop: 124px;
   --header-height-mobile: 56px;
