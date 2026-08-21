@@ -1,5 +1,5 @@
 <div class="hero">
-  <video class="hero-bg" poster="https://www.central-group.cz//storage/CG/wms3/img/kariera/videa/empiria-poster.png" autoplay muted loop>
+  <video class="hero-bg" poster="https://www.central-group.cz//storage/CG/wms3/img/kariera/videa/empiria-poster.png" autoplay muted loop playsinline>
     <source src="https://www.central-group.cz/storage/CG/wms3/img/kariera/videa/empiria.mp4" media="(min-width: 576px)">
     <source src="https://www.central-group.cz/storage/CG/wms3/img/kariera/videa/empiria-vertical.mp4">
   </video>
@@ -8,7 +8,7 @@
       <hgroup>
         <h1 class="brow">Největší výběr bytů
           <br>
-          <strong>po celé Praze</strong>
+          <strong class="text-yellow">po celé Praze</strong>
         </h1>
         <p>
           od největšího rezidenčního stavitele
@@ -31,11 +31,73 @@
         <h4>Viladomy Střížkov</h4>
       </a>
       <aside>
-        <nav>
-          <h4>Dokončené byty</h4>
+        <nav class="projects-list">
+          <div class="projects-list-header">
+            <h4 class="mb-0">Dokončené byty</h4>
+          </div>
+          <ul class="projects-list-body">
+            <li>
+              <a href="https://www.central-group.cz/lokalita/218?jv=1" class="link-arrow">
+                <strong>Praha 4 - Háje</strong>
+                <div class="small">REZIDENCE JIŽNÍ TERASY</div>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.central-group.cz/lokalita/184?jv=1" class="link-arrow">
+                <strong>Praha 8 - Střížkov</strong>
+                <div class="small">VILADOMY STŘÍŽKOV</div>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.central-group.cz/lokalita/197?jv=1" class="link-arrow">
+                <strong>Praha 9 - Dolní Počernice</strong>
+                <div class="small">VILADOMY POČERNICE</div>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.central-group.cz/lokalita/194?jv=1" class="link-arrow">
+                <strong>Praha 10 - Pitkovice</strong>
+                <div class="small">VILADOMY PITKOVICE</div>
+              </a>
+            </li>
+          </ul>
         </nav>
-        <nav>
-          <h4>Byty ve výstavbě</h4>
+        <nav class="projects-list">
+          <div class="projects-list-header">
+            <h4 class="mb-0">Byty ve výstavbě</h4>
+          </div>
+          <ul class="projects-list-body">
+            <li>
+              <a href="https://www.central-group.cz/lokalita/189?jv=1" class="link-arrow">
+                <strong>Praha 3 - Žižkov</strong>
+                <div class="small">REZIDENCE PARKOVÁ ČTVRŤ</div>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.central-group.cz/lokalita/204?jv=1" class="link-arrow">
+                <strong>Praha 4 - Michle</strong>
+                <div class="small">BOHDALECKÉ ZAHRADY</div>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.central-group.cz/lokalita/192?jv=1" class="link-arrow">
+                <strong>Praha 9 - Hloubětín</strong>
+                <div class="small">TESLA HLOUBĚTÍN</div>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.central-group.cz/lokalita/152?jv=1" class="link-arrow">
+                <strong>Praha 9 - Vysočany</strong>
+                <div class="small">HARFA LIVING</div>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.central-group.cz/lokalita/194?jv=1" class="link-arrow">
+                <strong>Praha 10 - Pitkovice</strong>
+                <div class="small">VILADOMY PITKOVICE</div>
+              </a>
+            </li>
+          </ul>
         </nav>
       </aside>
       <a href="#" class="hp-banner">
@@ -137,18 +199,22 @@
         <img src="https://picsum.photos/448/139?random=2" alt="" class="card-img">
         <div class="card-body" style="background-color: #f5f0e0;">
           <h3>Největší developerská <strong>vzorkovna v Česku</strong></h3>
+          <a href="#" class="link-arrow">
           <p>
             Koupelny, podlahy i dveře si vyberete na jednom místě. <strong>S odborným poradenstvím ZDARMA.</strong>
           </p>
+          </a>
         </div>
       </article>
       <article class="card g-col-12 g-col-sm-6 g-col-lg-4">
         <img src="https://picsum.photos/448/139?random=3" alt="" class="card-img">
         <div class="card-body" style="background-color: #f3ecd8;">
           <h3>4&nbsp;unikátní <strong>finanční programy</strong></h3>
+          <a href="#" class="link-arrow">
           <p>
             Využijte <strong>unikátní finanční programy</strong>, které vám přinesou více jistoty, výhod a pohodlí při pořízení bytu.
           </p>
+          </a>
         </div>
       </article>
       <article class="card tall g-col-12 g-col-sm-6 g-col-lg-4">
@@ -166,3 +232,45 @@
     </div>
   </div>
 </section>
+
+<style>
+  .projects-list {
+    border-radius: 5px;
+    background: #FFF;
+    box-shadow: 0 12px 32px -12px rgba(0, 0, 0, 0.05);
+    overflow: clip;
+    margin-bottom: 0;
+
+    &+& {
+      margin-top: var(--layout-gutter);
+    }
+  }
+
+  .projects-list-header {
+    background-color: var(--cg-blue);
+    color: white;
+    padding: 12px 32px;
+    min-height: 64px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .projects-list-body {
+    padding: 8px 32px;
+    margin: 0;
+  }
+
+  .projects-list li {
+    &+& {
+      border-top: 1px solid #e8e8eb;
+    }
+
+    a {
+      padding-block: 10px;
+      display: block;
+    }
+  }
+
+
+</style>

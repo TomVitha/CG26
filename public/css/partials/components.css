@@ -138,6 +138,8 @@
 .card {
   display: flex;
   flex-direction: column;
+  border-radius: 5px;
+  overflow: hidden;
 
   .card-img {
     width: 100%;
@@ -404,5 +406,21 @@
 
   .cta-action .btn {
     width: 100%;
+  }
+}
+
+.link-arrow {
+  position: relative;
+  padding-right: calc(10px + 8px);
+  /* ? maybe - block je potřeba, ale nevím jestli ho tu specifikovat, aby se netloukl */
+  display: block;
+
+  &::after {
+    content: ">";
+    content: url('data:image/svg+xml,<svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.25297 14.7841C0.928469 15.0403 0.458749 15.0493 0.263331 14.9113C-0.019936 14.7142 -0.113163 14.0316 0.177275 13.8004L8.13922 7.48802L0.145004 1.16308C0.0266775 0.905065 -0.019936 0.406953 0.100183 0.204484C0.240024 -0.0320296 0.915919 -0.0732402 1.17588 0.132813L9.77965 6.95228C10.1418 7.23896 10.0163 7.83204 9.70077 8.08109L1.25297 14.7841Z" fill="%2320234C"/></svg>');
+    position: absolute;
+    top: 50%;
+    right: 0;
+    translate: 0 -50%;
   }
 }

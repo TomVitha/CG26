@@ -1,15 +1,20 @@
-/* WIP HARD */
+/* WIP */
 
 .text-yellow {
   color: var(--cg-yellow);
 }
 
 .bg-blue {
-  background-color: var(--cg-blue);
   color: white;
+<<<<<<< HEAD
 }
 
 .bg-midnight {
   background-color: var(--blue-midnight);
   color: var(--white);
 }
+=======
+  /* TEMP hard-coded mid shade */
+  background: linear-gradient(90deg, var(--cg-blue), #2C306C, var(--cg-blue)), var(--cg-blue);
+}
+>>>>>>> 635db18d1aa6bbf358165927bcf6abd06d071bc8
