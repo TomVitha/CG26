@@ -8,3 +8,8 @@
   background-color: var(--cg-blue);
   color: white;
 }
+
+.bg-midnight {
+  background-color: var(--blue-midnight);
+  color: var(--white);
+}

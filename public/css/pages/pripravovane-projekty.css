@@ -1,0 +1,354 @@
+/* ==========================================================================
+   # PŘIPRAVOVANÉ PROJEKTY
+   ========================================================================== */
+
+.projects {
+  /* COLORS */
+  --projects-bg: var(--blue-midnight);
+  --projects-overlay: rgba(39, 35, 44, 0.55);
+  --projects-nav-bg: rgba(255, 255, 255, 0.22);
+  --projects-nav-bg-hover: rgba(255, 255, 255, 0.4);
+
+  /* SIZES
+     Velikost slidu určuje výška – šířku dopočítá poměr stran obrázku (nastavuje JS).
+     --projects-slide-max-w chrání před příliš širokými (panoramatickými) vizualizacemi. */
+  --projects-slide-h: min(62vh, 700px);
+  --projects-slide-max-w: 62vw;
+  --projects-slide-gap: 16px;
+  --projects-side-scale: 0.67;
+  --projects-nav-size: 48px;
+  --projects-radius: 5px;
+
+  /* MOTION */
+  --projects-speed: 600ms;
+  --projects-ease: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Vzdušnější sekce než výchozích 100px (odpovídá návrhu) */
+  --section-spacing: 220px;
+  /* odsazení kotvy kvůli fixní hlavičce */
+  --projects-scroll-offset: 100px;
+}
+
+.projects-section {
+  background-color: var(--projects-bg);
+  color: var(--white);
+  overflow: clip;
+  scroll-margin-top: var(--projects-scroll-offset);
+}
+
+
+/* ## ÚVOD SEKCE */
+.projects-head {
+  text-align: center;
+  margin-bottom: 56px;
+
+  .tag {
+    margin-bottom: 22px;
+  }
+
+  p {
+    max-width: 46ch;
+    margin-inline: auto;
+    margin-bottom: 0;
+    font-size: 0.875rem;
+  }
+}
+
+.projects-heading {
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+
+/* ## CAROUSEL */
+.projects-carousel {
+  position: relative;
+}
+
+/* carousel je přes celou šířku okna, boční slidy se ořezávají o okraje */
+.projects-viewport {
+  overflow: hidden;
+  padding-block: 4px;
+}
+
+.projects-track {
+  --track-x: 0px;
+  --drag-offset: 0px;
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--projects-slide-gap);
+  width: max-content;
+  translate: calc(var(--track-x) + var(--drag-offset));
+  transition: translate var(--projects-speed) var(--projects-ease);
+  touch-action: pan-y;
+  cursor: grab;
+
+  &.is-dragging {
+    transition: none;
+    cursor: grabbing;
+  }
+
+  /* přeskočení na začátek smyčky bez animace (platí i pro slidy) */
+  &.is-instant,
+  &.is-instant .projects-slide,
+  &.is-instant .projects-slide::after {
+    transition: none;
+  }
+}
+
+.projects-slide {
+  --shift: 0px;
+
+  position: relative;
+  flex: 0 0 auto;
+  height: var(--projects-slide-h);
+  max-width: var(--projects-slide-max-w);
+  border-radius: var(--projects-radius);
+  overflow: hidden;
+  scale: var(--projects-side-scale);
+  translate: var(--shift) 0;
+  transform-origin: center;
+  transition:
+    scale var(--projects-speed) var(--projects-ease),
+    translate var(--projects-speed) var(--projects-ease);
+
+  /* ztmavení neaktivních imgs */
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--projects-overlay);
+    transition: opacity var(--projects-speed) var(--projects-ease);
+    pointer-events: none;
+  }
+
+  /* sousední slidy se zmenšují k vnitřní hraně, mezera mezi nimi tak zůstává stejná */
+  &.is-before {
+    transform-origin: right center;
+  }
+
+  &.is-after {
+    transform-origin: left center;
+  }
+
+  &.is-active {
+    scale: 1;
+
+    &::after {
+      opacity: 0;
+    }
+  }
+}
+
+.projects-slide-btn {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: zoom-in;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -webkit-user-drag: none;
+    user-select: none;
+  }
+}
+
+
+/* # OVLÁDACÍ ŠIPKY */
+.projects-nav {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: var(--projects-nav-size);
+  height: var(--projects-nav-size);
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--projects-nav-bg);
+  color: var(--white);
+  font-size: 1rem;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: background-color 0.25s ease;
+
+  &:hover {
+    background-color: var(--projects-nav-bg-hover);
+  }
+}
+
+/* umístění šipek – doprostřed viditelné části bočního slidu
+   (--projects-active-w = šířka aktivního slidu, nastavuje JS) */
+.projects-carousel > .projects-nav--prev {
+  left: calc((100% - var(--projects-active-w, 60vw)) / 4);
+  translate: -50% -50%;
+}
+
+.projects-carousel > .projects-nav--next {
+  right: calc((100% - var(--projects-active-w, 60vw)) / 4);
+  translate: 50% -50%;
+}
+
+/* Počítadlo skryté (návrh ho nemá) */
+.projects-status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+
+/* ## LIGHTBOX */
+.projects-lightbox {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--white);
+  overflow: hidden;
+
+  &::backdrop {
+    background-color: rgba(18, 16, 22, 0.9);
+  }
+
+  .projects-nav {
+    top: 50%;
+  }
+
+  .projects-nav--prev {
+    left: 24px;
+    translate: 0 -50%;
+  }
+
+  .projects-nav--next {
+    right: 24px;
+    translate: 0 -50%;
+  }
+}
+
+.projects-lightbox-inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 64px 88px;
+}
+
+.projects-lightbox-image {
+  max-width: 100%;
+  max-height: 80vh;
+  width: auto;
+  border-radius: var(--projects-radius);
+  object-fit: contain;
+}
+
+.projects-lightbox-caption {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--lavender);
+}
+
+.projects-lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: var(--projects-nav-size);
+  height: var(--projects-nav-size);
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--projects-nav-bg);
+  color: var(--white);
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+
+  &:hover {
+    background-color: var(--projects-nav-bg-hover);
+  }
+}
+
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (width < 992px) {
+  .projects {
+    --section-spacing: 140px;
+    --projects-slide-h: min(52vh, 520px);
+    --projects-slide-max-w: 74vw;
+    --projects-side-scale: 0.78;
+    --projects-nav-size: 44px;
+  }
+
+  .projects-head {
+    margin-bottom: 40px;
+  }
+}
+
+@media (width < 576px) {
+  .projects {
+    --section-spacing: 96px;
+    --projects-slide-h: min(46vh, 420px);
+    --projects-slide-max-w: 84vw;
+    --projects-side-scale: 0.86;
+    --projects-nav-size: 40px;
+  }
+
+  /* úzké boční imgs na mob. – šipky na kraji */
+  .projects-carousel > .projects-nav--prev {
+    left: 12px;
+    translate: 0 -50%;
+  }
+
+  .projects-carousel > .projects-nav--next {
+    right: 12px;
+    translate: 0 -50%;
+  }
+
+  .projects-lightbox-inner {
+    padding: 72px 16px 24px;
+  }
+
+  .projects-lightbox {
+    .projects-nav--prev {
+      left: 12px;
+    }
+
+    .projects-nav--next {
+      right: 12px;
+    }
+  }
+}
+
+
+/* ## OMEZENÍ ANIMACÍ */
+@media (prefers-reduced-motion: reduce) {
+  .projects-track,
+  .projects-slide,
+  .projects-slide::after {
+    transition: none;
+  }
+}

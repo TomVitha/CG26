@@ -129,8 +129,9 @@ export function createRouter(options) {
     if (!link) return
     if (link.target === '_blank' || link.hasAttribute('download') || link.getAttribute('rel') === 'external') return
     if (link.origin !== window.location.origin) return
-    // FIXME: Anchor navigation
-    if (normalizePath(link.pathname) === stripBase(window.location.pathname) && link.hash !== '') return   // in-page anchor jump, let the browser handle it
+    // Odkaz v rámci stejné stránky (#kotva) necháme na prohlížeči.
+    // Obě strany porovnáváme včetně base, jinak by se kotva nikdy netrefila.
+    if (link.hash !== '' && normalizePath(link.pathname) === normalizePath(window.location.pathname)) return
 
     event.preventDefault()
     push(link.pathname)

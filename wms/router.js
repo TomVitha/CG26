@@ -42,8 +42,18 @@ const routerOptions = {
       title: "Postup koupě",
       description: "Jak probíhá koupě nového bytu – od výběru přes rezervaci a financování až po předání klíčů.",
       blocks: [
-        { src: "meta-common" },
+        { src: "meta-common", type: "meta" },
         { src: "postup-koupe" },
+      ],
+    },
+    {
+      path: "/pripravovane-projekty",
+      name: "pripravovane-projekty",
+      title: "Připravované projekty",
+      description: "Podívejte se, co připravujeme – nové rezidenční čtvrti i komorní bytové projekty po celé Praze.",
+      blocks: [
+        { src: "meta-common" },
+        { src: "pripravovane-projekty" },
       ],
     },
     {
