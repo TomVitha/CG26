@@ -1632,3 +1632,100 @@
     --row-gutter-y: var(--spacer-6);
   }
 }
+
+
+/* SPACER */
+
+/* Vertical */
+[class*="space-y"] {
+  --space-gap: var(--spacer-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-gap);
+}
+
+/* Horizontal */
+[class*="space-x"] {
+  --space-gap: var(--spacer-3);
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-gap);
+}
+
+/* Space gap sizes */
+.space-gap-0 {
+  --space-gap: var(--spacer-0);
+}
+
+.space-gap-1 {
+  --space-gap: var(--spacer-1);
+}
+
+.space-gap-2 {
+  --space-gap: var(--spacer-2);
+}
+
+.space-gap-3 {
+  --space-gap: var(--spacer-3);
+}
+
+.space-gap-4 {
+  --space-gap: var(--spacer-4);
+}
+
+.space-gap-5 {
+  --space-gap: var(--spacer-5);
+}
+
+.space-gap-6 {
+  --space-gap: var(--spacer-6);
+}
+
+:is([class*="space-y"], [class*="space-x"]).divide {
+  gap: 0;
+}
+
+/* Vertical children */
+[class*="space-y"].divide > * ~ * {
+  border-top: 1px solid #e3e3e3 !important;
+}
+
+[class*="space-y"].divide > *:not(:first-child) {
+  padding-top: var(--space-gap) !important;
+}
+
+[class*="space-y"].divide > *:not(:last-child) {
+  padding-bottom: var(--space-gap) !important;
+}
+
+/* Horizontal children */
+[class*="space-x"].divide > * ~ * {
+  border-left: 1px solid #e3e3e3 !important;
+}
+
+[class*="space-x"].divide > *:not(:first-child) {
+  padding-left: var(--space-gap) !important;
+}
+
+[class*="space-x"].divide > *:not(:last-child) {
+  padding-right: var(--space-gap) !important;
+}
+
+.divide-y-fill {
+  height: 100%;
+
+  > * {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+[class*="space-y"].gap-safe > * {
+  margin-inline: 0 !important;
+}
+
+[class*="space-x"].gap-safe > * {
+  margin-block: 0 !important;
+}
