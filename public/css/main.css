@@ -2,10 +2,14 @@
 @import url("./partials/variables.css");
 @import url("./partials/typography.css");
 
+
+@import url("./partials/utilities.css");
+@import url("./partials/layout.css");
+
 @import url("./partials/controls.css");
 @import url("./partials/components.css");
 
-@import url("./partials/layout.css");
+
 @import url("./partials/colors.css");
 
 @import url("./partials/footer.css");
