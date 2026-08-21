@@ -411,8 +411,8 @@
 
 .link-arrow {
   position: relative;
-  padding-right: 10px;
-  /* ? maybe - block je potřeba, ale nevím jestli ho tu chceme specifikovat */
+  padding-right: calc(10px + 8px);
+  /* ? maybe - block je potřeba, ale nevím jestli ho tu specifikovat, aby se netloukl */
   display: block;
 
   &::after {
