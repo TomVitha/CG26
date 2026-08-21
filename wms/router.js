@@ -42,7 +42,7 @@ const routerOptions = {
       title: "Postup koupě",
       description: "Jak probíhá koupě nového bytu – od výběru přes rezervaci a financování až po předání klíčů.",
       blocks: [
-        { src: "meta-common", type: "meta" },
+        { src: "meta-common" },
         { src: "postup-koupe" },
       ],
     },
