@@ -188,6 +188,42 @@
 }
 
 
+/* Obsah boxu – flex kvůli konzistentním mezerám (a kvůli sbalování na mobilu) */
+.info-body {
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* ## ROZBALOVACÍ BOXY NA MOBILU
+   Stejný princip jako dropdowny v patičce: <details> + <summary>,
+   animace přes ::details-content (interpolate-size: allow-keywords v reset.css). */
+.info-dropdown > summary {
+  list-style: none;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+}
+
+/* vyšší specifičnost kvůli Font Awesome (.fa-* nastavuje display) */
+.info-dropdown > summary .info-dropdown-icon {
+  display: none;
+  margin-left: auto;
+  font-size: 1.25rem;
+  color: var(--cg-blue);
+  transition: rotate 0.3s ease;
+}
+
+/* od 576px výš je obsah boxu vždy viditelný (nezávisle na atributu open) */
+@media (width >= 576px) {
+  .info-dropdown::details-content {
+    content-visibility: visible;
+    block-size: auto;
+  }
+}
+
+
 /* ## NEJŠIRŠÍ MOŽNOSTI FINANCOVÁNÍ (modrá sekce) */
 .financing-options {
   .financing-head {
@@ -396,6 +432,39 @@
 @media (width < 576px) {
   .financing-head {
     margin-bottom: 32px;
+  }
+
+
+  .info-title br {
+    display: none;
+  }
+
+  /* # ROZBALOVACÍ BOXY */
+  .info-dropdown > summary {
+    cursor: pointer;
+    margin-bottom: 0;
+  }
+
+  .info-dropdown > summary .info-dropdown-icon {
+    display: block;
+  }
+
+  .info-dropdown[open] > summary .info-dropdown-icon {
+    rotate: 180deg;
+  }
+
+  .info-dropdown::details-content {
+    block-size: 0;
+    overflow: hidden;
+    transition: block-size 0.35s ease, content-visibility 0.35s ease allow-discrete;
+  }
+
+  .info-dropdown[open]::details-content {
+    block-size: auto;
+  }
+
+  .info-body {
+    padding-top: 24px;
   }
 
   .programs-tab {
