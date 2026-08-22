@@ -42,7 +42,7 @@ const routerOptions = {
       title: "Postup koupě",
       description: "Jak probíhá koupě nového bytu – od výběru přes rezervaci a financování až po předání klíčů.",
       blocks: [
-        { src: "meta-common", type: "meta" },
+        { src: "meta-common" },
         { src: "postup-koupe" },
       ],
     },
@@ -57,13 +57,13 @@ const routerOptions = {
       ],
     },
     {
-      path: "/moznosti-financovani",
-      name: "moznosti-financovani",
+      path: "/financovani",
+      name: "financovani",
       title: "Možnosti financování",
       description: "Nejširší možnosti financování nového bydlení – záloha 10 %, zvýhodněná hypotéka, slevy i unikátní finanční programy.",
       blocks: [
         { src: "meta-common" },
-        { src: "moznosti-financovani" },
+        { src: "financovani" },
       ],
     },
     {
