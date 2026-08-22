@@ -26,16 +26,6 @@
 }
 
 
-/* ## ÚVODNÍ SEKCE */
-.postup-intro-heading {
-  grid-column: span 6;
-}
-
-.postup-intro-text {
-  grid-column: 7 / -1;
-}
-
-
 /* ## PRŮBĚH KOUPĚ (banner + kroky) */
 .postup-process {
   margin-top: 72px;
@@ -183,7 +173,7 @@
 
 .postup-program-title {
   margin-bottom: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.875rem;
   font-weight: 700;
   color: var(--cg-blue);
 }
@@ -191,7 +181,7 @@
 .postup-program-body {
   p {
     max-width: 65ch;
-    font-size: 1rem;
+    font-size: 1.125rem;
     color: var(--cg-blue);
   }
 
@@ -271,7 +261,7 @@
 
 .postup-consultant {
   margin-bottom: 16px;
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--cg-blue);
 }
@@ -286,16 +276,6 @@
     --postup-programs-gap: 64px;
     --postup-programs-overlap: 0px;
     --postup-head-spacing: 40px;
-  }
-
-  /* Úvod: nadpis nad textem */
-  .postup-intro-heading,
-  .postup-intro-text {
-    grid-column: 1 / -1;
-  }
-
-  .postup-intro-text p {
-    max-width: 70ch;
   }
 
   /* Průběh koupě: banner nad kroky */

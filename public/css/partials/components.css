@@ -68,6 +68,38 @@
 }
 
 
+/* # ÚVOD STRÁNKY – nadpis vlevo, doprovodný text vpravo
+   use:
+   <div class="layout-grid">
+     <div class="page-intro-heading">
+       <h2 class="section-heading">Text <strong>Zvýrazněný text</strong></h2>
+     </div>
+     <div class="page-intro-text"><p>…</p></div>
+   </div> */
+.page-intro-heading {
+  grid-column: span 6;
+}
+
+.page-intro-text {
+  grid-column: 7 / -1;
+
+  p {
+    max-width: 70ch;
+    margin-bottom: 0;
+    font-size: 1.125rem;
+    font-weight: 400;
+  }
+}
+
+@media (width < 992px) {
+  /* nadpis nad textem */
+  .page-intro-heading,
+  .page-intro-text {
+    grid-column: 1 / -1;
+  }
+}
+
+
 /* # HERO */
 .hero {
   height: 660px;
@@ -389,7 +421,7 @@
 }
 
 .cta-text {
-  font-size: 0.875rem;
+  font-size: 1rem;
   margin-bottom: 0;
 }
 
@@ -405,7 +437,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--cg-blue);
 }

@@ -32,16 +32,6 @@
 }
 
 
-/* ## ÚVODNÍ SEKCE */
-.hypo-intro-heading {
-  grid-column: span 6;
-}
-
-.hypo-intro-text {
-  grid-column: 7 / -1;
-}
-
-
 /* ## VÝHODY (modrý pruh) */
 .hypo-benefits {
   background: var(--hypo-benefits-bg);
@@ -325,12 +315,6 @@
 }
 
 @media (width < 992px) {
-  /* Úvod: nadpis nad textem */
-  .hypo-intro-heading,
-  .hypo-intro-text {
-    grid-column: 1 / -1;
-  }
-
   /* Výhody: 3 → 2 sloupce */
   .hypo-benefits-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
