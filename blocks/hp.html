@@ -247,7 +247,15 @@
   }
 
   .projects-list-header {
-    background-color: var(--cg-blue);
+    background:
+      linear-gradient(
+        88deg,
+        var(--cg-blue, var(--blue)) 0%,
+        var(--blue) 49.28%,
+        var(--cg-blue, var(--blue)) 98.08%
+      ),
+      var(--blue);
+      
     color: white;
     padding: 12px 32px;
     min-height: 64px;
