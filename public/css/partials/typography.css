@@ -165,7 +165,7 @@ h6 {
 */
 
 /* Nadpis sekce: základ regular, zvýrazněná (druhá) část extra bold.
-   Použití: <h2 class="section-heading">Text <strong>Zvýrazněný text</strong></h2> */
+   use: <h2 class="section-heading">Text <strong>Zvýrazněný text</strong></h2> */
 .section-heading {
   font-size: 2.25rem;
   font-weight: 400;

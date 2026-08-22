@@ -57,6 +57,16 @@ const routerOptions = {
       ],
     },
     {
+      path: "/moznosti-financovani",
+      name: "moznosti-financovani",
+      title: "Možnosti financování",
+      description: "Nejširší možnosti financování nového bydlení – záloha 10 %, zvýhodněná hypotéka, slevy i unikátní finanční programy.",
+      blocks: [
+        { src: "meta-common" },
+        { src: "moznosti-financovani" },
+      ],
+    },
+    {
       path: "/design-style",
       name: "design-style",
       title: "Design style",

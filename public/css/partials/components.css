@@ -59,6 +59,7 @@
   user-select: none;
   vertical-align: bottom;
   white-space: nowrap;
+  letter-spacing: 0.5px;
 }
 
 /* tag preceding a heading */
