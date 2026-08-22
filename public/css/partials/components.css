@@ -136,6 +136,7 @@
 
 /* # CARD */
 .card {
+  container: card / inline-size;
   display: flex;
   flex-direction: column;
   border-radius: 5px;
@@ -149,6 +150,26 @@
     background-color: #f2f2f2;
     padding: 40px;
     flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Tlačítko drží u spodní hrany karty (karty v řádku jsou stejně vysoké)
+     a v úzkém sloupci se raději zalomí, než aby přeteklo. */
+  .card-body > .btn {
+    margin-top: auto;
+    align-self: start;
+    max-width: 100%;
+    white-space: normal;
+    text-wrap: balance;
+  }
+}
+
+/* V úzké kartě je tlačítko přes celou šířku – vypadá to lépe než zalomený „blok" */
+@container card (width < 24rem) {
+  .card-body > .btn {
+    align-self: stretch;
+    --controls-fs: var(--controls-fs-sm);
   }
 }
 

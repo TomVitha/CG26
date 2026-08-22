@@ -1,3 +1,6 @@
+<!--přidat @import do public/css/main.css -->
+<link href="css/pages/homepage.css" rel="stylesheet" type="text/css">
+
 <div class="hero">
   <video class="hero-bg" poster="https://www.central-group.cz//storage/CG/wms3/img/kariera/videa/empiria-poster.png" autoplay muted loop playsinline>
     <source src="https://www.central-group.cz/storage/CG/wms3/img/kariera/videa/empiria.mp4" media="(min-width: 576px)">
@@ -220,7 +223,7 @@
       <article class="card tall g-col-12 g-col-sm-6 g-col-lg-4">
         <img src="https://picsum.photos/448/342?random=4" alt="" class="card-img">
         <div class="card-body" style="background-color: #efe6cd;">
-          <h3><strong>Interiérové studio</strong>ro domov podle vašich představ</h3>
+          <h3><strong>Interiérové studio</strong> pro domov podle vašich představ</h3>
           <p>
             Od prvního návrhu až po kompletně zařízený domov.
             <strong>Navrhneme a zrealizujeme váš interiér na klíč,</strong>
@@ -233,52 +236,113 @@
   </div>
 </section>
 
-<style>
-  .projects-list {
-    border-radius: 5px;
-    background: #FFF;
-    box-shadow: 0 12px 32px -12px rgba(0, 0, 0, 0.05);
-    overflow: clip;
-    margin-bottom: 0;
 
-    &+& {
-      margin-top: var(--layout-gutter);
-    }
-  }
+<section class="stay-informed">
+  <div class="container-main">
 
-  .projects-list-header {
-    background:
-      linear-gradient(
-        88deg,
-        var(--cg-blue, var(--blue)) 0%,
-        var(--blue) 49.28%,
-        var(--cg-blue, var(--blue)) 98.08%
-      ),
-      var(--blue);
-      
-    color: white;
-    padding: 12px 32px;
-    min-height: 64px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
+    <div class="stay-head">
+      <div class="tag">OSTATNÍ</div>
+      <h2>Zůstaňte v obraze</h2>
+      <p>
+        Novinky, inspirace a další obsah, který stojí za pozornost.
+      </p>
+    </div>
 
-  .projects-list-body {
-    padding: 8px 32px;
-    margin: 0;
-  }
+    <div class="layout-grid stay-grid">
 
-  .projects-list li {
-    &+& {
-      border-top: 1px solid #e8e8eb;
-    }
+      <!-- Registration form (temp) -->
+      <div class="newsletter g-col-12 g-col-lg-6">
+        <div class="newsletter-media">
+          <!-- zástupný obrázek -->
+          <img src="https://www.central-group.cz/Uloziste/0e/0eefd926-f099-4d5d-a3c6-bba84ba408ea.jpg" alt="">
+          <!-- bg video   -->
+           <!--
+          <video autoplay muted loop playsinline preload="metadata"
+                 poster="https://www.central-group.cz/Uloziste/0e/0eefd926-f099-4d5d-a3c6-bba84ba408ea.jpg">
+            <source src="video/newsletter.webm" type="video/webm">
+            <source src="video/newsletter.mp4" type="video/mp4">
+          </video>
+          -->
+        </div>
 
-    a {
-      padding-block: 10px;
-      display: block;
-    }
-  }
+        <form class="newsletter-form" action="#" method="post">
+          <h3 class="brow newsletter-heading">Registrujte se</h3>
+          <p class="newsletter-text">
+            pro přednostní zasílání novinek<br>
+            a získejte řadu výhod
+          </p>
 
+          <div>
+            <label class="visually-hidden" for="newsletter-name">Jméno a příjmení</label>
+            <input type="text" id="newsletter-name" name="name" autocomplete="name" placeholder="Jméno a příjmení">
+          </div>
 
-</style>
+          <div>
+            <label class="visually-hidden" for="newsletter-email">Váš e-mail</label>
+            <input type="email" id="newsletter-email" name="email" autocomplete="email" required placeholder="Váš e-mail *">
+          </div>
+
+          <label class="newsletter-consent">
+            <input type="checkbox" name="consent" required>
+            <span>Souhlasím se zpracováním <a href="/page/osobni-udaje">osobních údajů</a>.</span>
+          </label>
+
+          <button type="submit" class="btn btn-primary btn-md">
+            Přihlásit k odběru <i class="fa-sharp fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </button>
+        </form>
+
+        <!--  (transparentní PNG) -->
+        <img class="newsletter-phone" src="img/newsletter-phone-placeholder.png" alt="" aria-hidden="true">
+      </div>
+
+      <!-- PROMO BANNERS -->
+      <div class="promos g-col-12 g-col-lg-6">
+
+        <a href="#" class="promo">
+          <div class="promo-media">
+            <!-- TODO: zástupný obrázek/fallback-->
+            <img src="https://www.central-group.cz/Uloziste/54/54471479-4e98-4891-a6cb-616bcd575aeb.jpg" alt="">
+            <!-- Video smyčka na pozadí -->
+          <!--
+            <video autoplay muted loop playsinline preload="metadata"
+                   poster="https://www.central-group.cz/Uloziste/54/54471479-4e98-4891-a6cb-616bcd575aeb.jpg">
+              <source src="video/pozemky.webm" type="video/webm">
+              <source src="video/pozemky.mp4" type="video/mp4">
+            </video>
+            -->
+          </div>
+          <div class="promo-body">
+            <h4 class="promo-title">
+              Koupíme
+              <strong>váš pozemek</strong>
+            </h4>
+            <p class="promo-text">Nepotřebujeme úvěry</p>
+            <span class="btn btn-primary btn-md">
+              Zjistit více <i class="fa-sharp fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </span>
+          </div>
+        </a>
+
+        <a href="#" class="promo promo--overflow">
+          <div class="promo-body">
+            <h4 class="promo-title">
+              <strong>Magazín 2026</strong>
+            </h4>
+            <p class="promo-text">
+              trendy na trhu, inspirace<br>
+              a novinky pro nové bydlení
+            </p>
+            <span class="btn btn-primary btn-md">
+              Přečíst <i class="fa-sharp fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </span>
+          </div>
+          <!-- transparentní PNG -->
+          <img class="promo-image" src="img/magazin-placeholder.png" alt="" aria-hidden="true">
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+</section>

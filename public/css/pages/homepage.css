@@ -1,0 +1,400 @@
+/* ==========================================================================
+   # HOMEPAGE
+   ========================================================================== */
+
+  .projects-list {
+    border-radius: 5px;
+    background: #FFF;
+    box-shadow: 0 12px 32px -12px rgba(0, 0, 0, 0.05);
+    overflow: clip;
+    margin-bottom: 0;
+
+    &+& {
+      margin-top: var(--layout-gutter);
+    }
+  }
+
+  .projects-list-header {
+    background:
+      linear-gradient(
+        88deg,
+        var(--cg-blue, var(--blue)) 0%,
+        var(--blue) 49.28%,
+        var(--cg-blue, var(--blue)) 98.08%
+      ),
+      var(--blue);
+
+    color: white;
+    padding: 12px 32px;
+    min-height: 64px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .projects-list-body {
+    padding: 8px 32px;
+    margin: 0;
+  }
+
+  .projects-list li {
+    &+& {
+      border-top: 1px solid #e8e8eb;
+    }
+
+    a {
+      padding-block: 10px;
+      display: block;
+    }
+  }
+
+
+/* Skrytý popisek pro čtečky – kandidát na utilitu v utilities.css */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+
+/* ## SEKCE „ZŮSTAŇTE V OBRAZE" */
+.stay-informed {
+  --stay-radius: var(--controls-border-radius);
+  --stay-padding: 40px;
+}
+
+.stay-head {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.stay-grid {
+  align-items: stretch;
+}
+
+
+/* ## NEWSLETTER (levý sloupec) */
+.newsletter {
+  --newsletter-form-width: 240px;
+  --newsletter-phone-width: 330px;
+  /* o kolik telefon přesahuje pod spodní hranu */
+  --newsletter-phone-overflow: 90px;
+
+  container: newsletter / inline-size;
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 420px;
+  padding: var(--stay-padding);
+  border-radius: var(--stay-radius);
+  color: var(--white);
+}
+
+/* Pozadí je vlastní vrstva */
+.newsletter-media {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  border-radius: inherit;
+  background-color: var(--cg-blue);
+
+  :is(img, video) {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* video (pokud je) překrývá poster/fallback obrázek  */
+  video {
+    z-index: 1;
+  }
+
+  /* modrý overlay přes video */
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: linear-gradient(88deg, rgba(32, 35, 76, 0.94) 0%, rgba(44, 48, 108, 0.86) 100%);
+  }
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: var(--newsletter-form-width);
+}
+
+.newsletter-heading {
+    margin-bottom: 0;
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--cg-yellow);
+}
+
+.newsletter-text {
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.newsletter-form :is(input[type="text"], input[type="email"]) {
+  width: 100%;
+  background-color: var(--white);
+  border-color: transparent;
+  color: var(--body-text-color);
+  font-weight: 400;
+}
+
+.newsletter-consent {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.875rem;
+  cursor: pointer;
+
+  a {
+    font-weight: 700;
+    color: var(--cg-yellow);
+    text-decoration: underline;
+  }
+}
+
+/* Checkbox – přesun do controls.css?
+   (controls.css nastavuje inputům appearance: none) */
+.newsletter-consent input[type="checkbox"] {
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  border-radius: 3px;
+  background-color: var(--white);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+
+  &::after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    scale: 0;
+    transition: scale 0.15s ease;
+    background-color: var(--cg-blue);
+    clip-path: polygon(14% 47%, 0 61%, 40% 100%, 100% 20%, 85% 8%, 38% 71%);
+  }
+
+  &:checked::after {
+    scale: 1;
+  }
+}
+
+.newsletter-form .btn {
+  align-self: start;
+  margin-top: 8px;
+}
+
+/* obrázek přesahující spodní hranu */
+.newsletter-phone {
+  position: absolute;
+  right: var(--stay-padding);
+  bottom: calc(var(--newsletter-phone-overflow) * -1);
+  z-index: 1;
+  width: var(--newsletter-phone-width);
+  max-width: 45%;
+  pointer-events: none;
+  user-select: none;
+}
+
+
+@container newsletter (width < 560px) {
+  .newsletter-form {
+    max-width: 100%;
+  }
+
+  .newsletter-phone {
+    position: static;
+    align-self: end;
+    width: min(var(--newsletter-phone-width), 45%);
+    margin-top: 24px;
+    margin-right: calc((var(--stay-padding) - 8px) * -1);
+    margin-bottom: calc(var(--newsletter-phone-overflow) * -1);
+  }
+}
+
+/* # PROMO BANNERS */
+.promos {
+  display: grid;
+  grid-auto-rows: 1fr;
+  gap: var(--layout-gutter);
+  height: 100%;
+}
+
+.promo {
+  --promo-media-width: 62%;
+
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 240px;
+  padding: var(--stay-padding);
+  border-radius: var(--stay-radius);
+  background-color: var(--cream-light);
+  color: var(--body-text-color);
+}
+
+/* Obrázek/video */
+.promo-media {
+  position: absolute;
+  inset: 0 0 0 auto;
+  z-index: -1;
+  width: var(--promo-media-width);
+  overflow: hidden;
+  border-radius: inherit;
+  mask-image: linear-gradient(to right, transparent 0%, #000 45%);
+
+  :is(img, video) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  video {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+}
+
+.promo-body {
+  max-width: 60%;
+}
+
+.promo-title {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--cg-blue);
+
+  strong {
+    display: block;
+    font-weight: 700;
+  }
+}
+
+.promo-text {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    line-height: 187%;
+}
+
+.promo .btn {
+  align-self: start;
+  width: fit-content;
+}
+
+/* obrázek přesahujícím spodní hranu */
+.promo--overflow {
+  --promo-image-width: 300px;
+  --promo-image-overflow: 60px;
+}
+
+.promo-image {
+  position: absolute;
+  right: 24px;
+  bottom: calc(var(--promo-image-overflow) * -1);
+  z-index: 1;
+  width: var(--promo-image-width);
+  max-width: 45%;
+  pointer-events: none;
+  user-select: none;
+}
+
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (width < 1200px) {
+  .newsletter {
+    --newsletter-phone-width: 260px;
+  }
+
+  .promo {
+    --promo-media-width: 55%;
+  }
+
+  .promo--overflow {
+    --promo-image-width: 240px;
+  }
+}
+
+@media (width < 992px) {
+  .stay-informed {
+    --stay-padding: 32px;
+  }
+
+  .stay-head {
+    margin-bottom: 40px;
+  }
+
+
+  .newsletter {
+    --newsletter-phone-width: 240px;
+    --newsletter-phone-overflow: 60px;
+
+    min-height: 380px;
+  }
+
+  .promos {
+    gap: var(--layout-gutter);
+  }
+}
+
+@media (width < 576px) {
+  .stay-informed {
+    --stay-padding: 24px;
+  }
+
+  .newsletter {
+    --newsletter-phone-width: 170px;
+    --newsletter-phone-overflow: 40px;
+  }
+
+  .newsletter-form .btn {
+    align-self: stretch;
+  }
+
+  .promo {
+    --promo-media-width: 70%;
+    min-height: 220px;
+  }
+
+  .promo-body {
+    max-width: 100%;
+  }
+
+  .promo--overflow {
+    --promo-image-width: 190px;
+    --promo-image-overflow: 40px;
+
+    padding-bottom: 96px;
+  }
+
+  .promo-image {
+    right: 8px;
+  }
+}
