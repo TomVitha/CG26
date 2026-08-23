@@ -10,7 +10,7 @@ const routerOptions = {
       path: "/",
       name: "index",
       title: "Domovská stránka",
-      description: "Jsme největší český největší developer s největším výběrem bytů a největší vzorkovnou... jsme největší, jo?",
+      description: "Jsme největší český největší developer s největším výběrem bytů a největší vzorkovnou.",
       blocks: [
         { src: "meta-common", type: "meta" },
         { src: "hp" },
@@ -64,6 +64,16 @@ const routerOptions = {
       blocks: [
         { src: "meta-common" },
         { src: "financovani" },
+      ],
+    },
+    {
+      path: "/reference",
+      name: "reference",
+      title: "Reference",
+      description: "Realizované projekty CENTRAL GROUP – od rozsáhlých rezidenčních čtvrtí až po komorní bytové domy.",
+      blocks: [
+        { src: "meta-common" },
+        { src: "reference" },
       ],
     },
     {

@@ -3,22 +3,17 @@
    Markup: blocks/hypoteka.html, chování tabů: public/js/hypoteka.js
 
    Sdílené komponenty v partials:
-   .section-heading (typography.css), .brow--blue, .banner, .cta-box, .contact
-   (components.css), .btn-outline-blue (controls.css)
+   .section-heading (typography.css), .page-intro, .brow--blue, .benefits,
+   .banner, .cta-box, .contact (components.css), .btn-outline-blue (controls.css)
    ========================================================================== */
 
 .hypo {
   /* COLORS */
   --hypo-surface: var(--blue-light);
   --hypo-muted-color: var(--gray-500);
-  --hypo-benefits-bg: linear-gradient(88deg, var(--cg-blue, #20234C) 0%, #2C306C 49.28%, var(--cg-blue, #20234C) 98.08%), #F8FAFC;
-  --hypo-separator: linear-gradient(180deg, rgba(50, 52, 83, 0.00) 0%, #505486 51.44%, rgba(50, 52, 83, 0.00) 100%);
-  --hypo-separator-horizontal: linear-gradient(90deg, rgba(50, 52, 83, 0.00) 0%, #505486 51.44%, rgba(50, 52, 83, 0.00) 100%);
 
   /* SIZES */
   --hypo-gap: var(--layout-gutter);
-  --hypo-benefits-gap: 80px;
-  --hypo-benefit-icon-size: 56px;
   --hypo-tabs-width: 220px;
   --hypo-aside-width: 320px;
   --hypo-price-padding: 24px;
@@ -29,65 +24,6 @@
 /* ## HERO */
 .hero-text {
   font-weight: 300;
-}
-
-
-/* ## VÝHODY (modrý pruh) */
-.hypo-benefits {
-  background: var(--hypo-benefits-bg);
-}
-
-.hypo-benefits-list {
-  list-style: none;
-  padding-left: 0;
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: var(--hypo-benefits-gap);
-}
-
-.hypo-benefit {
-  position: relative;
-
-  /* svislý oddělovač vlevo od sloupce */
-  &::before {
-    content: "";
-    position: absolute;
-    inset-block: -16px;
-    inset-inline-start: calc(var(--hypo-benefits-gap) / -2);
-    width: 1px;
-    background: var(--hypo-separator);
-  }
-
-  /* první sloupec v řádku oddělovač nemá */
-  &:nth-child(5n + 1)::before {
-    content: none;
-  }
-
-  p {
-    color: var(--lavender);
-    font-size: 0.875rem;
-    margin-bottom: 0;
-  }
-}
-
-.hypo-benefit-icon {
-  display: grid;
-  place-items: center;
-  width: var(--hypo-benefit-icon-size);
-  height: var(--hypo-benefit-icon-size);
-  margin-bottom: 32px;
-  border-radius: 50%;
-  background-color: var(--cg-yellow);
-  color: var(--cg-blue);
-  font-size: 1.25rem;
-}
-
-.hypo-benefit-title {
-  font-size: 1.125rem;
-  font-weight: 700;
-  line-height: 1.35;
-  margin-bottom: 0.75rem;
-  color: var(--white);
 }
 
 
@@ -298,36 +234,7 @@
    RESPONSIVE
    ========================================================================== */
 
-/* Výhody: 5 → 3 sloupce */
-@media (width < 1200px) {
-  .hypo-benefits-list {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    row-gap: 48px;
-  }
-
-  .hypo-benefit:nth-child(5n + 1)::before {
-    content: "";
-  }
-
-  .hypo-benefit:nth-child(3n + 1)::before {
-    content: none;
-  }
-}
-
 @media (width < 992px) {
-  /* Výhody: 3 → 2 sloupce */
-  .hypo-benefits-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .hypo-benefit:nth-child(3n + 1)::before {
-    content: "";
-  }
-
-  .hypo-benefit:nth-child(2n + 1)::before {
-    content: none;
-  }
-
   /* taby nad obsahem, na šířku */
   .hypo-examples {
     grid-template-columns: minmax(0, 1fr);
@@ -372,37 +279,6 @@
 }
 
 @media (width < 576px) {
-  .hypo {
-    --hypo-benefits-gap: 32px;
-  }
-
-  /* Výhody: 1 sloupec vodorovné separatory */
-  .hypo-benefits-list {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .hypo-benefit::before,
-  .hypo-benefit:nth-child(2n + 1)::before {
-    content: none;
-  }
-
-  .hypo-benefit + .hypo-benefit::before {
-    content: "";
-    inset: calc(var(--hypo-benefits-gap) / -2) 0 auto 0;
-    width: auto;
-    height: 1px;
-    background: var(--hypo-separator-horizontal);
-  }
-
-  .hypo-benefit {
-    text-align: center;
-  }
-
-  .hypo-benefit-icon {
-    margin-bottom: 20px;
-    margin-inline: auto;
-  }
-
   /* Taby 2 × 2 */
   .hypo-tabs {
     display: grid;

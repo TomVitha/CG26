@@ -95,7 +95,11 @@ select,
 
 .btn-blue {
   --btn-theme-color: var(--cg-blue);
-  /* TODO: text color */
+  --btn-contrast-color: var(--white);
+
+  &:hover {
+    --btn-theme-color: var(--blue);
+  }
 }
 
 .btn-primary {
