@@ -175,7 +175,7 @@
   border-radius: 50%;
   background-color: var(--white);
   color: var(--cg-blue);
-  font-size: 0.875rem;
+  font-size: 1.25rem;
   cursor: pointer;
   box-shadow: 0 4px 16px -4px rgba(0, 0, 0, 0.25);
   transition: background-color 0.25s ease, color 0.25s ease;

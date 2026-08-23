@@ -4,7 +4,8 @@
 
    Sdílené komponenty v partials:
    .section-heading (typography.css), .page-intro, .brow--blue, .benefits,
-   .banner, .cta-box, .contact (components.css), .btn-outline-blue (controls.css)
+   .promo-banner(s), .cta-box, .contact (components.css),
+   .btn-outline-blue (controls.css)
    ========================================================================== */
 
 .hypo {
@@ -222,14 +223,6 @@
 }
 
 
-/* ## BANNERY (vzhled banneru je v components.css → .banner) */
-.hypo-banners {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--hypo-gap);
-}
-
-
 /* ==========================================================================
    RESPONSIVE
    ========================================================================== */
@@ -263,11 +256,6 @@
     .cta-action {
       grid-column: span 6;
     }
-  }
-
-  /* Bannery pod sebou */
-  .hypo-banners {
-    grid-template-columns: minmax(0, 1fr);
   }
 }
 

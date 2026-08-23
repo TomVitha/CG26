@@ -100,17 +100,9 @@
 }
 
 
-/* # VÝHODY – modrý pruh s ikonami ve sloupcích
+/* # modrý pruh s ikonami ve sloupcích
    Počet sloupců určuje modifikátor .benefits-list--3 / --4 / --5.
-   use:
-   <section class="bg-blue benefits">
-     <div class="container-main">
-       <ul class="benefits-list benefits-list--3">
-         <li class="benefit">
-           <span class="benefit-icon"><i class="fa-solid fa-…" aria-hidden="true"></i></span>
-           <h3 class="benefit-title">Nadpis</h3>
-           <p>Text</p>
-         </li> */
+*/
 .benefits {
   --benefits-bg: linear-gradient(88deg, var(--cg-blue) 0%, var(--blue) 49.28%, var(--cg-blue) 98.08%), var(--snow);
   --benefits-separator: linear-gradient(180deg, rgba(50, 52, 83, 0) 0%, #505486 51.44%, rgba(50, 52, 83, 0) 100%);
@@ -342,8 +334,7 @@
     flex-direction: column;
   }
 
-  /* Tlačítko drží u spodní hrany karty (karty v řádku jsou stejně vysoké)
-     a v úzkém sloupci se raději zalomí, než aby přeteklo. */
+  /* Tlačítko drží u spodní hrany karty (karty v řádku jsou stejně vysoké) */
   .card-body > .btn {
     margin-top: auto;
     align-self: start;
@@ -353,7 +344,7 @@
   }
 }
 
-/* V úzké kartě je tlačítko přes celou šířku – vypadá to lépe než zalomený „blok" */
+/* V úzké kartě je tlačítko přes celou šířku  */
 @container card (width < 24rem) {
   .card-body > .btn {
     align-self: stretch;
@@ -447,18 +438,19 @@
   }
 }
 
-/* # BANNER
-   Obrázek nebo video přes celou plochu, obsah zarovnaný dolů.
-   <a class="banner"><div class="banner-media">…</div><div class="banner-content">…</div></a> */
-.banner {
-  --banner-title-size: 32px;
-  --banner-padding: 40px;
+/* # PROMO BANNER
+   Prokliknutelná dlaždice – obrázek nebo video přes celou plochu, obsah zarovnaný dolů.
+   Dvojice bannerů na konci stránky
+*/
+.promo-banner {
+  --promo-banner-title-size: 32px;
+  --promo-banner-padding: 40px;
 
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  min-height: 450px;
-  padding: var(--banner-padding);
+  min-height: 350px;
+  padding: var(--promo-banner-padding);
   padding-block-end: 56px;
   border-radius: var(--controls-border-radius);
   display: flex;
@@ -479,7 +471,7 @@
     transition: opacity 0.3s ease;
   }
 
-  &:hover .banner-media :is(img, video) {
+  &:hover .promo-banner-media :is(img, video) {
     scale: 1.05;
   }
 
@@ -497,7 +489,7 @@
   }
 }
 
-.banner-media {
+.promo-banner-media {
   position: absolute;
   inset: 0;
   z-index: -2;
@@ -517,7 +509,7 @@
   }
 }
 
-.banner-content {
+.promo-banner-content {
   p {
     font-size: 16px;
     margin-bottom: 24px;
@@ -525,8 +517,8 @@
   }
 }
 
-.banner-title {
-  font-size: var(--banner-title-size);
+.promo-banner-title {
+  font-size: var(--promo-banner-title-size);
   font-weight: 400;
   line-height: 1.25;
   margin-bottom: 12px;
@@ -538,23 +530,37 @@
   }
 }
 
+/* Mřížka dvojice bannerů */
+.promo-banners {
+  --promo-banners-gap: var(--layout-gutter);
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--promo-banners-gap);
+}
+
 @media (width < 992px) {
-  .banner {
-    --banner-padding: 32px;
+  .promo-banner {
+    --promo-banner-padding: 32px;
     min-height: 380px;
+  }
+
+  /* bannery pod sebou */
+  .promo-banners {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
 @media (width < 576px) {
-  .banner {
-    --banner-title-size: 26px;
-    --banner-padding: 24px;
+  .promo-banner {
+    --promo-banner-title-size: 26px;
+    --promo-banner-padding: 24px;
 
     min-height: 320px;
-    padding-block-end: var(--banner-padding);
+    padding-block-end: var(--promo-banner-padding);
   }
 
-  .banner-content .btn {
+  .promo-banner-content .btn {
     width: 100%;
   }
 }

@@ -3,7 +3,7 @@
    Markup: blocks/postup-koupe.html
 
    Sdílené komponenty jsou v partials:
-   .section-heading (typography.css), .brow--blue, .tag, .banner, .cta-box,
+   .section-heading (typography.css), .brow--blue, .tag, .promo-banner(s), .cta-box,
    .contact (components.css), .btn / .btn-primary (controls.css)
    ========================================================================== */
 
@@ -36,9 +36,9 @@
   grid-column: span 5;
 }
 
-.postup-process-banner .banner {
-  --banner-title-size: 28px;
-  --banner-padding: 32px;
+.postup-process-banner .promo-banner {
+  --promo-banner-title-size: 28px;
+  --promo-banner-padding: 32px;
 
   min-height: 340px;
   padding-block-end: 32px;
