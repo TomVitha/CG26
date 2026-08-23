@@ -6,7 +6,7 @@
 //   .reference-lightbox … jeden sdílený <dialog> pro všechny galerie na stránce
 //
 // Počet náhledů v pásu určuje CSS (--gallery-thumbs), JS ho jen čte – díky tomu
-// zůstává rozhodnutí o layoutu v CSS včetně breakpointů.
+
 (() => {
 
   /* ==========================================================================
@@ -67,7 +67,6 @@
 
     lightbox.addEventListener("close", () => { source = null; });
   }
-
 
   /* ==========================================================================
      GALERIE
