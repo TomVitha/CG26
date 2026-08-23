@@ -100,9 +100,17 @@
 }
 
 
-/* # modrý pruh s ikonami ve sloupcích
+/* # VÝHODY – modrý pruh s ikonami ve sloupcích
    Počet sloupců určuje modifikátor .benefits-list--3 / --4 / --5.
-*/
+   use:
+   <section class="bg-blue benefits">
+     <div class="container-main">
+       <ul class="benefits-list benefits-list--3">
+         <li class="benefit">
+           <span class="benefit-icon"><i class="fa-solid fa-…" aria-hidden="true"></i></span>
+           <h3 class="benefit-title">Nadpis</h3>
+           <p>Text</p>
+         </li> */
 .benefits {
   --benefits-bg: linear-gradient(88deg, var(--cg-blue) 0%, var(--blue) 49.28%, var(--cg-blue) 98.08%), var(--snow);
   --benefits-separator: linear-gradient(180deg, rgba(50, 52, 83, 0) 0%, #505486 51.44%, rgba(50, 52, 83, 0) 100%);
@@ -334,7 +342,8 @@
     flex-direction: column;
   }
 
-  /* Tlačítko drží u spodní hrany karty (karty v řádku jsou stejně vysoké) */
+  /* Tlačítko drží u spodní hrany karty (karty v řádku jsou stejně vysoké)
+     a v úzkém sloupci se raději zalomí, než aby přeteklo. */
   .card-body > .btn {
     margin-top: auto;
     align-self: start;
@@ -344,7 +353,7 @@
   }
 }
 
-/* V úzké kartě je tlačítko přes celou šířku  */
+/* V úzké kartě je tlačítko přes celou šířku – vypadá to lépe než zalomený „blok" */
 @container card (width < 24rem) {
   .card-body > .btn {
     align-self: stretch;
@@ -360,6 +369,9 @@
 
 /* TEMP umístění stylů */
 .hp-banner {
+  --hp-banner-title-size: 18px;
+  --hp-banner-name-size: 24px;
+
   position: relative;
   overflow: hidden;
   min-height: 250px;
@@ -419,6 +431,22 @@
     scale: 1.075;
   }
 
+  /* Název projektu: typ zástavby tenkým řezem, vlastní název tučně na dalším řádku.
+     use: <h4>Viladomy <strong>Střížkov</strong></h4> – část <strong> je nepovinná
+     (název bez uvození se zapíše celý do <strong>). text-shadow dědí i <strong>. */
+  h4 {
+    font-size: var(--hp-banner-title-size);
+    font-weight: 400;
+    line-height: 1.35;
+    text-shadow: 0 12px 32px rgba(0, 0, 0, 0.05);
+
+    strong {
+      display: block;
+      font-size: var(--hp-banner-name-size);
+      font-weight: 700;
+    }
+  }
+
   address {
     order: -1;
     margin-bottom: auto;
@@ -440,8 +468,15 @@
 
 /* # PROMO BANNER
    Prokliknutelná dlaždice – obrázek nebo video přes celou plochu, obsah zarovnaný dolů.
-   Dvojice bannerů na konci stránky
-*/
+   Dvojice bannerů na konci stránky se sází do mřížky .promo-banners.
+   use:
+   <section class="promo-banners-section">
+     <div class="container-main">
+       <div class="promo-banners">
+         <a href="…" class="promo-banner">
+           <div class="promo-banner-media">…</div>
+           <div class="promo-banner-content">…</div>
+         </a> */
 .promo-banner {
   --promo-banner-title-size: 32px;
   --promo-banner-padding: 40px;

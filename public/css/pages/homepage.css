@@ -60,6 +60,15 @@
       padding-block: 10px;
       display: block;
     }
+
+    /* první řádek (lokalita) modrý, druhý (název projektu) černý */
+    strong {
+      color: var(--cg-blue);
+    }
+
+    .small {
+      color: var(--black);
+    }
   }
 
 
