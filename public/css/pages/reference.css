@@ -129,6 +129,12 @@
   white-space: normal;
 }
 
+/* Tlačítko je nepovinné (má ho jen část projektů) – bez něj nesmí za posledním
+   prvkem zůstat viset spodní mezera. Specifičnost (0,2,0) přebíjí .project-stages. */
+.project-info > :last-child {
+  margin-bottom: 0;
+}
+
 
 /* ## GALERIE PROJEKTU */
 .project-gallery {

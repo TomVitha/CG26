@@ -111,7 +111,8 @@
 
       if (moreItem) {
         moreItem.hidden = hidden === 0;
-        if (moreCount) moreCount.textContent = `+ ${hidden} dalších`;
+        // skloňování: 1–4 „další“, 5 a více „dalších“
+        if (moreCount) moreCount.textContent = `+ ${hidden} ${hidden < 5 ? "další" : "dalších"}`;
       }
     }
 
