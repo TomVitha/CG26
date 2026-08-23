@@ -2,6 +2,52 @@
    # HOMEPAGE
    ========================================================================== */
 
+/* ## HERO – varianta pro HP
+   Základ komponenty je v components.css (.hero), tady se mění jen velikosti
+   písma v hgroup. 53px = 3.3125rem při základu 16px. */
+.hero--hp {
+  --hp-hero-title-size: 3.3125rem;
+  --hp-hero-subtitle-size: 1.5rem;
+
+  .hero-content h1 {
+    font-size: var(--hp-hero-title-size);
+    font-weight: 400;
+    line-height: 1.2;
+
+    strong {
+      font-weight: 700;
+    }
+  }
+
+  .hero-content hgroup p {
+    font-size: var(--hp-hero-subtitle-size);
+    font-weight: 400;
+    margin-bottom: 0;
+  }
+}
+
+@media (width < 1200px) {
+  .hero--hp {
+    --hp-hero-title-size: 2.75rem;
+    --hp-hero-subtitle-size: 1.375rem;
+  }
+}
+
+@media (width < 992px) {
+  .hero--hp {
+    --hp-hero-title-size: 2.5rem;
+    --hp-hero-subtitle-size: 1.25rem;
+  }
+}
+
+@media (width < 576px) {
+  .hero--hp {
+    --hp-hero-title-size: 1.875rem;
+    --hp-hero-subtitle-size: 1.5rem;
+  }
+}
+
+
   .projects-list {
     border-radius: 5px;
     background: #FFF;
@@ -369,6 +415,12 @@
   .stay-informed {
     --stay-padding: 32px;
   }
+
+@media (width >= 992px) {
+  .hero--hp .hero-content {
+    max-width: min(620px, 100%);
+  }
+}
 
   .stay-head {
     margin-bottom: 40px;
