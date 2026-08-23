@@ -69,6 +69,25 @@ export function createRouter(options) {
     return route.blocks.map(block => createBlock(block))
   }
 
+  // Poster hero videa je zpravidla LCP prvek. Bloky se vkládají až z JS, takže prohlížeč
+  // o obrázek požádá pozdě – preload se proto odešle ještě před vložením markupu
+  // (dřív to v tomto uspořádání nejde). Odkaz v <head> se jen přepisuje, nepřibývá.
+  function preloadHeroPoster(html) {
+    const poster = html.match(/<video[^>]*\bposter="([^"]+)"/i)?.[1]
+    if (!poster) return
+
+    let link = document.querySelector('link[data-hero-poster]')
+    if (!link) {
+      link = document.createElement('link')
+      link.rel = 'preload'
+      link.as = 'image'
+      link.setAttribute('fetchpriority', 'high')
+      link.setAttribute('data-hero-poster', '')
+      document.head.appendChild(link)
+    }
+    if (link.getAttribute('href') !== poster) link.setAttribute('href', poster)
+  }
+
   async function render(route, { scroll = true } = {}) {
 
     const blocksContainer = document.querySelector("#wms-blocks")
@@ -77,7 +96,11 @@ export function createRouter(options) {
     document.querySelector('meta[name="description"]')?.setAttribute("content", route.description);
 
     const blocks = createPathBlocks(route)
-    blocksContainer.replaceChildren(document.createRange().createContextualFragment(blocks.join("\n")))   // Fragment allows executing scripts inside loaded HTML (dangerous for prod, fine for local dev)
+    const html = blocks.join("\n")
+
+    preloadHeroPoster(html)
+
+    blocksContainer.replaceChildren(document.createRange().createContextualFragment(html))   // Fragment allows executing scripts inside loaded HTML (dangerous for prod, fine for local dev)
 
     // Active link class
     if (isActiveLinkClass) {

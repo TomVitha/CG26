@@ -11,6 +11,11 @@
   <meta name="Copyright" content="Copyright © 2019 CENTRAL GROUP, a.s.">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="icon" href="https://www.central-group.cz/wms3/favicon.ico">
+  <!-- ! Původ obrázků a videí – DNS + TLS se vyřídí dřív, než router vloží bloky.
+       Poster hero videa bývá LCP prvek a v tomto uspořádání se o něj žádá až z JS
+       (preload posteru odesílá wms/url-router.js těsně před vložením bloků). -->
+  <link rel="preconnect" href="https://www.central-group.cz">
+  <link rel="dns-prefetch" href="https://www.central-group.cz">
   <!-- ! Jquery - Outdated version from 2013 -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <!-- ! Fancybox - Outdated version from 2019, deprecated and superseded by Fancyapps UI -->
