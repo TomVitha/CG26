@@ -519,6 +519,14 @@
     aspect-ratio: 16 / 9;
     max-height: 400px;
   }
+
+  /* Dlaždice na výšku zůstávají na výšku i na mobilu – jednak se tím mřížka nescvrkne
+     na řadu stejných pruhů, jednak 4:5 odpovídá svislému posteru i videu (900 × 1120).
+     Nad ~480px šířky by bylo 4:5 neúnosně vysoké, proto vlastní max-height. */
+  .hp-banner.tall {
+    aspect-ratio: 4 / 5;
+    max-height: 560px;
+  }
 }
 
 /* # PROMO BANNER
