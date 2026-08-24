@@ -507,6 +507,20 @@
   }
 }
 
+/* Pod 992px je mřížka jednosloupcová a dlaždice zabírá celou šířku – s pevnou výškou
+   250px by z obrázku při 991px zbylo 26 % (poměr 3,84 : 1). Výšku proto řídí poměr stran:
+   min-height 250px zachovává současnou podobu na telefonu, max-height drží stránku
+   v rozumné délce na tabletu. Poměr se tím drží v rozsahu 1,15–2,40 místo 1,15–3,84. */
+@media (width < 992px) {
+  .hp-banner {
+    /* width: 100% je nutná – s poměrem stran a min-height si prohlížeč jinak dopočítá
+       šířku z výšky (250 × 16/9 = 444px) a dlaždice přeteče sloupec */
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    max-height: 400px;
+  }
+}
+
 /* # PROMO BANNER
    Prokliknutelná dlaždice – obrázek nebo video přes celou plochu, obsah zarovnaný dolů.
    Dvojice bannerů na konci stránky se sází do mřížky .promo-banners.

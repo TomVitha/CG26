@@ -5,7 +5,10 @@
     /* grid-row: span 1; */
   }
 
-  @media (width > 992px) {
+  /* >= kvůli konzistenci se zbytkem webu (jinde je hranicí `width < 992px`);
+     se `>` byla mřížka na přesně 992px ještě jednosloupcová, zatímco okolní layout
+     už byl desktopový – a dlaždice tam měly ze všech šířek nejhorší ořez */
+  @media (width >= 992px) {
     & {
       /* Řádky budou všechny stejně vysoké (FIX pro kolapsnutý řádek a nepřekrývající se tall bannery) */
       grid-auto-rows: 1fr;
