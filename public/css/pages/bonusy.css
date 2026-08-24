@@ -1,0 +1,240 @@
+/* ==========================================================================
+   # BONUSY
+   Markup: blocks/bonusy.html
+
+   Sdílené prvky: .page-intro-heading / .page-intro-text, .section-heading,
+   .brow / .brow--blue, info panel (.info-head / .info-icon / .info-title /
+   .info-note / .info-subtitle / .check-list) – vše v components.css,
+   .btn / .btn-primary (controls.css), .bg-light-blue (colors.css)
+   ========================================================================== */
+
+.bonuses {
+  --bonuses-radius: var(--controls-border-radius);
+  --bonuses-shadow: 0 12px 32px -12px rgba(0, 0, 0, 0.05);
+  --bonuses-gap: 48px;
+}
+
+
+/* ## SLEVA PŘI ZRYCHLENÉ PLATBĚ */
+.bonus-discount {
+  align-items: center;
+  row-gap: var(--bonuses-gap);
+}
+
+/* Obrázek je dekorace – nikdy se nezvětšuje nad svou velikost a drží se na střed sloupce */
+.bonus-figure {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+  }
+}
+
+/* Panel má stejné provedení jako .programs-panel na stránce financování,
+   jen s menší ikonou a drobnějším mezinadpisem podle návrhu. */
+.bonus-panel {
+  --info-icon-size: 32px;
+
+  .info-icon {
+    font-size: 1.25rem;
+  }
+
+  .info-title {
+    font-size: 1.5rem;
+  }
+
+  /* „Forma bonusu:" je v návrhu drobný mezinadpis, ne velký nadpis jako u programů */
+  .info-subtitle {
+    margin-bottom: 0;
+    font-size: 1rem;
+  }
+
+  /* oddělovač i pod poslední položkou – stejně jako u .programs-panel */
+  .check-list li {
+    border-top: none;
+    border-bottom: 1px solid var(--gray-200);
+  }
+}
+
+.bonus-cta {
+  margin-top: 40px;
+}
+
+
+/* ## VĚRNOSTNÍ A MNOŽSTEVNÍ SLEVY */
+.loyalty {
+  row-gap: var(--bonuses-gap);
+}
+
+/* Do 991px je levý sloupec jen průhledný obal – jeho děti se stávají přímo položkami
+   mřížky, takže tlačítko může přes order odejít až za obrázek se slevami. */
+.loyalty-col {
+  display: contents;
+}
+
+.loyalty-info,
+.loyalty-cta {
+  grid-column: 1 / -1;
+}
+
+.loyalty-cta {
+  order: 1;
+}
+
+.loyalty-info {
+  p {
+    max-width: 46ch;
+  }
+}
+
+.loyalty-figure {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    max-width: 560px;
+    height: auto;
+  }
+}
+
+/* Výše slevy podle počtu bytů – <dl> s dvojicemi hodnota / popis */
+.loyalty-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin: 40px 0 0;
+}
+
+.loyalty-stat {
+  padding: 24px;
+  border-radius: var(--bonuses-radius);
+  background-color: var(--white);
+  box-shadow: var(--bonuses-shadow);
+}
+
+.loyalty-stat-value {
+  margin-bottom: 4px;
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--body-text-color);
+
+  /* žlutá čárka nad hodnotou (.brow) je v této velikosti blíž k textu */
+  &::before {
+    margin-bottom: 14px;
+  }
+}
+
+.loyalty-stat-label {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--muted-text-color);
+}
+
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+/* Desktop: obrázek vlevo / panel vpravo, u věrnostních slev text vlevo a médium vpravo.
+   Tlačítko druhé sekce sedí pod textem v levém sloupci, na užších šířkách jde na konec. */
+@media (width >= 992px) {
+  .bonus-discount {
+    .bonus-figure {
+      grid-column: 1 / span 6;
+    }
+
+    .bonus-panel {
+      grid-column: 7 / -1;
+      max-width: 560px;
+    }
+  }
+
+  .loyalty {
+    align-items: start;
+
+    .loyalty-col {
+      display: flex;
+      flex-direction: column;
+      grid-column: 1 / span 5;
+    }
+
+    .loyalty-cta {
+      order: 0;
+      margin-top: 40px;
+      align-self: start;
+    }
+
+    .loyalty-media {
+      grid-column: 7 / -1;
+    }
+  }
+}
+
+/* Tablet a mobil: vše pod sebou, obrázky menší – jsou dekorativní a nemají ukrajovat
+   z výšky obrazovky víc než obsah. */
+@media (width < 992px) {
+  .bonuses {
+    --bonuses-gap: 40px;
+  }
+
+  .bonus-figure img {
+    max-width: 380px;
+  }
+
+  .loyalty-figure img {
+    max-width: 440px;
+  }
+
+  .loyalty-stats {
+    margin-top: 32px;
+  }
+}
+
+/* Pod 768px se dlaždice se slevami skládají pod sebe a mění se na řádky
+   (tři svislé karty by na telefonu zabraly půl obrazovky a popisek by se drolil). */
+@media (width < 768px) {
+  .loyalty-stats {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .loyalty-stat {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    column-gap: 24px;
+    padding: 20px 24px;
+  }
+
+  .loyalty-stat-value {
+    margin-bottom: 0;
+    font-size: 2rem;
+
+    &::before {
+      margin-bottom: 8px;
+    }
+  }
+}
+
+@media (width < 576px) {
+  .bonus-figure img {
+    max-width: 280px;
+  }
+
+  .loyalty-figure img {
+    max-width: 320px;
+  }
+
+  .bonus-cta .btn,
+  .loyalty-cta .btn {
+    width: 100%;
+  }
+}

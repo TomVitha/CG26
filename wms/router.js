@@ -67,6 +67,16 @@ const routerOptions = {
       ],
     },
     {
+      path: "/bonusy",
+      name: "bonusy",
+      title: "Bonusy",
+      description: "Zvýhodnění pro naše zákazníky – sleva za zrychlenou platbu i věrnostní a množstevní slevy.",
+      blocks: [
+        { src: "meta-common" },
+        { src: "bonusy" },
+      ],
+    },
+    {
       path: "/reference",
       name: "reference",
       title: "Reference",
