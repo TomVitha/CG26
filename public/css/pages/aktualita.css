@@ -1,6 +1,5 @@
 /* ==========================================================================
    # AKTUALITA – detail článku (typová šablona)
-   Markup: blocks/aktualita.html
 
    Sdílené prvky: galerie a lightbox (.cg-gallery-* / .cg-lightbox-* v components.css
    + js/gallery.js),
@@ -8,7 +7,7 @@
 
    Tři šířky obsahu:
      .container-narrow          1168px – hlavní obrázek přes celou šířku
-     --article-text-width        950px – texty (kvůli délce řádku)
+     --article-text-width        950px – texty 
      --article-inline-width      780px – galerie a obrázky uvnitř článku
    ========================================================================== */
 
@@ -21,8 +20,7 @@
 
 
 /* ## HLAVIČKA ČLÁNKU
-   Stránka nemá hero sekci, takže odsazení od fixní hlavičky webu musí zajistit
-   hlavička článku (na ostatních stránkách to dělá padding-top v .hero). */
+   Stránka nemá hero sekci - odsazení v hlavičce článku */
 .article-header {
   max-width: var(--article-text-width);
   margin-inline: auto;
@@ -31,7 +29,7 @@
   text-align: center;
 }
 
-/* Nadřazená rubrika – čárka a verzálky před nadpisem */
+
 .article-kicker {
   display: flex;
   align-items: center;
@@ -46,9 +44,9 @@
 
   &::before {
     content: "";
-    width: 16px;
-    height: 1px;
-    background-color: currentColor;
+    width: 11px;
+    height: 2px;
+    background: var(--blue-medium);
   }
 }
 
@@ -138,13 +136,13 @@
     color: var(--gray-500);
   }
 
-  /* Seznam s odrážkami */
-  ul {
+  /* Seznam s odrážkami.  ul:not([class]) (kvůli pásu náhledů .cg-gallery-thumbs` */
+  ul:not([class]) {
     margin-bottom: var(--article-block-spacing);
     padding-left: 0;
     list-style: none;
 
-    li {
+    > li {
       position: relative;
       padding-left: 24px;
       margin-bottom: 12px;
@@ -157,11 +155,11 @@
         content: "";
         position: absolute;
         left: 4px;
-        top: 0.65em;
-        width: 6px;
-        height: 6px;
+        top: 0.7em;
+        width: 5px;
+        height: 5px;
         border-radius: 50%;
-        background-color: var(--cg-yellow);
+        background-color: var(--gray-500);
       }
     }
   }
