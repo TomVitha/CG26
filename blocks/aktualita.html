@@ -1,0 +1,229 @@
+<!-- přidat @import do public/css/main.css -->
+<link href="css/pages/aktualita.css" rel="stylesheet" type="text/css">
+
+<!-- ŠABLONA DETAILU AKTUALITY
+     Stránka nemá hero sekci, proto je h1 zároveň nadpisem článku a hlavička článku
+     si sama odsazuje obsah od fixní hlavičky webu (--header-height).
+     Obsah je v užším `.container-narrow` (1168px), text a média uvnitř článku jsou
+     ještě užší – viz proměnné v css/pages/aktualita.css. -->
+<article class="article">
+
+  <div class="container-narrow">
+
+    <!-- ## HLAVIČKA ČLÁNKU -->
+    <header class="article-header">
+      <p class="article-kicker">Rezidenční projekty</p>
+
+      <h1 class="article-title">
+        <strong>Parková čtvrť:</strong> Jak roste nová dominanta Žižkova
+      </h1>
+
+      <p class="article-perex">
+        Pražský rezidenční trh prochází nejvýraznější proměnou za poslední desetiletí.
+        Nové projekty už nejsou jen místem k přespání, ale stávají se komplexními
+        urbanistickými celky, které definují vizuální a ekologickou identitu celých čtvrtí.
+      </p>
+
+      <p class="article-meta">
+        <time datetime="2026-03-12">12. března 2026</time>
+        <span class="article-meta-separator" aria-hidden="true">•</span>
+        <!-- TODO: hodnotu doplní calculateReadingTime z počtu slov v .article-body -->
+        <span data-reading-time>6 min čtení</span>
+      </p>
+    </header>
+
+    <!-- ## HLAVNÍ OBRÁZEK (přes celou šířku užšího kontejneru) -->
+    <figure class="article-media">
+      <!-- TODO: zástupný obrázek -->
+      <img src="https://www.central-group.cz/Uloziste/86/86ff1fee-f02d-47e6-b397-cf1849cd18a4.jpg"
+        alt="Rezidenční projekt Parková čtvrť za soumraku" width="1168" height="620">
+    </figure>
+
+    <!-- ## TĚLO ČLÁNKU -->
+    <div class="article-body">
+
+      <h2>Urbanistická vize pro 21. století</h2>
+
+      <p>
+        Projekt Parková čtvrť představuje zásadní milník v rozvoji pražské rezidenční scény.
+        Na místě bývalých brownfieldů vzniká komplexní urbanistický celek, který nejenly
+        přináší nové bydlení, ale především definuje vizuální a ekologickou identitu
+        celého Žižkova.
+      </p>
+
+      <p>
+        Hlavním cílem architektů bylo vytvořit místo, které se bude cítit jako skutečná
+        čtvrť – s vlastní dynamikou, komunitou a kvalitním veřejným prostorem. Projekt proto
+        zahrnuje rozsáhlé zelené plochy, komerční prostory a inovativní dopravní řešení.
+      </p>
+
+      <p>
+        Transformace Žižkova je takřka revoluční. Zatímco dříve se jednalo o lokalitu
+        vnímanou jako periferní, Parková čtvrť ji proměňuje v atraktivní centrum moderního
+        městského života. Projekt reaguje na potřeby dnešních obyvatel – nabízet kvalitní
+        bydlení, které je zároveň udržitelné a komfortní.
+      </p>
+
+      <!-- ## GALERIE V ČLÁNKU (sdílená komponenta – js/gallery.js) -->
+      <div class="article-gallery" data-cg-gallery>
+
+        <div class="cg-gallery-stage">
+          <!-- TODO: zástupné fotografie -->
+          <img class="cg-gallery-image" src="https://www.central-group.cz/Uloziste/0e/0eefd926-f099-4d5d-a3c6-bba84ba408ea.jpg" alt="Parková čtvrť – pohled z ulice">
+          <button type="button" class="cg-gallery-stage-btn" aria-label="Zvětšit fotografii"></button>
+          <button type="button" class="cg-gallery-nav cg-gallery-nav--prev" aria-label="Předchozí fotografie">
+            <i class="fa-sharp fa-solid fa-arrow-left" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="cg-gallery-nav cg-gallery-nav--next" aria-label="Další fotografie">
+            <i class="fa-sharp fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="cg-gallery-zoom" aria-label="Otevřít galerii článku">
+            <i class="fa-regular fa-magnifying-glass-plus" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <ul class="cg-gallery-thumbs">
+          <li>
+            <button type="button" class="cg-gallery-thumb">
+              <img src="https://www.central-group.cz/Uloziste/0e/0eefd926-f099-4d5d-a3c6-bba84ba408ea.jpg" alt="Parková čtvrť – fotografie 1" loading="lazy">
+            </button>
+          </li>
+          <li>
+            <button type="button" class="cg-gallery-thumb">
+              <img src="https://www.central-group.cz/Uloziste/96/96d1835e-10f3-4f77-b700-595157fb230d.jpg" alt="Parková čtvrť – fotografie 2" loading="lazy">
+            </button>
+          </li>
+          <li>
+            <button type="button" class="cg-gallery-thumb">
+              <img src="https://www.central-group.cz/Uloziste/bd/bd68d40a-1290-4aab-ba03-c63a84e09c09.jpg" alt="Parková čtvrť – fotografie 3" loading="lazy">
+            </button>
+          </li>
+          <li>
+            <button type="button" class="cg-gallery-thumb">
+              <img src="https://www.central-group.cz/Uloziste/54/54471479-4e98-4891-a6cb-616bcd575aeb.jpg" alt="Parková čtvrť – fotografie 4" loading="lazy">
+            </button>
+          </li>
+          <li>
+            <button type="button" class="cg-gallery-thumb">
+              <img src="https://www.central-group.cz/Uloziste/86/86ff1fee-f02d-47e6-b397-cf1849cd18a4.jpg" alt="Parková čtvrť – fotografie 5" loading="lazy">
+            </button>
+          </li>
+          <li>
+            <button type="button" class="cg-gallery-thumb">
+              <img src="https://www.central-group.cz/Uloziste/6d/6d3c1333-12e0-4e20-9f88-c06677468779.jpg" alt="Parková čtvrť – fotografie 6" loading="lazy">
+            </button>
+          </li>
+          <li>
+            <button type="button" class="cg-gallery-thumb">
+              <img src="https://www.central-group.cz/Uloziste/f8/f8424307-67d5-493b-9106-5576b8092c2f.jpg" alt="Parková čtvrť – fotografie 7" loading="lazy">
+            </button>
+          </li>
+          <li class="cg-gallery-more">
+            <button type="button" class="cg-gallery-thumb-more">
+              <span class="cg-gallery-more-icon"><i class="fa-regular fa-images" aria-hidden="true"></i></span>
+              <span class="cg-gallery-more-count"></span>
+            </button>
+          </li>
+        </ul>
+
+      </div>
+
+      <h2>Architektura, která respektuje kontext</h2>
+
+      <p>
+        Architektonické řešení Parkové čtvrti vychází z hlubokého respektu k historickému
+        kontextu Žižkova. Projekt se nesnaží vymstít si dominantní postavení, ale naopak se
+        snaží navázat na stávající uliční čáru a urbanistickou strukturu.
+      </p>
+
+      <p>
+        Budovy jsou navrženy tak, aby se harmonicky zapojily do stávající zástavby. Použité
+        materiály – převážně cihla a dřevo – odkazují na tradiční pražskou architekturu,
+        zároveň však zajišťují moderní tepelnou izolaci a komfort.
+      </p>
+
+      <h3>Materiály a udržitelnost</h3>
+
+      <p>
+        Udržitelnost je u Parkové čtvrti zásadním parametrem. Projekt využívá materiály
+        s nízkou uhlíkovou stopou a klade důraz na energetickou efektivitu. Budovy jsou
+        navrženy jako téměř nulové, což znamená, že spotřebovávají minimální množství
+        energie na vytápění a chlazení.
+      </p>
+
+      <ul>
+        <li>Šetrné materiály s certifikací pro udržitelnou výstavbu</li>
+        <li>Energeticky úsporné technologie a rekuperace</li>
+        <li>Zelené střechy a fasády pro zlepšení mikroklimatu</li>
+        <li>Podzemní parkování pro minimalizaci dopravy v lokalitě</li>
+        <li>Cyklostezky a bezpečné pěší zóny</li>
+      </ul>
+
+      <!-- ## OBRÁZEK V ČLÁNKU S POPISKEM -->
+      <figure class="article-figure">
+        <!-- TODO: zástupný obrázek -->
+        <img src="https://www.central-group.cz/Uloziste/96/96d1835e-10f3-4f77-b700-595157fb230d.jpg"
+          alt="Vizualizace centrálního parku Parkové čtvrti" loading="lazy">
+        <figcaption>Vizualizace centrálního parku Parkové čtvrti / Central Group</figcaption>
+      </figure>
+
+      <h2>Život v nové čtvrti</h2>
+
+      <p>
+        Život v Parkové čtvrti je koncipován jako komfortní a soběstačný. Projekt nabízí
+        širokou škálu služeb – od mateřských školek a obchodů po kavárny a restaurace.
+        Obyvatelé tak mají vše potřebné přímo na dosah ruky.
+      </p>
+
+      <p>
+        Velký důraz je kladen na komunitní život. Projekt zahrnuje komunitní centrum, kde se
+        budou konat kulturní akce, workshopy a setkání sousedů. Cílem je vytvořit skutečnou
+        komunitu, kde se lidé znají a vzájemně se podporují.
+      </p>
+
+    </div>
+  </div>
+
+  <!-- ## TÉMATA (zatím jen vizuální skořápka pro budoucí filtrování) -->
+  <section class="article-topics-section">
+    <div class="container-narrow">
+      <div class="article-topics">
+        <h2 class="article-topics-title">Témata</h2>
+
+        <nav aria-label="Témata článků">
+          <ul class="topic-list">
+            <!-- TODO: odkazy na výpis aktualit podle tématu -->
+            <li><a href="#" class="topic" aria-current="page">Vše</a></li>
+            <li><a href="#" class="topic">Architektura</a></li>
+            <li><a href="#" class="topic">Interiér &amp; design</a></li>
+            <li><a href="#" class="topic">Rezidenční projekty</a></li>
+            <li><a href="#" class="topic">Udržitelnost</a></li>
+            <li><a href="#" class="topic">Financování</a></li>
+            <li><a href="#" class="topic">Ze života CENTRAL GROUP</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <!-- společný lightbox galerií (jeden na stránku) -->
+  <dialog class="cg-lightbox" aria-label="Galerie článku">
+    <div class="cg-lightbox-inner">
+      <img class="cg-lightbox-image" src="" alt="">
+      <p class="cg-lightbox-caption"></p>
+    </div>
+    <button type="button" class="cg-lightbox-nav cg-lightbox-prev" aria-label="Předchozí fotografie">
+      <i class="fa-sharp fa-solid fa-arrow-left" aria-hidden="true"></i>
+    </button>
+    <button type="button" class="cg-lightbox-nav cg-lightbox-next" aria-label="Další fotografie">
+      <i class="fa-sharp fa-solid fa-arrow-right" aria-hidden="true"></i>
+    </button>
+    <button type="button" class="cg-lightbox-close" aria-label="Zavřít galerii">
+      <i class="fa-sharp fa-solid fa-xmark" aria-hidden="true"></i>
+    </button>
+    <p class="cg-lightbox-counter"></p>
+  </dialog>
+
+</article>
+
+<script src="js/gallery.js"></script>

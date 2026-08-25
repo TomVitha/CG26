@@ -24,7 +24,8 @@
 }
 
 .container-narrow {
-  /* TBA */
+  /* užší obsah pro čtené stránky (detail aktuality) – efektivní obsah 1168px */
+  max-width: 1200px;
 }
 
 .container-wide {

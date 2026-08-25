@@ -87,6 +87,16 @@ const routerOptions = {
       ],
     },
     {
+      path: "/aktualita",
+      name: "aktualita",
+      title: "Parková čtvrť: Jak roste nová dominanta Žižkova",
+      description: "Typová šablona detailu aktuality – nadpis, perex, hlavní obrázek, text, galerie a témata.",
+      blocks: [
+        { src: "meta-common" },
+        { src: "aktualita" },
+      ],
+    },
+    {
       path: "/reference",
       name: "reference",
       title: "Reference",
