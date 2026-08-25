@@ -15,22 +15,6 @@
   --info-divider: var(--financing-divider);
 }
 
-.financing-head {
-  text-align: center;
-  margin-bottom: 48px;
-
-  .tag {
-    margin-bottom: 22px;
-  }
-
-  p {
-    max-width: 52ch;
-    margin-inline: auto;
-    margin-bottom: 0;
-    font-size: 1.125rem;
-  }
-}
-
 .financing-cta {
   display: flex;
   justify-content: center;
@@ -161,7 +145,7 @@
 
 /* ## NEJŠIRŠÍ MOŽNOSTI FINANCOVÁNÍ (modrá sekce) */
 .financing-options {
-  .financing-head {
+  .section-head {
     color: var(--white);
   }
 
@@ -340,10 +324,6 @@
     --financing-card-padding: 24px;
   }
 
-  .financing-head {
-    margin-bottom: 40px;
-  }
-
   .financing-cta {
     margin-top: 40px;
   }
@@ -366,10 +346,6 @@
 }
 
 @media (width < 576px) {
-  .financing-head {
-    margin-bottom: 32px;
-  }
-
 
   .info-title br {
     display: none;

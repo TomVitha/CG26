@@ -1,0 +1,12 @@
+/* ==========================================================================
+   # PROČ SI VYBRAT CENTRAL GROUP
+   Markup: blocks/proc-central-group.html
+
+   Stránka je poskládaná výhradně ze sdílených prvků, vlastní styly zatím nemá:
+   .page-intro-heading / .page-intro-text, .benefits + .benefits-list--6,
+   .section-head, .project-tiles / .project-tile* (components.css),
+   .section-heading (typography.css), .btn (controls.css), .bg-blue (colors.css).
+   Chování hover videí v dlaždicích drží public/js/loop-video.js.
+
+   Odchylky této stránky patří sem – ne do components.css.
+   ========================================================================== */

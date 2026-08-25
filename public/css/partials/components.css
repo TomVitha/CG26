@@ -68,6 +68,41 @@
 }
 
 
+/* # HLAVIČKA SEKCE – vystředěný tag, nadpis a krátký text nad obsahem sekce
+   use:
+   <div class="section-head">
+     <div class="tag">ŠTÍTEK</div>
+     <h2 class="section-heading section-heading--lg"><strong>Nadpis</strong></h2>
+     <p>Krátký doprovodný text</p>
+   </div> */
+.section-head {
+  text-align: center;
+  margin-bottom: 48px;
+
+  .tag {
+    margin-bottom: 22px;
+  }
+
+  p {
+    max-width: 52ch;
+    margin-inline: auto;
+    margin-bottom: 0;
+    font-size: 1.125rem;
+  }
+}
+
+@media (width < 992px) {
+  .section-head {
+    margin-bottom: 40px;
+  }
+}
+
+@media (width < 576px) {
+  .section-head {
+    margin-bottom: 32px;
+  }
+}
+
 /* # ÚVOD STRÁNKY – nadpis vlevo, doprovodný text vpravo
    use:
    <div class="layout-grid">
@@ -101,7 +136,8 @@
 
 
 /* # VÝHODY – modrý pruh s ikonami ve sloupcích
-   Počet sloupců určuje modifikátor .benefits-list--3 / --4 / --5.
+   Počet sloupců určuje modifikátor .benefits-list--3 / --4 / --5 / --6,
+   modifikátor .benefits-list--center zarovná obsah sloupců na střed.
    use:
    <section class="bg-blue benefits">
      <div class="container-main">
@@ -140,6 +176,22 @@
   --benefits-columns: 4;
 }
 
+/* varianta s obsahem na střed (např. „Proč si vybrat CENTRAL GROUP") */
+.benefits-list--center {
+  text-align: center;
+
+  .benefit-icon {
+    margin-inline: auto;
+  }
+}
+
+.benefits-list--6 {
+  --benefits-columns: 6;
+
+  /* při šesti sloupcích by výchozí mezera 80px nechala na text ~170px */
+  --benefits-gap: 48px;
+}
+
 .benefit {
   position: relative;
 
@@ -163,7 +215,8 @@
 /* první sloupec v řádku oddělovač nemá */
 .benefits-list--3 > .benefit:nth-child(3n + 1)::before,
 .benefits-list--4 > .benefit:nth-child(4n + 1)::before,
-.benefits-list--5 > .benefit:nth-child(5n + 1)::before {
+.benefits-list--5 > .benefit:nth-child(5n + 1)::before,
+.benefits-list--6 > .benefit:nth-child(6n + 1)::before {
   content: none;
 }
 
@@ -187,7 +240,7 @@
   color: var(--white);
 }
 
-/* 5 a 4 sloupce → 3 */
+/* 6, 5 a 4 sloupce → 3 */
 @media (width < 1200px) {
   .benefits-list {
     --benefits-columns: 3;
@@ -196,7 +249,8 @@
   }
 
   .benefits-list--4 > .benefit:nth-child(4n + 1)::before,
-  .benefits-list--5 > .benefit:nth-child(5n + 1)::before {
+  .benefits-list--5 > .benefit:nth-child(5n + 1)::before,
+  .benefits-list--6 > .benefit:nth-child(6n + 1)::before {
     content: "";
   }
 
@@ -744,6 +798,170 @@
     margin-top: 2px;
     font-size: 1.5rem;
     color: var(--cg-blue);
+  }
+}
+
+
+/* # DLAŽDICE PROJEKTU – vizualizace na pozadí, přes ni skleněný panel s obsahem.
+   Používá přehled projektů (může být na více stránkách). Video na pozadí je nepovinné
+   a přehrává se až po najetí kurzorem (js/loop-video.js, data-loop-video="hover").
+   use:
+   <div class="project-tiles">
+     <a href="…" class="project-tile">
+       <div class="project-tile-media"><img …> <!-- volitelně <video data-loop-video="hover"> --></div>
+       <div class="project-tile-panel">
+         <h3 class="project-tile-title">Název projektu</h3>
+         <p class="project-tile-location"><span>Praha 3</span><span>Žižkov</span></p>
+         <p class="project-tile-text">…</p>
+         <span class="btn btn-primary btn-md">Prohlédnout …</span>
+       </div>
+     </a> */
+.project-tiles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--layout-gutter);
+}
+
+.project-tile {
+  /* Dlaždice je kontejner: šířka panelu se řídí šířkou dlaždice, ne šířkou okna –
+     na jiné stránce může být dlaždic v řádku jiný počet. Pozor, container query
+     může stylovat jen potomky kontejneru, proto se přepíná panel, ne dlaždice. */
+  container: project-tile / inline-size;
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  min-height: 400px;
+  border-radius: var(--controls-border-radius);
+  color: var(--white);
+}
+
+.project-tile-media {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  :is(img, video) {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: scale 0.4s ease;
+  }
+
+  /* video překrývá obrázek, který slouží jako poster/fallback, a najíždí až na hover */
+  video {
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+}
+
+.project-tile:hover .project-tile-media video {
+  opacity: 1;
+}
+
+/* dlaždice bez videa se na hover jemně přiblíží */
+.project-tile:not(:has(video)):hover .project-tile-media img {
+  scale: 1.05;
+}
+
+/* Skleněný panel – překrývá necelou polovinu dlaždice */
+.project-tile-panel {
+  --project-tile-panel-width: 46%;
+  --project-tile-padding: 40px;
+  --project-tile-line: rgba(255, 255, 255, 0.20);
+
+  width: var(--project-tile-panel-width);
+  padding: var(--project-tile-padding);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+  background:
+    linear-gradient(0deg, rgba(32, 35, 76, 0.50) 0%, rgba(32, 35, 76, 0.50) 100%),
+    rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(25px);
+}
+
+.project-tile-title {
+  margin-bottom: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--white);
+}
+
+/* Lokalita – dva sloupce oddělené svislou čárou, nad i pod vodorovná linka */
+.project-tile-location {
+  width: 100%;
+  margin-bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-block: 1px solid var(--project-tile-line);
+  font-size: 1rem;
+  font-weight: 700;
+
+  span {
+    padding: 12px 8px;
+  }
+
+  span + span {
+    border-left: 1px solid var(--project-tile-line);
+  }
+}
+
+.project-tile-text {
+  margin-bottom: 0;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.project-tile-panel .btn {
+  width: fit-content;
+  max-width: 100%;
+  white-space: normal;
+}
+
+/* Užší dlaždice – panel dostane větší podíl, aby text nebyl v proužku */
+@container project-tile (width < 640px) {
+  .project-tile-panel {
+    --project-tile-panel-width: 55%;
+    --project-tile-padding: 32px;
+  }
+}
+
+/* Nejužší dlaždice (telefon): panel přes celou šířku u spodní hrany,
+   vizualizace zůstává vidět nad ním */
+@container project-tile (width < 420px) {
+  .project-tile-panel {
+    --project-tile-panel-width: 100%;
+    --project-tile-padding: 24px;
+
+    align-self: end;
+
+    .btn {
+      width: 100%;
+    }
+  }
+}
+
+@media (width < 576px) {
+  /* aby nad panelem zbylo místo na vizualizaci */
+  .project-tile {
+    min-height: 460px;
+  }
+}
+
+/* Jedna dlaždice na řádek – dvojice je na tabletu příliš útlá */
+@media (width < 992px) {
+  .project-tiles {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 

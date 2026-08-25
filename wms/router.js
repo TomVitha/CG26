@@ -67,6 +67,16 @@ const routerOptions = {
       ],
     },
     {
+      path: "/proc-central-group",
+      name: "proc-central-group",
+      title: "Proč si vybrat CENTRAL GROUP",
+      description: "Největší rezidenční stavitel v ČR – nejširší nabídka bytů, garance vrácení peněz a kompletní servis pod jednou střechou.",
+      blocks: [
+        { src: "meta-common" },
+        { src: "proc-central-group" },
+      ],
+    },
+    {
       path: "/bonusy",
       name: "bonusy",
       title: "Bonusy",
