@@ -1,11 +1,11 @@
 /* ==========================================================================
    # STRÁNKA HYPOTÉKA
-   Markup: blocks/hypoteka.html, chování tabů: public/js/hypoteka.js
+   Markup: blocks/hypoteka.html, chování tabů: public/js/tabs.js
 
    Sdílené komponenty v partials:
    .section-heading (typography.css), .page-intro, .brow--blue, .benefits,
-   .promo-banner(s), .cta-box, .contact (components.css),
-   .btn-outline-blue (controls.css)
+   .cg-tabs / .cg-tab (taby – components.css), .promo-banner(s), .cta-box,
+   .contact (components.css), .btn-outline-blue (controls.css)
    ========================================================================== */
 
 .hypo {
@@ -37,62 +37,7 @@
   margin-top: 40px;
 }
 
-/* ### Taby */
-.hypo-tabs {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.hypo-tab {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 18px 20px;
-  border: none;
-  border-radius: var(--hypo-radius);
-  background-color: var(--hypo-surface);
-  color: var(--cg-blue);
-  font-family: inherit;
-  font-size: 1rem;
-  line-height: 1.2;
-  text-align: left;
-  cursor: pointer;
-  transition: background-color 0.25s ease, color 0.25s ease;
-
-  > span {
-    white-space: nowrap;
-  }
-
-  strong {
-    font-weight: 700;
-  }
-
-  &:hover {
-    background-color: var(--blue-medium);
-  }
-
-  &[aria-selected="true"] {
-    background-color: var(--cg-blue);
-    color: var(--white);
-  }
-}
-
-.hypo-tab-icon {
-  font-size: 1rem;
-}
-
-/* vyšší specifičnost kvůli Font Awesome (.fa-* nastavuje display) */
-.hypo-tab .hypo-tab-icon--close,
-.hypo-tab[aria-selected="true"] .hypo-tab-icon--plus {
-  display: none;
-}
-
-.hypo-tab[aria-selected="true"] .hypo-tab-icon--close {
-  display: block;
-  color: var(--cg-yellow);
-}
+/* Taby jsou sdílená komponenta .cg-tabs / .cg-tab (components.css) */
 
 /* ### Panel (obrázek + ceny + tlačítko) */
 .hypo-panel {
@@ -228,18 +173,9 @@
    ========================================================================== */
 
 @media (width < 992px) {
-  /* taby nad obsahem, na šířku */
+  /* taby (.cg-tabs) se pod 992px řadí na šířku – viz components.css */
   .hypo-examples {
     grid-template-columns: minmax(0, 1fr);
-  }
-
-  .hypo-tabs {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
-  .hypo-tab {
-    flex: 1 1 150px;
   }
 
   .hypo-panel {
@@ -267,16 +203,6 @@
 }
 
 @media (width < 576px) {
-  /* Taby 2 × 2 */
-  .hypo-tabs {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .hypo-tab {
-    padding: 14px 16px;
-  }
-
   .hypo-cta .cta-heading,
   .hypo-cta .cta-text,
   .hypo-cta .cta-contacts,

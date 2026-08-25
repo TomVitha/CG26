@@ -107,6 +107,16 @@ const routerOptions = {
       ],
     },
     {
+      path: "/efektivni-dispozice",
+      name: "efektivni-dispozice",
+      title: "Efektivní dispozice",
+      description: "Jak navrhujeme naše byty – promyšlené dispozice, snadná zařiditelnost a plnohodnotné bydlení i u menších bytů.",
+      blocks: [
+        { src: "meta-common" },
+        { src: "efektivni-dispozice" },
+      ],
+    },
+    {
       path: "/prehled-projektu",
       name: "prehled-projektu",
       title: "Přehled projektů",

@@ -1396,6 +1396,99 @@
 }
 
 
+/* # TABY – sloupec přepínačů (hypotéka, efektivní dispozice).
+   Chování: js/tabs.js (role="tablist" + data-tabs). Zavřený tab ukazuje „+",
+   otevřený žlutý křížek; rozvržení tabů vůči panelům si určuje stránka.
+   use:
+   <div class="cg-tabs" role="tablist" data-tabs aria-label="…">
+     <button type="button" class="cg-tab" role="tab" id="…" aria-controls="…" aria-selected="true">
+       <span>byt <strong>1+kk</strong></span>
+       <i class="cg-tab-icon cg-tab-icon--plus fa-light fa-plus" aria-hidden="true"></i>
+       <i class="cg-tab-icon cg-tab-icon--close fa-light fa-xmark" aria-hidden="true"></i>
+     </button>
+   </div>
+   <div role="tabpanel" id="…" aria-labelledby="…" tabindex="0" hidden>…</div> */
+.cg-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.cg-tab {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 20px;
+  border: none;
+  border-radius: var(--controls-border-radius);
+  background-color: var(--blue-light);
+  color: var(--cg-blue);
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.2;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease;
+
+  > span {
+    white-space: nowrap;
+  }
+
+  strong {
+    font-weight: 700;
+  }
+
+  &:hover {
+    background-color: var(--blue-medium);
+  }
+
+  &[aria-selected="true"] {
+    background-color: var(--cg-blue);
+    color: var(--white);
+  }
+}
+
+.cg-tab-icon {
+  font-size: 1rem;
+}
+
+/* vyšší specifičnost kvůli Font Awesome (.fa-* nastavuje display) */
+.cg-tab .cg-tab-icon--close,
+.cg-tab[aria-selected="true"] .cg-tab-icon--plus {
+  display: none;
+}
+
+.cg-tab[aria-selected="true"] .cg-tab-icon--close {
+  display: block;
+  color: var(--cg-yellow);
+}
+
+@media (width < 992px) {
+  /* taby nad obsahem, na šířku */
+  .cg-tabs {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .cg-tab {
+    flex: 1 1 150px;
+  }
+}
+
+@media (width < 576px) {
+  /* taby 2 × 2 */
+  .cg-tabs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cg-tab {
+    padding: 14px 16px;
+  }
+}
+
+
 /* # CTA BOX kontakty a tlačítkem. Rozvržení sloupců si určuje stránka */
 .cta-box {
   --cta-padding: 40px;
