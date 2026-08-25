@@ -112,6 +112,8 @@
 }
 
 .loyalty-stat {
+  /* šířka dlaždice řídí velikost hodnoty – viz .loyalty-stat-value */
+  container-type: inline-size;
   padding: 24px;
   border-radius: var(--bonuses-radius);
   background-color: var(--white);
@@ -120,7 +122,11 @@
 
 .loyalty-stat-value {
   margin-bottom: 4px;
-  font-size: 3.5rem;
+  /* 3,5rem je strop; ve třech sloupcích na desktopu se do dlaždice nevejde nejširší
+     hodnota „2,5 %" (potřebuje 175px, k dispozici je 91–165px), proto se velikost
+     odvozuje od šířky dlaždice zmenšené o vodorovný padding */
+  font-size: clamp(1.75rem, calc((100cqi - 48px) * 0.3), 3.5rem);
+  white-space: nowrap;
   font-weight: 800;
   line-height: 1.2;
   color: var(--body-text-color);
@@ -214,9 +220,10 @@
     padding: 20px 24px;
   }
 
+  /* v řádku je vedle hodnoty popis, takže pevná velikost místo odvozené od šířky */
   .loyalty-stat-value {
     margin-bottom: 0;
-    font-size: 2rem;
+    font-size: 2.5rem;
 
     &::before {
       margin-bottom: 8px;
