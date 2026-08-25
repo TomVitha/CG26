@@ -97,6 +97,16 @@ const routerOptions = {
       ],
     },
     {
+      path: "/aktuality",
+      name: "aktuality",
+      title: "Aktuality",
+      description: "Novinky z našich projektů, ze světa architektury i z financování nového bydlení.",
+      blocks: [
+        { src: "meta-common" },
+        { src: "aktuality" },
+      ],
+    },
+    {
       path: "/reference",
       name: "reference",
       title: "Reference",

@@ -1297,6 +1297,105 @@
 }
 
 
+/* # KICKER – rubrika nad nadpisem (krátká čárka + verzálky).
+   Používá detail aktuality i karty v přehledu aktualit.
+   use: <p class="cg-kicker">Rezidenční projekty</p> */
+.cg-kicker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gray-500);
+
+  &::before {
+    content: "";
+    flex: 0 0 auto;
+    width: 11px;
+    height: 2px;
+    background: var(--blue-medium);
+  }
+}
+
+
+/* # TÉMATA – světlý box se štítky (zatím bez chování, připraveno pro filtrování).
+   use:
+   <div class="cg-topics">
+     <h2 class="cg-topics-title">Témata</h2>
+     <nav aria-label="Témata článků">
+       <ul class="cg-topic-list">
+         <li><a href="…" class="cg-topic" aria-current="page">Vše</a></li>
+       </ul>
+     </nav>
+   </div> */
+.cg-topics {
+  padding: 48px 32px;
+  border-radius: var(--controls-border-radius);
+  background-color: var(--blue-light);
+  text-align: center;
+}
+
+.cg-topics-title {
+  margin-bottom: 32px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--cg-blue);
+}
+
+.cg-topic-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.cg-topic {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  border: 1px solid var(--blue-medium);
+  border-radius: var(--controls-border-radius);
+  background-color: var(--white);
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--gray-500);
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+
+  &:hover,
+  &:focus-visible {
+    border-color: var(--cg-blue);
+    color: var(--cg-blue);
+  }
+
+  &[aria-current] {
+    border-color: var(--cg-blue);
+    background-color: var(--cg-blue);
+    color: var(--white);
+  }
+}
+
+@media (width < 576px) {
+  .cg-topics {
+    padding: 32px 20px;
+  }
+
+  .cg-topics-title {
+    font-size: 1.25rem;
+  }
+
+  .cg-topic {
+    padding: 8px 16px;
+  }
+}
+
+
 /* # CTA BOX kontakty a tlačítkem. Rozvržení sloupců si určuje stránka */
 .cta-box {
   --cta-padding: 40px;

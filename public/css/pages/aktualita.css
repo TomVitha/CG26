@@ -1,5 +1,6 @@
 /* ==========================================================================
    # AKTUALITA – detail článku (typová šablona)
+   Markup: blocks/aktualita.html
 
    Sdílené prvky: galerie a lightbox (.cg-gallery-* / .cg-lightbox-* v components.css
    + js/gallery.js),
@@ -7,7 +8,7 @@
 
    Tři šířky obsahu:
      .container-narrow          1168px – hlavní obrázek přes celou šířku
-     --article-text-width        950px – texty 
+     --article-text-width        950px – texty (kvůli délce řádku)
      --article-inline-width      780px – galerie a obrázky uvnitř článku
    ========================================================================== */
 
@@ -20,7 +21,8 @@
 
 
 /* ## HLAVIČKA ČLÁNKU
-   Stránka nemá hero sekci - odsazení v hlavičce článku */
+   Stránka nemá hero sekci, takže odsazení od fixní hlavičky webu musí zajistit
+   hlavička článku (na ostatních stránkách to dělá padding-top v .hero). */
 .article-header {
   max-width: var(--article-text-width);
   margin-inline: auto;
@@ -29,25 +31,13 @@
   text-align: center;
 }
 
-
+/* Rubrika je sdílený .cg-kicker (components.css), na detailu je na střed,
+   s větší mezerou pod sebou a o něco těsnějším prostrkáním (v přehledu aktualit
+   stojí nad menšími nadpisy, tady nad velkým titulkem článku). */
 .article-kicker {
-  display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 12px;
   margin-bottom: 24px;
-  font-size: 0.75rem;
-  font-weight: 700;
   letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--gray-500);
-
-  &::before {
-    content: "";
-    width: 11px;
-    height: 2px;
-    background: var(--blue-medium);
-  }
 }
 
 .article-title {
@@ -136,7 +126,8 @@
     color: var(--gray-500);
   }
 
-  /* Seznam s odrážkami.  ul:not([class]) (kvůli pásu náhledů .cg-gallery-thumbs` */
+  /* Seznam s odrážkami.
+     `ul:not([class])` (kvůli pásu náhledů .cg-gallery-thumbs` */
   ul:not([class]) {
     margin-bottom: var(--article-block-spacing);
     padding-left: 0;
@@ -199,59 +190,9 @@
 }
 
 
-/* ## TÉMATA – vizuální skořápka pro budoucí filtrování */
+/* ## TÉMATA – box je sdílený .cg-topics (components.css) */
 .article-topics-section {
   margin-top: var(--section-spacing);
-}
-
-.article-topics {
-  padding: 48px 32px;
-  border-radius: var(--controls-border-radius);
-  background-color: var(--blue-light);
-  text-align: center;
-}
-
-.article-topics-title {
-  margin-bottom: 32px;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--cg-blue);
-}
-
-.topic-list {
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-}
-
-.topic {
-  display: inline-flex;
-  align-items: center;
-  padding: 10px 20px;
-  border: 1px solid var(--blue-medium);
-  border-radius: var(--controls-border-radius);
-  background-color: var(--white);
-  font-size: 0.875rem;
-  font-weight: 700;
-  line-height: 1.2;
-  color: var(--gray-500);
-  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
-
-  &:hover,
-  &:focus-visible {
-    border-color: var(--cg-blue);
-    color: var(--cg-blue);
-  }
-
-  &[aria-current] {
-    border-color: var(--cg-blue);
-    background-color: var(--cg-blue);
-    color: var(--white);
-  }
 }
 
 
@@ -310,15 +251,4 @@
     }
   }
 
-  .article-topics {
-    padding: 32px 20px;
-  }
-
-  .article-topics-title {
-    font-size: 1.25rem;
-  }
-
-  .topic {
-    padding: 8px 16px;
-  }
 }

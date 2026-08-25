@@ -1,0 +1,465 @@
+<!--přidat @import do public/css/main.css  -->
+<link href="css/pages/aktuality.css" rel="stylesheet" type="text/css">
+
+<!-- PŘEHLED AKTUALIT
+     Stránka nemá hero sekci, proto si odsazení od fixní hlavičky webu řeší
+     .news-header sama (--header-height), stejně jako .article-header na detailu.
+
+     Karty článků mají tři varianty rozvržení, viz css/pages/aktuality.css:
+       .news-card                 obrázek nahoře, text pod ním
+       .news-card--horizontal     obrázek vlevo, text vpravo
+       .news-card--featured       hlavní článek – text vlevo, obrázek vpravo
+
+     Odkaz je vždy jen na nadpisu (kvůli čtečkám a SEO), jeho ::after ale překryje
+     celou kartu, takže se dá kliknout kamkoli. Výjimkou je hlavní článek, který má
+     vlastní tlačítko.
+
+     TODO: všechny články jsou zástupné – nahradit výpisem z WMS.
+     TODO: hodnoty „X min čtení“ doplní calculateReadingTime (viz blocks/aktualita.html). -->
+<div class="news">
+
+  <!-- ## HLAVIČKA STRÁNKY -->
+  <div class="container-main">
+    <header class="news-header">
+      <h1 class="brow news-title">Aktuality</h1>
+    </header>
+  </div>
+
+  <!-- ## TÉMATA (sdílená komponenta, zatím jen vizuální skořápka pro filtrování) -->
+  <section class="news-topics-section">
+    <div class="container-main">
+      <div class="cg-topics">
+        <h2 class="cg-topics-title">Témata</h2>
+
+        <nav aria-label="Témata článků">
+          <ul class="cg-topic-list">
+            <!-- TODO: odkazy na výpis aktualit podle tématu -->
+            <li><a href="#" class="cg-topic" aria-current="page">Vše</a></li>
+            <li><a href="#" class="cg-topic">Architektura</a></li>
+            <li><a href="#" class="cg-topic">Interiér &amp; design</a></li>
+            <li><a href="#" class="cg-topic">Rezidenční projekty</a></li>
+            <li><a href="#" class="cg-topic">Udržitelnost</a></li>
+            <li><a href="#" class="cg-topic">Financování</a></li>
+            <li><a href="#" class="cg-topic">Ze života CENTRAL GROUP</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <!-- ## HLAVNÍ ČLÁNEK -->
+  <section class="news-featured-section">
+    <div class="container-main">
+
+      <article class="news-card news-card--featured">
+        <div class="news-card-body">
+          <p class="cg-kicker">Rezidenční projekty</p>
+
+          <h2 class="news-card-title">
+            <a href="/aktualita">Parková čtvrť: Jak roste nová dominanta Žižkova</a>
+          </h2>
+
+          <p class="news-card-text">
+            Pražský rezidenční trh prochází nejvýraznější proměnou za poslední desetiletí.
+            Nové projekty už nejsou jen místem k přespání, ale stávají se komplexními
+            urbanistickými celky, které definují vizuální i ekologickou identitu celých čtvrtí.
+          </p>
+
+          <p class="news-card-cta">
+            <a href="/aktualita" class="btn btn-primary btn-md">Přečíst celý článek</a>
+          </p>
+
+          <p class="news-card-meta">
+            <time datetime="2026-03-12">12. března 2026</time>
+            <span aria-hidden="true">•</span>
+            <span data-reading-time>6 min čtení</span>
+          </p>
+        </div>
+
+        <figure class="news-card-media">
+          <!-- TODO: zástupný obrázek -->
+          <img src="https://www.central-group.cz/Uloziste/86/86ff1fee-f02d-47e6-b397-cf1849cd18a4.jpg"
+            alt="Vizualizace projektu Parková čtvrť" width="688" height="459">
+        </figure>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ## PŘEDCHOZÍ ČLÁNKY – tři sloupce -->
+  <section class="news-latest-section">
+    <div class="container-main">
+      <div class="news-grid">
+
+        <article class="news-card">
+          <figure class="news-card-media">
+            <img src="https://www.central-group.cz/Uloziste/0e/0eefd926-f099-4d5d-a3c6-bba84ba408ea.jpg"
+              alt="" width="448" height="252" loading="lazy">
+          </figure>
+          <div class="news-card-body">
+            <p class="cg-kicker">Udržitelnost</p>
+            <h3 class="news-card-title">
+              <a href="/aktualita">Zelené střechy jako standard nové výstavby</a>
+            </h3>
+            <p class="news-card-text">
+              Vegetační střechy zadržují dešťovou vodu, snižují teplotu v okolí domu
+              a prodlužují životnost hydroizolace.
+            </p>
+            <p class="news-card-meta">
+              <time datetime="2026-03-05">5. března 2026</time>
+              <span aria-hidden="true">•</span>
+              <span data-reading-time>4 min čtení</span>
+            </p>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <figure class="news-card-media">
+            <img src="https://www.central-group.cz/Uloziste/96/96d1835e-10f3-4f77-b700-595157fb230d.jpg"
+              alt="" width="448" height="252" loading="lazy">
+          </figure>
+          <div class="news-card-body">
+            <p class="cg-kicker">Financování</p>
+            <h3 class="news-card-title">
+              <a href="/aktualita">Sleva 4 % při zrychlené platbě: kdy se vyplatí</a>
+            </h3>
+            <p class="news-card-text">
+              Spočítali jsme, za jakých podmínek je rychlejší úhrada kupní ceny
+              výhodnější než rozložení splátek do delšího období.
+            </p>
+            <p class="news-card-meta">
+              <time datetime="2026-02-26">26. února 2026</time>
+              <span aria-hidden="true">•</span>
+              <span data-reading-time>5 min čtení</span>
+            </p>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <figure class="news-card-media">
+            <img src="https://www.central-group.cz/Uloziste/bd/bd68d40a-1290-4aab-ba03-c63a84e09c09.jpg"
+              alt="" width="448" height="252" loading="lazy">
+          </figure>
+          <div class="news-card-body">
+            <p class="cg-kicker">Interiér &amp; design</p>
+            <h3 class="news-card-title">
+              <a href="/aktualita">Jak si vybrat standardy interiéru bez zbytečných kompromisů</a>
+            </h3>
+            <p class="news-card-text">
+              Průvodce klientskými změnami od výběru podlah po rozmístění zásuvek –
+              a termíny, do kdy se dají stihnout.
+            </p>
+            <p class="news-card-meta">
+              <time datetime="2026-02-18">18. února 2026</time>
+              <span aria-hidden="true">•</span>
+              <span data-reading-time>7 min čtení</span>
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ## BANNERY -->
+  <section class="promo-banners-section">
+    <div class="container-main">
+      <div class="promo-banners">
+
+        <a href="/byty-lokality" class="promo-banner">
+          <div class="promo-banner-media">
+            <!-- TODO: zástupný obrázek; poster/fallback videa -->
+            <img src="https://www.central-group.cz/Uloziste/86/86ff1fee-f02d-47e6-b397-cf1849cd18a4.jpg" alt="">
+            <!-- Video smyčka na pozadí
+            <video data-loop-video muted loop playsinline preload="none"
+                   aria-hidden="true" tabindex="-1"
+                   poster="https://www.central-group.cz/Uloziste/86/86ff1fee-f02d-47e6-b397-cf1849cd18a4.jpg">
+              <source src="video/lokality.webm" type="video/webm">
+              <source src="video/lokality.mp4" type="video/mp4">
+            </video>
+            -->
+          </div>
+          <div class="promo-banner-content">
+            <h2 class="brow promo-banner-title">
+              Podívejte se na
+              <strong>naše lokality</strong>
+            </h2>
+            <p>Objevte moderní byty v atraktivních částech Prahy i jejím okolí.</p>
+            <span class="btn btn-md">Prozkoumat lokality</span>
+          </div>
+        </a>
+
+        <a href="/page/usporne-stavby" class="promo-banner">
+          <div class="promo-banner-media">
+            <img src="https://www.central-group.cz/Uloziste/54/54471479-4e98-4891-a6cb-616bcd575aeb.jpg" alt="">
+            <!-- Video smyčka na pozadí
+            <video data-loop-video muted loop playsinline preload="none"
+                   aria-hidden="true" tabindex="-1"
+                   poster="https://www.central-group.cz/Uloziste/54/54471479-4e98-4891-a6cb-616bcd575aeb.jpg">
+              <source src="video/uspornebyty.webm" type="video/webm">
+              <source src="video/uspornebyty.mp4" type="video/mp4">
+            </video>
+            -->
+          </div>
+          <div class="promo-banner-content">
+            <h2 class="brow promo-banner-title">
+              Energeticky
+              <strong>úsporné byty</strong>
+            </h2>
+            <p>Šetrné k životnímu prostředí</p>
+            <span class="btn btn-md">Zjistit více</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ## STARŠÍ ČLÁNKY – vlevo velký náhled, vpravo tři kompaktní -->
+  <section class="news-split-section">
+    <div class="container-main">
+      <div class="news-split">
+
+        <article class="news-card">
+          <figure class="news-card-media">
+            <img src="https://www.central-group.cz/Uloziste/54/54471479-4e98-4891-a6cb-616bcd575aeb.jpg"
+              alt="" width="688" height="387" loading="lazy">
+          </figure>
+          <div class="news-card-body">
+            <p class="cg-kicker">Architektura</p>
+            <h3 class="news-card-title">
+              <a href="/aktualita">Vnitroblok, který funguje: pět principů dobrého sousedství</a>
+            </h3>
+            <p class="news-card-text">
+              Polosoukromé dvory patří k nejcennějším částem nových čtvrtí. Ukazujeme,
+              čím se liší dvůr, kterým lidé jen procházejí, od toho, kde se skutečně zdrží.
+            </p>
+            <p class="news-card-meta">
+              <time datetime="2026-02-10">10. února 2026</time>
+              <span aria-hidden="true">•</span>
+              <span data-reading-time>6 min čtení</span>
+            </p>
+          </div>
+        </article>
+
+        <div class="news-split-list">
+
+          <article class="news-card news-card--horizontal">
+            <figure class="news-card-media">
+              <img src="https://www.central-group.cz/Uloziste/6d/6d3c1333-12e0-4e20-9f88-c06677468779.jpg"
+                alt="" width="180" height="101" loading="lazy">
+            </figure>
+            <div class="news-card-body">
+              <p class="cg-kicker">Ze života CENTRAL GROUP</p>
+              <h3 class="news-card-title">
+                <a href="/aktualita">Předali jsme klíče od tisícího bytu na Zahradním Městě</a>
+              </h3>
+              <p class="news-card-text">
+                Milník, který uzavírá druhou etapu jednoho z největších pražských projektů.
+              </p>
+              <p class="news-card-meta">
+                <time datetime="2026-02-03">3. února 2026</time>
+                <span aria-hidden="true">•</span>
+                <span data-reading-time>3 min čtení</span>
+              </p>
+            </div>
+          </article>
+
+          <article class="news-card news-card--horizontal">
+            <figure class="news-card-media">
+              <img src="https://www.central-group.cz/Uloziste/f8/f8424307-67d5-493b-9106-5576b8092c2f.jpg"
+                alt="" width="180" height="101" loading="lazy">
+            </figure>
+            <div class="news-card-body">
+              <p class="cg-kicker">Financování</p>
+              <h3 class="news-card-title">
+                <a href="/aktualita">Hypotéky na začátku roku 2026: co čekat od sazeb</a>
+              </h3>
+              <p class="news-card-text">
+                Přehled aktuálních nabídek bank a toho, jak se promítají do měsíční splátky.
+              </p>
+              <p class="news-card-meta">
+                <time datetime="2026-01-27">27. ledna 2026</time>
+                <span aria-hidden="true">•</span>
+                <span data-reading-time>5 min čtení</span>
+              </p>
+            </div>
+          </article>
+
+          <article class="news-card news-card--horizontal">
+            <figure class="news-card-media">
+              <img src="https://www.central-group.cz/Uloziste/0e/0eefd926-f099-4d5d-a3c6-bba84ba408ea.jpg"
+                alt="" width="180" height="101" loading="lazy">
+            </figure>
+            <div class="news-card-body">
+              <p class="cg-kicker">Udržitelnost</p>
+              <h3 class="news-card-title">
+                <a href="/aktualita">Tepelná čerpadla v bytových domech: jak to funguje v praxi</a>
+              </h3>
+              <p class="news-card-text">
+                Data z prvního roku provozu ukazují, kolik se dá reálně ušetřit.
+              </p>
+              <p class="news-card-meta">
+                <time datetime="2026-01-20">20. ledna 2026</time>
+                <span aria-hidden="true">•</span>
+                <span data-reading-time>4 min čtení</span>
+              </p>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ## STARŠÍ ČLÁNKY POD SEBOU – odkrývá je tlačítko nad výpisem
+       (stejný mechanismus jako #reference-more na stránce reference) -->
+  <section class="news-stack-section">
+    <div class="container-main">
+
+      <div class="news-more-wrap">
+        <button type="button" id="news-more" class="btn btn-blue btn-md news-more">
+          Zobrazit další články <span class="news-more-count" data-reveal-count></span>
+        </button>
+      </div>
+
+      <!-- data-reveal-step … kolik článků přibude po jednom kliknutí
+           data-reveal-focus … na co se po odkrytí přesune focus -->
+      <div class="news-stack" data-reveal data-reveal-step="3" data-reveal-button="news-more"
+        data-reveal-focus=".news-card-title">
+
+        <article class="news-card news-card--horizontal" hidden>
+          <figure class="news-card-media">
+            <img src="https://www.central-group.cz/Uloziste/96/96d1835e-10f3-4f77-b700-595157fb230d.jpg"
+              alt="" width="240" height="135" loading="lazy">
+          </figure>
+          <div class="news-card-body">
+            <p class="cg-kicker">Rezidenční projekty</p>
+            <h3 class="news-card-title">
+              <a href="/aktualita">Nové Modřanské cukrovary: zahájili jsme čtvrtou etapu</a>
+            </h3>
+            <p class="news-card-text">
+              Na břehu Vltavy vyroste dalších 240 bytů, mateřská škola a nová pěší promenáda.
+            </p>
+            <p class="news-card-meta">
+              <time datetime="2026-01-13">13. ledna 2026</time>
+              <span aria-hidden="true">•</span>
+              <span data-reading-time>4 min čtení</span>
+            </p>
+          </div>
+        </article>
+
+        <article class="news-card news-card--horizontal" hidden>
+          <figure class="news-card-media">
+            <img src="https://www.central-group.cz/Uloziste/bd/bd68d40a-1290-4aab-ba03-c63a84e09c09.jpg"
+              alt="" width="240" height="135" loading="lazy">
+          </figure>
+          <div class="news-card-body">
+            <p class="cg-kicker">Interiér &amp; design</p>
+            <h3 class="news-card-title">
+              <a href="/aktualita">Barvy roku 2026 v bytových interiérech</a>
+            </h3>
+            <p class="news-card-text">
+              Tlumené zemité tóny se vracejí. Poradíme, jak je zkombinovat s dřevem a kovem.
+            </p>
+            <p class="news-card-meta">
+              <time datetime="2026-01-06">6. ledna 2026</time>
+              <span aria-hidden="true">•</span>
+              <span data-reading-time>3 min čtení</span>
+            </p>
+          </div>
+        </article>
+
+        <article class="news-card news-card--horizontal" hidden>
+          <figure class="news-card-media">
+            <img src="https://www.central-group.cz/Uloziste/86/86ff1fee-f02d-47e6-b397-cf1849cd18a4.jpg"
+              alt="" width="240" height="135" loading="lazy">
+          </figure>
+          <div class="news-card-body">
+            <p class="cg-kicker">Architektura</p>
+            <h3 class="news-card-title">
+              <a href="/aktualita">Proč se vyplatí investovat do kvalitního parteru</a>
+            </h3>
+            <p class="news-card-text">
+              Přízemí domu rozhoduje o tom, jestli ulice žije. Ukazujeme řešení z našich projektů.
+            </p>
+            <p class="news-card-meta">
+              <time datetime="2025-12-16">16. prosince 2025</time>
+              <span aria-hidden="true">•</span>
+              <span data-reading-time>6 min čtení</span>
+            </p>
+          </div>
+        </article>
+
+        <article class="news-card news-card--horizontal" hidden>
+          <figure class="news-card-media">
+            <img src="https://www.central-group.cz/Uloziste/54/54471479-4e98-4891-a6cb-616bcd575aeb.jpg"
+              alt="" width="240" height="135" loading="lazy">
+          </figure>
+          <div class="news-card-body">
+            <p class="cg-kicker">Ze života CENTRAL GROUP</p>
+            <h3 class="news-card-title">
+              <a href="/aktualita">Rok 2025 v číslech: kolik bytů jsme dokončili</a>
+            </h3>
+            <p class="news-card-text">
+              Shrnutí uplynulého roku – dokončené etapy, zahájené projekty a plány na rok 2026.
+            </p>
+            <p class="news-card-meta">
+              <time datetime="2025-12-09">9. prosince 2025</time>
+              <span aria-hidden="true">•</span>
+              <span data-reading-time>5 min čtení</span>
+            </p>
+          </div>
+        </article>
+
+        <article class="news-card news-card--horizontal" hidden>
+          <figure class="news-card-media">
+            <img src="https://www.central-group.cz/Uloziste/6d/6d3c1333-12e0-4e20-9f88-c06677468779.jpg"
+              alt="" width="240" height="135" loading="lazy">
+          </figure>
+          <div class="news-card-body">
+            <p class="cg-kicker">Financování</p>
+            <h3 class="news-card-title">
+              <a href="/aktualita">Věrnostní sleva pro klienty: jak se počítá</a>
+            </h3>
+            <p class="news-card-text">
+              Kdo koupil byt v minulosti, má u dalšího nákupu nárok na zvýhodnění.
+            </p>
+            <p class="news-card-meta">
+              <time datetime="2025-12-02">2. prosince 2025</time>
+              <span aria-hidden="true">•</span>
+              <span data-reading-time>3 min čtení</span>
+            </p>
+          </div>
+        </article>
+
+        <article class="news-card news-card--horizontal" hidden>
+          <figure class="news-card-media">
+            <img src="https://www.central-group.cz/Uloziste/f8/f8424307-67d5-493b-9106-5576b8092c2f.jpg"
+              alt="" width="240" height="135" loading="lazy">
+          </figure>
+          <div class="news-card-body">
+            <p class="cg-kicker">Udržitelnost</p>
+            <h3 class="news-card-title">
+              <a href="/aktualita">Hospodaření s dešťovou vodou v našich projektech</a>
+            </h3>
+            <p class="news-card-text">
+              Retenční nádrže, vsakovací průlehy a zálivka zeleně – co všechno se schová pod terén.
+            </p>
+            <p class="news-card-meta">
+              <time datetime="2025-11-25">25. listopadu 2025</time>
+              <span aria-hidden="true">•</span>
+              <span data-reading-time>4 min čtení</span>
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script src="js/reveal.js"></script>
+<script src="js/loop-video.js"></script>
