@@ -1,0 +1,166 @@
+/* ==========================================================================
+   # PŘEHLED PROJEKTŮ
+   Markup: blocks/prehled-projektu.html
+
+   Obsah je sdílená sekce .project-tiles-section (components.css: .section-head,
+   .project-tiles / .project-tile*), sem patří jen filtr lokalit a odchylky
+   téhle stránky. Chování filtru: public/js/project-filter.js,
+   hover videa v dlaždicích: public/js/loop-video.js.
+   ========================================================================== */
+
+/* ## FILTR – nadpis vlevo, pilulky lokalit, checkbox vpravo */
+.project-filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px 32px;
+  margin-bottom: 40px;
+}
+
+.project-filter-title {
+  margin-bottom: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--cg-blue);
+}
+
+.project-filter-regions {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Pilulka lokality – přepínač; zapnutý stav drží aria-pressed (nastavuje JS) */
+.project-filter-region {
+  padding: 10px 24px;
+  border: 1px solid var(--gray-200);
+  border-radius: 100px;
+  background-color: var(--white);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--cg-blue);
+  cursor: pointer;
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+
+  &:hover,
+  &:focus-visible {
+    border-color: var(--cg-blue);
+  }
+
+  &[aria-pressed="true"] {
+    border-color: var(--cg-blue);
+    background-color: var(--cg-blue);
+    color: var(--white);
+  }
+}
+
+.project-filter-completed {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--body-text-color);
+  cursor: pointer;
+  user-select: none;
+
+  /* Zaškrtávátko kreslíme sami (clip-path) – controls.css dává všem inputům
+     appearance: none, takže nativní check prohlížeč nevykreslí. */
+  input {
+    appearance: none;
+    flex: 0 0 auto;
+    display: inline-grid;
+    place-content: center;
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid var(--gray-100);
+    border-radius: 4px;
+    background-color: var(--white);
+    cursor: pointer;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+
+    &::before {
+      content: "";
+      width: 11px;
+      height: 11px;
+      background-color: var(--white);
+      clip-path: polygon(14% 44%, 0 62%, 41% 100%, 100% 18%, 84% 4%, 39% 72%);
+      scale: 0;
+      transition: scale 0.15s ease;
+    }
+
+    &:checked {
+      border-color: var(--cg-blue);
+      background-color: var(--cg-blue);
+
+      &::before {
+        scale: 1;
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--cg-blue);
+      outline-offset: 2px;
+    }
+  }
+}
+
+/* hláška, když kombinaci filtrů neodpovídá žádný projekt (odkrývá JS) */
+.project-filter-empty {
+  margin-bottom: 0;
+  padding: 32px;
+  border-radius: var(--controls-border-radius);
+  background-color: var(--blue-light);
+  text-align: center;
+  font-size: 1.125rem;
+  color: var(--gray-500);
+}
+
+/* Odfiltrované dlaždice schovává atribut hidden – .project-tile má display: flex,
+   který by výchozí chování hidden přebilo */
+.project-tiles > [hidden] {
+  display: none;
+}
+
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (width < 992px) {
+  /* nadpis na vlastním řádku, checkbox zůstává na řádku s pilulkami */
+  .project-filter-title {
+    flex-basis: 100%;
+  }
+}
+
+@media (width < 768px) {
+  .project-filter {
+    gap: 16px;
+  }
+
+  .project-filter-title {
+    font-size: 1.5rem;
+  }
+
+  /* checkbox pod pilulkami, zarovnaný vlevo */
+  .project-filter-completed {
+    flex-basis: 100%;
+    margin-left: 0;
+  }
+}
+
+@media (width < 576px) {
+  .project-filter-region {
+    padding: 8px 18px;
+  }
+}

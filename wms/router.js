@@ -107,6 +107,16 @@ const routerOptions = {
       ],
     },
     {
+      path: "/prehled-projektu",
+      name: "prehled-projektu",
+      title: "Přehled projektů",
+      description: "Stovky nových bytů po celé Praze – vyberte si projekt podle lokality, nebo jen z dokončených bytů.",
+      blocks: [
+        { src: "meta-common" },
+        { src: "prehled-projektu" },
+      ],
+    },
+    {
       path: "/reference",
       name: "reference",
       title: "Reference",
