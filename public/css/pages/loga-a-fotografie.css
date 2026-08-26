@@ -1,0 +1,72 @@
+/* ==========================================================================
+   # LOGA A FOTOGRAFIE (ke stažení)
+   Markup: blocks/loga-a-fotografie.html
+
+   Sdílené komponenty v partials:
+   .hero--static (nízké hero s grafikou) a .cg-download-* (dlaždice ke stažení)
+   – components.css, .page-intro-* (components.css), .section-heading
+   (typography.css), .brow. Stránka nemá vlastní JS.
+
+   Odchylky této stránky patří sem – ne do components.css.
+   ========================================================================== */
+
+.downloads {
+  /* nadpisy podle grafiky: úvodní h2 a podnadpisy sekcí 35px */
+  .section-heading {
+    font-size: 2.1875rem;
+  }
+}
+
+/* Nadpis skupiny dlaždic („Loga ke stažení") a jména členů vedení – stejný styl.
+   Čárka nad nadpisem je modrá (.brow--blue v markupu); jediný žlutý .brow
+   na stránce zůstává v h1 v hero sekci. */
+.downloads-heading,
+.downloads-name {
+  margin-bottom: 32px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--cg-blue);
+}
+
+/* podnadpis sekce („Vedení společnosti") – 35px, druhý řádek tučně */
+.downloads-subheading {
+  margin-bottom: 48px;
+  font-size: 2.1875rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--cg-blue);
+
+  strong {
+    display: block;
+    font-weight: 700;
+  }
+}
+
+/* skupina dlaždic jednoho člověka – menší rozestup než mezi sekcemi */
+.downloads-person {
+  & + & {
+    margin-top: 64px;
+  }
+}
+
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (width < 992px) {
+  .downloads-subheading {
+    margin-bottom: 32px;
+  }
+
+  .downloads-person + .downloads-person {
+    margin-top: 48px;
+  }
+}
+
+@media (width < 576px) {
+  .downloads .section-heading,
+  .downloads-subheading {
+    font-size: 1.875rem;
+  }
+}

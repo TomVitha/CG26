@@ -4,15 +4,14 @@
 <div class="hero">
   <!-- Video na pozadí hero sekce. Zdroj i poster přepíná js/hero-video.js i za běhu –
        <source media> prohlížeč vyhodnotí jen při načtení a po změně šířky okna (otočení
-       displeje) zdroj sám nepřepne. Poster jde v HTML zadat jen jeden, varianty drží data-poster.
-       TODO: zástupné video i poster – nahradit finálními exporty (viz docs/hero-video-zadani.md). -->
+       displeje) zdroj sám nepřepne. Poster varianty drží data-poster. -->
   <video class="hero-bg" data-hero-video autoplay muted loop playsinline preload="auto"
     aria-hidden="true" tabindex="-1"
     poster="https://www.central-group.cz/storage/CG/wms3/img/kariera/videa/empiria-poster.png">
     <!-- desktop 16:9 (1920×1080) -->
     <source src="https://www.central-group.cz/storage/CG/wms3/img/kariera/videa/empiria.mp4" type="video/mp4" media="(min-width: 768px)"
       data-poster="https://www.central-group.cz/storage/CG/wms3/img/kariera/videa/empiria-poster.png">
-    <!-- tablet 4:5 (1080×1350) – až bude video hotové, stačí odkomentovat; rozsahy se nepřekrývají, na pořadí nezáleží
+    <!-- tablet 4:5 (1080×1350) 
     <source src="https://www.central-group.cz/storage/CG/wms3/img/kariera/videa/empiria-tablet.mp4" type="video/mp4" media="(min-width: 576px) and (max-width: 767.98px)"
       data-poster="https://www.central-group.cz/storage/CG/wms3/img/kariera/videa/empiria-tablet-poster.png">
     -->
@@ -74,9 +73,9 @@
 
         <div class="highlight g-col-12 g-col-md-6 g-col-lg-4">
           <div class="highlight-media">
-            <!-- TODO: zástupný obrázek; slouží zároveň jako poster/fallback videa -->
+            <!-- TODO: zástupný obrázek; poster/fallback videa -->
             <img src="https://www.central-group.cz/Uloziste/0e/0eefd926-f099-4d5d-a3c6-bba84ba408ea.jpg" alt="">
-            <!-- Video smyčka na pozadí – odkomentovat a doplnit zdroje:
+            <!-- Video smyčka na pozadí:
             <video data-loop-video muted loop playsinline preload="none"
                    aria-hidden="true" tabindex="-1"
                    poster="https://www.central-group.cz/Uloziste/0e/0eefd926-f099-4d5d-a3c6-bba84ba408ea.jpg">
@@ -101,7 +100,7 @@
         <div class="highlight g-col-12 g-col-md-6 g-col-lg-4">
           <div class="highlight-media">
             <img src="https://www.central-group.cz/Uloziste/96/96d1835e-10f3-4f77-b700-595157fb230d.jpg" alt="">
-            <!-- Video smyčka na pozadí – odkomentovat a doplnit zdroje:
+            <!-- Video smyčka na pozadí 
             <video data-loop-video muted loop playsinline preload="none"
                    aria-hidden="true" tabindex="-1"
                    poster="https://www.central-group.cz/Uloziste/96/96d1835e-10f3-4f77-b700-595157fb230d.jpg">
@@ -126,7 +125,7 @@
         <div class="highlight g-col-12 g-col-md-6 g-col-lg-4">
           <div class="highlight-media">
             <img src="https://www.central-group.cz/Uloziste/bd/bd68d40a-1290-4aab-ba03-c63a84e09c09.jpg" alt="">
-            <!-- Video smyčka na pozadí – odkomentovat a doplnit zdroje:
+            <!-- Video smyčka na pozadí
             <video data-loop-video muted loop playsinline preload="none"
                    aria-hidden="true" tabindex="-1"
                    poster="https://www.central-group.cz/Uloziste/bd/bd68d40a-1290-4aab-ba03-c63a84e09c09.jpg">

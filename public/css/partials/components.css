@@ -416,6 +416,248 @@
   }
 }
 
+/* ## HERO – nízká statická varianta (podstránky „ke stažení" a další).
+   Bez videa, 500px, abstraktní modrá grafika na pozadí, nadpis bez skleněného
+   panelu. TODO: gradient je jen přiblížení – nahradit finálním exportem grafiky
+   (background-image: url(…)).
+   use:
+   <div class="hero hero--static">
+     <div class="container-main hero-container">
+       <div class="hero-content">
+         <h1 class="brow">Loga a fotografie<br><strong class="yellow-heading">vedení společnosti</strong></h1>
+       </div>
+     </div>
+   </div> */
+.hero--static {
+  height: 500px;
+  padding-bottom: 0;
+  background:
+    linear-gradient(115deg, rgba(64, 70, 140, 0.55) 0%, rgba(64, 70, 140, 0) 45%),
+    radial-gradient(120% 150% at 85% -10%, rgba(84, 90, 168, 0.5) 0%, rgba(32, 35, 76, 0) 55%),
+    linear-gradient(200deg, #262a5e 0%, #191c40 55%, #14162f 100%);
+
+  .hero-container {
+    justify-content: center;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 16px;
+    background: none;
+    backdrop-filter: none;
+    border-radius: 0;
+  }
+
+  h1 {
+    margin-bottom: 0;
+
+    strong {
+      font-weight: 700;
+    }
+  }
+}
+
+@media (width >= 992px) {
+  .hero.hero--static {
+    height: 500px;
+    padding-bottom: 0;
+
+    .hero-content {
+      width: 100%;
+      max-width: 100%;
+      /* .hero-container si nuluje padding-inline (kvůli sklu běžného hera),
+         16px tu drží nadpis zarovnaný s obsahem kontejneru pod herem */
+      padding: 0 16px;
+    }
+  }
+}
+
+@media (width < 576px) {
+  .hero--static {
+    height: 360px;
+  }
+}
+
+
+/* # KE STAŽENÍ (cg-download) – dlaždice se souborem a odkazy na formáty.
+   Používá „Loga a fotografie", počítá se s dalšími stránkami ke stažení
+   (fotografie a vizualizace projektů).
+   use:
+   <ul class="cg-download-grid">
+     <li class="cg-download-card">
+       <h3 class="cg-download-card-title">Primární logo CG</h3>   (volitelné)
+       <figure class="cg-download-media"><img …></figure>
+       <p class="cg-download-label">Ke stažení</p>
+       <ul class="cg-download-files">
+         <li><a class="cg-download-file" href="…" download>
+           <i class="fa-light fa-file" aria-hidden="true"></i>
+           <span class="cg-download-file-name">PNG</span>
+           <span class="cg-download-file-btn"><i class="fa-solid fa-download" aria-hidden="true"></i></span>
+         </a></li>
+       </ul>
+     </li>
+   </ul>
+   Fotky: <li class="cg-download-card cg-download-card--photo"> – fotografie
+   v původním poměru stran (na výšku i na šířku), celá viditelná, zarovnaná
+   doleva nahoru. */
+.cg-download-grid {
+  --cg-download-columns: 4;
+
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(var(--cg-download-columns), minmax(0, 1fr));
+  gap: var(--layout-gutter);
+}
+
+.cg-download-card {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border-radius: var(--controls-border-radius);
+  background-color: #f5f7fc;
+}
+
+.cg-download-card-title {
+  margin-bottom: 12px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--cg-blue);
+}
+
+/* náhled loga – na střed, bez ořezu */
+.cg-download-media {
+  display: grid;
+  place-items: center;
+  margin: 0 0 16px;
+  min-height: 120px;
+
+  img {
+    display: block;
+    max-width: 100%;
+    max-height: 120px;
+  }
+}
+
+/* Náhled fotografie – v původním poměru stran (na výšku i na šířku), vždy celá.
+   Zarovnání doleva nahoru, o něco širší okraj dlaždice. Výšky dlaždic v řádku
+   srovnává grid (položky se natahují), flex: 1 uvnitř karty drží „Ke stažení"
+   s odkazy u dna. */
+.cg-download-card--photo {
+  padding: 24px;
+
+  .cg-download-media {
+    display: block;
+    /* základ dlaždice centruje přes place-items – a justify-items od Chromu ~123
+       platí i v blokovém layoutu, proto je potřeba vrátit výchozí hodnotu */
+    place-items: normal;
+    flex: 1 1 auto;
+    min-height: 0;
+    margin-bottom: 24px;
+
+    img {
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      /* strop pro fotky na výšku, ať nenatahují celý řádek dlaždic */
+      max-height: 340px;
+      border-radius: var(--controls-border-radius);
+    }
+  }
+}
+
+/* „Ke stažení" – margin-top: auto drží popisek i odkazy u dna dlaždice,
+   ať je náhled jakkoli vysoký */
+.cg-download-label {
+  margin-top: auto;
+  margin-bottom: 8px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--cg-blue);
+}
+
+.cg-download-files {
+  list-style: none;
+  padding: 12px;
+  margin-bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  border: 1px solid #dce6f6;
+  border-radius: var(--controls-border-radius);
+  background-color: #e3ebf8;
+}
+
+.cg-download-file {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 5px 5px 10px;
+  border-radius: var(--controls-border-radius);
+  background-color: var(--white);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--cg-blue);
+
+  &:hover {
+    text-decoration: none;
+    color: var(--cg-blue);
+  }
+
+  > [class*="fa-"] {
+    font-size: 0.875rem;
+    color: var(--gray-500);
+  }
+}
+
+.cg-download-file-name {
+  flex: 1 1 auto;
+}
+
+.cg-download-file-btn {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: var(--controls-border-radius);
+  background-color: var(--cg-yellow);
+  color: var(--cg-blue);
+  font-size: 0.75rem;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.cg-download-file:hover .cg-download-file-btn,
+.cg-download-file:focus-visible .cg-download-file-btn {
+  background-color: var(--cg-blue);
+  color: var(--white);
+}
+
+@media (width < 1200px) {
+  .cg-download-grid {
+    --cg-download-columns: 3;
+  }
+}
+
+@media (width < 992px) {
+  .cg-download-grid {
+    --cg-download-columns: 2;
+  }
+}
+
+@media (width < 576px) {
+  .cg-download-grid {
+    --cg-download-columns: 1;
+  }
+}
+
+
 /* # CARD */
 .card {
   container: card / inline-size;

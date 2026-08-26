@@ -127,6 +127,16 @@ const routerOptions = {
       ],
     },
     {
+      path: "/loga-a-fotografie",
+      name: "loga-a-fotografie",
+      title: "Loga a fotografie ke stažení",
+      description: "Loga CENTRAL GROUP a fotografie vedení společnosti ke stažení pro média.",
+      blocks: [
+        { src: "meta-common" },
+        { src: "loga-a-fotografie" },
+      ],
+    },
+    {
       path: "/reference",
       name: "reference",
       title: "Reference",
