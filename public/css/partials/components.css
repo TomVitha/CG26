@@ -1801,13 +1801,25 @@
 
 
 /* # CTA BOX kontakty a tlačítkem. Rozvržení sloupců si určuje stránka */
-.cta-box {
-  --cta-padding: 40px;
-
-  padding: var(--cta-padding);
+.box {
+  padding: 24px;
   border-radius: var(--controls-border-radius);
   background-color: var(--blue-light);
   align-items: center;
+
+
+  @media (width > 576px) {
+    &.box-md,
+    &.box-lg {
+      padding: 32px;
+    }
+  }
+
+  @media (width > 992px) {
+    &.box-lg {
+      padding: 40px;
+    }
+  }
 }
 
 .cta-heading {
@@ -1849,17 +1861,8 @@
   font-size: 0.75rem;
 }
 
-@media (width < 992px) {
-  .cta-box {
-    --cta-padding: 32px;
-  }
-}
 
 @media (width < 576px) {
-  .cta-box {
-    --cta-padding: 24px;
-  }
-
   .cta-action .btn {
     width: 100%;
   }
