@@ -581,8 +581,71 @@
   }
 }
 
-/* „Ke stažení" – margin-top: auto drží popisek i odkazy u dna dlaždice,
-   ať je náhled jakkoli vysoký */
+/* Dlaždice rozcestníku projektů (ke-stazeni-projekty)  */
+.cg-download-card--project {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+
+  .cg-download-media {
+    display: block;
+    place-items: normal;
+    min-height: 0;
+    margin: 0 0 24px;
+
+    img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      min-height: 185px;
+      max-height: none;
+      object-fit: cover;
+      border-radius: var(--controls-border-radius) var(--controls-border-radius) 0 0;
+      transition: scale 0.4s ease;
+    }
+  }
+
+  &:hover .cg-download-media img {
+    scale: 1.04;
+  }
+}
+
+.cg-download-project-body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 24px 24px;
+}
+
+.cg-download-project-location {
+  margin-bottom: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--body-text-color);
+}
+
+.cg-download-project-title {
+  margin-bottom: 24px;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--body-text-color);
+}
+
+.cg-download-project-cta {
+  margin-top: auto;
+  margin-bottom: 0;
+
+  a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+}
+
+
+/* „Ke stažení" – margin-top: popisek i odkazy u dna dlaždice */
 .cg-download-label {
   margin-top: auto;
   margin-bottom: 8px;
@@ -690,8 +753,7 @@
     flex-direction: column;
   }
 
-  /* Tlačítko drží u spodní hrany karty (karty v řádku jsou stejně vysoké)
-     a v úzkém sloupci se raději zalomí, než aby přeteklo. */
+  /* Tlačítko drží u spodní hrany karty (karty v řádku jsou stejně vysoké) */
   .card-body > .btn {
     margin-top: auto;
     align-self: start;
@@ -701,7 +763,7 @@
   }
 }
 
-/* V úzké kartě je tlačítko přes celou šířku – vypadá to lépe než zalomený „blok" */
+/* tlačítko přes celou šířku */
 @container card (width < 24rem) {
   .card-body > .btn {
     align-self: stretch;
@@ -779,9 +841,6 @@
     scale: 1.075;
   }
 
-  /* Název projektu: typ zástavby tenkým řezem, vlastní název tučně na dalším řádku.
-     use: <h4>Viladomy <strong>Střížkov</strong></h4> – část <strong> je nepovinná
-     (název bez uvození se zapíše celý do <strong>). text-shadow dědí i <strong>. */
   h4 {
     font-size: var(--hp-banner-title-size);
     font-weight: 400;
