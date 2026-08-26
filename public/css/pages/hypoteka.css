@@ -122,8 +122,8 @@
   margin-inline: auto;
 }
 
-/* # Poznámka  */
-.hypo-note {
+/* # Upozornění  */
+.alert-note {
   display: flex;
   align-items: center;
   gap: 16px;
@@ -134,7 +134,7 @@
   color: var(--hypo-muted-color);
 }
 
-.hypo-note-icon {
+.alert-note-icon {
   flex: 0 0 auto;
   display: grid;
   place-items: center;

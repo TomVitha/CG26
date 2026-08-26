@@ -10,7 +10,7 @@
   --financing-divider: var(--gray-200);
 
   /* sdílený info panel (components.css) – .info-head / .info-icon / .info-title /
-     .info-note / .info-subtitle / .check-list */
+     .note / .info-subtitle / .check-list */
   --info-icon-size: var(--financing-icon-size);
   --info-divider: var(--financing-divider);
 }
@@ -156,17 +156,6 @@
 
 
 /* ## 4 ZPŮSOBY FINANCOVÁNÍ */
-/* stejný rámeček jako sdílená .info-note (components.css) */
-.way-note {
-  margin-top: 24px;
-  padding: 24px 24px;
-  border-radius: var(--financing-radius);
-  background:
-    linear-gradient(0deg, var(--snow) 0%, var(--blue-light) 100%),
-    linear-gradient(258deg, var(--white) 0%, #E7E7E7 97.74%);
-    font-size: 1.125rem;
-  border: 1px solid #E3EBF8;
-}
 
 .terms-list {
   list-style: none;
@@ -296,7 +285,7 @@
     font-size: 1.5rem;
   }
 
-  .info-note {
+  .note {
     padding: 24px;
   }
 
