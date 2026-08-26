@@ -136,12 +136,9 @@
 
 
 /* # VÝHODY – modrý pruh s ikonami ve sloupcích
-   Počet sloupců určuje modifikátor .benefits-list--3 / --4 / --5 / --6,
-   modifikátor .benefits-list--center zarovná obsah sloupců na střed.
-   use:
    <section class="bg-blue benefits">
      <div class="container-main">
-       <ul class="benefits-list benefits-list--3">
+       <ul class="benefits-list">
          <li class="benefit">
            <span class="benefit-icon"><i class="fa-solid fa-…" aria-hidden="true"></i></span>
            <h3 class="benefit-title">Nadpis</h3>
@@ -151,7 +148,6 @@
   --benefits-bg: linear-gradient(88deg, var(--cg-blue) 0%, var(--blue) 49.28%, var(--cg-blue) 98.08%), var(--snow);
   --benefits-separator: linear-gradient(180deg, rgba(50, 52, 83, 0) 0%, #505486 51.44%, rgba(50, 52, 83, 0) 100%);
   --benefits-separator-horizontal: linear-gradient(90deg, rgba(50, 52, 83, 0) 0%, #505486 51.44%, rgba(50, 52, 83, 0) 100%);
-  --benefits-gap: 80px;
   --benefits-icon-size: 56px;
 
   background: var(--benefits-bg);
@@ -165,45 +161,28 @@
   margin-bottom: 0;
   display: grid;
   grid-template-columns: repeat(var(--benefits-columns), minmax(0, 1fr));
-  gap: var(--benefits-gap);
-}
+  gap: 48px 64px;
 
-.benefits-list--3 {
-  --benefits-columns: 3;
-}
+  /* WIP */
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 
-.benefits-list--4 {
-  --benefits-columns: 4;
-}
+  /* separátor mezi sloupci (netřeba pseudo element) */
+  column-rule: 1px solid #ffffff33;
+  row-rule-break: intersection;
 
-/* varianta s obsahem na střed (např. „Proč si vybrat CENTRAL GROUP") */
-.benefits-list--center {
-  text-align: center;
-
-  .benefit-icon {
-    margin-inline: auto;
+  > .benefit {
+    /* WIP */
+    flex: 1 1 0;
+    min-width: 180px;
+    max-width: 500px;
   }
 }
 
-.benefits-list--6 {
-  --benefits-columns: 6;
-
-  /* při šesti sloupcích by výchozí mezera 80px nechala na text ~170px */
-  --benefits-gap: 48px;
-}
 
 .benefit {
   position: relative;
-
-  /* svislý oddělovač vlevo od sloupce */
-  &::before {
-    content: "";
-    position: absolute;
-    inset-block: -16px;
-    inset-inline-start: calc(var(--benefits-gap) / -2);
-    width: 1px;
-    background: var(--benefits-separator);
-  }
 
   p {
     color: var(--lavender);
@@ -212,16 +191,10 @@
   }
 }
 
-/* první sloupec v řádku oddělovač nemá */
-.benefits-list--3 > .benefit:nth-child(3n + 1)::before,
-.benefits-list--4 > .benefit:nth-child(4n + 1)::before,
-.benefits-list--5 > .benefit:nth-child(5n + 1)::before,
-.benefits-list--6 > .benefit:nth-child(6n + 1)::before {
-  content: none;
-}
+
 
 .benefit-icon {
-  display: grid;
+  display: inline-grid;
   place-items: center;
   width: var(--benefits-icon-size);
   height: var(--benefits-icon-size);
@@ -242,20 +215,10 @@
 
 /* 6, 5 a 4 sloupce → 3 */
 @media (width < 1200px) {
+
+  /* TODO: Mandate thru flexbox? */
   .benefits-list {
     --benefits-columns: 3;
-
-    row-gap: 48px;
-  }
-
-  .benefits-list--4 > .benefit:nth-child(4n + 1)::before,
-  .benefits-list--5 > .benefit:nth-child(5n + 1)::before,
-  .benefits-list--6 > .benefit:nth-child(6n + 1)::before {
-    content: "";
-  }
-
-  .benefits-list > .benefit:nth-child(3n + 1)::before {
-    content: none;
   }
 }
 
@@ -274,37 +237,17 @@
   }
 }
 
-/* → 1 sloupec, svislé oddělovače se mění na vodorovné */
+/* Vynutit 1 sloupec, vertikální */
 @media (width < 576px) {
-  .benefits {
-    --benefits-gap: 32px;
-  }
-
   .benefits-list {
     --benefits-columns: 1;
-  }
+    /* WIP */
+    row-rule: 1px solid #ffffff33;
 
-  .benefit::before,
-  .benefits-list > .benefit:nth-child(2n + 1)::before {
-    content: none;
-  }
-
-  /* specifičnost (0,3,0) kvůli pravidlu pro první sloupec výše */
-  .benefits-list > .benefit + .benefit::before {
-    content: "";
-    inset: calc(var(--benefits-gap) / -2) 0 auto 0;
-    width: auto;
-    height: 1px;
-    background: var(--benefits-separator-horizontal);
-  }
-
-  .benefit {
-    text-align: center;
-  }
-
-  .benefit-icon {
-    margin-bottom: 20px;
-    margin-inline: auto;
+    > .benefit {
+      text-align: center;
+      flex-basis: 100%;
+    }
   }
 }
 
