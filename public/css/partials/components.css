@@ -397,6 +397,17 @@
 
 }
 
+/* ## Ztmavující přechod přes video/obrázek – volitelný modifikátor.*/
+.hero--gradient::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg,
+      color-mix(in srgb, var(--cg-blue) 60%, transparent) 9%,
+      transparent 59%);
+}
+
 @media (width >=992px) {
   .hero {
     height: 800px;
