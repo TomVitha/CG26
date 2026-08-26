@@ -722,6 +722,24 @@
     width: 100%;
   }
 
+  /* Obal pro obrázek/video v hlavičce karty – obrázek je poster/fallback a drží
+     rozměr, video ho jen překrývá (jako .promo-media). Max. plocha videa 448×342 px. */
+  .card-media {
+    position: relative;
+
+    .card-img {
+      display: block;
+    }
+
+    video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
   .card-body {
     background-color: #f2f2f2;
     padding: 40px;
@@ -751,6 +769,13 @@
 @media (width < 992px) {
   .card .card-body {
     padding-inline: 24px;
+  }
+
+  /* nízké obrázky (448×139) srovnat s vysokými kartami */
+  .card:not(.tall) .card-img {
+    aspect-ratio: 448 / 342;
+    height: auto;
+    object-fit: cover;
   }
 }
 
@@ -813,7 +838,7 @@
     }
   }
 
-  /* Pokud nemá video, obrízek se zoomne */
+  /* Pokud nemá video, obrázek se zoomne */
   &:not(:has(video)):hover img {
     scale: 1.075;
   }

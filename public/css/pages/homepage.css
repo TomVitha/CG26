@@ -3,7 +3,7 @@
    ========================================================================== */
 
 /* ## HERO – varianta pro HP
-   Základ komponenty je v components.css (.hero), tady se mění jen velikosti
+   Základ komponenty je v components.css (.hero)
    písma v hgroup. 53px = 3.3125rem při základu 16px. */
 .hero--hp {
   --hp-hero-title-size: 3.3125rem;
@@ -107,7 +107,7 @@
       display: block;
     }
 
-    /* první řádek (lokalita) modrý, druhý (název projektu) černý */
+
     strong {
       color: var(--cg-blue);
     }
@@ -118,7 +118,7 @@
   }
 
 
-/* Skrytý popisek pro čtečky – kandidát na utilitu v utilities.css */
+/* Skrytý popisek pro čtečky – do utilities.css ?*/
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -273,7 +273,7 @@
   margin-top: 8px;
 }
 
-/* obrázek přesahující spodní hranu */
+/* přesahující spodní hranu */
 .newsletter-phone {
   position: absolute;
   right: var(--stay-padding);
@@ -297,7 +297,8 @@
     width: min(var(--newsletter-phone-width), 45%);
     margin-top: 24px;
     margin-right: calc((var(--stay-padding) - 8px) * -1);
-    margin-bottom: calc(var(--newsletter-phone-overflow) * -1);
+    /* zruší spodní padding karty */
+    margin-bottom: calc(var(--stay-padding) * -1);
   }
 }
 
@@ -397,6 +398,13 @@
    RESPONSIVE
    ========================================================================== */
 
+@media (width < 1344px) {
+  .newsletter {
+    --newsletter-phone-width: 280px;
+    --newsletter-phone-overflow: 70px;
+  }
+}
+
 @media (width < 1200px) {
   .newsletter {
     --newsletter-phone-width: 260px;
@@ -411,16 +419,17 @@
   }
 }
 
-@media (width < 992px) {
-  .stay-informed {
-    --stay-padding: 32px;
-  }
-
+/* širší panel */
 @media (width >= 992px) {
   .hero--hp .hero-content {
     max-width: min(620px, 100%);
   }
 }
+
+@media (width < 992px) {
+  .stay-informed {
+    --stay-padding: 32px;
+  }
 
   .stay-head {
     margin-bottom: 40px;
@@ -429,7 +438,8 @@
 
   .newsletter {
     --newsletter-phone-width: 240px;
-    --newsletter-phone-overflow: 60px;
+    /* přesah dolů by zasahoval do promo karty */
+    --newsletter-phone-overflow: 0px;
 
     min-height: 380px;
   }
@@ -444,9 +454,9 @@
     --stay-padding: 24px;
   }
 
-  .newsletter {
-    --newsletter-phone-width: 170px;
-    --newsletter-phone-overflow: 40px;
+  /* na mobilu se telefon vypouští */
+  .newsletter-phone {
+    display: none;
   }
 
   .newsletter-form .btn {
@@ -463,10 +473,15 @@
   }
 
   .promo--overflow {
-    --promo-image-width: 190px;
+    --promo-image-width: 220px;
     --promo-image-overflow: 40px;
 
     padding-bottom: 96px;
+  }
+
+
+  .promo-image {
+    max-width: 55%;
   }
 
   .promo-image {
