@@ -4,7 +4,7 @@
 
    Sdílené komponenty v partials:
    .section-heading (typography.css), .page-intro, .brow--blue, .benefits,
-   .cg-tabs / .cg-tab (taby – components.css), .promo-banner(s), .cta-box,
+   .cg-tabs / .cg-tab (taby – components.css), .promo-banner(s), .box,
    .contact (components.css), .btn-outline-blue (controls.css)
    ========================================================================== */
 
@@ -122,8 +122,8 @@
   margin-inline: auto;
 }
 
-/* # Poznámka  */
-.hypo-note {
+/* # Upozornění  */
+.alert-note {
   display: flex;
   align-items: center;
   gap: 16px;
@@ -134,7 +134,7 @@
   color: var(--hypo-muted-color);
 }
 
-.hypo-note-icon {
+.alert-note-icon {
   flex: 0 0 auto;
   display: grid;
   place-items: center;
@@ -146,7 +146,7 @@
 }
 
 
-/* ## KONTAKTNÍ BLOK (vzhled boxu je v components.css → .cta-box) */
+/* ## KONTAKTNÍ BLOK (vzhled boxu je v components.css → .box) */
 .hypo-cta {
   --column-count: 13;
 

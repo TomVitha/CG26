@@ -3,7 +3,7 @@
    Markup: blocks/postup-koupe.html
 
    Sdílené komponenty jsou v partials:
-   .section-heading (typography.css), .brow--blue, .tag, .promo-banner(s), .cta-box,
+   .section-heading (typography.css), .brow--blue, .tag, .promo-banner(s), .box,
    .contact (components.css), .btn / .btn-primary (controls.css)
    ========================================================================== */
 
@@ -239,7 +239,7 @@
 }
 
 
-/* ## KONTAKTNÍ BLOK (vzhled boxu je v components.css → .cta-box) */
+/* ## KONTAKTNÍ BLOK (vzhled boxu je v components.css → .box) */
 .postup-cta-heading {
   margin-bottom: 32px;
 }
