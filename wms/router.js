@@ -137,6 +137,16 @@ const routerOptions = {
       ],
     },
     {
+      path: "/ke-stazeni-projekt",
+      name: "ke-stazeni-projekt",
+      title: "Fotografie a vizualizace projektu ke stažení",
+      description: "Typová šablona – fotografie a vizualizace konkrétního projektu ke stažení pro média.",
+      blocks: [
+        { src: "meta-common" },
+        { src: "ke-stazeni-projekt" },
+      ],
+    },
+    {
       path: "/reference",
       name: "reference",
       title: "Reference",

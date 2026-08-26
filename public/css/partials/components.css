@@ -480,6 +480,75 @@
 }
 
 
+/* # KE STAŽENÍ – kostra stránky (loga-a-fotografie, ke-stazeni-projekt).
+   Obal .downloads + nadpisy a skupiny dlaždic; samotné dlaždice viz .cg-download-*.
+   use:
+   <div class="downloads">
+     <section>…<h2 class="section-heading">…</h2> (úvod .page-intro-*)
+     <section>…<h2 class="brow brow--blue downloads-heading">Loga ke stažení</h2>
+     <section>…<h2 class="downloads-subheading">Vedení <strong>společnosti</strong></h2>
+       <div class="downloads-person">
+         <h3 class="brow brow--blue downloads-name">Jméno / název skupiny</h3>
+         <ul class="cg-download-grid">…</ul>
+       </div>
+   </div> */
+.downloads {
+  /* nadpisy podle grafiky: úvodní h2 a podnadpisy sekcí 35px */
+  .section-heading {
+    font-size: 2.1875rem;
+  }
+}
+
+/* Nadpis skupiny dlaždic („Loga ke stažení") a názvy skupin – stejný styl.
+   Čárka nad nadpisem je modrá (.brow--blue v markupu); jediný žlutý .brow
+   na stránce zůstává v h1 v hero sekci. */
+.downloads-heading,
+.downloads-name {
+  margin-bottom: 32px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--cg-blue);
+}
+
+/* podnadpis sekce („Vedení společnosti") – 35px, zvýrazněná část tučně */
+.downloads-subheading {
+  margin-bottom: 48px;
+  font-size: 2.1875rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--cg-blue);
+
+  strong {
+    display: block;
+    font-weight: 700;
+  }
+}
+
+/* skupina dlaždic (člověk / sada fotek) – menší rozestup než mezi sekcemi */
+.downloads-person {
+  & + & {
+    margin-top: 64px;
+  }
+}
+
+@media (width < 992px) {
+  .downloads-subheading {
+    margin-bottom: 32px;
+  }
+
+  .downloads-person + .downloads-person {
+    margin-top: 48px;
+  }
+}
+
+@media (width < 576px) {
+  .downloads .section-heading,
+  .downloads-subheading {
+    font-size: 1.875rem;
+  }
+}
+
+
 /* # KE STAŽENÍ (cg-download) – dlaždice se souborem a odkazy na formáty.
    Používá „Loga a fotografie", počítá se s dalšími stránkami ke stažení
    (fotografie a vizualizace projektů).
