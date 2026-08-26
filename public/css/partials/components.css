@@ -347,8 +347,8 @@
   inset: 0;
   z-index: -1;
   background: linear-gradient(90deg,
-      color-mix(in srgb, var(--cg-blue) 60%, transparent) 9%,
-      transparent 59%);
+      color-mix(in srgb, var(--cg-blue) 60%, transparent) 15%,
+      transparent 85%);
 }
 
 @media (width >=992px) {
@@ -1292,8 +1292,7 @@
 
 /* # GALERIE – hlavní obrázek s ovládáním, pás náhledů a společný lightbox.
    Chování drží public/js/gallery.js ([data-cg-gallery] + jeden <dialog class="cg-lightbox">
-   na stránku). Používá reference (projektová galerie) i detail aktuality.
-   Počet náhledů v pásu určuje CSS (--cg-gallery-thumbs), JS ho jen čte.
+   na stránku). Počet náhledů v pásu určuje (--cg-gallery-thumbs)
    use:
    <div class="…" data-cg-gallery>
      <div class="cg-gallery-stage">
