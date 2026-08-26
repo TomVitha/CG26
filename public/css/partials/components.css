@@ -168,15 +168,16 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
 
-  /* separátor mezi sloupci (netřeba pseudo element) */
+  /* separátor mezi sloupci (netřeba pseudo element) - akorát podporuje jen chromium - FF a Safari separátor nevykreslí? */
   column-rule: 1px solid #ffffff33;
   row-rule-break: intersection;
 
   > .benefit {
-    /* WIP */
+    /* WIP
+       Desktop: flex-grow drží všechny položky v jednom řádku (smí se zúžit
+       i pod 180px, stejně jako dřívější grid s minmax(0, 1fr) */
     flex: 1 1 0;
-    min-width: 180px;
-    max-width: 500px;
+    min-width: 0;
   }
 }
 
@@ -216,9 +217,13 @@
 /* 6, 5 a 4 sloupce → 3 */
 @media (width < 1200px) {
 
-  /* TODO: Mandate thru flexbox? */
   .benefits-list {
     --benefits-columns: 3;
+
+    /* tři pevné sloupce: bez flex-grow */
+    > .benefit {
+      flex: 0 1 calc((100% - 2 * 64px) / 3);
+    }
   }
 }
 
@@ -226,6 +231,10 @@
 @media (width < 992px) {
   .benefits-list {
     --benefits-columns: 2;
+
+    > .benefit {
+      flex-basis: calc((100% - 64px) / 2);
+    }
   }
 
   .benefits-list > .benefit:nth-child(3n + 1)::before {
@@ -253,9 +262,7 @@
 
 
 /* # HERO
-   Obsah leží nad pozadím (video/obrázek) díky isolation + záporný z-index na .hero-bg
-   – stejný princip jako u .hp-banner. Nespoléhat na to, že .hero-content dělá vlastní
-   stacking context přes backdrop-filter: bez něj by se video vykreslilo přes text. */
+   Obsah leží nad pozadím (video/obrázek) díky isolation + záporný z-index na .hero-bg */
 .hero {
   height: 660px;
   position: relative;
@@ -299,9 +306,7 @@
     background-repeat: no-repeat;
   }
 
-  /* Zastavení videa na pozadí – tlačítko doplňuje js/hero-video.js.
-     WCAG 2.2.2: pohyb delší než 5 s musí jít zastavit. Záměrně nenápadné,
-     v rohu pod hlavičkou (dole by se krylo s .hero-content). */
+  /* Zastavení videa na pozadí – tlačítko doplňuje js/hero-video.js.*/
   .hero-media-toggle {
     position: absolute;
     top: calc(var(--header-height) + 16px);
@@ -371,8 +376,7 @@
 }
 
 /* ## HERO – nízká statická varianta (podstránky „ke stažení" a další).
-   Bez videa, 500px, abstraktní modrá grafika na pozadí, nadpis bez skleněného
-   panelu. TODO: gradient je jen přiblížení – nahradit finálním exportem grafiky
+
    (background-image: url(…)).
    use:
    <div class="hero hero--static">
@@ -420,8 +424,8 @@
     .hero-content {
       width: 100%;
       max-width: 100%;
-      /* .hero-container si nuluje padding-inline (kvůli sklu běžného hera),
-         16px tu drží nadpis zarovnaný s obsahem kontejneru pod herem */
+      /* .hero-container,
+         16px drží nadpis zarovnaný s obsahem kontejneru pod herem */
       padding: 0 16px;
     }
   }
@@ -434,28 +438,14 @@
 }
 
 
-/* # KE STAŽENÍ – kostra stránky (loga-a-fotografie, ke-stazeni-projekt).
-   Obal .downloads + nadpisy a skupiny dlaždic; samotné dlaždice viz .cg-download-*.
-   use:
-   <div class="downloads">
-     <section>…<h2 class="section-heading">…</h2> (úvod .page-intro-*)
-     <section>…<h2 class="brow brow--blue downloads-heading">Loga ke stažení</h2>
-     <section>…<h2 class="downloads-subheading">Vedení <strong>společnosti</strong></h2>
-       <div class="downloads-person">
-         <h3 class="brow brow--blue downloads-name">Jméno / název skupiny</h3>
-         <ul class="cg-download-grid">…</ul>
-       </div>
-   </div> */
+/* # KE STAŽENÍ – kostra stránky  */
 .downloads {
-  /* nadpisy podle grafiky: úvodní h2 a podnadpisy sekcí 35px */
   .section-heading {
     font-size: 2.1875rem;
   }
 }
 
-/* Nadpis skupiny dlaždic („Loga ke stažení") a názvy skupin – stejný styl.
-   Čárka nad nadpisem je modrá (.brow--blue v markupu); jediný žlutý .brow
-   na stránce zůstává v h1 v hero sekci. */
+/* Nadpis skupiny dlaždic */
 .downloads-heading,
 .downloads-name {
   margin-bottom: 32px;
@@ -464,7 +454,7 @@
   color: var(--cg-blue);
 }
 
-/* podnadpis sekce („Vedení společnosti") – 35px, zvýrazněná část tučně */
+
 .downloads-subheading {
   margin-bottom: 48px;
   font-size: 2.1875rem;
@@ -478,7 +468,7 @@
   }
 }
 
-/* skupina dlaždic (člověk / sada fotek) – menší rozestup než mezi sekcemi */
+
 .downloads-person {
   & + & {
     margin-top: 64px;
@@ -503,27 +493,7 @@
 }
 
 
-/* # KE STAŽENÍ (cg-download) – dlaždice se souborem a odkazy na formáty.
-   Používá „Loga a fotografie", počítá se s dalšími stránkami ke stažení
-   (fotografie a vizualizace projektů).
-   use:
-   <ul class="cg-download-grid">
-     <li class="cg-download-card">
-       <h3 class="cg-download-card-title">Primární logo CG</h3>   (volitelné)
-       <figure class="cg-download-media"><img …></figure>
-       <p class="cg-download-label">Ke stažení</p>
-       <ul class="cg-download-files">
-         <li><a class="cg-download-file" href="…" download>
-           <i class="fa-light fa-file" aria-hidden="true"></i>
-           <span class="cg-download-file-name">PNG</span>
-           <span class="cg-download-file-btn"><i class="fa-solid fa-download" aria-hidden="true"></i></span>
-         </a></li>
-       </ul>
-     </li>
-   </ul>
-   Fotky: <li class="cg-download-card cg-download-card--photo"> – fotografie
-   v původním poměru stran (na výšku i na šířku), celá viditelná, zarovnaná
-   doleva nahoru. */
+/* # KE STAŽENÍ (cg-download) – dlaždice se souborem a odkazy na formáty. */
 .cg-download-grid {
   --cg-download-columns: 4;
 
@@ -565,17 +535,13 @@
   }
 }
 
-/* Náhled fotografie – v původním poměru stran (na výšku i na šířku), vždy celá.
-   Zarovnání doleva nahoru, o něco širší okraj dlaždice. Výšky dlaždic v řádku
-   srovnává grid (položky se natahují), flex: 1 uvnitř karty drží „Ke stažení"
-   s odkazy u dna. */
+/* Náhled fotografie */
 .cg-download-card--photo {
   padding: 24px;
 
   .cg-download-media {
     display: block;
-    /* základ dlaždice centruje přes place-items – a justify-items od Chromu ~123
-       platí i v blokovém layoutu, proto je potřeba vrátit výchozí hodnotu */
+    /* základ dlaždice centruje přes place-items – a justify-items */
     place-items: normal;
     flex: 1 1 auto;
     min-height: 0;
@@ -656,7 +622,7 @@
 }
 
 
-/* „Ke stažení" – margin-top: popisek i odkazy u dna dlaždice */
+/* „Ke stažení" */
 .cg-download-label {
   margin-top: auto;
   margin-bottom: 8px;
@@ -764,7 +730,7 @@
     flex-direction: column;
   }
 
-  /* Tlačítko drží u spodní hrany karty (karty v řádku jsou stejně vysoké) */
+  /* Tlačítko u spodní hrany karty */
   .card-body > .btn {
     margin-top: auto;
     align-self: start;
@@ -885,22 +851,15 @@
   }
 }
 
-/* Pod 992px je mřížka jednosloupcová a dlaždice zabírá celou šířku – s pevnou výškou
-   250px by z obrázku při 991px zbylo 26 % (poměr 3,84 : 1). Výšku proto řídí poměr stran:
-   min-height 250px zachovává současnou podobu na telefonu, max-height drží stránku
-   v rozumné délce na tabletu. Poměr se tím drží v rozsahu 1,15–2,40 místo 1,15–3,84. */
+/* Pod 992px je mřížka jednosloupcová a dlaždice zabírá celou šířku  */
 @media (width < 992px) {
   .hp-banner {
-    /* width: 100% je nutná – s poměrem stran a min-height si prohlížeč jinak dopočítá
-       šířku z výšky (250 × 16/9 = 444px) a dlaždice přeteče sloupec */
     width: 100%;
     aspect-ratio: 16 / 9;
     max-height: 400px;
   }
 
-  /* Dlaždice na výšku zůstávají na výšku i na mobilu – jednak se tím mřížka nescvrkne
-     na řadu stejných pruhů, jednak 4:5 odpovídá svislému posteru i videu (900 × 1120).
-     Nad ~480px šířky by bylo 4:5 neúnosně vysoké, proto vlastní max-height. */
+  /* Dlaždice na výšku zůstávají na výšku i na mobilu */
   .hp-banner.tall {
     aspect-ratio: 4 / 5;
     max-height: 560px;
@@ -908,16 +867,7 @@
 }
 
 /* # PROMO BANNER
-   Prokliknutelná dlaždice – obrázek nebo video přes celou plochu, obsah zarovnaný dolů.
-   Dvojice bannerů na konci stránky se sází do mřížky .promo-banners.
-   use:
-   <section class="promo-banners-section">
-     <div class="container-main">
-       <div class="promo-banners">
-         <a href="…" class="promo-banner">
-           <div class="promo-banner-media">…</div>
-           <div class="promo-banner-content">…</div>
-         </a> */
+   Prokliknutelná dlaždice */
 .promo-banner {
   --promo-banner-title-size: 32px;
   --promo-banner-padding: 40px;
@@ -934,7 +884,7 @@
   justify-content: end;
   color: var(--white);
 
-  /* ztmavení kvůli čitelnosti textu */
+  /* ztmavení  */
   &::before {
     content: "";
     position: absolute;
@@ -951,7 +901,7 @@
     scale: 1.05;
   }
 
-  /* tlačítko na banneru: žluté, na hover bílé, text vždy černý */
+  /* tlačítko na banneru */
   .btn {
     --btn-theme-color: var(--cg-yellow);
     --btn-contrast-color: var(--black);
@@ -979,7 +929,7 @@
     transition: scale 0.4s ease;
   }
 
-  /* video (pokud je doplněno) překrývá obrázek, který slouží jako poster/fallback */
+  /* video (pokud je) překrývá obrázek, který slouží jako poster/fallback */
   video {
     z-index: 1;
   }
@@ -1042,17 +992,8 @@
 }
 
 
-/* # INFO PANEL – hlavička s ikonou, zvýrazněná poznámka, odrážky s fajfkami.
-   Používá financování (`.info-card`, `.programs-panel`) i bonusy; velikost ikony
-   se přenastavuje proměnnou `--info-icon-size`, oddělovač `--info-divider`.
-   use:
-   <div class="info-head">
-     <span class="info-icon"><i class="fa-solid fa-…" aria-hidden="true"></i></span>
-     <h3 class="info-title">Nadpis</h3>
-   </div>
-   <p class="note">Zvýrazněná poznámka</p>
-   <h4 class="info-subtitle">Mezinadpis</h4>
-   <ul class="check-list"><li><i class="fa-solid fa-circle-check" aria-hidden="true"></i>…</li></ul> */
+/* # INFO PANEL – 
+   Používá financování (`.info-card`, `.programs-panel`) i bonusy. */
 .info-head {
   display: flex;
   align-items: center;
@@ -1127,19 +1068,8 @@
 
 
 /* # DLAŽDICE PROJEKTU – vizualizace na pozadí, přes ni skleněný panel s obsahem.
-   Používá přehled projektů (může být na více stránkách). Video na pozadí je nepovinné
-   a přehrává se až po najetí kurzorem (js/loop-video.js, data-loop-video="hover").
-   use:
-   <div class="project-tiles">
-     <a href="…" class="project-tile">
-       <div class="project-tile-media"><img …> <!-- volitelně <video data-loop-video="hover"> --></div>
-       <div class="project-tile-panel">
-         <h3 class="project-tile-title">Název projektu</h3>
-         <p class="project-tile-location"><span>Praha 3</span><span>Žižkov</span></p>
-         <p class="project-tile-text">…</p>
-         <span class="btn btn-primary">Prohlédnout …</span>
-       </div>
-     </a> */
+   Používá přehled projektů. Video na pozadí nepovinné
+   a přehrává se až po najetí kurzorem (js/loop-video.js, data-loop-video="hover"). */
 .project-tiles {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1147,9 +1077,7 @@
 }
 
 .project-tile {
-  /* Dlaždice je kontejner: šířka panelu se řídí šířkou dlaždice, ne šířkou okna –
-     na jiné stránce může být dlaždic v řádku jiný počet. Pozor, container query
-     může stylovat jen potomky kontejneru, proto se přepíná panel, ne dlaždice. */
+  /* Dlaždice je kontejner: šířka panelu se řídí šířkou dlaždice, ne šířkou okna */
   container: project-tile / inline-size;
 
   position: relative;
@@ -1187,12 +1115,12 @@
   opacity: 1;
 }
 
-/* dlaždice bez videa se na hover jemně přiblíží */
+/* dlaždice bez videa - přiblížení */
 .project-tile:not(:has(video)):hover .project-tile-media img {
   scale: 1.05;
 }
 
-/* Skleněný panel – překrývá necelou polovinu dlaždice */
+/* Skleněný panel přes část dlaždice */
 .project-tile-panel {
   --project-tile-panel-width: 46%;
   --project-tile-padding: 40px;
@@ -1220,7 +1148,7 @@
   color: var(--white);
 }
 
-/* Lokalita – dva sloupce oddělené svislou čárou, nad i pod vodorovná linka */
+/* Lokalita */
 .project-tile-location {
   width: 100%;
   margin-bottom: 0;
@@ -1252,7 +1180,7 @@
   white-space: normal;
 }
 
-/* Užší dlaždice – panel dostane větší podíl, aby text nebyl v proužku */
+/* Užší dlaždice */
 @container project-tile (width < 640px) {
   .project-tile-panel {
     --project-tile-panel-width: 55%;
@@ -1261,7 +1189,7 @@
 }
 
 /* Nejužší dlaždice (telefon): panel přes celou šířku u spodní hrany,
-   vizualizace zůstává vidět nad ním */
+   vizualizace nad ním */
 @container project-tile (width < 420px) {
   .project-tile-panel {
     --project-tile-panel-width: 100%;
@@ -1276,13 +1204,13 @@
 }
 
 @media (width < 576px) {
-  /* aby nad panelem zbylo místo na vizualizaci */
+  /* místo pro viz nad panelem */
   .project-tile {
     min-height: 460px;
   }
 }
 
-/* Jedna dlaždice na řádek – dvojice je na tabletu příliš útlá */
+/* Jedna dlaždice na řádek */
 @media (width < 992px) {
   .project-tiles {
     grid-template-columns: minmax(0, 1fr);
@@ -1292,21 +1220,7 @@
 
 /* # GALERIE – hlavní obrázek s ovládáním, pás náhledů a společný lightbox.
    Chování drží public/js/gallery.js ([data-cg-gallery] + jeden <dialog class="cg-lightbox">
-   na stránku). Počet náhledů v pásu určuje (--cg-gallery-thumbs)
-   use:
-   <div class="…" data-cg-gallery>
-     <div class="cg-gallery-stage">
-       <img class="cg-gallery-image" src="…" alt="…">
-       <button type="button" class="cg-gallery-stage-btn" aria-label="Zvětšit fotografii"></button>
-       <button type="button" class="cg-gallery-nav cg-gallery-nav--prev" …>…</button>
-       <button type="button" class="cg-gallery-nav cg-gallery-nav--next" …>…</button>
-       <button type="button" class="cg-gallery-zoom" …>…</button>
-     </div>
-     <ul class="cg-gallery-thumbs">
-       <li><button type="button" class="cg-gallery-thumb"><img …></button></li>
-       <li class="cg-gallery-more"><button type="button" class="cg-gallery-thumb-more">…</button></li>
-     </ul>
-   </div> */
+   na stránku). Počet náhledů v pásu určuje (--cg-gallery-thumbs) */
 .cg-gallery-stage,
 .cg-gallery-thumbs {
   --cg-gallery-nav-size: 40px;
@@ -1326,7 +1240,7 @@
   object-fit: cover;
 }
 
-/* neviditelná plocha přes obrázek – klik otevře lightbox */
+/* neviditelná plocha přes obrázek – otevření lightboxu */
 .cg-gallery-stage-btn {
   position: absolute;
   inset: 0;
@@ -1620,9 +1534,7 @@
 }
 
 
-/* # KICKER – rubrika nad nadpisem (krátká čárka + verzálky).
-   Používá detail aktuality i karty v přehledu aktualit.
-   use: <p class="cg-kicker">Rezidenční projekty</p> */
+/* # KICKER – rubrika nad nadpisem */
 .cg-kicker {
   display: flex;
   align-items: center;
@@ -1644,16 +1556,7 @@
 }
 
 
-/* # TÉMATA – světlý box se štítky (zatím bez chování, připraveno pro filtrování).
-   use:
-   <div class="cg-topics">
-     <h2 class="cg-topics-title">Témata</h2>
-     <nav aria-label="Témata článků">
-       <ul class="cg-topic-list">
-         <li><a href="…" class="cg-topic" aria-current="page">Vše</a></li>
-       </ul>
-     </nav>
-   </div> */
+/* # TÉMATA – světlý box se štítky (zatím bez chování, připraveno pro filtrování). */
 .cg-topics {
   padding: 48px 32px;
   border-radius: var(--controls-border-radius);
@@ -1720,17 +1623,7 @@
 
 
 /* # TABY – sloupec přepínačů (hypotéka, efektivní dispozice).
-   Chování: js/tabs.js (role="tablist" + data-tabs). Zavřený tab ukazuje „+",
-   otevřený žlutý křížek; rozvržení tabů vůči panelům si určuje stránka.
-   use:
-   <div class="cg-tabs" role="tablist" data-tabs aria-label="…">
-     <button type="button" class="cg-tab" role="tab" id="…" aria-controls="…" aria-selected="true">
-       <span>byt <strong>1+kk</strong></span>
-       <i class="cg-tab-icon cg-tab-icon--plus fa-light fa-plus" aria-hidden="true"></i>
-       <i class="cg-tab-icon cg-tab-icon--close fa-light fa-xmark" aria-hidden="true"></i>
-     </button>
-   </div>
-   <div role="tabpanel" id="…" aria-labelledby="…" tabindex="0" hidden>…</div> */
+   Chování: js/tabs.js (role="tablist" + data-tabs). */
 .cg-tabs {
   display: flex;
   flex-direction: column;
@@ -1884,7 +1777,6 @@
   position: relative;
   padding-right: calc(10px + 8px);
 
-  /* display block je potřeba, ale aby nepřepsal jinde definovaný display je zabalený v :where() který má specificity 0; ekvivalentní selectoru :where(.link-arrow) */
   :where(&) {
     display: block;
   }
