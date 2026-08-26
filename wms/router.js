@@ -137,6 +137,16 @@ const routerOptions = {
       ],
     },
     {
+      path: "/ke-stazeni-projekty",
+      name: "ke-stazeni-projekty",
+      title: "Fotografie a vizualizace projektů ke stažení",
+      description: "Rozcestník fotografií a vizualizací projektů CENTRAL GROUP ke stažení pro média.",
+      blocks: [
+        { src: "meta-common" },
+        { src: "ke-stazeni-projekty" },
+      ],
+    },
+    {
       path: "/ke-stazeni-projekt",
       name: "ke-stazeni-projekt",
       title: "Fotografie a vizualizace projektu ke stažení",
