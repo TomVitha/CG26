@@ -947,7 +947,7 @@
     transition: opacity 0.3s ease;
   }
 
-  &:hover .promo-banner-media :is(img, video) {
+  &:hover .promo-banner-media :is(img) {
     scale: 1.05;
   }
 
