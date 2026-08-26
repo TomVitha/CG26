@@ -4,15 +4,15 @@
 <div class="hero hero--hp">
   <!-- Video na pozadí hero sekce. Zdroj i poster přepíná js/hero-video.js i za běhu –
        <source media> prohlížeč vyhodnotí jen při načtení a po změně šířky okna (otočení
-       displeje) zdroj sám nepřepne. Poster jde v HTML zadat jen jeden, varianty drží data-poster.
-       TODO: zástupné video i poster – nahradit finálními exporty (viz docs/hero-video-zadani.md). -->
+       displeje) zdroj sám nepřepne. U Poster varianty drží data-poster.
+        -->
   <video class="hero-bg" data-hero-video autoplay muted loop playsinline preload="auto"
     aria-hidden="true" tabindex="-1"
     poster="https://www.central-group.cz/storage/CG/test/video-loop-hp/poster/HP-main.jpg">
     <!-- desktop 16:9 (1920×1080) -->
     <source src="https://www.central-group.cz/storage/CG/test/video-loop-hp/HP-main.mp4" type="video/mp4" media="(min-width: 768px)"
       data-poster="https://www.central-group.cz/storage/CG/test/video-loop-hp/poster/HP-main.jpg">
-    <!-- tablet 4:5 (1080×1350) – až bude video hotové, stačí odkomentovat; rozsahy se nepřekrývají, na pořadí nezáleží
+    <!-- tablet 4:5 (1080×1350) 
     <source src="https://www.central-group.cz/storage/CG/wms3/img/kariera/videa/empiria-tablet.mp4" type="video/mp4" media="(min-width: 576px) and (max-width: 767.98px)"
       data-poster="https://www.central-group.cz/storage/CG/wms3/img/kariera/videa/empiria-tablet-poster.png">
     -->
@@ -44,7 +44,7 @@
         </picture>
         <!-- Video smyčka dlaždice – spouští ji js/loop-video.js až po najetí kurzorem
              (na dotykových zařízeních se nepřehraje, platí tam obrázek výše, který
-             slouží zároveň jako poster/fallback). Až bude video hotové, odkomentovat:-->
+             slouží zároveň jako poster/fallback).-->
         <video data-loop-video="hover" muted loop playsinline preload="none"
                aria-hidden="true" tabindex="-1">
           <!--source src="video/loop-hp-viladomy-strizkov.webm" type="video/webm"-->
@@ -134,9 +134,7 @@
         <picture>
           <img src="https://www.central-group.cz/storage/CG/test/video-loop-hp/poster/hp-banner_192.jpg" alt="Rezidenční čtvrť Tesla Hloubětín">
         </picture>
-        <!-- Video smyčka dlaždice – spouští ji js/loop-video.js až po najetí kurzorem
-             (na dotykových zařízeních se nepřehraje, platí tam obrázek výše, který
-             slouží zároveň jako poster/fallback). Až bude video hotové, odkomentovat:-->
+        <!-- Video smyčka dlaždice – spouští ji js/loop-video.js -->
         <video data-loop-video="hover" muted loop playsinline preload="none"
                aria-hidden="true" tabindex="-1">
           <!--source src="video/loop-hp-rezidencni-ctvrt-tesla-hloubetin.webm" type="video/webm"-->
@@ -154,9 +152,7 @@
         <picture>
           <img src="https://www.central-group.cz/storage/CG/test/video-loop-hp/poster/hp-banner_tall_204.jpg" alt="Bohdalecké zahrady">
         </picture>
-        <!-- Video smyčka dlaždice – spouští ji js/loop-video.js až po najetí kurzorem
-             (na dotykových zařízeních se nepřehraje, platí tam obrázek výše, který
-             slouží zároveň jako poster/fallback). Až bude video hotové, odkomentovat: -->
+      <!-- Video smyčka dlaždice – spouští ji js/loop-video.js -->
         <video data-loop-video="hover" muted loop playsinline preload="none"
                aria-hidden="true" tabindex="-1">
           <!--source src="video/loop-hp-bohdalecke-zahrady.webm" type="video/webm"-->
@@ -174,9 +170,7 @@
         <picture>
           <img src="https://www.central-group.cz/storage/CG/test/video-loop-hp/poster/hp-banner_tall_197.jpg" alt="Viladomy Počernice">
         </picture>
-        <!-- Video smyčka dlaždice – spouští ji js/loop-video.js až po najetí kurzorem
-             (na dotykových zařízeních se nepřehraje, platí tam obrázek výše, který
-             slouží zároveň jako poster/fallback). Až bude video hotové, odkomentovat:-->
+      <!-- Video smyčka dlaždice – spouští ji js/loop-video.js -->
         <video data-loop-video="hover" muted loop playsinline preload="none"
                aria-hidden="true" tabindex="-1">
           <!--source src="video/loop-hp-viladomy-pocernice.webm" type="video/webm"-->
@@ -194,9 +188,7 @@
         <picture>
           <img src="https://www.central-group.cz/Uloziste/0e/0eefd926-f099-4d5d-a3c6-bba84ba408ea.jpg" alt="Jižní Terasy">
         </picture>
-        <!-- Video smyčka dlaždice – spouští ji js/loop-video.js až po najetí kurzorem
-             (na dotykových zařízeních se nepřehraje, platí tam obrázek výše, který
-             slouží zároveň jako poster/fallback). Až bude video hotové, odkomentovat:-->
+      <!-- Video smyčka dlaždice – spouští ji js/loop-video.js -->
         <video data-loop-video="hover" muted loop playsinline preload="none"
                aria-hidden="true" tabindex="-1">
           <!--source src="video/loop-hp-rezidence-jizni-terasy.webm" type="video/webm"-->
@@ -214,9 +206,7 @@
         <picture>
           <img src="https://www.central-group.cz/Uloziste/1d/1de1b630-81ba-452a-b0a6-6441fc98a62e.jpg" alt="Viladomy Pitkovice">
         </picture>
-        <!-- Video smyčka dlaždice – spouští ji js/loop-video.js až po najetí kurzorem
-             (na dotykových zařízeních se nepřehraje, platí tam obrázek výše, který
-             slouží zároveň jako poster/fallback). Až bude video hotové, odkomentovat:-->
+      <!-- Video smyčka dlaždice – spouští ji js/loop-video.js -->
         <video data-loop-video="hover" muted loop playsinline preload="none"
                aria-hidden="true" tabindex="-1">
           <!--source src="video/loop-hp-viladomy-pitkovice.webm" type="video/webm"-->
@@ -234,9 +224,7 @@
         <picture>
           <img src="https://www.central-group.cz/Uloziste/96/96d1835e-10f3-4f77-b700-595157fb230d.jpg" alt="Harfa Living">
         </picture>
-        <!-- Video smyčka dlaždice – spouští ji js/loop-video.js až po najetí kurzorem
-             (na dotykových zařízeních se nepřehraje, platí tam obrázek výše, který
-             slouží zároveň jako poster/fallback). Až bude video hotové, odkomentovat:-->
+      <!-- Video smyčka dlaždice – spouští ji js/loop-video.js -->
         <video data-loop-video="hover" muted loop playsinline preload="none"
                aria-hidden="true" tabindex="-1">
           <!--source src="video/loop-hp-harfa-living.webm" type="video/webm"-->
@@ -254,9 +242,7 @@
         <picture>
           <img src="https://www.central-group.cz/Uloziste/86/86ff1fee-f02d-47e6-b397-cf1849cd18a4.jpg" alt="Rezidence Parková Čtvrť">
         </picture>
-        <!-- Video smyčka dlaždice – spouští ji js/loop-video.js až po najetí kurzorem
-             (na dotykových zařízeních se nepřehraje, platí tam obrázek výše, který
-             slouží zároveň jako poster/fallback). Až bude video hotové, odkomentovat:-->
+      <!-- Video smyčka dlaždice – spouští ji js/loop-video.js -->
         <video data-loop-video="hover" muted loop playsinline preload="none"
                aria-hidden="true" tabindex="-1">
           <!--source src="video/loop-hp-rezidence-parkova-ctvrt.webm" type="video/webm"-->
@@ -398,7 +384,7 @@
         </form>
 
         <!--  (transparentní PNG) -->
-        <img class="newsletter-phone" src="img/newsletter-phone-placeholder.png" alt="" aria-hidden="true">
+        <img class="newsletter-phone" src="img/newsform-mobile.png" alt="" aria-hidden="true">
       </div>
 
       <!-- PROMO BANNERS -->
@@ -444,7 +430,7 @@
             </span>
           </div>
           <!-- transparentní PNG -->
-          <img class="promo-image" src="img/magazin-placeholder.png" alt="" aria-hidden="true">
+          <img class="promo-image" src="img/banner-magazine.png" alt="" aria-hidden="true">
         </a>
 
       </div>
