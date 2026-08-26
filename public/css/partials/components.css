@@ -1868,8 +1868,11 @@
 .link-arrow {
   position: relative;
   padding-right: calc(10px + 8px);
-  /* ? maybe - block je potřeba, ale nevím jestli ho tu specifikovat, aby se netloukl */
-  display: block;
+
+  /* display block je potřeba, ale aby nepřepsal jinde definovaný display je zabalený v :where() který má specificity 0; ekvivalentní selectoru :where(.link-arrow) */
+  :where(&) {
+    display: block;
+  }
 
   &::after {
     content: ">";
