@@ -214,9 +214,6 @@
   background-color: var(--blue-light);
   color: var(--cg-blue);
   font-family: inherit;
-  font-size: 1.125rem;
-  font-weight: 700;
-  line-height: 1.3;
   text-align: left;
   cursor: pointer;
   transition: background-color 0.25s ease, color 0.25s ease;

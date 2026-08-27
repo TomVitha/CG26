@@ -139,8 +139,8 @@
        <ul class="benefits-list">
          <li class="benefit">
            <span class="benefit-icon"><i class="fa-solid fa-…" aria-hidden="true"></i></span>
-           <h3 class="benefit-title">Nadpis</h3>
-           <p>Text</p>
+           <h5>Nadpis</h5>
+           <p class="small">Text</p>
          </li> */
 .benefits {
   --benefits-bg: linear-gradient(88deg, var(--cg-blue) 0%, var(--blue) 49.28%, var(--cg-blue) 98.08%), var(--snow);
@@ -172,18 +172,9 @@
   }
 }
 
-
 .benefit {
   position: relative;
-
-  p {
-    color: var(--lavender);
-    font-size: 0.875rem;
-    margin-bottom: 0;
-  }
 }
-
-
 
 .benefit-icon {
   display: inline-grid;
@@ -197,13 +188,6 @@
   font-size: 1.25rem;
 }
 
-.benefit-title {
-  font-size: 1.125rem;
-  font-weight: 700;
-  line-height: 1.35;
-  margin-bottom: 0.75rem;
-  color: var(--white);
-}
 
 @media (width < 1200px) {
   .benefits-list {
