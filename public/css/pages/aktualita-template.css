@@ -94,6 +94,11 @@
   margin-inline: auto;
   padding-top: 64px;
 
+  a {
+    color: var(--text-link);
+    text-decoration: underline;
+  }
+
   /* Větší podnadpis */
   h2 {
     margin-top: var(--article-heading-spacing);

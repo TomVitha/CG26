@@ -1,0 +1,163 @@
+<!-- ŠABLONA DETAILU AKTUALITY
+     Stránka nemá hero sekci, hlavička článku
+     si sama odsazuje obsah od fixní hlavičky webu (--header-height).
+     Obsah je v užším `.container-narrow` (1168px), text a média uvnitř článku jsou
+     ještě užší – viz proměnné v css/pages/aktualita.css. -->
+<article class="article">
+
+  <div class="container-narrow">
+
+    <!-- ## HLAVIČKA ČLÁNKU -->
+    <header class="article-header">
+      <p class="kicker article-kicker">ze života CENTRAL GROUP</p>
+
+      <h1 class="article-title">
+        <strong>Společné zážitky</strong> posilují náš tým
+      </h1>
+
+      <p class="article-perex">
+        Dobrý tým se netvoří jen v kanceláři. Proto kolegové z různých oddělení CENTRAL GROUP pravidelně vyrážejí za společnými zážitky, při kterých se mohou lépe poznat i mimo pracovní prostředí. Ať už jde o jógu, únikovou hru, posezení v hospůdce, šlapadla na Vltavě, venkovní hry nebo lanové centrum. Každá aktivita nabízí trochu jinou výzvu.
+      </p>
+
+      <p class="article-meta">
+        <time datetime="2026-08-26">26. srpna 2026</time>
+        <span class="article-meta-separator" aria-hidden="true">•</span>
+        <!-- TODO: hodnotu doplní calculateReadingTime z počtu slov v .article-body -->
+        <span data-reading-time>3 min čtení</span>
+      </p>
+    </header>
+
+    <!-- ## HLAVNÍ OBRÁZEK (přes celou šířku užšího kontejneru) -->
+    <figure class="article-media">
+      <!-- TODO: zástupný obrázek -->
+      <img src="https://www.central-group.cz/uloziste/4a/4a66740b-61b9-4d66-8b7a-4431166d5444.webp"
+        alt="Galavečer ABS Gala" width="1168" height="620">
+    </figure>
+
+    <!-- ## TĚLO ČLÁNKU -->
+    <div class="article-body">
+
+      <p>
+        Soustředění, spolupráce, vzájemná důvěra i schopnost držet společný směr se totiž hodí při sportu stejně jako při každodenní práci. Teambuildingové akce přinášejí nejen zábavu a nové zážitky, ale především pomáhají budovat pevnější vztahy napříč CENTRAL GROUP.
+      </p>
+
+
+      <!-- ## GALERIE V ČLÁNKU (sdílená komponenta – js/gallery.js) -->
+      <div class="article-gallery" data-cg-gallery>
+
+        <div class="cg-gallery-stage">
+          <!-- TODO: zástupné fotografie -->
+          <img class="cg-gallery-image" src="https://www.central-group.cz/uloziste/4a/4a66740b-61b9-4d66-8b7a-4431166d5444.webp" alt="">
+          <button type="button" class="cg-gallery-stage-btn" aria-label="Zvětšit fotografii"></button>
+          <button type="button" class="cg-gallery-nav cg-gallery-nav--prev" aria-label="Předchozí fotografie">
+            <i class="fa-sharp fa-solid fa-arrow-left" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="cg-gallery-nav cg-gallery-nav--next" aria-label="Další fotografie">
+            <i class="fa-sharp fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="cg-gallery-zoom" aria-label="Otevřít galerii článku">
+            <i class="fa-regular fa-magnifying-glass-plus" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <ul class="cg-gallery-thumbs">
+          <li>
+            <button type="button" class="cg-gallery-thumb">
+              <img src="https://www.central-group.cz/uloziste/4a/4a66740b-61b9-4d66-8b7a-4431166d5444.webp" alt="Teambuilding – fotografie 1" loading="lazy">
+            </button>
+          </li>
+          <li>
+            <button type="button" class="cg-gallery-thumb">
+              <img src="https://www.central-group.cz/uloziste/fd/fdc41441-b820-410e-8794-9cb8df092b13.webp" alt="Teambuilding – fotografie 2" loading="lazy">
+            </button>
+          </li>
+          <li>
+            <button type="button" class="cg-gallery-thumb">
+              <img src="https://www.central-group.cz/uloziste/ac/ac4b6715-2289-40cb-a39a-40e51ab17917.webp" alt="Teambuilding – fotografie 3" loading="lazy">
+            </button>
+          </li>
+          <li>
+            <button type="button" class="cg-gallery-thumb">
+              <img src="https://www.central-group.cz/uloziste/49/49bba43b-c3b4-48f3-8301-ecae16e54809.webp" alt="Teambuilding – fotografie 4" loading="lazy">
+            </button>
+          </li>
+          <li>
+            <button type="button" class="cg-gallery-thumb">
+              <img src="https://www.central-group.cz/uloziste/5e/5ed35dac-7d20-4d2f-acbc-395ac30c9840.webp" alt="Teambuilding – fotografie 5" loading="lazy">
+            </button>
+          </li>
+          <li>
+            <button type="button" class="cg-gallery-thumb">
+              <img src="https://www.central-group.cz/uloziste/60/605102e9-781e-481f-8424-3e51eb4753c2.webp" alt="Teambuilding – fotografie 6" loading="lazy">
+            </button>
+          </li>
+          <li>
+            <button type="button" class="cg-gallery-thumb">
+              <img src="https://www.central-group.cz/uloziste/84/84dc16a4-1eb4-49fb-a591-b39ff878b4f8.webp" alt="Teambuilding – fotografie 7" loading="lazy">
+            </button>
+          </li>
+
+          <li class="cg-gallery-more">
+            <button type="button" class="cg-gallery-thumb-more">
+              <span class="cg-gallery-more-icon"><i class="fa-regular fa-images" aria-hidden="true"></i></span>
+              <span class="cg-gallery-more-count"></span>
+            </button>
+          </li>
+        </ul>
+
+      </div>
+
+        <p>
+          I tohle patří k životu v CENTRAL GROUP 💛.
+        </p>
+
+        <p>
+          Pokud by se vám líbilo být součástí našeho týmu, podívejte se na aktuální volné pozice: <a href="https://central-group.jobs.cz/" target="_blank">ZDE</a>.
+        </p>
+
+    </div>
+  </div>
+
+  <!-- ## TÉMATA (zatím jen vizuální skořápka pro filtrování) -->
+  <section class="article-topics-section">
+    <div class="container-narrow">
+      <div class="cg-topics">
+        <h2 class="cg-topics-title">Témata</h2>
+
+        <nav aria-label="Témata článků">
+          <ul class="cg-topic-list">
+            <!-- TODO: odkazy na výpis aktualit podle tématu -->
+            <li><a href="#" class="cg-topic" aria-current="page">Vše</a></li>
+            <li><a href="#" class="cg-topic">Architektura</a></li>
+            <li><a href="#" class="cg-topic">Interiér &amp; design</a></li>
+            <li><a href="#" class="cg-topic">Rezidenční projekty</a></li>
+            <li><a href="#" class="cg-topic">Udržitelnost</a></li>
+            <li><a href="#" class="cg-topic">Financování</a></li>
+            <li><a href="#" class="cg-topic">Ze života CENTRAL GROUP</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <!-- společný lightbox galerií (jeden na stránku) -->
+  <dialog class="cg-lightbox" aria-label="Galerie článku">
+    <div class="cg-lightbox-inner">
+      <img class="cg-lightbox-image" src="" alt="">
+      <p class="cg-lightbox-caption"></p>
+    </div>
+    <button type="button" class="cg-lightbox-nav cg-lightbox-prev" aria-label="Předchozí fotografie">
+      <i class="fa-sharp fa-solid fa-arrow-left" aria-hidden="true"></i>
+    </button>
+    <button type="button" class="cg-lightbox-nav cg-lightbox-next" aria-label="Další fotografie">
+      <i class="fa-sharp fa-solid fa-arrow-right" aria-hidden="true"></i>
+    </button>
+    <button type="button" class="cg-lightbox-close" aria-label="Zavřít galerii">
+      <i class="fa-sharp fa-solid fa-xmark" aria-hidden="true"></i>
+    </button>
+    <p class="cg-lightbox-counter"></p>
+  </dialog>
+
+</article>
+
+<script src="js/gallery.js"></script>

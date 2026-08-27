@@ -18,7 +18,7 @@
 
 /* STYLING JEDNOTLIVÝCH STRÁNEK */
 /* TODO: Absolutně je eliminovat, nahradit custom styling za generické, nebo je definovat v komponentech */
-@import url("./pages/aktualita.css");
+@import url("./pages/aktualita-template.css");
 @import url("./pages/aktuality.css");
 @import url("./pages/bonusy.css");
 @import url("./pages/efektivni-dispozice.css");

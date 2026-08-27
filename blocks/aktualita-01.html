@@ -1,0 +1,144 @@
+<!-- ŠABLONA DETAILU AKTUALITY
+     Stránka nemá hero sekci, hlavička článku
+     si sama odsazuje obsah od fixní hlavičky webu (--header-height).
+     Obsah je v užším `.container-narrow` (1168px), text a média uvnitř článku jsou
+     ještě užší – viz proměnné v css/pages/aktualita.css. -->
+<article class="article">
+
+  <div class="container-narrow">
+
+    <!-- ## HLAVIČKA ČLÁNKU -->
+    <header class="article-header">
+      <p class="kicker article-kicker">Architektura</p>
+
+      <h1 class="article-title">
+        <strong>CENTRAL GROUP</strong> nominován na ocenění ASB GALA 2026
+      </h1>
+
+      <p class="article-perex">
+        S potěšením bychom vás chtěli informovat, že CENTRAL GROUP byl v nominován na ocenění ASB GALA 2026, a to hned ve dvou kategoriích: Developer roku – Rezidence a Cena veřejnosti. Jedná se již o druhý ročník soutěže, kterou pořádá magazín ASB o architektuře, stavebnictví a byznysu.
+      </p>
+
+      <p class="article-meta">
+        <time datetime="2026-03-12">27. srpna 2026</time>
+        <span class="article-meta-separator" aria-hidden="true">•</span>
+        <!-- TODO: hodnotu doplní calculateReadingTime z počtu slov v .article-body -->
+        <span data-reading-time>2 min čtení</span>
+      </p>
+    </header>
+
+    <!-- ## HLAVNÍ OBRÁZEK (přes celou šířku užšího kontejneru) -->
+    <figure class="article-media">
+      <!-- TODO: zástupný obrázek -->
+      <img src="https://www.central-group.cz/uloziste/30/3083438e-c092-4aa9-b973-d0ee0edb8aff.webp"
+        alt="Galavečer ABS Gala" width="1168" height="620">
+    </figure>
+
+    <!-- ## TĚLO ČLÁNKU -->
+    <div class="article-body">
+
+      <p>
+        O vítězi kategorie Rezidence rozhodne odborná porota. Hlasování v kategorii Cena veřejnosti je otevřené široké veřejnosti. Pokud jste příznivcem našich rezidenčních projektů, budeme moc rádi za Váš hlas.
+      </p>
+
+      <p>
+        Hlasování probíhá do 5. října 2026 pod tímto <a href="https://www.asb-portal.cz/gala" target="_blank">odkazem</a>.
+      </p>
+
+      <p>
+        Vítězové jednotlivých kategorií budou vyhlášeni 13. října 2026 v Národním domě na Vinohradech v Praze.
+      </p>
+
+      <!-- ## GALERIE V ČLÁNKU (sdílená komponenta – js/gallery.js) -->
+      <div class="article-gallery" data-cg-gallery>
+
+        <div class="cg-gallery-stage">
+          <!-- TODO: zástupné fotografie -->
+          <img class="cg-gallery-image" src="https://www.central-group.cz/uloziste/7e/7e76b2f3-a776-4306-8d35-42dac00e0a1b.webp" alt="">
+          <button type="button" class="cg-gallery-stage-btn" aria-label="Zvětšit fotografii"></button>
+          <button type="button" class="cg-gallery-nav cg-gallery-nav--prev" aria-label="Předchozí fotografie">
+            <i class="fa-sharp fa-solid fa-arrow-left" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="cg-gallery-nav cg-gallery-nav--next" aria-label="Další fotografie">
+            <i class="fa-sharp fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="cg-gallery-zoom" aria-label="Otevřít galerii článku">
+            <i class="fa-regular fa-magnifying-glass-plus" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <ul class="cg-gallery-thumbs">
+          <li>
+            <button type="button" class="cg-gallery-thumb">
+              <img src="https://www.central-group.cz/uloziste/7e/7e76b2f3-a776-4306-8d35-42dac00e0a1b.webp" alt="Parková čtvrť – fotografie 1" loading="lazy">
+            </button>
+          </li>
+          <li>
+            <button type="button" class="cg-gallery-thumb">
+              <img src="https://www.central-group.cz/uloziste/90/907df893-834f-4921-bfbb-24818900a6fe.webp" alt="Parková čtvrť – fotografie 2" loading="lazy">
+            </button>
+          </li>
+          <li>
+            <button type="button" class="cg-gallery-thumb">
+              <img src="https://www.central-group.cz/uloziste/b4/b4ad4268-02bf-437b-9dc1-d9464ef07e95.webp" alt="Parková čtvrť – fotografie 3" loading="lazy">
+            </button>
+          </li>
+
+          <li class="cg-gallery-more">
+            <button type="button" class="cg-gallery-thumb-more">
+              <span class="cg-gallery-more-icon"><i class="fa-regular fa-images" aria-hidden="true"></i></span>
+              <span class="cg-gallery-more-count"></span>
+            </button>
+          </li>
+        </ul>
+
+      </div>
+
+
+
+    </div>
+  </div>
+
+  <!-- ## TÉMATA (zatím jen vizuální skořápka pro filtrování) -->
+  <section class="article-topics-section">
+    <div class="container-narrow">
+      <div class="cg-topics">
+        <h2 class="cg-topics-title">Témata</h2>
+
+        <nav aria-label="Témata článků">
+          <ul class="cg-topic-list">
+            <!-- TODO: odkazy na výpis aktualit podle tématu -->
+            <li><a href="#" class="cg-topic" aria-current="page">Vše</a></li>
+            <li><a href="#" class="cg-topic">Architektura</a></li>
+            <li><a href="#" class="cg-topic">Interiér &amp; design</a></li>
+            <li><a href="#" class="cg-topic">Rezidenční projekty</a></li>
+            <li><a href="#" class="cg-topic">Udržitelnost</a></li>
+            <li><a href="#" class="cg-topic">Financování</a></li>
+            <li><a href="#" class="cg-topic">Ze života CENTRAL GROUP</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <!-- společný lightbox galerií (jeden na stránku) -->
+  <dialog class="cg-lightbox" aria-label="Galerie článku">
+    <div class="cg-lightbox-inner">
+      <img class="cg-lightbox-image" src="" alt="">
+      <p class="cg-lightbox-caption"></p>
+    </div>
+    <button type="button" class="cg-lightbox-nav cg-lightbox-prev" aria-label="Předchozí fotografie">
+      <i class="fa-sharp fa-solid fa-arrow-left" aria-hidden="true"></i>
+    </button>
+    <button type="button" class="cg-lightbox-nav cg-lightbox-next" aria-label="Další fotografie">
+      <i class="fa-sharp fa-solid fa-arrow-right" aria-hidden="true"></i>
+    </button>
+    <button type="button" class="cg-lightbox-close" aria-label="Zavřít galerii">
+      <i class="fa-sharp fa-solid fa-xmark" aria-hidden="true"></i>
+    </button>
+    <p class="cg-lightbox-counter"></p>
+  </dialog>
+
+</article>
+
+<script src="js/gallery.js"></script>

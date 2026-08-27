@@ -87,13 +87,13 @@ const routerOptions = {
       ],
     },
     {
-      path: "/aktualita",
-      name: "aktualita",
+      path: "/aktualita-template",
+      name: "aktualita-template",
       title: "Parková čtvrť: Jak roste nová dominanta Žižkova",
       description: "Typová šablona detailu aktuality – nadpis, perex, hlavní obrázek, text, galerie a témata.",
       blocks: [
         { src: "meta-common" },
-        { src: "aktualita" },
+        { src: "aktualita-template" },
       ],
     },
     {
@@ -164,6 +164,27 @@ const routerOptions = {
       blocks: [
         { src: "meta-common" },
         { src: "reference" },
+      ],
+    },
+    // AKTUALITY
+    {
+      path: "/aktualita-01",
+      name: "aktualita-01",
+      title: "aktualita-01",
+      description: "CENTRAL GROUP nominován na ocenění ASB GALA 2026",
+      blocks: [
+        { src: "meta-common" },
+        { src: "aktualita-01" },
+      ],
+    },
+    {
+      path: "/aktualita-02",
+      name: "aktualita-02",
+      title: "aktualita-02",
+      description: "Společné zážitky posilují náš tým",
+      blocks: [
+        { src: "meta-common" },
+        { src: "aktualita-02" },
       ],
     },
     // DEV STRÁNKY
