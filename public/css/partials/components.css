@@ -1206,6 +1206,20 @@
   --cg-gallery-nav-size: 40px;
 }
 
+/* Varianta pro fotografie na výšku
+   <div class="article-gallery cg-gallery-portrait" data-cg-gallery> */
+.cg-gallery-portrait {
+  .cg-gallery-stage {
+    aspect-ratio: 4 / 5;
+    max-width: min(520px, 100%);
+    margin-inline: auto;
+  }
+
+  .cg-gallery-thumb {
+    aspect-ratio: 4 / 5;
+  }
+}
+
 .cg-gallery-stage {
   position: relative;
   aspect-ratio: 5 / 3;
