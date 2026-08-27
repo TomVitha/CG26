@@ -7,10 +7,8 @@
     padding-block: var(--section-spacing);
   }
 
-  /* sub-section (section inside another section) */
   & & {
-    /* debug */
-    background-color: red;
+    /* sub-section (section inside another section) */
   }
 }
 
