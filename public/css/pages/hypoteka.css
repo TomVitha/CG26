@@ -3,7 +3,7 @@
    Markup: blocks/hypoteka.html, chování tabů: public/js/tabs.js
 
    Sdílené komponenty v partials:
-   .section-heading (typography.css), .page-intro, .brow--blue, .benefits,
+   .section-heading (typography.css), .page-intro, .brow-blue, .benefits,
    .cg-tabs / .cg-tab (taby – components.css), .promo-banner(s), .box,
    .contact (components.css), .btn-outline-blue (controls.css)
    ========================================================================== */

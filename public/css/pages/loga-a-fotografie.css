@@ -5,7 +5,7 @@
    Stránka je poskládaná výhradně ze sdílených prvků, vlastní styly zatím nemá:
    .hero--static (nízké hero s grafikou), .downloads* (kostra stránky ke stažení)
    a .cg-download-* (dlaždice) – components.css, .page-intro-* (components.css),
-   .section-heading (typography.css), .brow--blue. Stránka nemá vlastní JS.
+   .section-heading (typography.css), .brow-blue. Stránka nemá vlastní JS.
 
    Odchylky této stránky patří sem – ne do components.css.
    ========================================================================== */

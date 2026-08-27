@@ -2,7 +2,7 @@
    # REFERENCE
    Markup: blocks/reference.html, chování: public/js/reference.js
 
-   Sdílené prvky: .page-intro-heading / .page-intro-text, .benefits, .brow--blue
+   Sdílené prvky: .page-intro-heading / .page-intro-text, .benefits, .brow-blue
    (components.css), .section-heading (typography.css), .btn / .btn-primary /
    .btn-blue (controls.css)
    ========================================================================== */

@@ -5,7 +5,7 @@
    Sdílené komponenty v partials:
    .page-intro-* a .layout-grid (layout.css/components.css), 
    .benefits + (components.css), .section-heading (typography.css),
-   .brow--blue, .cg-tabs / .cg-tab (taby – components.css, chování js/tabs.js),
+   .brow-blue, .cg-tabs / .cg-tab (taby – components.css, chování js/tabs.js),
    .btn-primary (controls.css). Listování obrázky v sadě: js/slides.js.
    ========================================================================== */
 
