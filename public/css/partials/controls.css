@@ -20,24 +20,26 @@ select,
 
 /* # BUTTONS */
 .btn {
-  /* --btn-theme-color: white; */
-  --btn-bg-color: var(--btn-theme-color);
+  --btn-theme-color: #f2f2f2;
+  --btn-bg: var(--btn-theme-color);
   --btn-text-color: var(--btn-contrast-color);
   --btn-border-width: 1px;
   --btn-border-color: transparent;
   --btn-icon-color: currentColor;
-  /* ? maybe - hover variables -- buď přepisovat v :hover, nebo vlastní proměnné */
-  --btn-hover-color: var(--btn-text-color);
-  --btn-hover-bg: var(--btn-bg-color);
+  --btn-hover-bg: var(--btn-bg);
+  --btn-hover-text-color: var(--btn-text-color);
 
   display: inline-flex;
   font-weight: 600;
   color: var(--btn-text-color);
-  background-color: var(--btn-bg-color);
+  background: var(--btn-bg);
   cursor: pointer;
   user-select: none;
   border-color: var(--btn-border-color);
   text-align: center;
+  transition-duration: 0.25s;
+  transition-timing-function: ease;
+  transition-property: color, background;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -47,21 +49,32 @@ select,
 }
 
 .btn:hover {
-  color: var(--btn-hover-color);
+  color: var(--btn-hover-text-color);
   text-decoration: none;
-  background-color: var(--btn-hover-bg);
+  background: var(--btn-hover-bg);
 }
 
+.btn:is(.btn-outline, .btn-outline-fill) {
+  --btn-bg: transparent;
+  --btn-border-color: var(--btn-theme-color);
+  --btn-text-color: var(--btn-theme-color);
+}
+
+.btn.btn-outline-fill {
+  --btn-hover-bg: var(--btn-theme-color);
+  --btn-hover-text-color: var(--btn-contrast-color);
+}
+
+/* Icon */
 .btn :is(.icon, [class*="fa-"]) {
   color: var(--btn-icon-color);
   /* ? font-size zmenšit ? */
 }
 
-
 /* ? maybe ? */
 .btn-link {
   /* color: rgb(6.711627907, 124.1651162791, 233.788372093); */
-  background-color: transparent;
+  background: transparent;
   border-color: transparent;
   box-shadow: none;
 
@@ -74,7 +87,6 @@ select,
     color: inherit;
   }
 }
-
 
 /* LIST */
 .btn-list {
@@ -90,25 +102,22 @@ select,
 /* # THEMES / COLORS */
 .btn-yellow {
   --btn-theme-color: var(--cg-yellow);
-  /* TODO: text color */
+  --btn-contrast-color: var(--black, black);
 }
 
 .btn-blue {
   --btn-theme-color: var(--cg-blue);
   --btn-contrast-color: var(--white);
-
-  &:hover {
-    --btn-theme-color: var(--blue);
-  }
 }
 
 .btn-primary {
   --btn-theme-color: var(--cg-yellow);
   --btn-contrast-color: var(--black, black);
+  --btn-hover-text-color: var(--white, white);
+  --btn-hover-bg: var(--cg-blue);
 
+  /* ? maybe - introduce --btn-hover-icon-color variable ? */
   &:hover {
-    --btn-theme-color: var(--cg-blue);
-    --btn-contrast-color: var(--white, white);
     --btn-icon-color: var(--cg-yellow);
   }
 }
@@ -123,8 +132,7 @@ select {
   color: inherit;
   appearance: none;
   background-clip: padding-box;
-
-  /* TODO: Replace hard-coded with variable */
+  /* TODO: Replace hard-coded value with variable */
   border-color: #cccccc;
 }
 
@@ -134,39 +142,22 @@ select {
   --controls-fs: var(--controls-fs-sm);
   --controls-padding: var(--controls-padding-sm);
   --controls-lh: var(--controls-lh-sm);
-  /* background-color: red !important; */
 }
 
 .controls-md, :is(input, textarea, select).md, .btn-md {
   --controls-fs: var(--controls-fs-md);
   --controls-padding: var(--controls-padding-md);
   --controls-lh: var(--controls-lh-md);
-  /* background-color: green !important; */
 }
 
 .controls-lg, :is(input, textarea, select).lg, .btn-lg {
   --controls-fs: var(--controls-fs-lg);
   --controls-padding: var(--controls-padding-lg);
-  /* content height 24px */
   --controls-lh: var(--controls-lh-lh);
-  /* background-color: skyblue !important; */
 }
 
 
 /* Width of control (or height for <textarea>) follows its content */
 .autosize {
   field-sizing: content;
-}
-
-/* Obrys místo výplně (světlé pozadí) */
-.btn-outline-blue {
-  --btn-theme-color: transparent;
-  --btn-contrast-color: var(--cg-blue);
-  --btn-border-color: var(--cg-blue);
-  --btn-hover-bg: var(--cg-blue);
-  --btn-hover-color: var(--white);
-  --btn-icon-color: currentColor;
-
-  font-weight: 700;
-  transition: background-color 0.25s ease, color 0.25s ease;
 }
