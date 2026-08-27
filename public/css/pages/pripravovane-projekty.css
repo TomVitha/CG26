@@ -24,16 +24,9 @@
   --projects-ease: cubic-bezier(0.4, 0, 0.2, 1);
 
   /* Vzdušnější sekce než výchozích 100px (odpovídá návrhu) */
-  --section-spacing: 220px;
+  /* --section-spacing: 220px; */
   /* odsazení kotvy kvůli fixní hlavičce */
   --projects-scroll-offset: 100px;
-}
-
-.projects-section {
-  background-color: var(--projects-bg);
-  color: var(--white);
-  overflow: clip;
-  scroll-margin-top: var(--projects-scroll-offset);
 }
 
 
@@ -42,16 +35,6 @@
   text-align: center;
   margin-bottom: 56px;
 
-  .tag {
-    margin-bottom: 22px;
-  }
-
-  p {
-    max-width: 46ch;
-    margin-inline: auto;
-    margin-bottom: 0;
-    font-size: 0.875rem;
-  }
 }
 
 .projects-heading {
