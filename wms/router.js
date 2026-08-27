@@ -166,6 +166,7 @@ const routerOptions = {
         { src: "reference" },
       ],
     },
+    // DEV STRÁNKY
     {
       path: "/design-style",
       name: "design-style",
@@ -173,7 +174,17 @@ const routerOptions = {
       description: "Výčet dílčích částí stylu",
       blocks: [
         { src: "meta-common", type: "meta" },
-        { src: "design-style" },
+        { src: "dev/design-style" },
+      ],
+    },
+    {
+      path: "/rozcestnik",
+      name: "rozcestnik",
+      title: "Rozcestník",
+      description: "Rozcestník stránek",
+      blocks: [
+        { src: "meta-common", type: "meta" },
+        { src: "dev/rozcestnik" },
       ],
     },
   ]
