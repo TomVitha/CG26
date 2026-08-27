@@ -914,7 +914,7 @@
     --btn-theme-color: var(--cg-yellow);
     --btn-contrast-color: var(--black);
     --btn-hover-bg: var(--white);
-    --btn-hover-color: var(--black);
+    --btn-hover-text-color: var(--black);
 
     align-self: start;
     width: fit-content;
