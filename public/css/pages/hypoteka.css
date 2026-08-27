@@ -140,28 +140,6 @@
 }
 
 
-/* ## KONTAKTNÍ BLOK (vzhled boxu je v components.css → .box) */
-.hypo-cta {
-  --column-count: 13;
-
-  .cta-heading {
-    grid-column: span 3;
-  }
-
-  .cta-text {
-    grid-column: span 4;
-  }
-
-  .cta-contacts {
-    grid-column: span 3;
-  }
-
-  .cta-action {
-    grid-column: span 2;
-  }
-}
-
-
 /* ==========================================================================
    RESPONSIVE
    ========================================================================== */
@@ -176,17 +154,7 @@
     grid-template-columns: minmax(0, 1fr) 280px;
   }
 
-  /* Kontaktní blok */
-  .hypo-cta {
-    --column-count: 12;
 
-    .cta-heading,
-    .cta-text,
-    .cta-contacts,
-    .cta-action {
-      grid-column: span 6;
-    }
-  }
 }
 
 @media (width < 768px) {
@@ -196,11 +164,4 @@
   }
 }
 
-@media (width < 576px) {
-  .hypo-cta .cta-heading,
-  .hypo-cta .cta-text,
-  .hypo-cta .cta-contacts,
-  .hypo-cta .cta-action {
-    grid-column: 1 / -1;
-  }
-}
+
