@@ -1707,15 +1707,7 @@
   }
 }
 
-.cta-heading {
-  font-size: 1.875rem;
-  margin-bottom: 0;
-}
 
-.cta-text {
-  font-size: 1rem;
-  margin-bottom: 0;
-}
 
 .cta-contacts {
   list-style: none;
@@ -1723,27 +1715,27 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-}
-
-.contact {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--cg-blue);
-}
-
-.contact-icon {
-  flex: 0 0 auto;
-  display: grid;
-  place-items: center;
-  width: 28px;
-  height: 28px;
-  border-radius: var(--controls-border-radius);
-  background-color: var(--cg-yellow);
-  color: var(--cg-blue);
-  font-size: 0.75rem;
+  
+  .contact {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--cg-blue);
+  }
+  
+  .contact-icon {
+    flex: 0 0 auto;
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border-radius: var(--controls-border-radius);
+    background-color: var(--cg-yellow);
+    color: var(--cg-blue);
+    font-size: 0.75rem;
+  }
 }
 
 

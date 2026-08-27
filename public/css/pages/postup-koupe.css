@@ -243,33 +243,6 @@
 }
 
 
-/* ## KONTAKTNÍ BLOK (vzhled boxu je v components.css → .box) */
-.postup-cta-heading {
-  margin-bottom: 32px;
-}
-
-.postup-cta {
-  .cta-text {
-    grid-column: span 6;
-    max-width: 50%;
-  }
-
-  .cta-contacts-col {
-    grid-column: span 3;
-  }
-
-  .cta-action {
-    grid-column: span 3;
-  }
-}
-
-.postup-consultant {
-  margin-bottom: 16px;
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--cg-blue);
-}
-
 
 /* ==========================================================================
    RESPONSIVE
@@ -323,17 +296,6 @@
     aspect-ratio: 16 / 9;
   }
 
-  /* Kontaktní blok: text přes celou šířku, kontakty a tlačítko vedle sebe */
-  .postup-cta {
-    .cta-text {
-      grid-column: 1 / -1;
-    }
-
-    .cta-contacts-col,
-    .cta-action {
-      grid-column: span 6;
-    }
-  }
 }
 
 @media (width < 576px) {
@@ -357,16 +319,5 @@
 
   .postup-step-title {
     font-size: 1.125rem;
-  }
-
-  .postup-cta-heading {
-    margin-bottom: 24px;
-  }
-
-  .postup-cta {
-    .cta-contacts-col,
-    .cta-action {
-      grid-column: 1 / -1;
-    }
   }
 }
