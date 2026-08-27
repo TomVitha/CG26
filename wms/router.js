@@ -187,6 +187,26 @@ const routerOptions = {
         { src: "aktualita-02" },
       ],
     },
+    {
+      path: "/aktualita-03",
+      name: "aktualita-03",
+      title: "aktualita-03",
+      description: "Festival Žižkovská spojka 2026 – slavnostní otevření nové dominanty Žižkova",
+      blocks: [
+        { src: "meta-common" },
+        { src: "aktualita-03" },
+      ],
+    },
+    {
+      path: "/aktualita-04",
+      name: "aktualita-04",
+      title: "aktualita-04",
+      description: "Vzorkovna CENTRAL GROUP – interiérové studio s kompletním servisem pro klienty",
+      blocks: [
+        { src: "meta-common" },
+        { src: "aktualita-04" },
+      ],
+    },
     // DEV STRÁNKY
     {
       path: "/design-style",

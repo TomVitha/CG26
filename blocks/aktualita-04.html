@@ -2,25 +2,25 @@
      Stránka nemá hero sekci, hlavička článku
      si sama odsazuje obsah od fixní hlavičky webu (--header-height).
      Obsah je v užším `.container-narrow` (1168px), text a média uvnitř článku jsou
-     ještě užší – viz proměnné v css/pages/aktualita.css. -->
+     ještě užší – viz proměnné v css/pages/aktualita-template.css. -->
 <article class="article">
 
   <div class="container-narrow">
 
     <!-- ## HLAVIČKA ČLÁNKU -->
     <header class="article-header">
-      <p class="kicker article-kicker">ze života CENTRAL GROUP</p>
+      <p class="kicker article-kicker">Interiér &amp; design</p>
 
       <h1 class="article-title">
-        <strong>Společné zážitky</strong> posilují náš tým
+        <strong>Domov podle vašich představ</strong> v&nbsp;designu z naší vzorkovny
       </h1>
 
       <p class="article-perex">
-        Dobrý tým se netvoří jen v kanceláři. Proto kolegové z různých oddělení CENTRAL GROUP pravidelně vyrážejí za společnými zážitky, při kterých se mohou lépe poznat i mimo pracovní prostředí. Ať už jde o jógu, únikovou hru, posezení v hospůdce, šlapadla na Vltavě, venkovní hry nebo lanové centrum. Každá aktivita nabízí trochu jinou výzvu.
+        Každý dům je jedinečný, stejně jako jeho majitelé. Proto si klienti CENTRAL GROUP mohou svůj nový byt přizpůsobit vlastnímu vkusu již během výstavby. V největší developerské vzorkovně v České republice na vás čekají stovky různých variant provedení koupelen, desítky dekorů podlah a vnitřních dveří a dalšího vybavení.
       </p>
 
       <p class="article-meta">
-        <time datetime="2026-08-26">26. srpna 2026</time>
+        <time datetime="2026-08-25">25. srpna 2026</time>
         <span class="article-meta-separator" aria-hidden="true">•</span>
         <!-- TODO: hodnotu doplní calculateReadingTime z počtu slov v .article-body -->
         <span data-reading-time>3 min čtení</span>
@@ -30,15 +30,15 @@
     <!-- ## HLAVNÍ OBRÁZEK (přes celou šířku užšího kontejneru) -->
     <figure class="article-media">
       <!-- TODO: zástupný obrázek -->
-      <img src="https://central-group.cz/Uloziste/09/09c2b10b-72ea-4362-9a5e-e16a3aeed4f2.jpg"
-        alt="Galavečer ABS Gala" width="1168" height="620">
+      <img src="https://www.central-group.cz/storage/CG/vzorkovna/gallery/koupelny/koupelnove-studio-01.jpg"
+        alt="Vzorkovna CENTRAL GROUP" width="1168" height="620">
     </figure>
 
     <!-- ## TĚLO ČLÁNKU -->
     <div class="article-body">
 
       <p>
-        Soustředění, spolupráce, vzájemná důvěra i schopnost držet společný směr se totiž hodí při sportu stejně jako při každodenní práci. Teambuildingové akce přinášejí nejen zábavu a nové zážitky, ale především pomáhají budovat pevnější vztahy napříč CENTRAL GROUP.
+        Pro každého zájemce zpracujeme zdarma návrh kompletního nebo částečného zařízení nového bytu, včetně rozpočtu přímo na míru. Jednotlivé materiály, barvy a dekory si navíc lze prohlédnout a porovnat přímo v naší vzorkovně v sídle CENTRAL GROUP v Praze 4. To usnadňuje vytvoření kombinace, která bude ladit nejen na papíře, ale zejména ve skutečném interiéru.
       </p>
 
 
@@ -47,7 +47,7 @@
 
         <div class="cg-gallery-stage">
           <!-- TODO: zástupné fotografie -->
-          <img class="cg-gallery-image" src="https://www.central-group.cz/uloziste/4a/4a66740b-61b9-4d66-8b7a-4431166d5444.webp" alt="">
+          <img class="cg-gallery-image" src="https://www.central-group.cz/Uloziste/51/511f9bcd-a290-4ec6-838b-1b9eeeca7bab.webp" alt="Parková čtvrť – pohled z ulice">
           <button type="button" class="cg-gallery-stage-btn" aria-label="Zvětšit fotografii"></button>
           <button type="button" class="cg-gallery-nav cg-gallery-nav--prev" aria-label="Předchozí fotografie">
             <i class="fa-sharp fa-solid fa-arrow-left" aria-hidden="true"></i>
@@ -60,40 +60,31 @@
           </button>
         </div>
 
+
         <ul class="cg-gallery-thumbs">
           <li>
             <button type="button" class="cg-gallery-thumb">
-              <img src="https://www.central-group.cz/uloziste/4a/4a66740b-61b9-4d66-8b7a-4431166d5444.webp" alt="Teambuilding – fotografie 1" loading="lazy">
+              <img src="https://www.central-group.cz/Uloziste/94/9470a672-91bb-4d0b-915f-aace21e6f6ce.webp" alt="Vzorkovna – fotografie 1" loading="lazy">
             </button>
           </li>
           <li>
             <button type="button" class="cg-gallery-thumb">
-              <img src="https://www.central-group.cz/uloziste/fd/fdc41441-b820-410e-8794-9cb8df092b13.webp" alt="Teambuilding – fotografie 2" loading="lazy">
+              <img src="https://www.central-group.cz/Uloziste/c9/c95ba4b0-4e94-4091-8562-40de6f1775d6.webp" alt="Vzorkovna – fotografie 2" loading="lazy">
             </button>
           </li>
           <li>
             <button type="button" class="cg-gallery-thumb">
-              <img src="https://www.central-group.cz/uloziste/ac/ac4b6715-2289-40cb-a39a-40e51ab17917.webp" alt="Teambuilding – fotografie 3" loading="lazy">
+              <img src="https://www.central-group.cz/Uloziste/8e/8e3ffdda-0903-4454-bbbb-f8c25b9f16fb.webp" alt="Vzorkovna – fotografie 3" loading="lazy">
             </button>
           </li>
           <li>
             <button type="button" class="cg-gallery-thumb">
-              <img src="https://www.central-group.cz/uloziste/49/49bba43b-c3b4-48f3-8301-ecae16e54809.webp" alt="Teambuilding – fotografie 4" loading="lazy">
+              <img src="https://www.central-group.cz/Uloziste/9c/9c416f89-5d84-42f2-a436-c43191fcd81b.webp" alt="Vzorkovna – fotografie 4" loading="lazy">
             </button>
           </li>
           <li>
             <button type="button" class="cg-gallery-thumb">
-              <img src="https://www.central-group.cz/uloziste/5e/5ed35dac-7d20-4d2f-acbc-395ac30c9840.webp" alt="Teambuilding – fotografie 5" loading="lazy">
-            </button>
-          </li>
-          <li>
-            <button type="button" class="cg-gallery-thumb">
-              <img src="https://www.central-group.cz/uloziste/60/605102e9-781e-481f-8424-3e51eb4753c2.webp" alt="Teambuilding – fotografie 6" loading="lazy">
-            </button>
-          </li>
-          <li>
-            <button type="button" class="cg-gallery-thumb">
-              <img src="https://www.central-group.cz/uloziste/84/84dc16a4-1eb4-49fb-a591-b39ff878b4f8.webp" alt="Teambuilding – fotografie 7" loading="lazy">
+              <img src="https://www.central-group.cz/Uloziste/f3/f3257099-5c53-4bc4-ab7b-3a32c943a029.webp" alt="Vzorkovna – fotografie 5" loading="lazy">
             </button>
           </li>
 
@@ -107,13 +98,14 @@
 
       </div>
 
-        <p>
-          I tohle patří k životu v CENTRAL GROUP 💛.
-        </p>
+      <p>
+       Pro ještě větší možnosti přizpůsobení jsou k dispozici prémiové materiály a vybavení nebo klientské změny. Bytové studio CENTRAL INTERIER vám může pomoci i s komplexním návrhem interiéru, výběrem a realizací nábytku.
+      </p>
 
-        <p>
-          Pokud by se vám líbilo být součástí našeho týmu, podívejte se na aktuální volné pozice: <a href="https://central-group.jobs.cz/" target="_blank">ZDE</a>.
-        </p>
+      <p>
+        Nový byt nemusí být jen místem k bydlení. Během výstavby se může postupně proměnit v domov, který odpovídá vkusu, potřebám a životnímu stylu jeho budoucího majitele.
+      </p>
+
 
     </div>
   </div>
