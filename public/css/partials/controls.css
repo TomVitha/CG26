@@ -71,6 +71,11 @@ select,
   /* ? font-size zmenšit ? */
 }
 
+/* TODO */
+.btn-ico {
+  /* exact square for icon-only */
+}
+
 /* ? maybe ? */
 .btn-link {
   /* color: rgb(6.711627907, 124.1651162791, 233.788372093); */

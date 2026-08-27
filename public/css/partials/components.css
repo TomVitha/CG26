@@ -190,7 +190,7 @@
   place-items: center;
   width: var(--benefits-icon-size);
   height: var(--benefits-icon-size);
-  margin-bottom: 32px;
+  margin-bottom: 24px;
   border-radius: 50%;
   background-color: var(--cg-yellow);
   color: var(--cg-blue);
@@ -1019,14 +1019,6 @@
   background-color: var(--cg-yellow);
   color: var(--cg-blue);
   font-size: 1.125rem;
-}
-
-.info-title {
-  margin-bottom: 0;
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 1.3;
-  color: var(--cg-blue);
 }
 
 .note {
