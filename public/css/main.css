@@ -16,6 +16,20 @@
 
 @import url("./partials/component-variations.css");
 
+/* STYLING JEDNOTLIVÝCH STRÁNEK */
+/* TODO: Absolutně je eliminovat, nahradit custom styling za generické, nebo je definovat v komponentech */
+@import url("./pages/aktualita.css");
+@import url("./pages/aktuality.css");
+@import url("./pages/bonusy.css");
+@import url("./pages/efektivni-dispozice.css");
+@import url("./pages/financovani.css");
+@import url("./pages/homepage.css");
+@import url("./pages/hypoteka.css");
+@import url("./pages/postup-koupe.css");
+@import url("./pages/prehled-projektu.css");
+@import url("./pages/pripravovane-projekty.css");
+@import url("./pages/reference.css");
+
 /* TEMP umístění */
 :root {
   font-family: "Exo 2";

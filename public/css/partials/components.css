@@ -151,6 +151,7 @@
   background: var(--benefits-bg);
 }
 
+/* ? OPRAVDU CHCEME ZALAMOVAT? Na mobilu je pak z toho hrozně dlouhá nudle - nebyl by lepší horizontální scroll?  */
 .benefits-list {
   list-style: none;
   padding-left: 0;
