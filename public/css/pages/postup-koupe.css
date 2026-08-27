@@ -58,6 +58,10 @@
   grid-template-columns: var(--postup-badge-size) minmax(0, 1fr);
   column-gap: 24px;
 
+  a {
+    text-decoration: underline;
+  }
+
   /* přerušovaná spojnice mezi čísly – délka odpovídá výšce položky */
   &:not(:last-child)::before {
     content: "";
