@@ -9,7 +9,7 @@
   --financing-shadow: 0 12px 32px -12px rgba(0, 0, 0, 0.05);
   --financing-divider: var(--gray-200);
 
-  /* sdílený info panel (components.css) – .info-head / .info-icon / .info-title /
+  /* sdílený info panel (components.css) – .info-head / .info-icon /
      .note / .info-subtitle / .check-list */
   --info-icon-size: var(--financing-icon-size);
   --info-divider: var(--financing-divider);
@@ -281,14 +281,6 @@
     font-size: 1.25rem;
   }
 
-  .info-title {
-    font-size: 1.5rem;
-  }
-
-  .note {
-    padding: 24px;
-  }
-
   .check-list li {
     border-top: none;
     border-bottom: 1px solid var(--financing-divider);
@@ -335,10 +327,6 @@
 }
 
 @media (width < 576px) {
-
-  .info-title br {
-    display: none;
-  }
 
   /* # ROZBALOVACÍ BOXY */
   .info-dropdown > summary {
