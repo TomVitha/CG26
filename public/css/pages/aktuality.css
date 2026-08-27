@@ -2,7 +2,7 @@
    # AKTUALITY – přehled článků
    Markup: blocks/aktuality.html
 
-   Sdílené prvky: .cg-kicker, .cg-topics* (components.css), .promo-banner*
+   Sdílené prvky: .kicker, .cg-topics* (components.css), .promo-banner*
    (components.css), .btn (controls.css), .brow, postupné načítání js/reveal.js.
 
    Karta článku má dvě rozvržení:

@@ -1560,7 +1560,7 @@
 
 
 /* # KICKER – rubrika nad nadpisem */
-.cg-kicker {
+.kicker {
   display: flex;
   align-items: center;
   gap: 12px;

@@ -31,7 +31,7 @@
   text-align: center;
 }
 
-/* Rubrika je sdílený .cg-kicker (components.css), na detailu je na střed,
+/* Rubrika je sdílený .kicker (components.css), na detailu je na střed,
    s větší mezerou pod sebou a o něco těsnějším prostrkáním (v přehledu aktualit
    stojí nad menšími nadpisy, tady nad velkým titulkem článku). */
 .article-kicker {
