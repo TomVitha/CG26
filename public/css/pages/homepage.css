@@ -143,7 +143,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 420px;
   padding: 40px;
   border-radius: 5px;
   color: var(--white);
@@ -178,35 +177,16 @@
     inset: 0;
     z-index: 2;
     background: linear-gradient(88deg, rgba(32, 35, 76, 0.94) 0%, rgba(44, 48, 108, 0.86) 100%);
+    pointer-events: none;
   }
 }
 
-.newsletter-form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  max-width: var(--newsletter-form-width);
-}
-
-.newsletter-heading {
-    margin-bottom: 0;
-    font-size: 1.875rem;
-    font-weight: 700;
-    color: var(--cg-yellow);
-}
 
 .newsletter-text {
   margin-bottom: 8px;
   font-size: 1rem;
 }
 
-.newsletter-form :is(input[type="text"], input[type="email"]) {
-  width: 100%;
-  background-color: var(--white);
-  border-color: transparent;
-  color: var(--body-text-color);
-  font-weight: 400;
-}
 
 .newsletter-consent {
   display: flex;
@@ -251,10 +231,6 @@
   }
 }
 
-.newsletter-form .btn {
-  align-self: start;
-  margin-top: 8px;
-}
 
 /* přesahující spodní hranu */
 .newsletter-phone {
@@ -354,11 +330,6 @@
     line-height: 187%;
 }
 
-.promo .btn {
-  align-self: start;
-  width: fit-content;
-}
-
 /* obrázek přesahujícím spodní hranu */
 .promo--overflow {
   --promo-image-width: 300px;
@@ -422,8 +393,6 @@
     --newsletter-phone-width: 240px;
     /* přesah dolů by zasahoval do promo karty */
     --newsletter-phone-overflow: 0px;
-
-    min-height: 380px;
   }
 
   .promos {
@@ -436,10 +405,6 @@
   /* na mobilu se telefon vypouští */
   .newsletter-phone {
     display: none;
-  }
-
-  .newsletter-form .btn {
-    align-self: stretch;
   }
 
   .promo {

@@ -15,29 +15,38 @@
           -->
       </div>
       <div class="newsletter-form">
-        <h3 class="brow newsletter-heading">Registrujte se</h3>
-        <p class="newsletter-text">
-          pro přednostní zasílání novinek<br>
-          a získejte řadu výhod
-        </p>
-        <div>
-          <label class="visually-hidden" for="newsletter-name">Jméno a příjmení</label>
-          <input type="text" id="newsletter-name" name="name" autocomplete="name" placeholder="Jméno a příjmení">
+        <div class="space-y gap-safe">
+          <div>
+            <h3 class="brow text-yellow bold mb-0">Registrujte se</h3>
+            <p class="newsletter-text">
+              pro přednostní zasílání novinek<br>
+              a získejte řadu výhod
+            </p>
+          </div>
+          <div>
+            <div class="row g-2">
+              <div class="col-12 col-lg-auto">
+                <input type="text" id="newsletter-name" name="name" autocomplete="name" placeholder="Jméno a příjmení" class="w-100 w-lg-auto">
+              </div>
+              <div class="col-12 col-lg-auto">
+                <input type="email" id="newsletter-email" name="email" autocomplete="email" required="" placeholder="Váš e-mail *" class="w-100 w-lg-auto">
+              </div>
+              <div class="col-12">
+                <label class="newsletter-consent">
+                  <input type="checkbox" name="consent" required="">
+                  <span style="user-select: none;">Souhlasím se zpracováním <a href="/page/osobni-udaje">osobních údajů</a>.</span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div>
+            <button type="submit" class="btn btn-primary">
+              Přihlásit k odběru <i class="fa-sharp fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </button>
+          </div>
         </div>
-        <div>
-          <label class="visually-hidden" for="newsletter-email">Váš e-mail</label>
-          <input type="email" id="newsletter-email" name="email" autocomplete="email" required="" placeholder="Váš e-mail *">
-        </div>
-        <label class="newsletter-consent">
-          <input type="checkbox" name="consent" required="">
-          <span>Souhlasím se zpracováním <a href="/page/osobni-udaje">osobních údajů</a>.</span>
-        </label>
-        <button type="submit" class="btn btn-primary">
-          Přihlásit k odběru <i class="fa-sharp fa-solid fa-arrow-right" aria-hidden="true"></i>
-        </button>
       </div>
-      <!--  (transparentní PNG) -->
-      <img class="newsletter-phone" src="img/newsform-mobile.png" alt="" aria-hidden="true">
+      <!-- <img class="newsletter-phone" src="img/newsform-mobile.png" alt="" aria-hidden="true"> -->
     </div>
   </div>
 </section>
