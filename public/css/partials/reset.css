@@ -85,6 +85,10 @@ table {
   /* caption-side: bottom; */
 }
 
+dl {
+  margin: 0;
+}
+
 dt, dd {
   padding: 0;
 }
