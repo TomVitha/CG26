@@ -1776,3 +1776,11 @@
     translate: 0 -50%;
   }
 }
+
+.loyalty-stat {
+  container-type: inline-size;
+  padding: 24px;
+  border-radius: 5px;
+  background-color: var(--white, white);
+  box-shadow:  0 12px 32px -12px rgba(0, 0, 0, 0.05);
+}

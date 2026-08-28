@@ -1,4 +1,5 @@
-/* WIP */
+/* WIP - zatím lajdácky naházené na sobě */
+/* TODO systematicky zorganizovat */
 
 .text-yellow {
   color: var(--cg-yellow);
@@ -6,7 +7,7 @@
 
 .bg-blue {
   color: white;
-  /* TEMP hard-coded mid shade */
+  /* TEMP - hard-coded mid shade */
   background: linear-gradient(90deg, var(--cg-blue), #2C306C, var(--cg-blue)), var(--cg-blue);
 }
 
@@ -18,4 +19,8 @@
 .bg-light-blue {
   background-color: var(--blue-light);
   color: var(--body-text-color);
+}
+
+.text-muted {
+  color: var(--muted-text-color);
 }
