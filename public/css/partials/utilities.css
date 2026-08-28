@@ -2048,31 +2048,45 @@
 }
 
 /* Space gap sizes */
-.space-gap-0 {
+.space-gap-0,
+[class*="space-y-0"],
+[class*="space-x-0"] {
   --space-gap: var(--spacer-0);
 }
 
-.space-gap-1 {
+.space-gap-1,
+[class*="space-y-1"],
+[class*="space-x-1"] {
   --space-gap: var(--spacer-1);
 }
 
-.space-gap-2 {
+.space-gap-2,
+[class*="space-y-2"],
+[class*="space-x-2"] {
   --space-gap: var(--spacer-2);
 }
 
-.space-gap-3 {
+.space-gap-3,
+[class*="space-y-3"],
+[class*="space-x-3"] {
   --space-gap: var(--spacer-3);
 }
 
-.space-gap-4 {
+.space-gap-4,
+[class*="space-y-4"],
+[class*="space-x-4"] {
   --space-gap: var(--spacer-4);
 }
 
-.space-gap-5 {
+.space-gap-5,
+[class*="space-y-5"],
+[class*="space-x-5"] {
   --space-gap: var(--spacer-5);
 }
 
-.space-gap-6 {
+.space-gap-6,
+[class*="space-y-6"],
+[class*="space-x-6"] {
   --space-gap: var(--spacer-6);
 }
 
