@@ -92,7 +92,7 @@
 .article-body {
   max-width: var(--article-text-width);
   margin-inline: auto;
-  padding-top: 64px;
+  padding-block: 64px;
 
   a {
     color: var(--text-link);
