@@ -119,10 +119,6 @@
 
 
 /* ## SEKCE „ZŮSTAŇTE V OBRAZE" */
-.stay-informed {
-  --stay-radius: var(--controls-border-radius);
-  --stay-padding: 40px;
-}
 
 .stay-head {
   text-align: center;
@@ -147,9 +143,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 420px;
-  padding: var(--stay-padding);
-  border-radius: var(--stay-radius);
+  padding: 40px;
+  border-radius: 5px;
   color: var(--white);
 }
 
@@ -182,35 +177,16 @@
     inset: 0;
     z-index: 2;
     background: linear-gradient(88deg, rgba(32, 35, 76, 0.94) 0%, rgba(44, 48, 108, 0.86) 100%);
+    pointer-events: none;
   }
 }
 
-.newsletter-form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  max-width: var(--newsletter-form-width);
-}
-
-.newsletter-heading {
-    margin-bottom: 0;
-    font-size: 1.875rem;
-    font-weight: 700;
-    color: var(--cg-yellow);
-}
 
 .newsletter-text {
   margin-bottom: 8px;
   font-size: 1rem;
 }
 
-.newsletter-form :is(input[type="text"], input[type="email"]) {
-  width: 100%;
-  background-color: var(--white);
-  border-color: transparent;
-  color: var(--body-text-color);
-  font-weight: 400;
-}
 
 .newsletter-consent {
   display: flex;
@@ -255,15 +231,11 @@
   }
 }
 
-.newsletter-form .btn {
-  align-self: start;
-  margin-top: 8px;
-}
 
 /* přesahující spodní hranu */
 .newsletter-phone {
   position: absolute;
-  right: var(--stay-padding);
+  right: 40px;
   bottom: calc(var(--newsletter-phone-overflow) * -1);
   z-index: 1;
   width: var(--newsletter-phone-width);
@@ -283,9 +255,9 @@
     align-self: end;
     width: min(var(--newsletter-phone-width), 45%);
     margin-top: 24px;
-    margin-right: calc((var(--stay-padding) - 8px) * -1);
+    margin-right: calc((40px - 8px) * -1);
     /* zruší spodní padding karty */
-    margin-bottom: calc(var(--stay-padding) * -1);
+    margin-bottom: calc(40px * -1);
   }
 }
 
@@ -306,8 +278,8 @@
   flex-direction: column;
   justify-content: center;
   min-height: 240px;
-  padding: var(--stay-padding);
-  border-radius: var(--stay-radius);
+  padding: 40px;
+  border-radius: 5px;
   background-color: var(--cream-light);
   color: var(--body-text-color);
 }
@@ -356,11 +328,6 @@
     margin-bottom: 20px;
     font-size: 1rem;
     line-height: 187%;
-}
-
-.promo .btn {
-  align-self: start;
-  width: fit-content;
 }
 
 /* obrázek přesahujícím spodní hranu */
@@ -414,21 +381,18 @@
 }
 
 @media (width < 992px) {
-  .stay-informed {
-    --stay-padding: 32px;
-  }
-
   .stay-head {
     margin-bottom: 40px;
   }
 
+  .promo {
+    padding: 24px;
+  }
 
   .newsletter {
     --newsletter-phone-width: 240px;
     /* přesah dolů by zasahoval do promo karty */
     --newsletter-phone-overflow: 0px;
-
-    min-height: 380px;
   }
 
   .promos {
@@ -437,17 +401,10 @@
 }
 
 @media (width < 576px) {
-  .stay-informed {
-    --stay-padding: 24px;
-  }
 
   /* na mobilu se telefon vypouští */
   .newsletter-phone {
     display: none;
-  }
-
-  .newsletter-form .btn {
-    align-self: stretch;
   }
 
   .promo {
