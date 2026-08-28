@@ -35,7 +35,7 @@
   line-height: 1.5;
 }
 
-body {
+main {
   color: var(--body-text-color);
   /* NOTE: Font-size je určeno na body, namísto na :root, protože tím by se přenastavila hodnota 1rem; a byť v těle používáme velikost 18, pořád chceme 1rem = 16px, abychom se z toho nezbláznili */
   font-size: 1.125rem;

@@ -13,7 +13,13 @@ const routerOptions = {
       description: "Jsme největší český největší developer s největším výběrem bytů a největší vzorkovnou.",
       blocks: [
         { src: "meta-common", type: "meta" },
-        { src: "hp" },
+        { src: "hp/hero" },
+        { src: "hp/lokality" },
+        { src: "hp/clanky" },
+        { src: "hp/novinky-nadpis" },
+        { src: "hp/bannery" },
+        { src: "hp/form-registrace-newsletter" },
+
       ],
     },
     {

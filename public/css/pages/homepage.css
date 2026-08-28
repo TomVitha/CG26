@@ -119,10 +119,6 @@
 
 
 /* ## SEKCE „ZŮSTAŇTE V OBRAZE" */
-.stay-informed {
-  --stay-radius: var(--controls-border-radius);
-  --stay-padding: 40px;
-}
 
 .stay-head {
   text-align: center;
@@ -148,8 +144,8 @@
   flex-direction: column;
   justify-content: center;
   min-height: 420px;
-  padding: var(--stay-padding);
-  border-radius: var(--stay-radius);
+  padding: 40px;
+  border-radius: 5px;
   color: var(--white);
 }
 
@@ -263,7 +259,7 @@
 /* přesahující spodní hranu */
 .newsletter-phone {
   position: absolute;
-  right: var(--stay-padding);
+  right: 40px;
   bottom: calc(var(--newsletter-phone-overflow) * -1);
   z-index: 1;
   width: var(--newsletter-phone-width);
@@ -283,9 +279,9 @@
     align-self: end;
     width: min(var(--newsletter-phone-width), 45%);
     margin-top: 24px;
-    margin-right: calc((var(--stay-padding) - 8px) * -1);
+    margin-right: calc((40px - 8px) * -1);
     /* zruší spodní padding karty */
-    margin-bottom: calc(var(--stay-padding) * -1);
+    margin-bottom: calc(40px * -1);
   }
 }
 
@@ -306,8 +302,8 @@
   flex-direction: column;
   justify-content: center;
   min-height: 240px;
-  padding: var(--stay-padding);
-  border-radius: var(--stay-radius);
+  padding: 40px;
+  border-radius: 5px;
   background-color: var(--cream-light);
   color: var(--body-text-color);
 }
@@ -414,14 +410,13 @@
 }
 
 @media (width < 992px) {
-  .stay-informed {
-    --stay-padding: 32px;
-  }
-
   .stay-head {
     margin-bottom: 40px;
   }
 
+  .promo {
+    padding: 24px;
+  }
 
   .newsletter {
     --newsletter-phone-width: 240px;
@@ -437,9 +432,6 @@
 }
 
 @media (width < 576px) {
-  .stay-informed {
-    --stay-padding: 24px;
-  }
 
   /* na mobilu se telefon vypouští */
   .newsletter-phone {

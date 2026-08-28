@@ -1,0 +1,33 @@
+<div class="hero hero--hp">
+  <!-- Video na pozadí hero sekce. Zdroj i poster přepíná js/hero-video.js i za běhu –
+       <source media> prohlížeč vyhodnotí jen při načtení a po změně šířky okna (otočení
+       displeje) zdroj sám nepřepne. U Poster varianty drží data-poster.
+        -->
+  <video class="hero-bg" data-hero-video autoplay muted loop playsinline preload="auto"
+    aria-hidden="true" tabindex="-1"
+    poster="https://www.central-group.cz/storage/CG/test/video-loop-hp/poster/HP-main.jpg">
+    <!-- desktop 16:9 (1920×1080) -->
+    <source src="https://www.central-group.cz/storage/CG/test/video-loop-hp/HP-main.mp4" type="video/mp4" media="(min-width: 768px)"
+      data-poster="https://www.central-group.cz/storage/CG/test/video-loop-hp/poster/HP-main.jpg">
+    <!-- tablet 4:5 (1080×1350) 
+    <source src="https://www.central-group.cz/storage/CG/wms3/img/kariera/videa/empiria-tablet.mp4" type="video/mp4" media="(min-width: 576px) and (max-width: 767.98px)"
+      data-poster="https://www.central-group.cz/storage/CG/wms3/img/kariera/videa/empiria-tablet-poster.png">
+    -->
+    <!-- mobil 9:16 (1080×1920) – výchozí zdroj bez media dotazu -->
+    <source src="https://www.central-group.cz/storage/CG/wms3/img/kariera/videa/empiria-vertical.mp4" type="video/mp4"
+      data-poster="https://www.central-group.cz/storage/CG/wms3/img/kariera/videa/empiria-vertical-poster.png">
+  </video>
+  <div class="container-main hero-container">
+    <div class="hero-content">
+      <hgroup>
+        <h1 class="brow">Největší výběr bytů
+          <br>
+          <strong class="text-yellow">po celé Praze</strong>
+        </h1>
+        <p>
+          od největšího rezidenčního stavitele
+        </p>
+      </hgroup>
+    </div>
+  </div>
+</div>
