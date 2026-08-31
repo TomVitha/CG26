@@ -48,6 +48,10 @@
     text-decoration: underline;
   }
 
+  p {
+    font-size: 1rem;
+  }
+
   /* přerušovaná spojnice mezi čísly – délka odpovídá výšce položky */
   &:not(:last-child)::before {
     content: "";
@@ -140,7 +144,7 @@
   /* první obrázek přesahuje */
   /* to dělat nebudeme */
   .postup-program:first-child .postup-program-media {
-    /* margin-top: calc((var(--postup-head-spacing) + var(--postup-programs-overlap)) * -1); */
+    margin-top: calc((var(--postup-head-spacing) + var(--postup-programs-overlap)) * -1); 
   }
 }
 

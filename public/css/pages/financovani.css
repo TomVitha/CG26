@@ -4,7 +4,7 @@
 
 .financing {
   --financing-radius: var(--controls-border-radius);
-  --financing-card-padding: 40px;
+  --financing-card-padding: 48px 32px;
   --financing-icon-size: 48px;
   --financing-shadow: 0 12px 32px -12px rgba(0, 0, 0, 0.05);
   --financing-divider: var(--gray-200);
@@ -18,7 +18,7 @@
 .financing-cta {
   display: flex;
   justify-content: center;
-  margin-top: 48px;
+  margin-top: 64px;
 }
 
 
@@ -191,9 +191,10 @@
   --programs-tabs-width: 40%;
   display: grid;
   grid-template-columns: var(--programs-tabs-width) minmax(0, 1fr);
-  gap: 60px;
+  gap: 148px;
   align-items: start;
   margin-top: 48px;
+  margin-bottom: 170px;
 }
 
 /* tablist */

@@ -15,7 +15,7 @@
 
   /* SIZES */
   --hypo-gap: var(--layout-gutter);
-  --hypo-tabs-width: 220px;
+  --hypo-tabs-width: 202px;
   --hypo-aside-width: 320px;
   --hypo-price-padding: 24px;
   --hypo-radius: var(--controls-border-radius);
