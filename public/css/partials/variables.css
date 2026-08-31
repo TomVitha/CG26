@@ -44,11 +44,12 @@
   --header-height: var(--header-height-desktop);
 
   /* Controls (buttons, inputs) */
+
   --controls-fs-sm: 0.875rem;
   --controls-fs-md: 1.125rem;
   --controls-fs-lg: 1.25rem;
   --controls-padding-sm: 6px 16px;
-  --controls-padding-md: 14px 18px;
+  --controls-padding-md: 20px 20px;
   /* --controls-padding-md: 11px 18px; */
   --controls-padding-lg: 0 18px;
   --controls-border-radius: 5px;

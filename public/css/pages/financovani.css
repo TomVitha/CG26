@@ -39,6 +39,7 @@
       margin-bottom: 24px;
       font-weight: 400;
       line-height: 160%;
+      color: var(--lavender);
   }
 
   .btn {

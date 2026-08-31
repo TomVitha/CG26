@@ -2142,6 +2142,25 @@
   margin-inline: 0 !important;
 }
 
+/* SPACING – margin utility na škále --spacer-* (zatím jen mb-*, další doplnit až budou potřeba) */
+.mb-0 { margin-bottom: var(--spacer-0) !important; }
+.mb-1 { margin-bottom: var(--spacer-1) !important; }
+.mb-2 { margin-bottom: var(--spacer-2) !important; }
+.mb-3 { margin-bottom: var(--spacer-3) !important; }
+.mb-4 { margin-bottom: var(--spacer-4) !important; }
+.mb-5 { margin-bottom: var(--spacer-5) !important; }
+.mb-6 { margin-bottom: var(--spacer-6) !important; }
+
+/* SIZING */
+.w-auto { width: auto !important; }
+.w-100 { width: 100% !important; }
+
+@media (min-width: 992px) {
+  .w-lg-auto { width: auto !important; }
+  .w-lg-100 { width: 100% !important; }
+}
+
+
 /* WIP: text classes */
 .text-start {
   text-align: left !important;
@@ -2319,6 +2338,10 @@
 
 /* ? maybe ? */
 figure[class*="ar-"] > * {
+  /* absolutně, aby se box s aspect-ratio nenatáhl podle vyšších obrázků
+     (figure má position: relative z reset.css) */
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -2348,4 +2371,11 @@ figure[class*="ar-"] > * {
 /* 1.777 */
 .ar-16-9 {
   aspect-ratio: 16 / 9;
+}
+
+/* Varianta bez ořezu – logo/grafika se do boxu vejde celá (jako img.fit u promo) */
+[class*="ar-"].fit,
+figure[class*="ar-"].fit > * {
+  object-fit: contain;
+  background-size: contain;
 }

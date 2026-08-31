@@ -48,7 +48,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--heading-color, currentColor);
   line-height: 1.2;
   position: relative;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 
   strong {
     font-weight: 700;

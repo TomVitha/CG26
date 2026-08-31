@@ -130,10 +130,10 @@
 
 /* ## NEWSLETTER (levý sloupec) */
 .newsletter {
-  --newsletter-form-width: 240px;
-  --newsletter-phone-width: 330px;
+  --newsletter-form-width: 340px;
+  --newsletter-phone-width: 390px;
   /* o kolik telefon přesahuje pod spodní hranu */
-  --newsletter-phone-overflow: 90px;
+  --newsletter-phone-overflow: 120px;
 
   container: newsletter / inline-size;
   position: relative;
@@ -180,6 +180,10 @@
   }
 }
 
+
+.newsletter-form {
+  max-width: var(--newsletter-form-width);
+}
 
 .newsletter-text {
   margin-bottom: 8px;
@@ -238,7 +242,7 @@
   bottom: calc(var(--newsletter-phone-overflow) * -1);
   z-index: 1;
   width: var(--newsletter-phone-width);
-  max-width: 45%;
+  max-width: 52%;
   pointer-events: none;
   user-select: none;
 }
@@ -260,29 +264,51 @@
   }
 }
 
-/* # PROMO BANNERS */
+/* # PROMO BANNERY (pravý sloupec) – dvě karty nad sebou, stejně vysoké */
+.promos {
+  display: grid;
+  grid-auto-rows: 1fr;
+  gap: var(--layout-gutter);
+  height: 100%;
+}
+
 .promo {
+  --promo-media-width: 68%;
+
   position: relative;
   isolation: isolate;
+  /* bez overflow: clip – ořízl by .promo-image přesahující spodní hranu;
+     médium si ořez řeší samo (overflow + border-radius na .promo-media) */
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
   min-height: 240px;
+  padding: 40px;
   border-radius: 5px;
   background-color: var(--cream-light);
   color: var(--body-text-color);
-  overflow: clip;
-  container: promo / inline-size;
 }
 
-/* Obrázek/video */
+/* Médium (obrázek/video smyčka) vpravo, do ztracena směrem do textu.
+   Přechod je mírně nakloněný (75deg – hrana není kolmá) a mezizastávky
+   masky dělají rozpouštění plynulé po celé šířce média, žádná ostrá hrana. */
 .promo-media {
-  --promo-dir: top;
-  position: relative;
-  width: 100%;
-  flex: 1 1 100%;
-  height: 200px;
-  mask-image: linear-gradient(to var(--promo-dir), transparent 0%, #000 100px);
+  position: absolute;
+  inset: 0 0 0 auto;
+  z-index: -1;
+  width: var(--promo-media-width);
+  overflow: hidden;
+  border-radius: inherit;
+  /* dvě vrstvy masky (intersect): svislá zaručí úplně průhlednou levou hranu
+     média (žádný ostrý předěl u textu), nakloněná dělá pozvolné rozpouštění */
+  mask-image:
+    linear-gradient(to right, transparent 0%, #000 55%),
+    linear-gradient(75deg,
+      transparent 12%,
+      rgb(0 0 0 / 0.45) 45%,
+      rgb(0 0 0 / 0.85) 72%,
+      #000 95%);
+  mask-composite: intersect;
 
   :is(img, video) {
     position: absolute;
@@ -291,27 +317,51 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
-    background-size: cover;
-    background-position: center;
-
-    &.fit {
-      object-fit: contain;
-      background-size: contain;
-    }
   }
 
+  /* video překrývá poster/fallback obrázek */
   video {
-    position: absolute;
-    inset: 0;
     z-index: 1;
   }
 }
 
 .promo-body {
-  padding: 24px;
-  flex: 0 0 auto;
-  width: 270px;
-  max-width: 100%;
+  max-width: 60%;
+
+  /* nadpisy banneru: 24px, základ regular, zvýrazněná část tučně */
+  h4 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.3;
+    color: var(--cg-blue);
+
+    strong {
+      font-weight: 700;
+    }
+  }
+
+  /* „Nepotřebujeme úvěry" apod. – 16px */
+  .small {
+    font-size: 1rem;
+    color: var(--body-text-color);
+  }
+}
+
+/* karta s obrázkem přesahujícím spodní hranu (magazín) */
+.promo--overflow {
+  --promo-image-width: 380px;
+  --promo-image-overflow: 80px;
+}
+
+.promo-image {
+  position: absolute;
+  right: 24px;
+  bottom: calc(var(--promo-image-overflow) * -1);
+  z-index: 1;
+  width: var(--promo-image-width);
+  max-width: 52%;
+  pointer-events: none;
+  user-select: none;
 }
 
 
@@ -321,14 +371,22 @@
 
 @media (width < 1344px) {
   .newsletter {
-    --newsletter-phone-width: 280px;
-    --newsletter-phone-overflow: 70px;
+    --newsletter-phone-width: 330px;
+    --newsletter-phone-overflow: 90px;
   }
 }
 
 @media (width < 1200px) {
   .newsletter {
-    --newsletter-phone-width: 260px;
+    --newsletter-phone-width: 300px;
+  }
+
+  .promo {
+    --promo-media-width: 55%;
+  }
+
+  .promo--overflow {
+    --promo-image-width: 320px;
   }
 }
 
@@ -348,6 +406,8 @@
     --newsletter-phone-width: 240px;
     /* přesah dolů by zasahoval do promo karty */
     --newsletter-phone-overflow: 0px;
+
+    min-height: 380px;
   }
 }
 
@@ -357,17 +417,28 @@
   .newsletter-phone {
     display: none;
   }
-}
 
-@container promo (width >=450px) {
-  .promo-media {
-    --promo-dir: right;
-    flex-basis: 0;
-    height: 100%;
-    order: 1;
+  .promo {
+    --promo-media-width: 70%;
+
+    min-height: 220px;
+    padding: 24px;
   }
 
   .promo-body {
-    padding: 40px;
+    max-width: 100%;
+  }
+
+  /* výchozích 45 % by obrázek na nejužších displejích zmenšilo pod čitelnost */
+  .promo--overflow {
+    --promo-image-width: 220px;
+    --promo-image-overflow: 40px;
+
+    padding-bottom: 96px;
+  }
+
+  .promo-image {
+    right: 8px;
+    max-width: 55%;
   }
 }
