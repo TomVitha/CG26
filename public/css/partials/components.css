@@ -316,15 +316,21 @@
   }
 }
 
-/* ## Ztmavující přechod přes video/obrázek – volitelný modifikátor.*/
+/* ## Ztmavující přechod přes video/obrázek 
+  --hero-gradient-color: výchozí modrá (financovani),
+   varianta .hero--gradient-dark = černá (hypoteka). */
 .hero--gradient::after {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
   background: linear-gradient(90deg,
-      color-mix(in srgb, var(--cg-blue) 60%, transparent) 15%,
+      color-mix(in srgb, var(--hero-gradient-color, var(--cg-blue)) 60%, transparent) 15%,
       transparent 85%);
+}
+
+.hero--gradient-dark {
+  --hero-gradient-color: var(--black, #000);
 }
 
 @media (width >=992px) {
