@@ -4,7 +4,7 @@
 
 .financing {
   --financing-radius: var(--controls-border-radius);
-  --financing-card-padding: 32px;
+  --financing-card-padding: 40px;
   --financing-icon-size: 48px;
   --financing-shadow: 0 12px 32px -12px rgba(0, 0, 0, 0.05);
   --financing-divider: var(--gray-200);
@@ -29,7 +29,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  min-height: 300px;
+  min-height: 353px;
   padding: var(--financing-card-padding);
   border-radius: var(--financing-radius);
   color: var(--white);

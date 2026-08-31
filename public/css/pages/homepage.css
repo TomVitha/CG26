@@ -130,7 +130,7 @@
 
 /* ## NEWSLETTER (levý sloupec) */
 .newsletter {
-  --newsletter-form-width: 340px;
+  --newsletter-form-width: 240px;
   --newsletter-phone-width: 390px;
   /* o kolik telefon přesahuje pod spodní hranu */
   --newsletter-phone-overflow: 120px;
@@ -305,7 +305,7 @@
     linear-gradient(to right, transparent 0%, #000 55%),
     linear-gradient(75deg,
       transparent 12%,
-      rgb(0 0 0 / 0.45) 45%,
+      rgb(0 0 0 / 0.45) 27%,
       rgb(0 0 0 / 0.85) 72%,
       #000 95%);
   mask-composite: intersect;
