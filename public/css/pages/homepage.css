@@ -273,7 +273,7 @@
 }
 
 .promo {
-  --promo-media-width: 68%;
+  --promo-media-width: 100%;
 
   position: relative;
   isolation: isolate;
@@ -305,7 +305,7 @@
     linear-gradient(to right, transparent 0%, #000 55%),
     linear-gradient(75deg,
       transparent 12%,
-      rgb(0 0 0 / 0.45) 27%,
+      rgb(0 0 0 / 0.45) 40%,
       rgb(0 0 0 / 0.85) 72%,
       #000 95%);
   mask-composite: intersect;
