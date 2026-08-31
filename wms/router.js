@@ -41,6 +41,7 @@ const routerOptions = {
         { src: "meta-common" },
         { src: "hypoteka/hypoteka-hero" },
         { src: "hypoteka/hypoteka-content" },
+        { src: "promo-banners" },
       ],
     },
     {
@@ -52,6 +53,7 @@ const routerOptions = {
         { src: "meta-common" },
         { src: "postup-koupe/postup-koupe-hero" },
         { src: "postup-koupe/postup-koupe-content" },
+        { src: "promo-banners" },
       ],
     },
     {
@@ -74,6 +76,7 @@ const routerOptions = {
         { src: "meta-common" },
         { src: "financovani/hero-financovani" },
         { src: "financovani/financovani-content" },
+        { src: "promo-banners" },
       ],
     },
     {
@@ -96,6 +99,7 @@ const routerOptions = {
         { src: "meta-common" },
         { src: "bonusy/bonusy-hero" },
         { src: "bonusy/bonusy-content" },
+        { src: "promo-banners" },
       ],
     },
     {
@@ -116,6 +120,8 @@ const routerOptions = {
       blocks: [
         { src: "meta-common" },
         { src: "aktuality/aktuality-content" },
+        { src: "promo-banners" },
+        { src: "aktuality/aktuality-starsi-clanky" },
       ],
     },
     {
@@ -127,6 +133,7 @@ const routerOptions = {
         { src: "meta-common" },
         { src: "efektivni-dispozice/efektivni-dispozice-hero" },
         { src: "efektivni-dispozice/efektivni-dispozice-content" },
+        { src: "promo-banners" },
       ],
     },
     {
@@ -182,6 +189,7 @@ const routerOptions = {
         { src: "meta-common" },
         { src: "reference/reference-hero" },
         { src: "reference/reference-content" },
+        { src: "promo-banners" },
       ],
     },
     // AKTUALITY
