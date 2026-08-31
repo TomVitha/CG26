@@ -155,6 +155,7 @@ a.footer-contact:hover {
     border-radius: 0;
     font-weight: 700;
     transition: background-color 0.3s ease;
+    font-size: 0.813rem;
   }
 
   a span {
