@@ -9,9 +9,7 @@
   --supplier-status-color: #475467;
   --supplier-status-open-bg: #fffde5;
   --supplier-status-open-color: #855f00;
-
   display: flow-root;
-  padding-top: var(--header-height);
   background-color: var(--blue-light);
 }
 
