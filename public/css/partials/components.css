@@ -556,11 +556,20 @@
     flex: 1 1 auto;
     display: flex;
     flex-direction: column;
+
+    h3 {
+      color: var(--cg-blue);
+    }
+
+    p {
+      line-height: 1.8;
+    }
+
   }
 
   @media (width > 576px) {
     &.card-md .card-body {
-      padding: 32px;
+      padding: 40px;
     }
   }
 
@@ -1618,7 +1627,7 @@
 
 .link-arrow {
   position: relative;
-  padding-right: calc(10px + 8px);
+  padding-right: calc(16px + 22px);
 
   :where(&) {
     display: block;
