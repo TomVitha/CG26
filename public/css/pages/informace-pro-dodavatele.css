@@ -1,0 +1,259 @@
+/* ==========================================================================
+   # INFORMACE PRO DODAVATELE
+   ========================================================================== */
+
+.suppliers {
+  --supplier-card-padding: 32px;
+  /* pilulky stavů – barvy z grafiky, v projektu zatím nemají proměnné */
+  --supplier-status-bg: #f2f4f7;
+  --supplier-status-color: #475467;
+  --supplier-status-open-bg: #fffde5;
+  --supplier-status-open-color: #855f00;
+
+  display: flow-root;
+  padding-top: var(--header-height);
+  background-color: var(--blue-light);
+}
+
+
+/* ## BÍLÁ KARTA S TABULKOU */
+.supplier-card {
+  padding: 8px var(--supplier-card-padding) 16px;
+  border-radius: var(--controls-border-radius);
+  background-color: var(--white);
+  box-shadow: 0 12px 32px -12px rgba(0, 0, 0, 0.05);
+}
+
+/* table horizontal scroll. */
+.supplier-table-scroll {
+  position: relative;
+  overflow-x: auto;
+  margin-inline: calc(var(--supplier-card-padding) * -1);
+  padding-inline: var(--supplier-card-padding);
+}
+
+
+/* ## TABULKA */
+.supplier-table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+
+  th,
+  td {
+    padding: 20px 12px;
+    text-align: center;
+  }
+
+  /* záhlaví tabulky - zarovnání */
+  :is(th, td):first-child {
+    padding-left: 0;
+    text-align: left;
+  }
+
+  thead th {
+    border-bottom: 3px solid var(--cg-blue);
+    padding-block: 14px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--cg-blue);
+  }
+
+  tbody :is(th, td) {
+    border-bottom: 1px solid var(--gray-200);
+    font-size: 1rem;
+    color: var(--body-text-color);
+  }
+
+ 
+  tbody th {
+    font-weight: 400;
+  }
+
+  tbody tr:last-child :is(th, td) {
+    border-bottom: 0;
+  }
+}
+
+/* sloupec PDF */
+.supplier-table--pdf :is(th, td):last-child {
+  padding-right: 0;
+  text-align: right;
+}
+
+.supplier-table--pdf thead th:last-child {
+  font-size: 1rem;
+}
+
+.supplier-table .supplier-desc {
+  text-align: left;
+}
+
+
+/* ## PILULKY STAVŮ */
+.supplier-status {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 999px;
+  background-color: var(--supplier-status-bg);
+  color: var(--supplier-status-color);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+
+.supplier-status--open {
+  background-color: var(--supplier-status-open-bg);
+  color: var(--supplier-status-open-color);
+}
+
+.supplier-date {
+  white-space: nowrap;
+}
+
+/* PDF ke stažení  */
+.supplier-pdf {
+  display: inline-grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--controls-border-radius);
+  font-size: 1.25rem;
+  color: var(--cg-blue);
+  text-decoration: none;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* aktivní odkaz  */
+a.supplier-pdf:hover,
+a.supplier-pdf:focus-visible {
+  background-color: var(--cg-blue);
+  color: var(--white);
+}
+
+/* bez přílohy  */
+.supplier-pdf--none {
+  color: var(--gray-200);
+}
+
+
+/* ## KONTAKTNÍ BOX */
+.supplier-contact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px var(--layout-gutter);
+  padding: 24px 40px;
+  border-radius: var(--controls-border-radius);
+  background-color: var(--white);
+  box-shadow: 0 12px 32px -12px rgba(0, 0, 0, 0.05);
+}
+
+.supplier-contact-lead {
+  flex: 1 1 260px;
+  margin-bottom: 0;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--cg-blue);
+}
+
+
+.supplier-contact-photo {
+  flex: 0 0 auto;
+  width: 132px;
+  margin: 0;
+
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+@media (width >= 992px) {
+
+  .supplier-contact {
+    flex-wrap: nowrap;
+  }
+
+  .supplier-contact-lead,
+  .supplier-contact-person {
+    min-width: 0;
+  }
+
+  .supplier-contact-photo {
+    align-self: stretch;
+    position: relative;
+    width: 200px;
+
+    img {
+      position: absolute;
+      inset: auto 0 -24px; /* = spodní padding .supplier-contact */
+      height: auto;
+    }
+  }
+}
+
+.supplier-contact-person {
+  flex: 1 1 240px;
+}
+
+.supplier-contact-name {
+  margin-bottom: 12px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--cg-blue);
+}
+
+.supplier-contact-action {
+  flex: 0 0 auto;
+  margin-left: auto;
+}
+
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (width < 992px) {
+  .supplier-contact {
+    padding: 24px;
+  }
+
+  /* text přes celou šířku */
+  .supplier-contact-lead {
+    flex-basis: 100%;
+  }
+
+  .supplier-contact-action {
+    margin-left: 0;
+  }
+}
+
+@media (width < 576px) {
+  .suppliers {
+    --supplier-card-padding: 16px;
+  }
+
+  .supplier-table :is(th, td) {
+    padding: 14px 8px;
+  }
+
+  .supplier-contact-photo {
+    width: 88px;
+  }
+
+  .supplier-contact-action {
+    flex-basis: 100%;
+
+    .btn {
+      width: 100%;
+    }
+  }
+}

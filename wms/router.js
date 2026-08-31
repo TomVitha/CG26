@@ -133,6 +133,16 @@ const routerOptions = {
       ],
     },
     {
+      path: "/informace-pro-dodavatele",
+      name: "informace-pro-dodavatele",
+      title: "Informace pro dodavatele",
+      description: "Aktuální plán poptávkových řízení – termíny výběrových řízení na stavby a technickou infrastrukturu.",
+      blocks: [
+        { src: "meta-common" },
+        { src: "informace-pro-dodavatele" },
+      ],
+    },
+    {
       path: "/loga-a-fotografie",
       name: "loga-a-fotografie",
       title: "Loga a fotografie ke stažení",
