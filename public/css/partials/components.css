@@ -125,6 +125,7 @@
 }
 
 @media (width < 992px) {
+
   /* nadpis nad textem */
   .page-intro-heading,
   .page-intro-text {
@@ -192,6 +193,7 @@
 
 @media (width < 1200px) {
   .benefits-list {
+
     /* tři pevné sloupce: bez flex-grow */
     > .benefit {
       flex: 0 1 calc((100% - 2 * 64px) / 3);
@@ -379,7 +381,7 @@
   }
 }
 
-@media (width >= 992px) {
+@media (width >=992px) {
   .hero.hero--static {
     height: 500px;
     padding-bottom: 0;
@@ -401,200 +403,34 @@
 }
 
 
-/* # KE STAŽENÍ – kostra stránky  */
-.downloads {
-  .section-heading {
-    font-size: 2.1875rem;
-  }
-}
+/* ? přesunout k layoutům ? */
+.layout-grid.download-cards {
 
-/* Nadpis skupiny dlaždic */
-.downloads-heading,
-.downloads-name {
-  margin-bottom: 32px;
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--cg-blue);
-}
+  /* all direct children */
+  > * {
+    grid-column: span 3;
 
+    @media (width < 1200px) {
+      & {
+        grid-column: span 4;
+      }
+    }
 
-.downloads-subheading {
-  margin-bottom: 48px;
-  font-size: 2.1875rem;
-  font-weight: 400;
-  line-height: 1.2;
-  color: var(--cg-blue);
+    @media (width < 992px) {
+      & {
+        grid-column: span 6;
+      }
+    }
 
-  strong {
-    display: block;
-    font-weight: 700;
-  }
-}
-
-
-.downloads-person {
-  & + & {
-    margin-top: 64px;
-  }
-}
-
-@media (width < 992px) {
-  .downloads-subheading {
-    margin-bottom: 32px;
-  }
-
-  .downloads-person + .downloads-person {
-    margin-top: 48px;
-  }
-}
-
-@media (width < 576px) {
-  .downloads .section-heading,
-  .downloads-subheading {
-    font-size: 1.875rem;
-  }
-}
-
-
-/* # KE STAŽENÍ (cg-download) – dlaždice se souborem a odkazy na formáty. */
-.cg-download-grid {
-  --cg-download-columns: 4;
-
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 0;
-  display: grid;
-  grid-template-columns: repeat(var(--cg-download-columns), minmax(0, 1fr));
-  gap: var(--layout-gutter);
-}
-
-.cg-download-card {
-  display: flex;
-  flex-direction: column;
-  padding: 16px;
-  border-radius: var(--controls-border-radius);
-  background-color: #f5f7fc;
-}
-
-.cg-download-card-title {
-  margin-bottom: 12px;
-  font-size: 0.875rem;
-  font-weight: 700;
-  line-height: 1.3;
-  color: var(--cg-blue);
-}
-
-/* náhled loga – na střed, bez ořezu */
-.cg-download-media {
-  display: grid;
-  place-items: center;
-  margin: 0 0 16px;
-  min-height: 120px;
-
-  img {
-    display: block;
-    max-width: 100%;
-    max-height: 120px;
-  }
-}
-
-/* Náhled fotografie */
-.cg-download-card--photo {
-  padding: 24px;
-
-  .cg-download-media {
-    display: block;
-    /* základ dlaždice centruje přes place-items – a justify-items */
-    place-items: normal;
-    flex: 1 1 auto;
-    min-height: 0;
-    margin-bottom: 24px;
-
-    img {
-      width: auto;
-      max-width: 100%;
-      height: auto;
-      /* strop pro fotky na výšku, ať nenatahují celý řádek dlaždic */
-      max-height: 340px;
-      border-radius: var(--controls-border-radius);
+    @media (width < 576px) {
+      & {
+        grid-column: span 12;
+      }
     }
   }
 }
 
-/* Dlaždice rozcestníku projektů (ke-stazeni-projekty)  */
-.cg-download-card--project {
-  position: relative;
-  padding: 0;
-  overflow: hidden;
-
-  .cg-download-media {
-    display: block;
-    place-items: normal;
-    min-height: 0;
-    margin: 0 0 24px;
-
-    img {
-      display: block;
-      width: 100%;
-      aspect-ratio: 3 / 2;
-      min-height: 185px;
-      max-height: none;
-      object-fit: cover;
-      border-radius: var(--controls-border-radius) var(--controls-border-radius) 0 0;
-      transition: scale 0.4s ease;
-    }
-  }
-
-  &:hover .cg-download-media img {
-    scale: 1.04;
-  }
-}
-
-.cg-download-project-body {
-  display: flex;
-  flex: 1 1 auto;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0 24px 24px;
-}
-
-.cg-download-project-location {
-  margin-bottom: 8px;
-  font-size: 1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--body-text-color);
-}
-
-.cg-download-project-title {
-  margin-bottom: 24px;
-  font-size: 1rem;
-  font-weight: 400;
-  color: var(--body-text-color);
-}
-
-.cg-download-project-cta {
-  margin-top: auto;
-  margin-bottom: 0;
-
-  a::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-  }
-}
-
-
-/* „Ke stažení" */
-.cg-download-label {
-  margin-top: auto;
-  margin-bottom: 8px;
-  font-size: 0.875rem;
-  font-weight: 700;
-  color: var(--cg-blue);
-}
-
-.cg-download-files {
+.format-downloads {
   list-style: none;
   padding: 12px;
   margin-bottom: 0;
@@ -606,7 +442,7 @@
   background-color: #e3ebf8;
 }
 
-.cg-download-file {
+.format-download {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -625,50 +461,55 @@
     color: var(--cg-blue);
   }
 
-  > [class*="fa-"] {
+  /* FA Ikony */
+  &::before,
+  &::after {
+    --fa-display: grid;
+    font-family: "Font Awesome 6 Pro";
+    -webkit-font-smoothing: antialiased;
+    display: var(--fa-display, grid);
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-rendering: auto;
+
+  }
+
+  /* File icon */
+  /* ? potřebujeme ?? */
+  &::before {
+    /* fa-file */
+    content: "\f15b";
+    font-weight: 300;
+    
     font-size: 0.875rem;
     color: var(--gray-500);
+    flex: 0 0 auto;
   }
-}
 
-.cg-download-file-name {
-  flex: 1 1 auto;
-}
 
-.cg-download-file-btn {
-  flex: 0 0 auto;
-  display: grid;
-  place-items: center;
-  width: 26px;
-  height: 26px;
-  border-radius: var(--controls-border-radius);
-  background-color: var(--cg-yellow);
-  color: var(--cg-blue);
-  font-size: 0.75rem;
-  transition: background-color 0.25s ease, color 0.25s ease;
-}
+  /* Download icon */
+  &::after {
+    /* fa-download */
+    content: "\f019";
+    font-weight: 900;
 
-.cg-download-file:hover .cg-download-file-btn,
-.cg-download-file:focus-visible .cg-download-file-btn {
-  background-color: var(--cg-blue);
-  color: var(--white);
-}
-
-@media (width < 1200px) {
-  .cg-download-grid {
-    --cg-download-columns: 3;
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    border-radius: 5px;
+    background-color: var(--cg-yellow);
+    color: var(--cg-blue);
+    font-size: 0.75rem;
+    transition: background-color 0.25s ease, color 0.25s ease;
+    width:  26px;
+    height: 26px;
+    margin-left: auto;
   }
-}
 
-@media (width < 992px) {
-  .cg-download-grid {
-    --cg-download-columns: 2;
-  }
-}
-
-@media (width < 576px) {
-  .cg-download-grid {
-    --cg-download-columns: 1;
+  &:hover::after {
+    background-color: var(--cg-blue);
+    color: var(--white);
   }
 }
 
@@ -704,13 +545,20 @@
   }
 
   .card-body {
-    background-color: #f2f2f2;
-    padding: 40px;
+    background-color: #f5f7fc;
+    padding: 24px;
     flex: 1 1 auto;
     display: flex;
     flex-direction: column;
   }
 
+  @media (width > 576px) {
+    &.card-md .card-body {
+      padding: 32px;
+    }
+  }
+
+  /* BROKEN AND UNUSED (wrong selector) */
   /* Tlačítko u spodní hrany karty */
   .card-body > .btn {
     margin-top: auto;
@@ -730,9 +578,6 @@
 }
 
 @media (width < 992px) {
-  .card .card-body {
-    padding-inline: 24px;
-  }
 
   /* nízké obrázky (448×139) srovnat s vysokými kartami */
   .card:not(.tall) .card-img {
@@ -826,7 +671,8 @@
 
     /* WIP */
     &::before {
-      content: "\f3c5"; /* Font Awesome: <i class="fa-light fa-location-dot"></i> */
+      content: "\f3c5";
+      /* Font Awesome: <i class="fa-light fa-location-dot"></i> */
       font: var(--fa-font-light);
       font-size: 14px;
       line-height: 1;
@@ -1184,6 +1030,7 @@
 }
 
 @media (width < 576px) {
+
   /* místo pro viz nad panelem */
   .project-tile {
     min-height: 460px;
@@ -1464,6 +1311,7 @@
 
 
 @media (width < 576px) {
+
   .cg-gallery-stage,
   .cg-gallery-thumbs {
     --cg-gallery-nav-size: 36px;
@@ -1675,6 +1523,7 @@
 }
 
 @media (width < 992px) {
+
   /* taby nad obsahem, na šířku */
   .cg-tabs {
     flex-direction: row;
@@ -1687,6 +1536,7 @@
 }
 
 @media (width < 576px) {
+
   /* taby 2 × 2 */
   .cg-tabs {
     display: grid;
@@ -1708,6 +1558,7 @@
 
 
   @media (width > 576px) {
+
     &.box-md,
     &.box-lg {
       padding: 32px;
@@ -1729,7 +1580,7 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  
+
   .contact {
     display: flex;
     align-items: center;
@@ -1738,7 +1589,7 @@
     font-weight: 700;
     color: var(--cg-blue);
   }
-  
+
   .contact-icon {
     flex: 0 0 auto;
     display: grid;
@@ -1782,5 +1633,5 @@
   padding: 24px;
   border-radius: 5px;
   background-color: var(--white, white);
-  box-shadow:  0 12px 32px -12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 12px 32px -12px rgba(0, 0, 0, 0.05);
 }
