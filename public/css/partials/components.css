@@ -7,8 +7,10 @@
     display: block;
     height: 4px;
     width: 40px;
-    background-color: var(--cg-yellow);
     margin-bottom: 20px;
+    /* TEMP */
+    background-color: var(--brow-color, currentColor);
+    /* background-color: currentColor; */
   }
 
   &.brow-sm::before {
@@ -17,12 +19,16 @@
     margin-bottom: 12px;
   }
 
-  &.brow-blue::before {
-    background-color: var(--cg-blue);
+  &.brow-yellow {
+    --brow-color: var(--cg-yellow);
   }
 
-  &.brow-current::before {
-    background-color: currentColor;
+  &.brow-blue {
+    --brow-color: var(--cg-blue);
+  }
+
+  &.brow-current {
+    --brow-color: currentColor;
   }
 }
 
