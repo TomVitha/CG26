@@ -175,7 +175,8 @@
     position: absolute;
     inset: 0;
     z-index: 2;
-    background: linear-gradient(88deg, rgba(32, 35, 76, 0.94) 0%, rgba(44, 48, 108, 0.86) 100%);
+    /*background: linear-gradient(88deg, rgba(32, 35, 76, 0.94) 0%, rgba(44, 48, 108, 0.86) 100%);*/
+    background: linear-gradient(93deg, #304068 36.97%, rgba(48, 64, 104, 0.00) 55.09%), #1f3979c7;
     pointer-events: none;
   }
 }
@@ -277,8 +278,7 @@
 
   position: relative;
   isolation: isolate;
-  /* bez overflow: clip – ořízl by .promo-image přesahující spodní hranu;
-     médium si ořez řeší samo (overflow + border-radius na .promo-media) */
+  /* bez overflow: clip – ořízl by .promo-image přesahující spodní hranu; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -289,9 +289,7 @@
   color: var(--body-text-color);
 }
 
-/* Médium (obrázek/video smyčka) vpravo, do ztracena směrem do textu.
-   Přechod je mírně nakloněný (75deg – hrana není kolmá) a mezizastávky
-   masky dělají rozpouštění plynulé po celé šířce média, žádná ostrá hrana. */
+/* Médium (obrázek/video smyčka) */
 .promo-media {
   position: absolute;
   inset: 0 0 0 auto;
@@ -299,8 +297,7 @@
   width: var(--promo-media-width);
   overflow: hidden;
   border-radius: inherit;
-  /* dvě vrstvy masky (intersect): svislá zaručí úplně průhlednou levou hranu
-     média (žádný ostrý předěl u textu), nakloněná dělá pozvolné rozpouštění */
+  /* dvě vrstvy masky (intersect) */
   mask-image:
     linear-gradient(to right, transparent 0%, #000 55%),
     linear-gradient(75deg,
@@ -347,7 +344,7 @@
   }
 }
 
-/* karta s obrázkem přesahujícím spodní hranu (magazín) */
+/* karta s přesahujícím obrázkem */
 .promo--overflow {
   --promo-image-width: 380px;
   --promo-image-overflow: 80px;
