@@ -3,40 +3,99 @@
     <h2>Rozcestník stránek</h2>
 
 
-
     <h3>hotovo:</h3>
 
     <ul class="rozcestnik">
       <li><a href="./">Home Page</a> <small>(doplnit videa, obrázky)</small></li>
       <li><a href="./financovani">Financování</a></li>
       <li><a href="./hypoteka">Hypotéka</a></li>
-      <li><a href="./postup-koupe">Postup koupě</a> <small>(doplnit obrázky)</small></li>
+      <li><a href="./postup-koupe">Postup koupě</a></li>
       <li><a href="./pripravovane-projekty">Připravované projekty</a></li>
-      <li><a href="./efektivni-dispozice">Efektivní dispozice</a> <small>(doplnit videa, obrázky)</small></li>
+      <li><a href="./efektivni-dispozice">Efektivní dispozice</a></li>
       <li><a href="./bonusy">Bonusy</a></li>
       <li><a href="./aktuality">Aktuality - přehled</a></li>
       <li><a href="./aktualita-01">Aktualita: ABS Gala</a></li>
       <li><a href="./aktualita-02">Aktualita: Společné zážitky</a></li>
       <li><a href="./aktualita-03">Aktualita: Festival Žižkovská spojka</a></li>
       <li><a href="./aktualita-04">Aktualita: Vzorkovna CG</a></li>
-      <li><a href="./ke-stazeni-projekty">Ke stažení - přehled projektů</a></li>
+      <li><a href="./ke-stazeni-projekty">Ke stažení - aktuální projekty (press kit)</a></li>
     </ul>
 
+
+    <!-- show more -->
+    <details class="rozcestnik-more">
+      <summary aria-label="Zobrazit rozpracované stránky a stránky bez návrhu"></summary>
 
     <h3>zde něco chybí:</h3>
 
     <ul class="rozcestnik">
+      <li><a href="./loga-a-fotografie">Loga a fotografie</a> <small>(grafika ke stažení)</small></li>
       <li><a href="./proc-central-group">Proč si vybrat Central Group</a> <small>(texty, obsah)</small></li>
       <li><a href="./prehled-projektu">Přehled projektů</a> <small>(texty, obsah)</small></li>
-      <li><a href="./loga-a-fotografie">Loga a fotografie</a> <small>(grafika, fotografie)</small></li>
       <li><a href="./ke-stazeni-projekt">Ke stažení projekt - detail</a> <small>(grafika, fotografie)</small></li>
       <li><a href="./reference">Reference - realizované projekty</a> <small>(fotografie)</small></li>
     </ul>
+
+
+    <h3>zatím bez návrhu:</h3>
+
+    <ul class="rozcestnik">
+      <li>Standardy</li>
+      <li>Vzorkovna</li>
+      <li>Eko-smart prvky</li>
+      <li>Úsporné byty</li>
+      <li>O nás</li>
+      <li>Sponzorujeme pomáháme</li>
+      <li>Koupíme pozemky</li>
+      <li>Tiskové centrum</li>
+      <li>Napsali o nás</li>
+      <li>Tiskové zprávy/komentáře</li>
+      <li>CG magazín</li>
+      <li>Kontakty</li>
+      <li>Spolupracující dodavatelé</li>
+      <li>Informace pro dodavatele</li>
+      <li>Prohlášení vlastníka</li>
+      <li>Informace o zpracování osobních údajů</li>
+      <li>Společnosti koncernu</li>
+    </ul>
+
+    </details>
+
   </div>
 </section>
 
 <style>
   .rozcestnik a:hover {
     text-decoration: underline;
+  }
+
+  /* rozbalovač */
+  .rozcestnik-more > summary {
+    list-style: none;
+    width: fit-content;
+    margin-top: 24px;
+    padding: 4px 10px;
+    color: #b5b5b5;
+    font-size: 46px;
+    font-weight: 100;
+    line-height: 1;
+    cursor: pointer;
+    user-select: none;
+}
+
+  .rozcestnik-more > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .rozcestnik-more > summary::before {
+    content: "+";
+  }
+
+  .rozcestnik-more[open] > summary::before {
+    content: "−";
+  }
+
+  .rozcestnik-more > summary:hover {
+    color: #575757;
   }
 </style>
