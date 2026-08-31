@@ -1,133 +1,56 @@
-<div class="hero">
-  <!-- Video na pozadí hero sekce. Zdroj i poster přepíná js/hero-video.js i za běhu –
-       <source media> prohlížeč vyhodnotí jen při načtení a po změně šířky okna (otočení
-       displeje) zdroj sám nepřepne. Poster drží data-poster. -->
-  <video class="hero-bg" data-hero-video autoplay muted loop playsinline preload="auto"
-    aria-hidden="true" tabindex="-1"
-    poster="https://www.central-group.cz/storage/CG/wms3/video/proccg/proccg-hero-desktop.webp">
-    <!-- desktop 16:9 (1920×1080) -->
-    <source src="https://www.central-group.cz/storage/CG/wms3/video/proccg/proccg-hero-desktop.mp4" type="video/mp4" media="(min-width: 768px)"
-      data-poster="https://www.central-group.cz/storage/CG/wms3/video/proccg/proccg-hero-desktop.webp">
-    <!-- tablet 4:5 (1080×1350) 
-    <source src="https://www.central-group.cz/storage/CG/wms3/img/kariera/videa/empiria-tablet.mp4" type="video/mp4" media="(min-width: 576px) and (max-width: 767.98px)"
-      data-poster="https://www.central-group.cz/storage/CG/wms3/img/kariera/videa/empiria-tablet-poster.png">
-    -->
-    <!-- mobil 9:16 (1080×1920) – výchozí zdroj bez media dotazu -->
-    <source src="https://www.central-group.cz/storage/CG/wms3/video/proccg/proccg-hero-mobile.mp4" type="video/mp4"
-      data-poster="https://www.central-group.cz/storage/CG/wms3/video/proccg/proccg-hero-mobile.webp">
-  </video>
-  <div class="container-main hero-container">
-    <div class="hero-content">
-      <hgroup>
-        <h1 class="brow"><strong class="text-yellow">6 důvodů, proč si vybrat </strong>
-          <br />nový byt od CENTRAL GROUP
-        </h1>
-        <p class="hero-text">
-          Více než 30 let zkušeností, široká nabídka bytů, flexibilní financování a důraz na kvalitu. Objevte hlavní výhody, díky kterým si nové bydlení vybírají desetitisíce klientů.
-        </p>
+<!-- PŘEHLED PROJEKTŮ
+     Obsahem je sdílená sekce .project-tiles-section (stejná jako na stránce
+     proc-central-group), doplněná o filtr lokalit a checkbox „Dokončené byty".
+     Hlavním nadpisem stránky je h1 v hero sekci; nadpis sekce dlaždic zůstává h2
+     (sdílená komponenta).
 
-        <div class="cta-action">
-          <a href="#" class="btn btn-primary">
-            Vybrat byt <i class="fa-sharp fa-solid fa-arrow-right" aria-hidden="true"></i>
-          </a>
-        </div>
-
-      </hgroup>
-    </div>
-  </div>
-</div>
-
-<div class="why-cg">
-
-  <!-- ## ÚVOD -->
-  <section class="why-cg-intro">
-    <div class="container-main">
-      <div class="layout-grid">
-        <div class="page-intro-heading">
-          <h2 class="section-heading">
-            Jak funguje garance
-            <strong>vrácení peněz?</strong>
-          </h2>
-        </div>
-        <div class="page-intro-text">
-          <p>
-            <strong>Stabilitě trhu a kvalitě našich bytů</strong> velmi věříme. A proto jsme
-            schopni našim klientům poskytnout záruku, <strong>že na bytu od nás nemohou
-            prodělat</strong>. Při využití programu <strong>Garance vrácení peněz</strong>
-            můžete kdykoliv až do doby předání dokončeného bytu smlouvu ukončit a my Vám
-            <strong>vrátíme celou uhrazenou část ceny bytu zpět</strong>. Program můžete za
-            <strong>drobný poplatek</strong> využít <strong>pro všechny typy financování</strong>
-            a pro všechny byty v naší nabídce kromě bytů již dokončených.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ## VÝHODY (modrý pruh) -->
-  <section class="bg-blue benefits">
-    <div class="container-main">
-      <ul class="benefits-list text-center">
-
-        <li class="benefit">
-          <span class="benefit-icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span>
-          <h5>Pojistka proti<br>nepříznivému vývoji</h5>
-          <p class="small">Kupujte s jistotou. Pokud se vaše situace změní, můžete až do předání bytu odstoupit od smlouvy a získat své peníze zpět.</p>
-        </li>
-
-        <li class="benefit">
-          <span class="benefit-icon"><i class="fa-solid fa-building-columns" aria-hidden="true"></i></span>
-          <h5>Pro všechny způsoby<br>financování</h5>
-          <p class="small">Program Garance vrácení peněz je dostupný pro všechny typy financování a většinu bytů z nabídky CENTRAL GROUP.</p>
-        </li>
-
-        <li class="benefit">
-          <span class="benefit-icon"><i class="fa-solid fa-clipboard-check" aria-hidden="true"></i></span>
-          <h5>Možnost odstoupení<br>až do předání bytu</h5>
-          <p class="small">Smlouvu můžete ukončit kdykoliv až do dokončení a předání vašeho nového bytu.</p>
-        </li>
-
-        <li class="benefit">
-          <span class="benefit-icon"><i class="fa-solid fa-money-bill-transfer" aria-hidden="true"></i></span>
-          <h5>Vrácení všech finančních<br>prostředků</h5>
-          <p class="small">Při ukončení smlouvy vám vrátíme celou uhrazenou část kupní ceny do tří měsíců.</p>
-        </li>
-
-        <li class="benefit">
-          <span class="benefit-icon"><i class="fa-solid fa-percent" aria-hidden="true"></i></span>
-          <h5>Stačí pouze 10 %<br>vlastních prostředků</h5>
-          <p class="small">Na začátku hradíte jen 10&nbsp;% kupní ceny. Zbývající část můžete doplatit až do dvou let od dokončení bytu.</p>
-        </li>
-
-        <li class="benefit">
-          <span class="benefit-icon"><i class="fa-solid fa-file-signature" aria-hidden="true"></i></span>
-          <h5>Bez sankcí<br>a skrytých podmínek</h5>
-          <p class="small">Ukončení smlouvy je za drobný poplatek a bez jakýchkoliv dalších sankcí.</p>
-        </li>
-
-      </ul>
-    </div>
-  </section>
-
+     TODO: obrázky, texty i odkazy dlaždic jsou zástupné. -->
+<div class="project-overview">
 
   <!-- ## PŘEHLED PROJEKTŮ (sdílená sekce – .project-tiles v components.css) -->
-  <section class="project-tiles-section">
+  <section class="project-tiles-section" data-project-filter>
     <div class="container-main">
 
       <div class="section-head">
         <div class="tag">NOVÉ BYDLENÍ</div>
-        <h2 class="section-heading section-heading--lg"><strong>Stovky nových bytů po celé Praze</strong></h2>
+        <h2>Stovky nových bytů po celé Praze</h2>
         <p>
           Vybírejte z rozsáhlé nabídky rezidenčních čtvrtí i exkluzivních projektů.
           Najděte bydlení, které bude vyhovovat vašim potřebám i představám.
         </p>
       </div>
 
-      <!-- FIXME: Mobilní zobrazení není ideální -->
+      <!-- ## FILTR PROJEKTŮ (chování: js/project-filter.js)
+           Piluky lokalit jsou přepínače (aria-pressed) – jde jich zapnout víc najednou,
+           žádná zapnutá = zobrazeno vše. Checkbox „Dokončené byty" se s výběrem lokalit
+           kombinuje (AND). Dlaždice nesou data-project-region a příznak
+           data-project-completed. -->
+      <div class="project-filter">
+        <h3 class="project-filter-title">Vyberte si podle lokality</h3>
+
+        <ul class="project-filter-regions">
+          <li><button type="button" class="project-filter-region" aria-pressed="false" data-project-filter-region="praha-3">Praha 3</button></li>
+          <li><button type="button" class="project-filter-region" aria-pressed="false" data-project-filter-region="praha-4">Praha 4</button></li>
+          <li><button type="button" class="project-filter-region" aria-pressed="false" data-project-filter-region="praha-8">Praha 8</button></li>
+          <li><button type="button" class="project-filter-region" aria-pressed="false" data-project-filter-region="praha-9">Praha 9</button></li>
+          <li><button type="button" class="project-filter-region" aria-pressed="false" data-project-filter-region="praha-10">Praha 10</button></li>
+        </ul>
+
+        <label class="project-filter-completed">
+          <input type="checkbox" data-project-filter-completed>
+          Dokončené byty
+        </label>
+      </div>
+
+      <!-- hláška pro kombinaci filtrů bez výsledku (např. Praha 3 + dokončené) -->
+      <p class="project-filter-empty" data-project-filter-empty hidden>
+        Zadaným filtrům neodpovídá žádný projekt. Zkuste vybrat jinou lokalitu
+        nebo zrušit filtr dokončených bytů.
+      </p>
+
       <div class="project-tiles">
 
-        <a href="#" class="project-tile">
+        <a href="#" class="project-tile" data-project-region="praha-3">
           <div class="project-tile-media">
             <!-- TODO: img/poster/video fallback  -->
             <img src="https://www.central-group.cz/Uloziste/86/86ff1fee-f02d-47e6-b397-cf1849cd18a4.jpg" alt="" loading="lazy">
@@ -156,7 +79,7 @@
           </div>
         </a>
 
-        <a href="#" class="project-tile">
+        <a href="#" class="project-tile" data-project-region="praha-4" data-project-completed>
           <div class="project-tile-media">
             <img src="https://www.central-group.cz/Uloziste/0e/0eefd926-f099-4d5d-a3c6-bba84ba408ea.jpg" alt="" loading="lazy">
             <!-- Video smyčka no hover (js/loop-video.js) -->
@@ -183,7 +106,7 @@
           </div>
         </a>
 
-        <a href="#" class="project-tile">
+        <a href="#" class="project-tile" data-project-region="praha-4">
           <div class="project-tile-media">
             <img src="https://www.central-group.cz/Uloziste/54/54471479-4e98-4891-a6cb-616bcd575aeb.jpg" alt="" loading="lazy">
             <!-- Video smyčka no hover (js/loop-video.js) -->
@@ -210,7 +133,7 @@
           </div>
         </a>
 
-        <a href="#" class="project-tile">
+        <a href="#" class="project-tile" data-project-region="praha-8" data-project-completed>
           <div class="project-tile-media">
             <img src="https://www.central-group.cz/Uloziste/6d/6d3c1333-12e0-4e20-9f88-c06677468779.jpg" alt="" loading="lazy">
             <!-- Video smyčka no hover (js/loop-video.js) -->
@@ -237,7 +160,7 @@
           </div>
         </a>
 
-        <a href="#" class="project-tile">
+        <a href="#" class="project-tile" data-project-region="praha-9" data-project-completed>
           <div class="project-tile-media">
             <img src="https://www.central-group.cz/Uloziste/f8/f8424307-67d5-493b-9106-5576b8092c2f.jpg" alt="" loading="lazy">
             <!-- Video smyčka no hover (js/loop-video.js) -->
@@ -264,7 +187,7 @@
           </div>
         </a>
 
-        <a href="#" class="project-tile">
+        <a href="#" class="project-tile" data-project-region="praha-9">
           <div class="project-tile-media">
             <img src="https://www.central-group.cz/Uloziste/bd/bd68d40a-1290-4aab-ba03-c63a84e09c09.jpg" alt="" loading="lazy">
             <!-- Video smyčka no hover (js/loop-video.js) -->
@@ -291,7 +214,7 @@
           </div>
         </a>
 
-        <a href="#" class="project-tile">
+        <a href="#" class="project-tile" data-project-region="praha-9">
           <div class="project-tile-media">
             <img src="https://www.central-group.cz/Uloziste/96/96d1835e-10f3-4f77-b700-595157fb230d.jpg" alt="" loading="lazy">
             <!-- Video smyčka no hover (js/loop-video.js) -->
@@ -318,7 +241,7 @@
           </div>
         </a>
 
-        <a href="#" class="project-tile">
+        <a href="#" class="project-tile" data-project-region="praha-10" data-project-completed>
           <div class="project-tile-media">
             <img src="https://www.central-group.cz/Uloziste/1d/1de1b630-81ba-452a-b0a6-6441fc98a62e.jpg" alt="" loading="lazy">
             <!-- Video smyčka no hover (js/loop-video.js) -->
@@ -351,7 +274,6 @@
 
 </div>
 
-
+<script src="js/project-filter.js"></script>
 <script src="js/hero-video.js"></script>
 <script src="js/loop-video.js"></script>
-

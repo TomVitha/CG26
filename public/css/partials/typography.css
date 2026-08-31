@@ -166,11 +166,7 @@ h6 {
 }
 */
 
-/* Nadpis sekce: základ regular, zvýrazněná (druhá) část bold.
-   Dvě velikosti:
-     .section-heading              … 36px / 400 (strong 700) – např. úvod stránky
-     .section-heading--lg          … 48px / 800 – hlavní nadpisy sekcí
-   use: <h2 class="section-heading section-heading--lg">Text <strong>Zvýrazněný text</strong></h2> */
+
 .section-heading {
   font-size: 2.25rem;
   font-weight: 400;
@@ -182,27 +178,10 @@ h6 {
     font-weight: 700;
   }
 
-  /* ? k čemu ?? */
-  &.section-heading--lg {
-    font-size: 3rem;
-    font-weight: 800;
-
-    strong {
-      font-weight: 800;
-    }
-  }
-}
-
-/* specifičnost (0,2,0) kvůli zápisu &.section-heading--lg výše */
-@media (width < 992px) {
-  .section-heading.section-heading--lg {
-    font-size: 2.25rem;
-  }
 }
 
 @media (width < 576px) {
-  .section-heading,
-  .section-heading.section-heading--lg {
+  .section-heading {
     font-size: 1.875rem;
   }
 }

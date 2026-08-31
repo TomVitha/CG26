@@ -1,43 +1,3 @@
-<div class="hero">
-  <!-- Video na pozadí hero sekce. Zdroj i poster přepíná js/hero-video.js i za běhu –
-       <source media> prohlížeč vyhodnotí jen při načtení a po změně šířky okna (otočení
-       displeje) zdroj sám nepřepne. Poster varianty drží data-poster.
-        -->
-  <video class="hero-bg" data-hero-video autoplay muted loop playsinline preload="auto"
-    aria-hidden="true" tabindex="-1"
-    poster="https://www.central-group.cz/storage/CG/wms3/video/bonusy/bonusy-hero-desktop.webp">
-    <!-- desktop 16:9 (1920×1080) -->
-    <source src="https://www.central-group.cz/storage/CG/wms3/video/bonusy/bonusy-hero-desktop.mp4" type="video/mp4" media="(min-width: 768px)"
-      data-poster="https://www.central-group.cz/storage/CG/wms3/video/bonusy/bonusy-hero-desktop.webp">
-    <!-- tablet 4:5 (1080×1350) 
-    <source src="https://www.central-group.cz/storage/CG/wms3/img/kariera/videa/empiria-tablet.mp4" type="video/mp4" media="(min-width: 576px) and (max-width: 767.98px)"
-      data-poster="https://www.central-group.cz/storage/CG/wms3/img/kariera/videa/empiria-tablet-poster.png">
-    -->
-    <!-- mobil 9:16 (1080×1920) – výchozí zdroj bez media dotazu -->
-    <source src="https://www.central-group.cz/storage/CG/wms3/video/bonusy/bonusy-hero-mobile.mp4" type="video/mp4"
-      data-poster="https://www.central-group.cz/storage/CG/wms3/video/bonusy/bonusy-hero-mobile.webp">
-  </video>
-  <div class="container-main hero-container">
-    <div class="hero-content">
-      <hgroup>
-        <h1 class="brow">Výhodné bonusy a <strong class="text-yellow">slevy při nákupu bytu</strong>
-        </h1>
-        <p class="hero-text">
-          Získejte zvýhodnění při nákupu dalších bytů i při dřívější úhradě kupní ceny.
-        </p>
-
-        <div class="cta-action">
-          <a href="#" class="btn btn-primary">
-            Nezávazná konzultace <i class="fa-sharp fa-solid fa-arrow-right" aria-hidden="true"></i>
-          </a>
-        </div>
-
-      </hgroup>
-    </div>
-  </div>
-</div>
-
-
 <div class="bonuses">
 
   <!-- ## ÚVOD -->
@@ -121,7 +81,7 @@
 
 
         <div class="col-lg">
-          <h2 class="brow brow-blue section-heading">
+          <h2 class="brow brow-yellow section-heading">
             Věrnostní
             <strong>a množstevní slevy</strong>
           </h2>
@@ -149,34 +109,34 @@
           <div class="row g-2">
             <div class="col-md">
               <dl class="loyalty-stat h-100">
-                <dt class="brow"><h2 class="mb-0">2&nbsp;%</h2></dt>
+                <dt class="brow brow-yellow"><h2 class="mb-0">2&nbsp;%</h2></dt>
                 <dd class="small text-muted">při nákupu druhého bytu</dd>
               </dl>
             </div>
             <div class="col-md">
               <dl class="loyalty-stat h-100">
-                <dt class="brow"><h2 class="mb-0">2,5&nbsp;%</h2></dt>
+                <dt class="brow brow-yellow"><h2 class="mb-0">2,5&nbsp;%</h2></dt>
                 <dd class="small text-muted">při nákupu třetího bytu</dd>
               </dl>
             </div>
             <div class="col-md">
               <dl class="loyalty-stat h-100">
-                <dt class="brow"><h2 class="mb-0">3&nbsp;%</h2></dt>
+                <dt class="brow brow-yellow"><h2 class="mb-0">3&nbsp;%</h2></dt>
                 <dd class="small text-muted">při nákupu čtvrtého a každého dalšího bytu</dd>
               </dl>
             </div>
           </div>
           <!-- <dl class="loyalty-stats">
             <div class="loyalty-stat">
-              <dt class="brow loyalty-stat-value">2 %</dt>
+              <dt class="brow brow-yellow loyalty-stat-value">2 %</dt>
               <dd class="small text-muted">při nákupu druhého bytu</dd>
             </div>
             <div class="loyalty-stat">
-              <dt class="brow loyalty-stat-value">2,5 %</dt>
+              <dt class="brow brow-yellow loyalty-stat-value">2,5 %</dt>
               <dd class="small text-muted">při nákupu třetího bytu</dd>
             </div>
             <div class="loyalty-stat">
-              <dt class="brow loyalty-stat-value">3 %</dt>
+              <dt class="brow brow-yellow loyalty-stat-value">3 %</dt>
               <dd class="small text-muted">při nákupu čtvrtého a každého dalšího bytu</dd>
             </div>
           </dl> -->
@@ -185,62 +145,6 @@
       </div>
     </div>
   </section>
-
-
-  <!-- # BANNERY -->
-  <section class="promo-banners-section">
-    <div class="container-main">
-      <div class="promo-banners">
-
-        <a href="/byty-lokality?jv=1" class="promo-banner">
-          <div class="promo-banner-media">
-            <!-- TODO: zástupný obrázek; poster/fallback videa -->
-            <img src="https://www.central-group.cz/storage/CG/wms3/video/banner/promo-byty.webp" alt="">
-            <!-- Video smyčka na pozadí -->
-            <video data-loop-video muted loop playsinline preload="none"
-              aria-hidden="true" tabindex="-1"
-              poster="https://www.central-group.cz/storage/CG/wms3/video/banner/promo-byty.webp">
-              <!--source src="video/lokality.webm" type="video/webm"-->
-              <source src="https://www.central-group.cz/storage/CG/wms3/video/banner/promo-byty.mp4" type="video/mp4">
-            </video>
-
-          </div>
-          <div class="promo-banner-content">
-            <h2 class="brow promo-banner-title">
-              Podívejte se na
-              <strong>naše lokality</strong>
-            </h2>
-            <p>Objevte moderní byty v atraktivních částech Prahy i jejím okolí.</p>
-            <span class="btn">Prozkoumat lokality</span>
-          </div>
-        </a>
-
-        <a href="/page/usporne-stavby?jv=1" class="promo-banner">
-          <div class="promo-banner-media">
-            <img src="https://www.central-group.cz/storage/CG/wms3/video/banner/promo-eco.webp" alt="">
-            <!-- Video smyčka na pozadí  -->
-            <video data-loop-video muted loop playsinline preload="none"
-              aria-hidden="true" tabindex="-1"
-              poster="https://www.central-group.cz/storage/CG/wms3/video/banner/promo-eco.webp">
-              <!--source src="video/uspornebyty.webm" type="video/webm"-->
-              <source src="https://www.central-group.cz/storage/CG/wms3/video/banner/promo-eco.mp4" type="video/mp4">
-            </video>
-
-          </div>
-          <div class="promo-banner-content">
-            <h2 class="brow promo-banner-title">
-              Energeticky
-              <strong>úsporné byty</strong>
-            </h2>
-            <p>Šetrné k životnímu prostředí</p>
-            <span class="btn">Zjistit více</span>
-          </div>
-        </a>
-
-      </div>
-    </div>
-  </section>
-
 
 </div>
 

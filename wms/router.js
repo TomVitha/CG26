@@ -39,7 +39,9 @@ const routerOptions = {
       description: "Výhodné financování bez zbytečných poplatků – hypotéka na míru od CENTRAL GROUP.",
       blocks: [
         { src: "meta-common" },
-        { src: "hypoteka" },
+        { src: "hypoteka/hypoteka-hero" },
+        { src: "hypoteka/hypoteka-content" },
+        { src: "promo-banners" },
       ],
     },
     {
@@ -49,7 +51,9 @@ const routerOptions = {
       description: "Jak probíhá koupě nového bytu – od výběru přes rezervaci a financování až po předání klíčů.",
       blocks: [
         { src: "meta-common" },
-        { src: "postup-koupe" },
+        { src: "postup-koupe/postup-koupe-hero" },
+        { src: "postup-koupe/postup-koupe-content" },
+        { src: "promo-banners" },
       ],
     },
     {
@@ -59,7 +63,8 @@ const routerOptions = {
       description: "Podívejte se, co připravujeme – nové rezidenční čtvrti i komorní bytové projekty po celé Praze.",
       blocks: [
         { src: "meta-common" },
-        { src: "pripravovane-projekty" },
+        { src: "pripravovane-projekty/pripravovane-projekty-hero" },
+        { src: "pripravovane-projekty/pripravovane-projekty-content" },
       ],
     },
     {
@@ -69,7 +74,9 @@ const routerOptions = {
       description: "Nejširší možnosti financování nového bydlení – záloha 10 %, zvýhodněná hypotéka, slevy i unikátní finanční programy.",
       blocks: [
         { src: "meta-common" },
-        { src: "financovani" },
+        { src: "financovani/hero-financovani" },
+        { src: "financovani/financovani-content" },
+        { src: "promo-banners" },
       ],
     },
     {
@@ -79,7 +86,8 @@ const routerOptions = {
       description: "Největší rezidenční stavitel v ČR – nejširší nabídka bytů, garance vrácení peněz a kompletní servis pod jednou střechou.",
       blocks: [
         { src: "meta-common" },
-        { src: "proc-central-group" },
+        { src: "proc-central-group/proc-central-group-hero" },
+        { src: "proc-central-group/proc-central-group-content" },
       ],
     },
     {
@@ -89,7 +97,9 @@ const routerOptions = {
       description: "Zvýhodnění pro naše zákazníky – sleva za zrychlenou platbu i věrnostní a množstevní slevy.",
       blocks: [
         { src: "meta-common" },
-        { src: "bonusy" },
+        { src: "bonusy/bonusy-hero" },
+        { src: "bonusy/bonusy-content" },
+        { src: "promo-banners" },
       ],
     },
     {
@@ -99,7 +109,7 @@ const routerOptions = {
       description: "Typová šablona detailu aktuality – nadpis, perex, hlavní obrázek, text, galerie a témata.",
       blocks: [
         { src: "meta-common" },
-        { src: "aktualita-template" },
+        { src: "aktualita/aktualita-template" },
       ],
     },
     {
@@ -109,7 +119,9 @@ const routerOptions = {
       description: "Novinky z našich projektů, ze světa architektury i z financování nového bydlení.",
       blocks: [
         { src: "meta-common" },
-        { src: "aktuality" },
+        { src: "aktuality/aktuality-content" },
+        { src: "promo-banners" },
+        { src: "aktuality/aktuality-starsi-clanky" },
       ],
     },
     {
@@ -119,7 +131,9 @@ const routerOptions = {
       description: "Jak navrhujeme naše byty – promyšlené dispozice, snadná zařiditelnost a plnohodnotné bydlení i u menších bytů.",
       blocks: [
         { src: "meta-common" },
-        { src: "efektivni-dispozice" },
+        { src: "efektivni-dispozice/efektivni-dispozice-hero" },
+        { src: "efektivni-dispozice/efektivni-dispozice-content" },
+        { src: "promo-banners" },
       ],
     },
     {
@@ -129,7 +143,8 @@ const routerOptions = {
       description: "Stovky nových bytů po celé Praze – vyberte si projekt podle lokality, nebo jen z dokončených bytů.",
       blocks: [
         { src: "meta-common" },
-        { src: "prehled-projektu" },
+        { src: "prehled-projektu/prehled-projektu-hero" },
+        { src: "prehled-projektu/prehled-projektu-content" },
       ],
     },
     {
@@ -149,7 +164,8 @@ const routerOptions = {
       description: "Loga CENTRAL GROUP a fotografie vedení společnosti ke stažení pro média.",
       blocks: [
         { src: "meta-common" },
-        { src: "loga-a-fotografie" },
+        { src: "loga-a-fotografie/loga-a-fotografie-hero" },
+        { src: "loga-a-fotografie/loga-a-fotografie-content" },
       ],
     },
     {
@@ -159,7 +175,8 @@ const routerOptions = {
       description: "Rozcestník fotografií a vizualizací projektů CENTRAL GROUP ke stažení pro média.",
       blocks: [
         { src: "meta-common" },
-        { src: "ke-stazeni-projekty" },
+        { src: "ke-stazeni-projekty/ke-stazeni-projekty-hero" },
+        { src: "ke-stazeni-projekty/ke-stazeni-projekty-content" },
       ],
     },
     {
@@ -169,7 +186,8 @@ const routerOptions = {
       description: "Typová šablona – fotografie a vizualizace konkrétního projektu ke stažení pro média.",
       blocks: [
         { src: "meta-common" },
-        { src: "ke-stazeni-projekt" },
+        { src: "ke-stazeni-projekt/ke-stazeni-projekt-hero" },
+        { src: "ke-stazeni-projekt/ke-stazeni-projekt-content" },
       ],
     },
     {
@@ -179,7 +197,9 @@ const routerOptions = {
       description: "Realizované projekty CENTRAL GROUP – od rozsáhlých rezidenčních čtvrtí až po komorní bytové domy.",
       blocks: [
         { src: "meta-common" },
-        { src: "reference" },
+        { src: "reference/reference-hero" },
+        { src: "reference/reference-content" },
+        { src: "promo-banners" },
       ],
     },
     // AKTUALITY
@@ -190,7 +210,7 @@ const routerOptions = {
       description: "CENTRAL GROUP nominován na ocenění ASB GALA 2026",
       blocks: [
         { src: "meta-common" },
-        { src: "aktualita-01" },
+        { src: "aktualita/aktualita-01" },
       ],
     },
     {
@@ -200,7 +220,7 @@ const routerOptions = {
       description: "Společné zážitky posilují náš tým",
       blocks: [
         { src: "meta-common" },
-        { src: "aktualita-02" },
+        { src: "aktualita/aktualita-02" },
       ],
     },
     {
@@ -210,7 +230,7 @@ const routerOptions = {
       description: "Festival Žižkovská spojka 2026 – slavnostní otevření nové dominanty Žižkova",
       blocks: [
         { src: "meta-common" },
-        { src: "aktualita-03" },
+        { src: "aktualita/aktualita-03" },
       ],
     },
     {
@@ -220,7 +240,7 @@ const routerOptions = {
       description: "Vzorkovna CENTRAL GROUP – interiérové studio s kompletním servisem pro klienty",
       blocks: [
         { src: "meta-common" },
-        { src: "aktualita-04" },
+        { src: "aktualita/aktualita-04" },
       ],
     },
     // DEV STRÁNKY

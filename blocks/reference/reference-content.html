@@ -1,44 +1,3 @@
-<div class="hero">
-  <!-- Video na pozadí hero sekce. Zdroj i poster přepíná js/hero-video.js i za běhu –
-       <source media> prohlížeč vyhodnotí jen při načtení a po změně šířky okna (otočení
-       displeje) zdroj sám nepřepne. Poster  data-poster.-->
-  <video class="hero-bg" data-hero-video autoplay muted loop playsinline preload="auto"
-    aria-hidden="true" tabindex="-1"
-    poster="https://www.central-group.cz/storage/CG/wms3/video/reference/reference-hero-desktop.webp">
-    <!-- desktop 16:9 (1920×1080) -->
-    <source src="https://www.central-group.cz/storage/CG/wms3/video/reference/reference-hero-desktop.mp4" type="video/mp4" media="(min-width: 768px)"
-      data-poster="https://www.central-group.cz/storage/CG/wms3/video/reference/reference-hero-desktop.webp">
-    <!-- tablet 4:5 (1080×1350)
-    <source src="https://www.central-group.cz/storage/CG/wms3/img/kariera/videa/empiria-tablet.mp4" type="video/mp4" media="(min-width: 576px) and (max-width: 767.98px)"
-      data-poster="https://www.central-group.cz/storage/CG/wms3/img/kariera/videa/empiria-tablet-poster.png">
-    -->
-    <!-- mobil 9:16 (1080×1920) – výchozí zdroj bez media dotazu -->
-    <source src="https://www.central-group.cz/storage/CG/wms3/video/reference/reference-hero-mobile.mp4" type="video/mp4"
-      data-poster="https://www.central-group.cz/storage/CG/wms3/video/reference/reference-hero-mobile.webp">
-  </video>
-  <div class="container-main hero-container">
-    <div class="hero-content">
-      <hgroup>
-        <h1 class="brow">Dokončili jsme <br />20 tisíc bytů
-          <br>
-          <strong class="text-yellow">ve 200 projektech pro více než 40 tisíc lidí</strong>
-        </h1>
-        <p class="hero-text">
-          Již více než 30 let stavíme nové bydlení a podílíme se na proměně Prahy. Podívejte se na projekty, které jsme dokončili napříč metropolí.
-        </p>
-
-        <div class="cta-action">
-          <a href="#" class="btn btn-primary">
-            Prohlédnout projekty <i class="fa-sharp fa-solid fa-arrow-right" aria-hidden="true"></i>
-          </a>
-        </div>
-
-      </hgroup>
-    </div>
-  </div>
-</div>
-
-
 <div class="reference">
 
   <!-- ## ÚVOD -->
@@ -1910,61 +1869,6 @@
         </button>
       </div>
 
-    </div>
-  </section>
-
-
-  <!-- # BANNERY -->
-  <section class="promo-banners-section">
-    <div class="container-main">
-      <div class="promo-banners">
-
-        <a href="/byty-lokality?jv=1" class="promo-banner">
-          <div class="promo-banner-media">
-            <!-- TODO: zástupný obrázek; poster/fallback videa -->
-            <img src="https://www.central-group.cz/storage/CG/wms3/video/banner/promo-byty.webp" alt="">
-            <!-- Video smyčka na pozadí -->
-            <video data-loop-video muted loop playsinline preload="none"
-                   aria-hidden="true" tabindex="-1"
-                   poster="https://www.central-group.cz/storage/CG/wms3/video/banner/promo-byty.webp">
-              <!--source src="video/lokality.webm" type="video/webm"-->
-              <source src="https://www.central-group.cz/storage/CG/wms3/video/banner/promo-byty.mp4" type="video/mp4">
-            </video>
-           
-          </div>
-          <div class="promo-banner-content">
-            <h2 class="brow promo-banner-title">
-              Podívejte se na
-              <strong>naše lokality</strong>
-            </h2>
-            <p>Objevte moderní byty v atraktivních částech Prahy i jejím okolí.</p>
-            <span class="btn">Prozkoumat lokality</span>
-          </div>
-        </a>
-
-        <a href="/page/usporne-stavby?jv=1" class="promo-banner">
-          <div class="promo-banner-media">
-            <img src="https://www.central-group.cz/storage/CG/wms3/video/banner/promo-eco.webp" alt="">
-            <!-- Video smyčka na pozadí  -->
-            <video data-loop-video muted loop playsinline preload="none"
-                   aria-hidden="true" tabindex="-1"
-                   poster="https://www.central-group.cz/storage/CG/wms3/video/banner/promo-eco.webp">
-              <!--source src="video/uspornebyty.webm" type="video/webm"-->
-              <source src="https://www.central-group.cz/storage/CG/wms3/video/banner/promo-eco.mp4" type="video/mp4">
-            </video>
-           
-          </div>
-          <div class="promo-banner-content">
-            <h2 class="brow promo-banner-title">
-              Energeticky
-              <strong>úsporné byty</strong>
-            </h2>
-            <p>Šetrné k životnímu prostředí</p>
-            <span class="btn">Zjistit více</span>
-          </div>
-        </a>
-
-      </div>
     </div>
   </section>
 
