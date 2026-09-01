@@ -1267,12 +1267,12 @@ p.hero-text {
   text-align: left;
   cursor: pointer;
 
-  &:hover .cg-gallery-more-icon {
+  &:hover .cg-gallery-more-thumbnail {
     background-color: var(--blue-medium);
   }
 }
 
-.cg-gallery-more-icon {
+.cg-gallery-more-thumbnail {
   flex: 0 0 auto;
   width: 45%;
   display: grid;
@@ -1418,7 +1418,7 @@ p.hero-text {
     text-align: center;
   }
 
-  .cg-gallery-more-icon {
+  .cg-gallery-more-thumbnail {
     width: auto;
     flex: 1 1 auto;
   }
