@@ -662,6 +662,9 @@ p.hero-text {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    /* v případě nutnosti jde posunout banner inline stylem,
+       např. style="--hp-banner-media-pos-y: calc(50% + 50px)"  */
+    object-position: center var(--hp-banner-media-pos-y, 50%);
     z-index: -3;
     transition: all 300ms;
   }
