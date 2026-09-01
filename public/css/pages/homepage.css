@@ -76,19 +76,6 @@
   gap: 16px;
 }
 
-/* Ikona v záhlaví seznamu */
-.projects-list-icon {
-  flex: 0 0 auto;
-  display: grid;
-  place-items: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: var(--cg-yellow);
-  color: var(--cg-blue);
-  font-size: 1rem;
-}
-
 .projects-list-body {
   list-style: none;
   padding: 8px 32px;
