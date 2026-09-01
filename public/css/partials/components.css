@@ -939,10 +939,6 @@ p.hero-text {
       border-top: 1px solid var(--gray-200);
     }
 
-    & + & {
-      border-top: 1px solid var(--gray-200);
-    }
-
     &:first-child {
       padding-top: 0;
     }
@@ -951,7 +947,6 @@ p.hero-text {
       padding-bottom: 0;
     }
   }
-
 
   i {
     flex: 0 0 auto;

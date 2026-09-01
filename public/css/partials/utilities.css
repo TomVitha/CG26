@@ -2036,7 +2036,7 @@
   --space-gap: var(--spacer-3);
   display: flex;
   flex-direction: column;
-  align-items: start;
+  /* align-items: start; */
   gap: var(--space-gap);
 }
 
@@ -2045,9 +2045,11 @@
   --space-gap: var(--spacer-3);
   display: flex;
   flex-direction: row;
-  align-items: start;
+  /* align-items: start; */
   gap: var(--space-gap);
 }
+
+/* ? maybe - přidat modifier class pro zarovnání na začátek? (default je stretch) */
 
 /* Space gap sizes */
 .space-gap-0,
