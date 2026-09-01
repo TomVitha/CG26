@@ -5,6 +5,7 @@
 .financing {
   --financing-radius: var(--controls-border-radius);
   --financing-card-padding: 48px 32px;
+  /* TODO: Sladit s návrhem na 64px */
   --financing-icon-size: 48px;
   --financing-shadow: 0 12px 32px -12px rgba(0, 0, 0, 0.05);
   --financing-divider: var(--gray-200);
@@ -239,23 +240,6 @@
   color: var(--cg-yellow);
 }
 
-/* Obsah tabu */
-.programs-panel {
-  grid-column: 2;
-  grid-row: 1;
-
-  .info-head {
-    margin-bottom: 32px;
-  }
-
-  .info-icon {
-    border-radius: 50%;
-    width: 56px;
-    height: 56px;
-    font-size: 1.25rem;
-  }
-}
-
 
 /* ==========================================================================
    RESPONSIVE
@@ -271,10 +255,6 @@
     margin-top: 40px;
   }
 
-  .programs-panel {
-    grid-column: 1;
-    grid-row: 2;
-  }
 
   .highlight {
     min-height: 260px;

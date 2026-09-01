@@ -891,7 +891,7 @@ p.hero-text {
 
 
 /* # INFO PANEL – 
-   Používá financování (`.info-card`, `.programs-panel`) i bonusy. */
+   Používá financování (`.info-card`) i bonusy. */
 .info-head {
   display: flex;
   align-items: center;
