@@ -21,10 +21,9 @@
       </div>
 
       <!-- ## FILTR PROJEKTŮ (chování: js/project-filter.js)
-           Piluky lokalit jsou přepínače (aria-pressed) – jde jich zapnout víc najednou,
-           žádná zapnutá = zobrazeno vše. Checkbox „Dokončené byty" se s výběrem lokalit
-           kombinuje (AND). Dlaždice nesou data-project-region a příznak
-           data-project-completed. -->
+           Piluky lokalit jsou přepínače (aria-pressed) – Checkbox „Dokončené byty" se s výběrem
+           kombinuje (AND). Dlaždice nesou data-project-region
+           data-project-completed příznak -->
       <div class="project-filter">
         <h3 class="project-filter-title">Vyberte si podle lokality</h3>
 
@@ -48,19 +47,20 @@
         nebo zrušit filtr dokončených bytů.
       </p>
 
+      <!-- FIXME: Mobilní zobrazení není ideální -->
       <div class="project-tiles">
 
-        <a href="#" class="project-tile" data-project-region="praha-3">
+        <a href="#" class="project-tile">
           <div class="project-tile-media">
             <!-- TODO: img/poster/video fallback  -->
-            <img src="https://www.central-group.cz/Uloziste/86/86ff1fee-f02d-47e6-b397-cf1849cd18a4.jpg" alt="" loading="lazy">
+            <img src="https://www.central-group.cz/storage/CG/wms3/video/prehled-projektu/189.webp" alt="" loading="lazy">
             <!-- Video smyčka no hover (js/loop-video.js) -->
-            <!--  <video data-loop-video="hover" muted loop playsinline preload="none"
+            <video data-loop-video="hover" muted loop playsinline preload="none"
                    aria-hidden="true" tabindex="-1">
-              <source src="video/loop-parkova-ctvrt.webm" type="video/webm">
-              <source src="video/loop-parkova-ctvrt.mp4" type="video/mp4">
+              <source src="https://www.central-group.cz/storage/CG/wms3/video/prehled-projektu/189.webm" type="video/webm">
+              <!--source src="video/loop-parkova-ctvrt.mp4" type="video/mp4"-->
             </video>
-            -->
+
           </div>
           <div class="project-tile-panel">
             <h3 class="project-tile-title">Parková čtvrť</h3>
@@ -68,27 +68,37 @@
               <span>Praha 3</span>
               <span>Žižkov</span>
             </p>
-            <!-- TODO: zástupný text -->
-            <p class="project-tile-text">
-              Kupujte s jistotou. Pokud se vaše situace změní, můžete až do předání bytu
-              odstoupit od smlouvy a získat své peníze zpět.
-            </p>
+            <!-- TODO: zástupné údaje – doplnit reálné hodnoty projektu -->
+            <dl class="project-tile-info">
+              <div class="text-yellow">
+                <dt>Termín dokončení:</dt>
+                <dd class="bold">říjen 2026</dd>
+              </div>
+              <div>
+                <dt>Počet volných bytů:</dt>
+                <dd>81</dd>
+              </div>
+              <div>
+                <dt>Ceny:</dt>
+                <dd>od 7,6 mil. Kč</dd>
+              </div>
+            </dl>
             <span class="btn btn-primary">
               Prohlédnout <i class="fa-sharp fa-solid fa-arrow-right" aria-hidden="true"></i>
             </span>
           </div>
         </a>
 
-        <a href="#" class="project-tile" data-project-region="praha-4" data-project-completed>
+        <a href="#" class="project-tile">
           <div class="project-tile-media">
-            <img src="https://www.central-group.cz/Uloziste/0e/0eefd926-f099-4d5d-a3c6-bba84ba408ea.jpg" alt="" loading="lazy">
+            <img src="https://www.central-group.cz/storage/CG/wms3/video/prehled-projektu/218.webp" alt="" loading="lazy">
             <!-- Video smyčka no hover (js/loop-video.js) -->
-            <!--<video data-loop-video="hover" muted loop playsinline preload="none"
+            <video data-loop-video="hover" muted loop playsinline preload="none"
                    aria-hidden="true" tabindex="-1">
-              <source src="video/loop-jizni-terasy.webm" type="video/webm">
-              <source src="video/loop-jizni-terasy.mp4" type="video/mp4">
+              <source src="https://www.central-group.cz/storage/CG/wms3/video/prehled-projektu/218.webm" type="video/webm">
+              <!--source src="video/loop-jizni-terasy.mp4" type="video/mp4"-->
             </video>
-            -->
+            
           </div>
           <div class="project-tile-panel">
             <h3 class="project-tile-title">Rezidence Jižní terasy</h3>
@@ -96,26 +106,36 @@
               <span>Praha 4</span>
               <span>Háje</span>
             </p>
-            <p class="project-tile-text">
-              Kupujte s jistotou. Pokud se vaše situace změní, můžete až do předání bytu
-              odstoupit od smlouvy a získat své peníze zpět.
-            </p>
+            <dl class="project-tile-info">
+              <div class="text-yellow">
+                <dt>Termín dokončení:</dt>
+                <dd class="bold">říjen 2026</dd>
+              </div>
+              <div>
+                <dt>Počet volných bytů:</dt>
+                <dd>81</dd>
+              </div>
+              <div>
+                <dt>Ceny:</dt>
+                <dd>od 7,6 mil. Kč</dd>
+              </div>
+            </dl>
             <span class="btn btn-primary">
               Prohlédnout <i class="fa-sharp fa-solid fa-arrow-right" aria-hidden="true"></i>
             </span>
           </div>
         </a>
 
-        <a href="#" class="project-tile" data-project-region="praha-4">
+        <a href="#" class="project-tile">
           <div class="project-tile-media">
-            <img src="https://www.central-group.cz/Uloziste/54/54471479-4e98-4891-a6cb-616bcd575aeb.jpg" alt="" loading="lazy">
+            <img src="https://www.central-group.cz/storage/CG/wms3/video/prehled-projektu/204.webp" alt="" loading="lazy">
             <!-- Video smyčka no hover (js/loop-video.js) -->
-            <!--<video data-loop-video="hover" muted loop playsinline preload="none"
+            <video data-loop-video="hover" muted loop playsinline preload="none"
                    aria-hidden="true" tabindex="-1">
-              <source src="video/loop-bohdalecke-zahrady.webm" type="video/webm">
-              <source src="video/loop-bohdalecke-zahrady.mp4" type="video/mp4">
+              <source src="https://www.central-group.cz/storage/CG/wms3/video/prehled-projektu/204.webm" type="video/webm">
+              <!--source src="video/loop-bohdalecke-zahrady.mp4" type="video/mp4"-->
             </video>
-            -->
+            
           </div>
           <div class="project-tile-panel">
             <h3 class="project-tile-title">Bohdalecké zahrady</h3>
@@ -123,26 +143,36 @@
               <span>Praha 4</span>
               <span>Michle</span>
             </p>
-            <p class="project-tile-text">
-              Kupujte s jistotou. Pokud se vaše situace změní, můžete až do předání bytu
-              odstoupit od smlouvy a získat své peníze zpět.
-            </p>
+            <dl class="project-tile-info">
+              <div class="text-yellow">
+                <dt>Termín dokončení:</dt>
+                <dd class="bold">říjen 2026</dd>
+              </div>
+              <div>
+                <dt>Počet volných bytů:</dt>
+                <dd>81</dd>
+              </div>
+              <div>
+                <dt>Ceny:</dt>
+                <dd>od 7,6 mil. Kč</dd>
+              </div>
+            </dl>
             <span class="btn btn-primary">
               Prohlédnout <i class="fa-sharp fa-solid fa-arrow-right" aria-hidden="true"></i>
             </span>
           </div>
         </a>
 
-        <a href="#" class="project-tile" data-project-region="praha-8" data-project-completed>
+        <a href="#" class="project-tile">
           <div class="project-tile-media">
-            <img src="https://www.central-group.cz/Uloziste/6d/6d3c1333-12e0-4e20-9f88-c06677468779.jpg" alt="" loading="lazy">
+            <img src="https://www.central-group.cz/storage/CG/wms3/video/prehled-projektu/184.webp" alt="" loading="lazy">
             <!-- Video smyčka no hover (js/loop-video.js) -->
-            <!--<video data-loop-video="hover" muted loop playsinline preload="none"
+            <video data-loop-video="hover" muted loop playsinline preload="none"
                    aria-hidden="true" tabindex="-1">
-              <source src="video/loop-viladomy-strizkov.webm" type="video/webm">
-              <source src="video/loop-viladomy-strizkov.mp4" type="video/mp4">
+              <source src="https://www.central-group.cz/storage/CG/wms3/video/prehled-projektu/184.webm" type="video/webm">
+              <!--source src="video/loop-viladomy-strizkov.mp4" type="video/mp4"-->
             </video>
-            -->
+            
           </div>
           <div class="project-tile-panel">
             <h3 class="project-tile-title">Viladomy Střížkov</h3>
@@ -150,26 +180,36 @@
               <span>Praha 8</span>
               <span>Střížkov</span>
             </p>
-            <p class="project-tile-text">
-              Kupujte s jistotou. Pokud se vaše situace změní, můžete až do předání bytu
-              odstoupit od smlouvy a získat své peníze zpět.
-            </p>
+            <dl class="project-tile-info">
+              <div class="text-yellow">
+                <dt>Termín dokončení:</dt>
+                <dd class="bold">říjen 2026</dd>
+              </div>
+              <div>
+                <dt>Počet volných bytů:</dt>
+                <dd>81</dd>
+              </div>
+              <div>
+                <dt>Ceny:</dt>
+                <dd>od 7,6 mil. Kč</dd>
+              </div>
+            </dl>
             <span class="btn btn-primary">
               Prohlédnout <i class="fa-sharp fa-solid fa-arrow-right" aria-hidden="true"></i>
             </span>
           </div>
         </a>
 
-        <a href="#" class="project-tile" data-project-region="praha-9" data-project-completed>
+        <a href="#" class="project-tile">
           <div class="project-tile-media">
-            <img src="https://www.central-group.cz/Uloziste/f8/f8424307-67d5-493b-9106-5576b8092c2f.jpg" alt="" loading="lazy">
+            <img src="https://www.central-group.cz/storage/CG/wms3/video/prehled-projektu/197.webp" alt="" loading="lazy">
             <!-- Video smyčka no hover (js/loop-video.js) -->
-            <!--<video data-loop-video="hover" muted loop playsinline preload="none"
+            <<video data-loop-video="hover" muted loop playsinline preload="none"
                    aria-hidden="true" tabindex="-1">
-              <source src="video/loop-viladomy-pocernice.webm" type="video/webm">
-              <source src="video/loop-viladomy-pocernice.mp4" type="video/mp4">
+              <source src="https://www.central-group.cz/storage/CG/wms3/video/prehled-projektu/197.webm" type="video/webm">
+              <!--source src="video/loop-viladomy-pocernice.mp4" type="video/mp4"-->
             </video>
-            -->
+            
           </div>
           <div class="project-tile-panel">
             <h3 class="project-tile-title">Viladomy Počernice</h3>
@@ -177,26 +217,36 @@
               <span>Praha 9</span>
               <span>Dolní Počernice</span>
             </p>
-            <p class="project-tile-text">
-              Kupujte s jistotou. Pokud se vaše situace změní, můžete až do předání bytu
-              odstoupit od smlouvy a získat své peníze zpět.
-            </p>
+            <dl class="project-tile-info">
+              <div class="text-yellow">
+                <dt>Termín dokončení:</dt>
+                <dd class="bold">říjen 2026</dd>
+              </div>
+              <div>
+                <dt>Počet volných bytů:</dt>
+                <dd>81</dd>
+              </div>
+              <div>
+                <dt>Ceny:</dt>
+                <dd>od 7,6 mil. Kč</dd>
+              </div>
+            </dl>
             <span class="btn btn-primary">
               Prohlédnout <i class="fa-sharp fa-solid fa-arrow-right" aria-hidden="true"></i>
             </span>
           </div>
         </a>
 
-        <a href="#" class="project-tile" data-project-region="praha-9">
+        <a href="#" class="project-tile">
           <div class="project-tile-media">
-            <img src="https://www.central-group.cz/Uloziste/bd/bd68d40a-1290-4aab-ba03-c63a84e09c09.jpg" alt="" loading="lazy">
+            <img src="https://www.central-group.cz/storage/CG/wms3/video/prehled-projektu/192.webp" alt="" loading="lazy">
             <!-- Video smyčka no hover (js/loop-video.js) -->
-            <!--<video data-loop-video="hover" muted loop playsinline preload="none"
+            <video data-loop-video="hover" muted loop playsinline preload="none"
                    aria-hidden="true" tabindex="-1">
-              <source src="video/loop-tesla-hloubetin.webm" type="video/webm">
-              <source src="video/loop-tesla-hloubetin.mp4" type="video/mp4">
+              <source src="https://www.central-group.cz/storage/CG/wms3/video/prehled-projektu/192.webm" type="video/webm">
+              <!--source src="video/loop-tesla-hloubetin.mp4" type="video/mp4"-->
             </video>
-            -->
+            
           </div>
           <div class="project-tile-panel">
             <h3 class="project-tile-title">Rezidenční čtvrť Tesla Hloubětín</h3>
@@ -204,26 +254,36 @@
               <span>Praha 9</span>
               <span>Hloubětín</span>
             </p>
-            <p class="project-tile-text">
-              Kupujte s jistotou. Pokud se vaše situace změní, můžete až do předání bytu
-              odstoupit od smlouvy a získat své peníze zpět.
-            </p>
+            <dl class="project-tile-info">
+              <div class="text-yellow">
+                <dt>Termín dokončení:</dt>
+                <dd class="bold">říjen 2026</dd>
+              </div>
+              <div>
+                <dt>Počet volných bytů:</dt>
+                <dd>81</dd>
+              </div>
+              <div>
+                <dt>Ceny:</dt>
+                <dd>od 7,6 mil. Kč</dd>
+              </div>
+            </dl>
             <span class="btn btn-primary">
               Prohlédnout <i class="fa-sharp fa-solid fa-arrow-right" aria-hidden="true"></i>
             </span>
           </div>
         </a>
 
-        <a href="#" class="project-tile" data-project-region="praha-9">
+        <a href="#" class="project-tile">
           <div class="project-tile-media">
-            <img src="https://www.central-group.cz/Uloziste/96/96d1835e-10f3-4f77-b700-595157fb230d.jpg" alt="" loading="lazy">
+            <img src="https://www.central-group.cz/storage/CG/wms3/video/prehled-projektu/152.webp" alt="" loading="lazy">
             <!-- Video smyčka no hover (js/loop-video.js) -->
-            <!--<video data-loop-video="hover" muted loop playsinline preload="none"
+            <video data-loop-video="hover" muted loop playsinline preload="none"
                    aria-hidden="true" tabindex="-1">
-              <source src="video/loop-harfa-living.webm" type="video/webm">
-              <source src="video/loop-harfa-living.mp4" type="video/mp4">
+              <source src="https://www.central-group.cz/storage/CG/wms3/video/prehled-projektu/152.webm" type="video/webm">
+              <!--source src="video/loop-harfa-living.mp4" type="video/mp4"-->
             </video>
-            -->
+            
           </div>
           <div class="project-tile-panel">
             <h3 class="project-tile-title">Harfa Living</h3>
@@ -231,26 +291,36 @@
               <span>Praha 9</span>
               <span>Vysočany</span>
             </p>
-            <p class="project-tile-text">
-              Kupujte s jistotou. Pokud se vaše situace změní, můžete až do předání bytu
-              odstoupit od smlouvy a získat své peníze zpět.
-            </p>
+            <dl class="project-tile-info">
+              <div class="text-yellow">
+                <dt>Termín dokončení:</dt>
+                <dd class="bold">říjen 2026</dd>
+              </div>
+              <div>
+                <dt>Počet volných bytů:</dt>
+                <dd>81</dd>
+              </div>
+              <div>
+                <dt>Ceny:</dt>
+                <dd>od 7,6 mil. Kč</dd>
+              </div>
+            </dl>
             <span class="btn btn-primary">
               Prohlédnout <i class="fa-sharp fa-solid fa-arrow-right" aria-hidden="true"></i>
             </span>
           </div>
         </a>
 
-        <a href="#" class="project-tile" data-project-region="praha-10" data-project-completed>
+        <a href="#" class="project-tile">
           <div class="project-tile-media">
-            <img src="https://www.central-group.cz/Uloziste/1d/1de1b630-81ba-452a-b0a6-6441fc98a62e.jpg" alt="" loading="lazy">
+            <img src="https://www.central-group.cz/storage/CG/wms3/video/prehled-projektu/194.webp" alt="" loading="lazy">
             <!-- Video smyčka no hover (js/loop-video.js) -->
-            <!--<video data-loop-video="hover" muted loop playsinline preload="none"
+            <video data-loop-video="hover" muted loop playsinline preload="none"
                    aria-hidden="true" tabindex="-1">
-              <source src="video/loop-viladomy-pitkovice.webm" type="video/webm">
-              <source src="video/loop-viladomy-pitkovice.mp4" type="video/mp4">
+              <source src="https://www.central-group.cz/storage/CG/wms3/video/prehled-projektu/194.webm" type="video/webm">
+              <!--source src="video/loop-viladomy-pitkovice.mp4" type="video/mp4"-->
             </video>
-            -->
+            
           </div>
           <div class="project-tile-panel">
             <h3 class="project-tile-title">Viladomy Pitkovice</h3>
@@ -258,10 +328,20 @@
               <span>Praha 10</span>
               <span>Pitkovice</span>
             </p>
-            <p class="project-tile-text">
-              Kupujte s jistotou. Pokud se vaše situace změní, můžete až do předání bytu
-              odstoupit od smlouvy a získat své peníze zpět.
-            </p>
+            <dl class="project-tile-info">
+              <div class="text-yellow">
+                <dt>Termín dokončení:</dt>
+                <dd class="bold">říjen 2026</dd>
+              </div>
+              <div>
+                <dt>Počet volných bytů:</dt>
+                <dd>81</dd>
+              </div>
+              <div>
+                <dt>Ceny:</dt>
+                <dd>od 7,6 mil. Kč</dd>
+              </div>
+            </dl>
             <span class="btn btn-primary">
               Prohlédnout <i class="fa-sharp fa-solid fa-arrow-right" aria-hidden="true"></i>
             </span>
@@ -269,11 +349,12 @@
         </a>
 
       </div>
+
     </div>
   </section>
 
 </div>
 
-<script src="js/project-filter.js"></script>
+<script src="/js/project-filter.js"></script>
 <script src="js/hero-video.js"></script>
 <script src="js/loop-video.js"></script>
