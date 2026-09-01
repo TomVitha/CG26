@@ -32,8 +32,11 @@
 
 .layout-grid {
   display: grid;
-  gap: var(--layout-gutter) var(--layout-gutter);
   grid-template-columns: repeat(var(--column-count, 12), minmax(0, 1fr));
+  gap: var(--layout-gutter) var(--layout-gutter);
+  /* ? maybe - umožní stylovat mezery pomocí ".g-, .gx-, .gy-" tříd */
+  /* gap: var(--row-gutter-y, var(--layout-gutter))  var(--row-gutter-x, var(--layout-gutter)); */
+  /* ? maybe - definovat třídy "--row-gutter" přes @property, abychom zakázali inheritance (abychom neovlivňovali vnořené mezery) */
 
   /* ? možná mít rovnou zaplné - zatím jako class */
   &.dense {
@@ -45,7 +48,7 @@
     grid-auto-rows: 1fr;
   } */
 
-  /* WIP */
+  /* Natáhne děti na plnou výšku */
   &.deck {
     align-items: stretch;
 

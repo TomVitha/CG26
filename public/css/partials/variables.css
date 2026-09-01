@@ -32,6 +32,7 @@
   --spacer-0: 0;
   --spacer-1: 8px;
   --spacer-2: 16px;
+  /* spacer 3 je výchozí stav */
   --spacer-3: 32px;
   /* WIP spacer 4,5,6 values */
   --spacer-4: 48px;
@@ -50,7 +51,8 @@
   --controls-fs-lg: 1.25rem;
   --controls-padding-sm: 6px 16px;
   --controls-padding-md: 20px 20px;
-  /* --controls-padding-md: 11px 18px; */
+  /* pro výslednou výšku 52px */
+  /* --controls-padding-md: 14px 18px; */
   --controls-padding-lg: 0 18px;
   --controls-border-radius: 5px;
   /* ! <input> nedokáže jít až na line-height: 1 -> proto bylo třeba hodnotu zvýšit; hodnoty zvoleny aby height vycházel na celé a sudé číslo */
