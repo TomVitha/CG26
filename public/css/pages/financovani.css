@@ -159,39 +159,11 @@
 
 /* ## 4 ZPŮSOBY FINANCOVÁNÍ */
 
-.terms-list {
+
+.list-plain {
   list-style: none;
-  padding-left: 0;
-  margin-bottom: 0;
-
-  li {
-    padding-block: 12px;
-    font-size: 0.875rem;
-
-    & + & {
-      border-top: 1px solid var(--financing-divider);
-    }
-
-    &:first-child {
-      padding-top: 0;
-    }
-
-    &:last-child {
-      padding-bottom: 0;
-    }
-  }
-
-  strong {
-    display: block;
-    font-weight: 600;
-    font-size: 1.25rem;
-    color: var(--cg-blue);
-  }
-
-  span {
-    color: var(--blue-midnight);
-    font-size: 1.125rem;
-  }
+  padding: 0;
+  margin: 0;
 }
 
 
@@ -281,11 +253,6 @@
     width: 56px;
     height: 56px;
     font-size: 1.25rem;
-  }
-
-  .check-list li {
-    border-top: none;
-    border-bottom: 1px solid var(--financing-divider);
   }
 }
 

@@ -8,15 +8,12 @@ p {
   }
 }
 
-/* Emphasis */
+/* Emphasis (Body Large) */
 em, .em {
   font-style: normal;
-  font-size: 111.1111111111111%;
+  /* font-size: 111.1111111111111%; */
+  font-size: 1.25rem;
   font-weight: 600;
-
-  @media (width < 992px) {
-    /* font-size: 1.125em; */
-  }
 }
 
 strong, .bold {
@@ -24,10 +21,11 @@ strong, .bold {
   font-weight: 700 !important;
 }
 
-/* ? classes for other weights - 100 -> 900 / hairline -> black ? */
+/* ? classes for other weights - 100 -> 900 / hairline -> black (or BS ".fw-" classes) ? */
 
 small, .small {
-  font-size: 88.88888888888889%;
+  /* font-size: 88.88888888888889%; */
+  font-size: 1rem;
 }
 
 .tiny {
@@ -38,9 +36,6 @@ small, .small {
   font-size: 12px;
 }
 
-b, .big {
-  /* ? */
-}
 
 h1, h2, h3, h4, h5, h6 {
   display: block;
