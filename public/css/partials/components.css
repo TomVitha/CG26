@@ -665,7 +665,7 @@ p.hero-text {
     /* background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5)); */
     background:
       linear-gradient(292deg, rgba(32, 35, 76, 0.00) 54.72%, rgba(18, 20, 43, 0.80) 99.05%),
-      linear-gradient(211deg, rgba(32, 35, 76, 0.00) 55.37%, rgba(18, 20, 43, 0.80) 76.36%);
+      linear-gradient(211deg, rgba(32, 35, 76, 0.00) 55.37%, rgba(18, 20, 43, 0.60) 76.36%);
     z-index: -1;
     transition: all 300ms;
     pointer-events: none;
