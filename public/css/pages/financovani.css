@@ -168,70 +168,6 @@
 }
 
 
-/* ## FINANČNÍ PROGRAMY (taby) */
-.programs {
-  /* už nic */
-}
-
-/* tablist */
-.programs-tabs {
-  grid-column: 1;
-  grid-row: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.programs-tab {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 16px 24px;
-  border: none;
-  border-radius: var(--financing-radius);
-  background-color: var(--blue-light);
-  color: var(--cg-blue);
-  font-family: inherit;
-  text-align: left;
-  cursor: pointer;
-  transition: background-color 0.25s ease, color 0.25s ease;
-
-  &:hover {
-    background-color: var(--blue-medium);
-  }
-
-  &[aria-selected="true"] {
-    background-color: var(--cg-blue);
-    color: var(--white);
-  }
-}
-
-.programs-tab .icon-badge {
-  background-color: var(--white);
-  transition: background-color 0.25s ease;
-  box-shadow: 0 0 34px 0 rgba(0, 0, 0, 0.15);
-}
-
-.programs-tab[aria-selected="true"] .icon-badge {
-  background-color: var(--cg-yellow);
-}
-
-.programs-tab-toggle {
-  margin-left: auto;
-  font-size: 1.125rem;
-}
-
-/* vyšší specifičnost kvůli FA */
-.programs-tab .programs-tab-toggle--close,
-.programs-tab[aria-selected="true"] .programs-tab-toggle--plus {
-  display: none;
-}
-
-.programs-tab[aria-selected="true"] .programs-tab-toggle--close {
-  display: block;
-  color: var(--cg-yellow);
-}
-
 
 /* ==========================================================================
    RESPONSIVE
@@ -277,11 +213,6 @@
 
   .info-dropdown[open]::details-content {
     block-size: auto;
-  }
-
-  .programs-tab {
-    padding: 12px 16px;
-    font-size: 1rem;
   }
 
   .financing-cta .btn,

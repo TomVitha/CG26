@@ -1050,9 +1050,11 @@ p.hero-text {
 
 .project-tile-title {
   margin-bottom: 0;
-  font-size: 1.5rem; /* 24px */
+  /* 24px */
+  font-size: 1.5rem;
   font-weight: 700;
-  line-height: 1.25; /* 30px */
+  /* 30px */
+  line-height: 1.25;
   color: var(--white);
 }
 
@@ -1067,9 +1069,11 @@ p.hero-text {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   border-block: 1px solid var(--project-tile-line);
   text-align: center;
-  font-size: 0.875rem; /* 14px */
+  font-size: 0.875rem;
+  /* 14px */
   font-weight: 700;
-  line-height: calc(24 / 14); /* 24px */
+  line-height: calc(24 / 14);
+  /* 24px */
   color: var(--white);
 
   span {
@@ -1088,8 +1092,10 @@ p.hero-text {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  font-size: 0.875rem; /* 14px */
-  line-height: calc(24 / 14); /* 24px */
+  font-size: 0.875rem;
+  /* 14px */
+  line-height: calc(24 / 14);
+  /* 24px */
   text-align: left;
   color: var(--white);
 
@@ -1105,7 +1111,7 @@ p.hero-text {
   }
 
   dd {
-    margin: 0; 
+    margin: 0;
     font-weight: 400;
     text-align: right;
   }
@@ -1590,17 +1596,16 @@ p.hero-text {
 /* # TABY – sloupec přepínačů (hypotéka, efektivní dispozice).
    Chování: js/tabs.js (role="tablist" + data-tabs). */
 .cg-tabs {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+  /* samo nic nedělá */
 }
 
+/* FIXME: Obsah muže přetéct, měl by se říznout */
 .cg-tab {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 12px;
-  padding: 22px 18px;
+  padding: 18px;
+  width: 100%;
   border: none;
   border-radius: var(--controls-border-radius);
   background-color: var(--blue-light);
@@ -1611,14 +1616,10 @@ p.hero-text {
   text-align: left;
   cursor: pointer;
   transition: background-color 0.25s ease, color 0.25s ease;
-
-  > span {
-    white-space: nowrap;
-  }
-
-  strong {
-    font-weight: 700;
-  }
+  overflow: hidden;
+  white-space: nowrap;
+  /* text-overflow: ellipsis; */
+  position: relative;
 
   &:hover {
     background-color: var(--blue-medium);
@@ -1627,6 +1628,28 @@ p.hero-text {
   &[aria-selected="true"] {
     background-color: var(--cg-blue);
     color: var(--white);
+  }
+
+  &::after {
+    -webkit-font-smoothing: antialiased;
+    display: var(--fa-display, inline-block);
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-rendering: auto;
+    font-family: "Font Awesome 6 Pro";
+    font-weight: 300;
+    font-size: 1rem;
+    margin-left: auto;
+    /* + */
+    content: "\2b";
+    color: var(--cg-blue);
+  }
+
+  &[aria-selected="true"]::after {
+    /* X */
+    content: "\f00d";
+    color: var(--cg-yellow);
   }
 }
 
@@ -1643,32 +1666,6 @@ p.hero-text {
 .cg-tab[aria-selected="true"] .cg-tab-icon--close {
   display: block;
   color: var(--cg-yellow);
-}
-
-@media (width < 992px) {
-
-  /* taby nad obsahem, na šířku */
-  .cg-tabs {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
-  .cg-tab {
-    flex: 1 1 150px;
-  }
-}
-
-@media (width < 576px) {
-
-  /* taby 2 × 2 */
-  .cg-tabs {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .cg-tab {
-    padding: 14px 16px;
-  }
 }
 
 

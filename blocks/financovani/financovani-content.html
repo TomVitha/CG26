@@ -376,39 +376,41 @@
         </p>
       </div>
 
-      <div class="layout-grid gy-5 programs">
+      <!-- TEMP: Mezera přes inline style -->
+      <div class="layout-grid" style="row-gap: var(--spacer-5)">
 
-        <div class="g-col-12 g-col-lg-5">
-          <div class="programs-tabs" role="tablist" data-tabs aria-label="Finanční programy">
-            <button type="button" class="programs-tab" role="tab" id="program-tab-1" aria-controls="program-panel-1" aria-selected="true">
-              <span class="icon-badge icon-badge-sm"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span>
-              <em>Garance vrácení peněz</em>
-              <i class="programs-tab-toggle programs-tab-toggle--plus fa-light fa-plus" aria-hidden="true"></i>
-              <i class="programs-tab-toggle programs-tab-toggle--close fa-light fa-xmark" aria-hidden="true"></i>
-            </button>
-            <button type="button" class="programs-tab" role="tab" id="program-tab-2" aria-controls="program-panel-2" aria-selected="false" tabindex="-1">
-              <span class="icon-badge icon-badge-sm"><i class="fa-solid fa-key" aria-hidden="true"></i></span>
-              <em>Zajištění pronájmu a správy bytu</em>
-              <i class="programs-tab-toggle programs-tab-toggle--plus fa-light fa-plus" aria-hidden="true"></i>
-              <i class="programs-tab-toggle programs-tab-toggle--close fa-light fa-xmark" aria-hidden="true"></i>
-            </button>
-            <button type="button" class="programs-tab" role="tab" id="program-tab-3" aria-controls="program-panel-3" aria-selected="false" tabindex="-1">
-              <span class="icon-badge icon-badge-sm"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></span>
-              <em>Garantované zhodnocení 6 % ročně</em>
-              <i class="programs-tab-toggle programs-tab-toggle--plus fa-light fa-plus" aria-hidden="true"></i>
-              <i class="programs-tab-toggle programs-tab-toggle--close fa-light fa-xmark" aria-hidden="true"></i>
-            </button>
-            <button type="button" class="programs-tab" role="tab" id="program-tab-4" aria-controls="program-panel-4" aria-selected="false" tabindex="-1">
-              <span class="icon-badge icon-badge-sm"><i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i></span>
-              <em>Nový úsporný byt za starý</em>
-              <i class="programs-tab-toggle programs-tab-toggle--plus fa-light fa-plus" aria-hidden="true"></i>
-              <i class="programs-tab-toggle programs-tab-toggle--close fa-light fa-xmark" aria-hidden="true"></i>
-            </button>
+        <div class="g-col-12 g-col-xl-5">
+          <div class="cg-tabs" role="tablist" data-tabs aria-label="Finanční programy">
+            <div class="row g-2">
+              <div class="col-12">
+                <button type="button" class="cg-tab" role="tab" id="program-tab-1" aria-controls="program-panel-1" aria-selected="true">
+                  <span class="icon-badge icon-badge-sm"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span>
+                  <em>Garance vrácení peněz</em>
+                </button>
+              </div>
+              <div class="col-12">
+                <button type="button" class="cg-tab" role="tab" id="program-tab-2" aria-controls="program-panel-2" aria-selected="false" tabindex="-1">
+                  <span class="icon-badge icon-badge-sm"><i class="fa-solid fa-key" aria-hidden="true"></i></span>
+                  <em>Zajištění pronájmu a správy bytu</em>
+                </button>
+              </div>
+              <div class="col-12">
+                <button type="button" class="cg-tab" role="tab" id="program-tab-3" aria-controls="program-panel-3" aria-selected="false" tabindex="-1">
+                  <span class="icon-badge icon-badge-sm"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></span>
+                  <em>Garantované zhodnocení 6 % ročně</em>
+                </button>
+              </div>
+              <div class="col-12">
+                <button type="button" class="cg-tab" role="tab" id="program-tab-4" aria-controls="program-panel-4" aria-selected="false" tabindex="-1">
+                  <span class="icon-badge icon-badge-sm"><i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i></span>
+                  <em>Nový úsporný byt za starý</em>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- TEMP inline style -->
-        <div class="g-col-12 g-col-lg-6 g-start-lg-7">
+        <div class="g-col-12 g-col-xl-6 g-start-xl-7">
           <div role="tabpanel" id="program-panel-1" aria-labelledby="program-tab-1" tabindex="0">
             <div class="space-y gap-safe">
               <div class="info-head">
