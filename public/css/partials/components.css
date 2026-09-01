@@ -269,6 +269,17 @@
     background: rgba(255, 255, 255, 0.10);
     backdrop-filter: blur(25px);
     color: white;
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    /* NOTE: Figma tvrdí 40px, ale ta nebere v potaz mezery nad/pod texty, 30px nám dá opticky stejnou mezeru */
+    row-gap: 30px;
+
+    /* Odstraní margin aby neovlivňoval gap */
+    & > * {
+      margin-block: 0 !important;
+    }
   }
 
   /* video, image (object-fit platí i pro poster videa) */

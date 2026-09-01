@@ -2134,11 +2134,11 @@
 }
 
 /* gap-safe odstraní marginy (po dané ose) pro děti aby neovlivňovaly gap */
-:is(.gap-safe-y, [class*="space-y"]).gap-safe > * {
+:is(.gap-safe-y, [class*="space-y"].gap-safe) > * {
   margin-block: 0 !important;
 }
 
-:is(.gap-safe-x, [class*="space-x"]).gap-safe > * {
+:is(.gap-safe-x, [class*="space-x"].gap-safe) > * {
   margin-inline: 0 !important;
 }
 
