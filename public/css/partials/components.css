@@ -337,6 +337,14 @@
   --hero-gradient-color: var(--black, #000);
 }
 
+/* Varianta přechod odspoda nahoru (HP) – 60 % barvy u spodní hrany,
+   do ztracena v polovině výšky */
+.hero--gradient-bottom::after {
+  background: linear-gradient(0deg,
+      color-mix(in srgb, var(--hero-gradient-color, var(--cg-blue)) 60%, transparent) 15.75%,
+      transparent 50%);
+}
+
 @media (width >=992px) {
   .hero {
     height: 800px;
@@ -662,8 +670,8 @@ p.hero-text {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* v případě nutnosti jde posunout banner inline stylem,
-       např. style="--hp-banner-media-pos-y: calc(50% + 50px)"  */
+    /* svislé rámování záběru – jde posunout per banner inline stylem,
+       např. style="--hp-banner-media-pos-y: calc(50% + 50px)" (posun obrazu níž) */
     object-position: center var(--hp-banner-media-pos-y, 50%);
     z-index: -3;
     transition: all 300ms;
