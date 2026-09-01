@@ -10,7 +10,7 @@
   --financing-divider: var(--gray-200);
 
   /* sdílený info panel (components.css) – .info-head / .info-icon /
-     .note / .info-subtitle / .check-list */
+     .note / .check-list */
   --info-icon-size: var(--financing-icon-size);
   --info-divider: var(--financing-divider);
 }
@@ -112,8 +112,9 @@
 .info-body {
   display: flex;
   flex-direction: column;
+  /* HACK */
+  padding-top: 32px;
 }
-
 
 /* ## ROZBALOVACÍ BOXY NA MOBILU
    Stejný princip jako dropdowny v patičce: <details> + <summary>,
@@ -166,10 +167,18 @@
   li {
     padding-block: 12px;
     font-size: 0.875rem;
-  }
 
-  li + li {
-    border-top: 1px solid var(--financing-divider);
+    & + & {
+      border-top: 1px solid var(--financing-divider);
+    }
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
   }
 
   strong {
@@ -188,7 +197,7 @@
 
 /* ## FINANČNÍ PROGRAMY (taby) */
 .programs {
-  /*  */
+  /* už nic */
 }
 
 /* tablist */
@@ -329,10 +338,6 @@
 
   .info-dropdown[open]::details-content {
     block-size: auto;
-  }
-
-  .info-body {
-    padding-top: 24px;
   }
 
   .programs-tab {
