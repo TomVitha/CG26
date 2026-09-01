@@ -10,9 +10,9 @@
   --financing-shadow: 0 12px 32px -12px rgba(0, 0, 0, 0.05);
   --financing-divider: var(--gray-200);
 
-  /* sdílený info panel (components.css) – .info-head / .info-icon /
+  /* sdílený info panel (components.css) – .info-head / .icon-badge /
      .note / .check-list */
-  --info-icon-size: var(--financing-icon-size);
+  --icon-badge-size: var(--financing-icon-size);
   --info-divider: var(--financing-divider);
 }
 
@@ -206,21 +206,13 @@
   }
 }
 
-.programs-tab-icon {
-  flex: 0 0 auto;
-  display: grid;
-  place-items: center;
-  width: var(--financing-icon-size);
-  height: var(--financing-icon-size);
-  border-radius: 50%;
+.programs-tab .icon-badge {
   background-color: var(--white);
-  color: var(--cg-blue);
-  font-size: 1.125rem;
   transition: background-color 0.25s ease;
   box-shadow: 0 0 34px 0 rgba(0, 0, 0, 0.15);
 }
 
-.programs-tab[aria-selected="true"] .programs-tab-icon {
+.programs-tab[aria-selected="true"] .icon-badge {
   background-color: var(--cg-yellow);
 }
 

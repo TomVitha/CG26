@@ -149,7 +149,7 @@
      <div class="container-main">
        <ul class="benefits-list">
          <li class="benefit">
-           <span class="benefit-icon"><i class="fa-solid fa-…" aria-hidden="true"></i></span>
+           <span class="icon-badge"><i class="fa-solid fa-…" aria-hidden="true"></i></span>
            <h5>Nadpis</h5>
            <p class="small">Text</p>
          </li> */
@@ -188,16 +188,8 @@
   position: relative;
 }
 
-.benefit-icon {
-  display: inline-grid;
-  place-items: center;
-  width: var(--benefits-icon-size);
-  height: var(--benefits-icon-size);
+.benefit .icon-badge {
   margin-bottom: 24px;
-  border-radius: 50%;
-  background-color: var(--cg-yellow);
-  color: var(--cg-blue);
-  font-size: 1.25rem;
 }
 
 
@@ -898,16 +890,32 @@ p.hero-text {
   gap: 16px;
 }
 
-.info-icon {
+.icon-badge {
   flex: 0 0 auto;
-  display: grid;
+  display: inline-grid;
   place-items: center;
-  width: var(--info-icon-size, 48px);
-  height: var(--info-icon-size, 48px);
-  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  border-radius: 999px;
   background-color: var(--cg-yellow);
   color: var(--cg-blue);
-  font-size: 1.125rem;
+  font-size: 1.5rem;
+  text-align: center;
+  /* DEV */
+  /* background-color: red !important; */
+
+  &.icon-badge-sm {
+    width: 48px;
+    height: 48px;
+    font-size: 1.125rem;
+  }
+
+  /* použito jen na Hp */
+  &.icon-badge-xs {
+    width: 40px;
+    height: 40px;
+    font-size: 1.0rem;
+  }
 }
 
 .note {
