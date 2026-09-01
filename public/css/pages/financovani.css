@@ -10,7 +10,7 @@
   --financing-divider: var(--gray-200);
 
   /* sdílený info panel (components.css) – .info-head / .info-icon /
-     .note / .info-subtitle / .check-list */
+     .note / .check-list */
   --info-icon-size: var(--financing-icon-size);
   --info-divider: var(--financing-divider);
 }
@@ -35,11 +35,11 @@
   color: var(--white);
 
   p {
-      font-size: 1rem;
-      margin-bottom: 24px;
-      font-weight: 400;
-      line-height: 160%;
-      color: var(--lavender);
+    font-size: 1rem;
+    margin-bottom: 24px;
+    font-weight: 400;
+    line-height: 160%;
+    color: var(--lavender);
   }
 
   .btn {
@@ -112,8 +112,9 @@
 .info-body {
   display: flex;
   flex-direction: column;
+  /* HACK */
+  padding-top: 32px;
 }
-
 
 /* ## ROZBALOVACÍ BOXY NA MOBILU
    Stejný princip jako dropdowny v patičce: <details> + <summary>,
@@ -136,7 +137,7 @@
 }
 
 /* od 576px výš je obsah boxu vždy viditelný (nezávisle na atributu open) */
-@media (width >= 576px) {
+@media (width >=576px) {
   .info-dropdown::details-content {
     content-visibility: visible;
     block-size: auto;
@@ -166,10 +167,18 @@
   li {
     padding-block: 12px;
     font-size: 0.875rem;
-  }
 
-  li + li {
-    border-top: 1px solid var(--financing-divider);
+    & + & {
+      border-top: 1px solid var(--financing-divider);
+    }
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
   }
 
   strong {
@@ -188,13 +197,7 @@
 
 /* ## FINANČNÍ PROGRAMY (taby) */
 .programs {
-  --programs-tabs-width: 40%;
-  display: grid;
-  grid-template-columns: var(--programs-tabs-width) minmax(0, 1fr);
-  gap: 148px;
-  align-items: start;
-  margin-top: 48px;
-  margin-bottom: 170px;
+  /* už nic */
 }
 
 /* tablist */
@@ -291,13 +294,6 @@
    RESPONSIVE
    ========================================================================== */
 
-@media (width < 1200px) {
-  .programs {
-    --programs-tabs-width: 44%;
-
-    gap: 32px;
-  }
-}
 
 @media (width < 992px) {
   .financing {
@@ -305,13 +301,6 @@
   }
 
   .financing-cta {
-    margin-top: 40px;
-  }
-
-  /* Taby nad obsahem */
-  .programs {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 32px;
     margin-top: 40px;
   }
 
@@ -349,10 +338,6 @@
 
   .info-dropdown[open]::details-content {
     block-size: auto;
-  }
-
-  .info-body {
-    padding-top: 24px;
   }
 
   .programs-tab {

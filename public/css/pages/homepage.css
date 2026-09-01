@@ -4,7 +4,7 @@
 
 /* ## HERO – varianta pro HP
    Základ komponenty je v components.css (.hero)
-   písma v hgroup. 53px = 3.3125rem při základu 16px. */
+   53px = 3.3125rem při základu 16px. */
 .hero--hp {
   --hp-hero-title-size: 3.3125rem;
   --hp-hero-subtitle-size: 1.5rem;
@@ -19,7 +19,7 @@
     }
   }
 
-  .hero-content hgroup p {
+  .hero-content p {
     font-size: var(--hp-hero-subtitle-size);
     font-weight: 400;
     margin-bottom: 0;
