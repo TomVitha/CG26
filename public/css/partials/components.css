@@ -891,7 +891,7 @@ p.hero-text {
 
 
 /* # INFO PANEL – 
-   Používá financování (`.info-card`, `.programs-panel`) i bonusy. */
+   Používá financování (`.info-card`) i bonusy. */
 .info-head {
   display: flex;
   align-items: center;
@@ -922,6 +922,29 @@ p.hero-text {
   /* margin-block: 24px; */
 }
 
+/* TODO: Generic custom list component (with respective modifiers) */
+
+/* NOTE: Eventuálně bude lze na tohle použít row-rule-style */
+.list-separated {
+
+  /* schválně nespecifikuji <li>, aby se styl dát použít i na jiné elementy */
+  > * {
+    padding-block: var(--spacer-2) !important;
+
+    & + & {
+      border-top: 1px solid var(--gray-200);
+    }
+
+    &:first-child {
+      padding-top: 0 !important;
+    }
+
+    &:last-child {
+      padding-bottom: 0 !important;
+    }
+  }
+}
+
 .check-list {
   list-style: none;
   padding-left: 0;
@@ -931,21 +954,8 @@ p.hero-text {
     display: flex;
     align-items: center;
     gap: 16px;
-    padding-block: 16px;
     font-size: 1rem;
     line-height: 1.6;
-
-    & + & {
-      border-top: 1px solid var(--gray-200);
-    }
-
-    &:first-child {
-      padding-top: 0;
-    }
-
-    &:last-child {
-      padding-bottom: 0;
-    }
   }
 
   i {
